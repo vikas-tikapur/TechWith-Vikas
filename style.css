@@ -379,4 +379,27 @@ border-radius: 5px;
   .section-title {
     font-size: 30px;
   }
+  .python-banner {
+    height: 20vh;
+  }
+  
+.banner-overlay h1{
+  font-size: 30px;
+  
+}
+.banner-overlay {
+  padding: 0px 10px 0px 10px;
+}
+.python-intro{
+  padding: 0px 10px 0px 10px;
+}
+.python-intro h1{
+  font-size: 30px;
+}
+.python-intro p{
+  font-size: 16px;
+}
+.python-intro li {
+  font-size: 16px;
+}
 }
