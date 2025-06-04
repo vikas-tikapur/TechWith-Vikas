@@ -1,0 +1,382 @@
+/* Header Styling */
+.main-header {
+  background-color: #0f172a; /* dark blueish background */
+  color: #fff;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.main-header .container {
+  max-width: 1500px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-decoration: none !important;
+}
+
+.logo span {
+  color: #00c9a7;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+}
+
+.search-box input {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.search-box button {
+  background-color: #00c9a7;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+
+.fa-classic, .fa-regular, .fa-solid, .far, .fas {
+    font-family: sans-serif !important;
+}
+.search-box button:hover {
+  background-color: #00b398;
+}
+.fa-magnifying-glass:before, .fa-search:before {
+    content: none !important;
+}
+
+
+.footer {
+  background-color: #111;
+  color: #fff;
+  margin-top: 40px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1500px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.footer-left,
+.footer-links,
+.footer-social {
+  flex: 1 1 250px;
+  margin: 15px 0;
+}
+
+.footer h2 {
+  color: #ffffff;
+}
+.footer h3 {
+  color: #00b398;
+  letter-spacing: 1px;
+  font-size: 22px;
+}
+.footer h2 span {
+  color: #00c9a7;
+}
+footer h2{
+    font-size: 30px;
+}
+.footer a {
+  color: #ccc;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 8px;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.footer p {
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: white;
+}
+.footer a:hover {
+  color: #00c9a7;
+}
+
+.footer-social a {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.footer-links ul {
+  list-style: none; 
+  padding: 0;        
+  margin: 0;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #333;
+  padding: 10px 0px 15px 0px;
+  font-size: 18px;
+}
+
+.hero-section {
+  background: linear-gradient(to right, #0f172a, #00c9a7);
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content {
+  max-width: 1500px;
+  margin: auto;
+}
+
+.hero-section h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.hero-section h1 span {
+  color: #ffe600;
+}
+
+.hero-section p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #111;
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #222;
+}
+
+/* Courses Section */
+.courses-section {
+  padding: 80px 20px;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 36px;
+  margin-bottom: 50px;
+  color: #0f172a;
+  letter-spacing: 1px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1500px;
+  margin: auto;
+}
+
+.course-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 30px 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.course-card:hover {
+  transform: translateY(-8px);
+}
+
+.course-card h2 {
+  font-size: 24px;
+  color: #0f172a;
+  margin-bottom: 20px;
+}
+
+.course-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.course-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #00c9a7;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: background-color 0.3s;
+}
+
+.course-btn:hover {
+  background-color: #00b398;
+}
+
+#loadMoreBtn {
+  padding: 10px 25px;
+  font-size: 16px;
+  background-color: #0f172a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#loadMoreBtn:hover {
+  background-color: #00c9a7;
+}
+.load-more-container {
+  margin-top: 40px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Python page */
+.python-banner {
+  background-image: url('images/Pyhon_banner.png'); 
+  background-size: cover;
+  background-position: center;
+  height: 75vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-overlay {
+  background-color: rgba(0, 0, 0, 0.6); /* dark overlay for readability */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 40px;
+}
+
+.banner-overlay h1 {
+  color: #fff;
+  font-size: 4rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.python-intro {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  text-align: start;
+}
+
+.python-intro h1 {
+  font-family: Brygada 1918;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-transform: capitalize;
+  color: rgba(71, 71, 71, 1);
+}
+
+.python-intro li{
+  font-family: serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 160%;
+  letter-spacing: 2%;
+  text-align: justify;
+  color: rgba(107, 107, 107, 1);
+}
+
+.python-intro p{
+  font-family: serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 160%;
+  letter-spacing: 2%;
+  text-align: justify;
+  color: rgba(107, 107, 107, 1);
+}
+
+.Code-box pre{
+background-color: black;
+color: white;
+padding: 10px;
+border-radius: 5px;
+}
+
+
+@media (max-width: 768px) {
+  .main-header .container {
+    flex-direction: column;
+    gap: 10px;
+}
+.logo {
+    font-size: 26px;
+}
+.footer-container {
+    padding: 0px 10px 0px 10px;
+}
+.footer-left, .footer-links, .footer-social {
+    flex: none;
+    margin: 0;
+}
+
+.footer p {
+    font-size: 16px;
+    line-height: 25px;
+}
+
+.hero-section h1 {
+    font-size: 34px;
+  }
+
+  .hero-section p {
+    font-size: 18px;
+  }
+  .courses-section {
+    padding: 20px 10px 20px 10px;
+  }
+  .section-title {
+    font-size: 30px;
+  }
+}
