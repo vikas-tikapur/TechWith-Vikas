@@ -371,7 +371,7 @@ border-radius: 5px;
   }
 
   .hero-section p {
-    font-size: 18px;
+    font-size: 20px;
   }
   .courses-section {
     padding: 20px 10px 20px 10px;
@@ -391,7 +391,7 @@ border-radius: 5px;
   padding: 0px 10px 0px 10px;
 }
 .python-intro{
-  padding: 0px 10px 0px 10px;
+  padding: 30px 10px 30px 10px;
 }
 .python-intro h1{
   font-size: 30px;
@@ -401,5 +401,8 @@ border-radius: 5px;
 }
 .python-intro li {
   font-size: 16px;
+}
+.hero-section{
+  padding: 20px 10px 20px 10px;
 }
 }
