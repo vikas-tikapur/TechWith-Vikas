@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechWith Vikas</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+    <header class="main-header">
+  <div class="container">
+    <div><a href="../index.html" class="logo">TechWith <span>Vikas</span></a></div>
+    <div class="search-box">
+      <input type="text" placeholder="Search topics...">
+      <button><i class="fas fa-search">Go</i></button>
+    </div>
+  </div>
+</header>
+
+<section class="python-intro">
+  <div class="container">
+    <h1>Python Syntax</h1>
+    <p>Python syntax refers to the set of rules that define how a Python program is written and interpreted.</p>
+
+    <h2>Key Points of Python Syntax: </h2>
+    <ul>
+        <li><b>No Semicolons (;) </b>Unlike other languages, Python does not require semicolons to end a line.</li>
+    </ul>
+    <div class="Code-box">
+    <pre><code>print("Hello, World")</code></pre>
+  </div>
+
+  <ul>
+        <li><b>Indentation is Mandatory </b>Python uses indentation (spaces or tabs) to define blocks of code like loops, functions, or conditionals.</li>
+    </ul>
+
+    <div class="Code-box">
+    <pre><code>if 5 > 2:
+    print("5 is greater than 2")</code></pre>
+  </div>
+  
+  <ul>
+        <li><b>Case-Sensitive </b>Python is a case-sensitive programming language. This means that uppercase 
+            and lowercase letters are treated as distinct in identifiers (like variable names and function 
+            names). For example, the variable name is different from Name in Python.</li>
+    </ul>
+
+    <div class="Code-box">
+    <pre><code>name = "Vikas"
+Name = "Mishra"
+</code></pre>
+  </div>
+
+  <ul>
+        <li><b>Comments </b>Use # for single-line comments.</li>
+    </ul>
+
+    <div class="Code-box">
+    <pre><code># This is a comment
+print("Hello, Vikas")
+</code></pre>
+  </div>
+    
+  <ul>
+        <li><b>Variables Don't Need Declaration
+ </b>You can directly assign values to variables without declaring their type.</li>
+</ul>
+
+<div class="Code-box">
+    <pre><code>x = 10
+name = "Vikas"
+print(x)
+print(name)
+</code></pre>
+  </div>
+
+  <ul>
+        <li><b>Simple Print Statement
+ </b>Output is printed using print().</li>
+</ul>
+
+<div class="Code-box">
+    <pre><code>print("Welcome to Python!")
+</code></pre>
+  </div>
+
+  <ul>
+    <li><b>Function Definition
+ </b>Functions are defined using def keyword.</li>
+</ul>
+    
+<div class="Code-box">
+    <pre><code>def greet():
+    print("Hello from Python!")
+
+</code></pre>
+  </div>
+
+  <div class="navigation-buttons">
+  <a href="python.html" class="nav-btn prev-btn">← Previous</a>
+  <a href="#" class="nav-btn next-btn">Next →</a>
+</div>
+
+</section>
+
+
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <h2>CodeWith <span>Vikas</span></h2>
+      <p>Learn programming from scratch.<br> Start your journey today!</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Python</a></li>
+        <li><a href="#">Java</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h3>Follow Me</h3>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-x"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 CodeWithVikas | Created by Vikas Mishra</p>
+  </div>
+</footer>
+
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggleBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
