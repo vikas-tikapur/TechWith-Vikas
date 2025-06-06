@@ -396,6 +396,21 @@ font-size: 16px;
     line-height: 25px;
 }
 
+.footer a{
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.footer h3 {
+    font-size: 18px;
+    letter-spacing: 1.5px;
+}
+
+.footer h2 {
+    font-size: 27px;
+    letter-spacing: 1.5px;
+}
+
 .hero-section h1 {
     font-size: 34px;
   }
@@ -435,4 +450,18 @@ font-size: 16px;
 .hero-section{
   padding: 20px 10px 20px 10px;
 }
+
+.Code-box {
+    background-color: #000;
+    color: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow-x: auto; /* Enables horizontal scroll */
+  }
+
+  .Code-box pre {
+    margin: 0;
+    white-space: nowrap; /* Prevents code from wrapping */
+  }
 }

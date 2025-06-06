@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechWith Vikas</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+    <header class="main-header">
+  <div class="container">
+    <div><a href="../index.html" class="logo">TechWith <span>Vikas</span></a></div>
+    <div class="search-box">
+      <input type="text" placeholder="Search topics...">
+      <button><i class="fas fa-search">Go</i></button>
+    </div>
+  </div>
+</header>
+
+<section class="python-intro">
+  <div class="container">
+    <h2>Python Comments</h2>
+    <p>Comments are lines in your code that are ignored during execution. They help you and others 
+        understand what the code does or why something is written a certain way.</p>
+
+    <ul>
+        <li><b> Single-Line Comments : </b>Use the # symbol at the beginning of the line.</li>
+    </ul>
+    <div class="Code-box">
+    <pre><code># This is a single-line comment
+print("Hello, Python")  # This prints a message
+</code></pre>
+  </div>
+
+  <ul>
+        <li><b>Multi-Line Comments (Using #) : </b>You can use # at the beginning of multiple lines to create multi-line comments.</li>
+    </ul>
+
+    <div class="Code-box">
+    <pre><code># This is a comment
+# spread over multiple
+# lines using the hash symbol
+</code></pre>
+  </div>
+  
+  <ul>
+        <li><b>Multi-Line Comments (Using Triple Quotes) : </b>Although not officially for comments, Python 
+            allows multi-line strings using triple quotes (''' or """). <br>These are often used as docstrings 
+            but can serve as block comments too.</li>
+    </ul>
+
+    <div class="Code-box">
+    <pre><code>'''
+This is a multi-line comment
+written using triple single quotes.
+It is not executed by Python.
+'''
+print("Python is fun!")
+</code></pre>
+  </div>
+
+  <ul>
+        <li><b>Docstrings : </b>Special multi-line strings used to describe functions, classes, or modules.</li>
+    </ul>
+
+    <div class="Code-box">
+    <pre><code>def greet():
+    """This function prints a greeting message."""
+    print("Hello!")
+</code></pre>
+  </div>
+
+  <h2>Why Use Comments?</h2>
+  <ul>
+    <li>To explain complex logic.</li>
+    <li>To remind yourself or help others understand code.</li>
+    <li>To disable code temporarily for testing.</li>
+    <li>Can be used to explain Python code.</li>
+    <li>Can be used to make the code more readable.</li>
+  </ul>
+
+  <h2>Python Variables</h2>
+  <p>A variable in Python is used to store data or information that can be referenced and 
+    manipulated later in the program. <br> In simple terms, Variables are containers for storing data values.</p>
+
+<h2>Creating Variables</h2>
+<p>You don’t need to declare the type — just assign a value directly.</p>
+<div class="Code-box">
+    <pre><code>x = 5
+name = "Mango Tree"
+price = 99.99
+</code></pre>
+  </div>
+  <p>Python automatically understands the data type (integer, string, float, etc.) based on the value.</p>
+
+<h2>Variable Naming Rules</h2>
+<p>Here are the rules for naming variables in Python:</p>
+<ul>
+    <li><b>Start: </b>Variable names must begin with a letter (a-z, A-Z) or an underscore (_). 
+        They cannot start with a digit (0-9).</li>
+    <li><b>Characters: </b>Variable names can contain letters, numbers (0-9), and underscores (_). 
+        However, they cannot contain spaces or special characters (like @, #, $, etc.).</li>
+    <li><b>Case Sensitivity: </b>Variable names are case-sensitive. <br>For example: myVar, myvar, 
+        and MYVAR are three different variables.</li>
+    <li><b>No Spaces: </b>Variable names cannot contain spaces. Use underscores to separate 
+        words (e.g., my_variable).</li>
+    <li><b>Reserved Words: </b>Avoid using Python keywords (e.g., if, else, for, while, class, def, import, etc.) 
+        as variable names.</li>
+    <li><b>Length: </b>Variable names can be of any length, but it's a good practice to keep them concise and meaningful.</li>
+    <li><b>Convention: </b>Use lowercase letters and underscores for variable names (e.g., my_variable) to improve readability.</li>
+</ul>
+
+<p><b>Valid Example:</b></p>
+<div class="Code-box">
+    <pre><code>my_variable = 10
+_my_var = "Hello"
+variable2 = 3.14
+userName = "John Doe"
+</code></pre>
+  </div>
+
+  <p><b>Invalid Examples:</b></p>
+  <div class="Code-box">
+    <pre><code>2my_variable = 10 #cannot start with a number
+my-variable = 10 #cannot contain a hyphen
+my variable = 10 #cannot contain spaces
+</code></pre>
+  </div>
+
+  <ul>
+    <li><b>Reassigning Variables: </b>In Python, you can reassign a variable to a new value or 
+        even change its data type at any time.<br> To reassign a variable, simply use the assignment operator 
+        (=) with the variable name on the left and the new value on the right.</li>
+  </ul>
+  <p><b>Example:</b></p>
+  <div class="Code-box">
+    <pre><code>x = 10    # x is assigned the integer value 10
+print(x)  # Output: 10
+
+x = "hello" # x is reassigned to a string value
+print(x)  # Output: hello
+
+x = True  # x is reassigned to a boolean value
+print(x)  # Output: True
+</code></pre>
+  </div>
+<ul><li>
+    <b>Multiple Assignments: </b>Python allows you to assign values to multiple variables in a single line.
+</li></ul>
+<p><b>Example:</b></p>
+  <div class="Code-box">
+    <pre><code>   x, y, z = 1, 2, 3
+   print(x)  # Output: 1
+   print(y)  # Output: 2
+   print(z)  # Output: 3
+</code></pre>
+  </div>
+
+<ul>
+    <li><b>Printing Variables: </b>Use the print() function to display variable values.</li>
+</ul>
+<p><b>Example:</b></p>
+<div class="Code-box">
+    <pre><code>   x = 10
+    print(x)  # Output: 10
+</code></pre>
+  </div>
+
+<ul><li><b>Printing Variables: </b>Use the print() function to display variable values.</li></ul>
+    <p><b>Example:</b></p>
+  <div class="Code-box">
+    <pre><code>    x = 10
+    print(x)  # Output: 10
+</code></pre>
+</div>
+  <ul><li>To print a string, enclose it in single or double quotes.</li></ul>
+    <p><b>Example:</b></p>
+  <div class="Code-box">
+    <pre><code>    print("Hello, World!")
+</code></pre>
+</div>
+<ul><li>You can also use f-strings for formatted output:</li></ul>
+<p><b>Example:</b></p>
+  <div class="Code-box">
+    <pre><code>name = "Ram"
+age = 30
+print(f"My name is {name} and I am {age} years old.")
+</code></pre>
+  </div>
+
+  <ul><li><b>Dynamic Typing: </b>Python is dynamically typed, meaning you don't have to declare the variable type explicitly.</li></ul>
+<p><b>Example:</b></p>
+  <div class="Code-box">
+    <pre><code>value = 100     # int
+value = "Text"  # now string
+</code></pre>
+  </div>
+
+<ul><li><b>Variable Type Checking: </b>You can check the data type using the type() function.</li></ul>
+<p><b>Example:</b></p>
+  <div class="Code-box">
+    <pre><code>x = 10
+print(type(x)) 
+</code></pre>
+  </div>
+
+<ul><li><b>Deleting a Variable: </b>You can delete a variable using the del keyword.</li></ul>
+<p><b>Example:</b></p>
+  <div class="Code-box">
+    <pre><code>x = 100
+del x
+</code></pre>
+</div>
+
+<h2>Why Use Variables?</h2>
+<ul>
+    <li><b>Readability: </b>Variables make code more readable by giving meaningful names to data.</li>
+    <li><b>Reusability: </b>Variables allow you to reuse values without repeating code.</li>
+    <li><b>Flexibility: </b>Variables can change values, making your code adaptable.</li>
+</ul>
+  </div> 
+  <div class="navigation-buttons">
+  <a href="python.html" class="nav-btn prev-btn">← Previous</a>
+  <a href="#" class="nav-btn next-btn">Next →</a>
+</div>
+</section>
+
+
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <h2>CodeWith <span>Vikas</span></h2>
+      <p>Learn programming from scratch.<br> Start your journey today!</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Python</a></li>
+        <li><a href="#">Java</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h3>Follow Me</h3>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-x"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 CodeWithVikas | Created by Vikas Mishra</p>
+  </div>
+</footer>
+
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggleBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
