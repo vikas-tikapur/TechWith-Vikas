@@ -1,9 +1,10 @@
 /* Header Styling */
 .main-header {
-  background-color: #0f172a; /* dark blueish background */
+  background-color: #ffffff; 
   color: #fff;
   padding: 15px 0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0px 1px 15px 0px rgba(150, 150, 150, 0.25);
+
 }
 
 .main-header .container {
@@ -18,13 +19,13 @@
 .logo {
   font-size: 30px;
   font-weight: bold;
-  color: #ffffff;
+  color: rgba(10, 99, 155, 1);
   letter-spacing: 1px;
   text-decoration: none !important;
 }
 
 .logo span {
-  color: #00c9a7;
+  color: rgba(242, 113, 0, 1);
 }
 
 .search-box {
@@ -32,18 +33,39 @@
   align-items: center;
 }
 
+
+.search-box input[type="text"] {
+  color: rgba(107, 107, 107, 1); 
+  background-color: transparent; /* Optional: keep background transparent */
+  border: 1px solid rgba(242, 113, 0, 1); /* Optional: white border */
+  padding: 8px 10px;
+}
+
+.search-box input::placeholder {
+  color: rgba(107, 107, 107, 1); 
+  opacity: 1;    /* Ensures it's fully visible in all browsers */
+}
+
+.search-box button {
+  color: white; 
+  background-color: transparent; /* Optional */
+  border: 1px solid white;
+  padding: 8px 12px;
+  cursor: pointer;
+}
 .search-box input {
   padding: 8px 12px;
   border: none;
   border-radius: 4px 0 0 4px;
   outline: none;
   font-size: 1rem;
+  background-color: rgba(242, 113, 0, 1);
 }
 
 .search-box button {
-  background-color: #00c9a7;
+  background-color: rgba(10, 99, 155, 1);
   color: white;
-  border: none;
+  border: solid 1px rgba(10, 99, 155, 1);
   padding: 8px 12px;
   border-radius: 0 4px 4px 0;
   cursor: pointer;
@@ -56,7 +78,8 @@
     font-family: sans-serif !important;
 }
 .search-box button:hover {
-  background-color: #00b398;
+  background-color: #00b39800;
+  color: rgba(10, 99, 155, 1);
 }
 .fa-magnifying-glass:before, .fa-search:before {
     content: none !important;
@@ -64,9 +87,9 @@
 
 
 .footer {
-  background-color: #111;
-  color: #fff;
+  background-color: #000000;
   margin-top: 40px;
+  box-shadow: 0px 1px 15px 0px rgba(150, 150, 150, 0.25);
 }
 
 .footer-container {
@@ -86,21 +109,20 @@
 }
 
 .footer h2 {
-  color: #ffffff;
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  letter-spacing: 1px;
 }
 .footer h3 {
-  color: #00b398;
+  color: rgb(255, 255, 255);
   letter-spacing: 1px;
   font-size: 22px;
 }
 .footer h2 span {
-  color: #00c9a7;
-}
-footer h2{
-    font-size: 30px;
+  color: rgba(242, 113, 0, 1);
 }
 .footer a {
-  color: #ccc;
+  color: rgb(255, 255, 255);
   text-decoration: none;
   display: inline-block;
   margin-bottom: 8px;
@@ -111,10 +133,10 @@ footer h2{
 .footer p {
     font-size: 18px;
     letter-spacing: 1px;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 .footer a:hover {
-  color: #00c9a7;
+  color: rgba(242, 113, 0, 1);
 }
 
 .footer-social a {
@@ -131,7 +153,7 @@ footer h2{
 .footer-bottom {
   text-align: center;
   margin-top: 20px;
-  border-top: 1px solid #333;
+  border-top: 1px solid #ffffff;
   padding: 10px 0px 15px 0px;
   font-size: 18px;
 }
@@ -143,6 +165,10 @@ footer h2{
   text-align: center;
   position: relative;
   z-index: 1;
+  background-image: url('images/hero.jpg');
+  background-size: cover;
+  /* background-position: center; */
+  background-repeat: no-repeat;
 }
 
 .hero-content {
@@ -152,13 +178,13 @@ footer h2{
 
 .hero-section h1 {
   font-size: 48px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   font-weight: bold;
   letter-spacing: 1px;
 }
 
 .hero-section h1 span {
-  color: #ffe600;
+  color: rgba(242, 113, 0, 1);
 }
 
 .hero-section p {
@@ -170,16 +196,20 @@ footer h2{
 .hero-btn {
   display: inline-block;
   padding: 12px 30px;
-  background-color: #111;
+ background: linear-gradient(178.66deg, #F20000 13.35%, #F2A020 144.73%);
   color: #fff;
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 100%;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 5px;
   transition: background-color 0.3s ease;
+  letter-spacing: 1px;
 }
 
 .hero-btn:hover {
-  background-color: #222;
+  background: linear-gradient(178.66deg, rgb(242 70 131) 13.35%, #000000 144.73%);
+  color: rgb(255, 255, 255);
 }
 
 /* Courses Section */
@@ -237,7 +267,7 @@ footer h2{
 .course-btn {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #00c9a7;
+  background: linear-gradient(178.66deg, #F20000 13.35%, #F2A020 144.73%);
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -247,13 +277,14 @@ footer h2{
 }
 
 .course-btn:hover {
-  background-color: #00b398;
+  background: linear-gradient(178.66deg, rgba(10, 99, 155, 1) 13.35%, rgba(10, 99, 155, 1) 144.73%);
+  color: rgb(255, 255, 255);
 }
 
 #loadMoreBtn {
   padding: 10px 25px;
   font-size: 16px;
-  background-color: #0f172a;
+  background: linear-gradient(178.66deg, #F20000 13.35%, #F2A020 144.73%);
   color: white;
   border: none;
   border-radius: 5px;
@@ -261,7 +292,7 @@ footer h2{
 }
 
 #loadMoreBtn:hover {
-  background-color: #00c9a7;
+  background: linear-gradient(178.66deg, rgba(10, 99, 155, 1) 13.35%, rgba(10, 99, 155, 1) 144.73%);
 }
 .load-more-container {
   margin-top: 40px;
@@ -340,7 +371,7 @@ footer h2{
 .python-intro h2{
   color: rgba(71, 71, 71, 1);
   font-weight: 600;
-  font-size: 25px;
+  font-size: 30px;
   line-height: 100%;
   letter-spacing: 1px;
 }
@@ -374,6 +405,28 @@ font-size: 16px;
   background-color: #00c9a7;
 }
 
+table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      text-align: center;
+      color: rgba(107, 107, 107, 1);
+    }
+
+    th {
+      background-color: #00c9a7;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
 
 @media (max-width: 768px) {
   .main-header .container {
@@ -406,13 +459,9 @@ font-size: 16px;
     letter-spacing: 1.5px;
 }
 
-.footer h2 {
-    font-size: 27px;
-    letter-spacing: 1.5px;
-}
-
 .hero-section h1 {
-    font-size: 34px;
+    font-size: 25px;
+    letter-spacing: 1px;
   }
 
   .hero-section p {
@@ -463,5 +512,23 @@ font-size: 16px;
   .Code-box pre {
     margin: 0;
     white-space: nowrap; /* Prevents code from wrapping */
+  }
+  .table-python {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* for smooth scrolling on iOS */
+  }
+  .table-python table {
+  width: 100%;
+  min-width: 600px; /* You can adjust this width */
+  border-collapse: collapse;
+}
+.table-python th,
+.table-python td {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+.table-python table {
+    min-width: 800px;
   }
 }
