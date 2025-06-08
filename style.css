@@ -520,7 +520,6 @@ table {
 
   .Code-box pre {
     margin: 0;
-    white-space: nowrap; /* Prevents code from wrapping */
   }
   .table-python {
     overflow-x: auto;
