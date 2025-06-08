@@ -304,7 +304,7 @@
 
 /* Python page */
 .python-banner {
-  background-image: url('images/Pyhon_banner.png'); 
+  background-image: url('images/python_ban1.jpg'); 
   background-size: cover;
   background-position: center;
   height: 75vh;
@@ -315,15 +315,15 @@
   justify-content: center;
 }
 
-.banner-overlay {
-  background-color: rgba(0, 0, 0, 0.6); /* dark overlay for readability */
+/* .banner-overlay {
+  background-color: rgba(0, 0, 0, 0.6); 
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   padding-left: 40px;
-}
+} */
 
 .banner-overlay h1 {
   color: #fff;
@@ -420,7 +420,7 @@ table {
     }
 
     th {
-      background-color: #00c9a7;
+      background-color: rgba(10, 99, 155, 1);
       color: white;
     }
 
@@ -484,17 +484,20 @@ table {
   }
   
 .banner-overlay h1{
-  font-size: 30px;
+  font-size: 25px;
   
 }
 .banner-overlay {
   padding: 0px 10px 0px 10px;
 }
 .python-intro{
-  padding: 30px 10px 30px 10px;
+  padding: 10px 10px 30px 10px;
 }
 .python-intro h1{
   font-size: 30px;
+}
+.python-intro h2{
+  font-size: 25px;
 }
 .python-intro p{
   font-size: 16px;
