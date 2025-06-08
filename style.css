@@ -455,12 +455,15 @@ table {
 }
 
 .footer h3 {
-    font-size: 18px;
+    font-size: 22px;
     letter-spacing: 1.5px;
+}
+.footer h2 {
+    font-size: 26px;
 }
 
 .hero-section h1 {
-    font-size: 23px;
+    font-size: 25px;
     letter-spacing: 1px;
   }
 
@@ -470,8 +473,11 @@ table {
   .courses-section {
     padding: 20px 10px 20px 10px;
   }
+  .course-card h2{
+    font-size: 20px;
+  }
   .section-title {
-    font-size: 30px;
+    font-size: 25px;
   }
   .python-banner {
     height: 20vh;
