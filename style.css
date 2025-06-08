@@ -540,4 +540,8 @@ table {
 .table-python table {
     min-width: 800px;
   }
+  #different{
+    font-size: 23px;
+    letter-spacing: 1px;
+  }
 }
