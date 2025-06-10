@@ -40,6 +40,175 @@
 <p>Without the comma, Python will treat it as just a number.</p>
 
 <h3><b>🔸 Key Features of Tuples: </b></h3>
+<p><b>1. Immutability - Cannot be changed.</b></p>
+<p>Once a tuple is created, you cannot modify, add, or remove elements.</p>
+<div class="Code-box">
+    <pre><code># Creating a tuple
+tup = (11, 22, 33, 44)
+# Trying to change the third element
+tup[2] = 59
+
+#Output - Error: 'tuple' object does not support item assignment 
+</code></pre>
+  </div>
+<p><b>2. Ordered Collection - Elements have fixed positions.</b></p>
+<p>Elements in a tuple maintain their order and can be accessed by index.</p>
+<div class="Code-box">
+    <pre><code># Example
+animals = ("cat", "dog", "bird", "fish")
+
+# Access items by position
+first_animal = animals[0]    # "cat"
+second_animal = animals[1]   # "dog"
+last_animal = animals[-1]    # "fish" (negative means from end)
+
+print("First animal:", first_animal)
+print("Last animal:", last_animal)
+</code></pre>
+  </div>
+
+<p><b>3. Allows Duplicate Values.</b></p>
+<p>Tuples can contain multiple instances of the same value.</p>
+<div class="Code-box">
+    <pre><code># Example
+grades = (85, 90, 85, 78, 90, 85)
+print("All grades:", grades)
+print("How many 85s:", grades.count(85))  # Output: 3
+</code></pre>
+  </div>
+
+  <p><b>4. Multiple Data Types.</b></p>
+  <p>Tuples can store different types of data in a single collection.</p>
+  <div class="Code-box">
+    <pre><code># Example
+mixed_tuple = (42, "Hello", 3.14, True)
+print("Mixed tuple:", mixed_tuple)
+</code></pre>
+  </div>
+
+  <p><b>5. Tuple Packing and Unpacking.</b></p>
+  <p>You can pack multiple values into a tuple and unpack them into separate variables.</p>
+  <div class="Code-box">
+    <pre><code># Different ways to create tuples
+way1 = (1, 2, 3)           # With parentheses
+way2 = 1, 2, 3             # Without parentheses
+way3 = (10,)               # Single item (comma needed!)
+print("Way 1:", way1)
+print("Way 2:", way2)
+print("Way 3:", way3)
+</code></pre>
+  </div>
+
+<p><b>6. Slicing - Extract Portions of Tuple.</b></p>
+<p>You can extract a portion of a tuple using slicing.</p>
+  <div class="Code-box">
+    <pre><code># Example: Weekly Temperature Data
+temperatures = (22, 25, 28, 30, 27, 24, 21)
+
+# Slicing syntax: tuple[start:end:step]
+weekdays = temperatures[0:5]        # First 5 days
+weekend = temperatures[5:7]         # Last 2 days
+every_other_day = temperatures[::2] # Every alternate day
+
+print(f"Weekday temps: {weekdays}")      # (22, 25, 28, 30, 27)
+print(f"Weekend temps: {weekend}")       # (24, 21)
+print(f"Alternate days: {every_other_day}") # (22, 28, 27, 21)
+</code></pre>
+  </div>
+
+  <p><b>7. Loop Through Tuple</b></p>
+  <div class="Code-box">
+    <pre><code># Example
+fruits = ("apple", "banana", "cherry")
+
+# Looping through the tuple
+for fruit in fruits:
+    print("Fruit:", fruit)
+</code></pre>
+  </div>
+
+  <h3><b>🔸Simple Examples:</b></h3>
+  <p><b>Example 1: Store Coordinates</b></p>
+  <div class="Code-box">
+    <pre><code># Store x, y position
+my_position = (10, 20)
+x = my_position[0]  # 10
+y = my_position[1]  # 20
+print(f"I am at position ({x}, {y})")
+</code></pre>
+  </div>
+
+  <p><b>Example 2: Store Person Information</b></p>
+  <div class="Code-box">
+    <pre><code>person = ("Alice", 25, "Teacher")
+name = person[0]
+age = person[1]
+job = person[2]
+print(f"Name: {name}")
+print(f"Age: {age}")
+print(f"Job: {job}")
+</code></pre>
+  </div>
+
+  <p><b>Example 3: Store Multiple Values</b></p>
+  <div class="Code-box">
+    <pre><code># Test scores
+scores = (85, 92, 78, 96, 88)
+print("All scores:", scores)
+print("Highest score:", max(scores))
+print("Lowest score:", min(scores))
+print("Total scores:", len(scores))
+</code></pre>
+  </div>
+
+<p><b>Example 4: Compare Tuples</b></p>
+  <div class="Code-box">
+    <pre><code>score1 = (85, 90)
+score2 = (85, 88)
+print("Score1 > Score2:", score1 > score2)  # True
+print("Scores are same:", score1 == score2)  # False
+</code></pre>
+  </div>
+
+  <h3><b>🔸Simple Tricks</b></h3>
+<p><b>Swap Two Variables.</b></p>
+  <div class="Code-box">
+    <pre><code>a = 10
+b = 20
+a,b = b,a
+print("a:",a,"b:",b)
+</code></pre>
+  </div>
+
+  <p><b>Unpack Tuple Values</b></p>
+  <div class="Code-box">
+    <pre><code>student_info = ("Bob", 18, 95)
+# Get all values at once
+name, age, marks = student_info
+print("Student name:", name)
+print("Student age:", age)
+print("Student marks:", marks)
+</code></pre>
+  </div>
+<h3><b>🔸When to Use Tuples?</b></h3>
+<p>Use tuples when:</p>
+<ul>
+  <li>You have data that should not change</li>
+  <li>You want to store coordinates (x, y)</li>
+  <li>Storing related data (e.g., database records)</li>
+  <li>You want to store person info (name, age, etc.)</li>
+  <li>You want to return multiple values from a function</li>
+</ul>
+
+<h3><b>🔸Summary</b></h3>
+<ul>
+  <li>Tuples are like lists but cannot be changed</li>
+  <li>Use parentheses () to create tuples</li>
+  <li>Access items using square brackets [0], [1], etc.</li>
+  <li>Good for storing data that should stay the same</li>
+  <li>Simple and fast to use!</li>
+</ul>
+
   <div class="navigation-buttons">
   <a href="python_p3.html" class="nav-btn prev-btn">← Previous</a>
   <a href="python_p5.html" class="nav-btn next-btn">Next →</a>
