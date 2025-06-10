@@ -183,7 +183,120 @@ print(fruits[-3])  # Output: 'apple'
         <li><b>extend(iterable) :</b> Adds elements from another iterable (e.g., list, tuple) to the end of the list.</li>
         <li><b>reverse() :</b> Reverses the order of items in the list.</li>
         <li><b>copy() :</b> Returns a shallow copy of the list.</li>
+      </ul>
   </div>
+
+  <h3><b>🔸append():</b></h3>
+  <div class="Code-box">
+    <pre><code>fruits = ["apple", "banana", "cherry"]
+fruits.append("orange")
+print("Updated fruits:", fruits)
+# Output: Updated fruits: ['apple', 'banana', 'cherry', 'orange']
+</code></pre>
+  </div>
+
+  <h3><b>🔸insert(index, item):</b></h3>
+  <div class="Code-box">
+    <pre><code>fruits = ["apple", "banana", "cherry"]
+fruits.insert(1, "orange")
+print("Updated fruits:", fruits)
+# Output: Updated fruits: ['apple', 'orange', 'banana', 'cherry']
+</code></pre>
+  </div>
+
+  <h3><b>🔸remove(item):</b></h3>
+  <div class="Code-box">
+    <pre><code>fruits = ["apple", "banana", "cherry"]
+fruits.remove("banana")
+print("Updated fruits:", fruits)
+# Output: Updated fruits: ['apple', 'cherry']
+</code></pre>
+  </div>
+
+  <h3><b>🔸pop(index):</b></h3>
+  <div class="Code-box">
+    <pre><code>fruits = ["apple", "banana", "cherry"]
+removed_fruit = fruits.pop(1)
+print("Removed fruit:", removed_fruit)
+print("Updated fruits:", fruits)
+# Output: Removed fruit: banana
+# Output: Updated fruits: ['apple', 'cherry']
+</code></pre>
+  </div>
+
+  <h3><b>🔸clear():</b></h3>
+  <div class="Code-box">
+    <pre><code>fruits = ["apple", "banana", "cherry"]
+fruits.clear()
+print("Updated fruits:", fruits)
+# Output: Updated fruits: []
+</code></pre>
+  </div>
+
+  <h3><b>🔸index(x):</b></h3>
+  <div class="Code-box">
+    <pre><code>fruits = ["apple", "banana", "cherry"]
+index = fruits.index("banana")
+print("Index of banana:", index)
+# Output: Index of banana: 1
+</code></pre>
+  </div>
+
+  <h3><b>🔸count(x):</b></h3>
+  <div class="Code-box">
+    <pre><code>fruits = ["apple", "banana", "cherry", "banana"]
+count = fruits.count("banana")
+print("Count of banana:", count)
+# Output: Count of banana: 2
+</code></pre>
+  </div>
+
+  <h3><b>🔸extend(iterable):</b></h3>
+  <div class="Code-box">
+    <pre><code>fruits = ["apple", "banana"]
+more_fruits = ["cherry", "orange"]
+fruits.extend(more_fruits)
+print("Updated fruits:", fruits)
+# Output: Updated fruits: ['apple', 'banana', 'cherry', 'orange']
+</code></pre>
+  </div>
+
+  <h3><b>🔸reverse():</b></h3>
+  <div class="Code-box">
+    <pre><code>fruits = ["apple", "banana", "cherry"]
+fruits.reverse()
+print("Reversed fruits:", fruits)
+# Output: Reversed fruits: ['cherry', 'banana', 'apple']
+</code></pre>
+  </div>
+
+  <h3><b>🔸copy():</b></h3>
+  <div class="Code-box">
+    <pre><code>fruits = ["apple", "banana", "cherry"]
+fruits_copy = fruits.copy()
+print("Copied fruits:", fruits_copy)
+# Output: Copied fruits: ['apple', 'banana', 'cherry']
+</code></pre>
+  </div>
+
+  <h3><b>🔸When to Use Lists?</b></h3>
+  <p>Use lists when:</p>
+  <ul>
+    <li>You need a collection of items that can change</li>
+    <li>You want to store multiple values in a single variable</li>
+    <li>You need to maintain the order of items</li>
+    <li>You want to allow duplicates</li>
+  </ul>
+
+  <h3><b>🔸Summary</b></h3>
+  <ul>
+    <li>Lists are mutable (changeable)</li>
+    <li>Use square brackets [] to create lists</li>
+    <li>Access items using their index</li>
+    <li>Good for storing collections of related data</li>
+    <li>Flexible and easy to use!</li>
+  </ul>
+
   <div class="navigation-buttons">
   <a href="python_p2.html" class="nav-btn prev-btn">← Previous</a>
   <a href="python_p4.html" class="nav-btn next-btn">Next →</a>

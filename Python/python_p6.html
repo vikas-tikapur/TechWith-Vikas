@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechWith Vikas</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    @media (max-width: 768px) {
+      .quiz-container {
+    padding: 20px 10px 20px 10px !important;
+      }
+      .option {
+        line-height: 40px;
+      }
+    .option {
+    padding: 10px !important;
+    margin: 0px 10px !important;
+    font-size: 15px !important;
+    border-radius: 50px !important;
+}
+    }
+    .quiz-container {
+      padding: 30px;
+      border-radius: 15px;
+      margin: 0px auto;
+      color: rgba(71, 71, 71, 1);
+    }
+    .question {
+      font-size: 25px;
+      margin: 25px 0 25px;
+    }
+    .option {
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    .option:hover {
+      background-color: #f27100;
+      color: rgb(255, 255, 255);;
+    }
+    .btn {
+      margin-top: 20px;
+      background-color: #f27100;
+      color: #ffffff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .result {
+      font-size: 22px;
+      margin-top: 30px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<header class="main-header">
+  <div class="container">
+    <div><a href="../index.html" class="logo">TechWith <span>Vikas</span></a></div>
+    <div class="search-box">
+      <input type="text" placeholder="Search topics...">
+      <button><i class="fas fa-search">Go</i></button>
+    </div>
+  </div>
+</header>
+
+<!-- Existing content remains unchanged -->
+
+<section class="quiz-section">
+  <div class="quiz-container" id="quizContainer"></div>
+  <button class="btn" onclick="submitQuiz()">Submit Quiz</button>
+  <div class="result" id="result"></div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <h2>CodeWith <span>Vikas</span></h2>
+      <p>Learn programming from scratch.<br> Start your journey today!</p>
+    </div>
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Python</a></li>
+        <li><a href="#">Java</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-social">
+      <h3>Follow Me</h3>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-x"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 TechWith Vikas | Created by Vikas Mishra</p>
+  </div>
+</footer>
+
+<script>
+  const questions = [
+    { q: "Who created Python?", options: ["Dennis Ritchie", "Guido van Rossum", "James Gosling", "Bjarne Stroustrup"], answer: 1 },
+    { q: "Which is a key feature of Python?", options: ["Statically Typed", "Complex Syntax", "Interpreted Language", "Slow Execution"], answer: 2 },
+    { q: "Which of the following is a Python application area?", options: ["Web Development", "Data Science", "AI", "All of the above"], answer: 3 },
+    { q: "Which is NOT a valid Python data type?", options: ["Tuple", "List", "Char", "Boolean"], answer: 2 },
+    { q: "What does a tuple support that lists do NOT?", options: ["Mutability", "Indexing", "Immutability", "Sorting"], answer: 2 },
+    { q: "Which method is used to count occurrences in a tuple?", options: ["find()", "index()", "count()", "search()"], answer: 2 },
+    { q: "Which of the following is a valid variable name?", options: ["1value", "value_1", "value-1", "@value"], answer: 1 },
+    { q: "What is the output of len((10, 20, 30))?", options: ["2", "3", "1", "Error"], answer: 1 },
+    { q: "Which comment is valid in Python?", options: ["// this is comment", "# this is comment", "<!-- comment -->", "** comment **"], answer: 1 },
+    { q: "Which of these will install Python?", options: ["python.org", "npm install python", "pip install python", "java.com"], answer: 0 }
+  ];
+
+  const quizContainer = document.getElementById('quizContainer');
+  const resultBox = document.getElementById('result');
+
+  questions.forEach((q, i) => {
+    const div = document.createElement('div');
+    const question = document.createElement('div');
+    question.classList.add('question');
+    question.textContent = `${i + 1}. ${q.q}`;
+    div.appendChild(question);
+
+    q.options.forEach((opt, j) => {
+      const label = document.createElement('label');
+      label.classList.add('option');
+      label.innerHTML = `<input type='radio' name='q${i}' value='${j}'> ${opt}`;
+      div.appendChild(label);
+    });
+
+    quizContainer.appendChild(div);
+  });
+
+  function submitQuiz() {
+    let correct = 0;
+    questions.forEach((q, i) => {
+      const selected = document.querySelector(`input[name=q${i}]:checked`);
+      if (selected && parseInt(selected.value) === q.answer) {
+        correct++;
+      }
+    });
+
+    const percentage = Math.round((correct / questions.length) * 100);
+    let message = '';
+    if (percentage === 100) message = `🎉 Congratulations! You scored ${percentage}%! Perfect!`;
+    else if (percentage >= 70) message = `👏 Well done! You scored ${percentage}%!`;
+    else if (percentage >= 40) message = `😊 Keep practicing! You scored ${percentage}%!`;
+    else message = `😥 Try again. You scored only ${percentage}%`;
+
+    resultBox.textContent = message;
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
