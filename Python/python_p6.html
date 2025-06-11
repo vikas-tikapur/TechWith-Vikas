@@ -109,16 +109,30 @@ label.option {
 
 <script>
   const questions = [
+    {q: "What is Python?", options: ["A type of snake", "A high-level programming language", "A web browser", "A database system"], answer: 1 },
     { q: "Who created Python?", options: ["Dennis Ritchie", "Guido van Rossum", "James Gosling", "Bjarne Stroustrup"], answer: 1 },
+    { q: "In which year was Python first released?", options: ["1991", "1989", "2000", "1995"], answer: 0 },
+    { q: "Which of the following is NOT a key feature of Python?", options: ["Easy to learn", "Platform independent", "Requires compilation before running", "Open source"], answer: 2 },
+    { q: "What is the correct file extension for Python files?", options: [".py", ".python", ".pyt", ".pt"], answer: 0 },
+    { q: "Which of the following is a valid Python variable name?", options: ["1variable", "variable_1", "variable-1", "@variable"], answer: 1 },
+    { q: "What is the output of print(2 ** 3)?", options: ["6", "8", "9", "16"], answer: 1 },
+    { q: "Which of the following is a mutable data type in Python?", options: ["Tuple", "List", "String", "Set"], answer: 1 },
     { q: "Which is a key feature of Python?", options: ["Statically Typed", "Complex Syntax", "Interpreted Language", "Slow Execution"], answer: 2 },
     { q: "Which of the following is a Python application area?", options: ["Web Development", "Data Science", "AI", "All of the above"], answer: 3 },
     { q: "Which is NOT a valid Python data type?", options: ["Tuple", "List", "Char", "Boolean"], answer: 2 },
     { q: "What does a tuple support that lists do NOT?", options: ["Mutability", "Indexing", "Immutability", "Sorting"], answer: 2 },
     { q: "Which method is used to count occurrences in a tuple?", options: ["find()", "index()", "count()", "search()"], answer: 2 },
-    { q: "Which of the following is a valid variable name?", options: ["1value", "value_1", "value-1", "@value"], answer: 1 },
     { q: "What is the output of len((10, 20, 30))?", options: ["2", "3", "1", "Error"], answer: 1 },
+    { q: "What is the correct way to create a list in Python?", options: ["list = (1, 2, 3)", "list = [1, 2, 3]", "list = {1, 2, 3}", "list = <1, 2, 3>"], answer: 1 },
+    { q: "How do you create a tuple in Python?", options: ["tuple = (1, 2, 3)", "tuple = [1, 2, 3]", "tuple = {1, 2, 3}", "tuple = <1, 2, 3>"], answer: 0 },
+    { q: "Which data type is used to store True/False values?", options: ["String", "Boolean", "Integer", "Float"], answer: 1 },
+    { q: "Which method is used to add an item to the end of a list?", options: ["append()", "add()", "insert()", "extend()"], answer: 0 },
+    { q: "What will [1, 2, 3].count(2) return?", options: ["1", "2", "3", "Error"], answer: 0 },
     { q: "Which comment is valid in Python?", options: ["// this is comment", "# this is comment", "-- comment --", "** comment **"], answer: 1 },
-    { q: "Which of these will install Python?", options: ["python.org", "npm install python", "pip install python", "java.com"], answer: 0 }
+    { q: "Which of these will install Python?", options: ["python.org", "npm install python", "pip install python", "java.com"], answer: 0 },
+    { q: "Which method finds the position of an item in a tuple?", options: ["index()", "find()", "search()", "count()"], answer: 0 },
+    { q: "What makes tuples different from lists?", options: ["Tuples can store more data()", "Tuples are faster()", "Tuples cannot be changed after creation()", "Tuples use less memory()"], answer: 2 },
+    { q: "What is the output of (1, 2, 3) + (4, 5)?", options: ["(1, 2, 3, 4, 5)", "(1, 2, 3) + (4, 5)", "(1, 2, 3, 4) + (5)", "Error"], answer: 0 }
   ];
 
   const quizContainer = document.getElementById('quizContainer');
