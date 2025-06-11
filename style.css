@@ -333,7 +333,7 @@
 }
 
 .python-intro {
-  padding: 40px 20px;
+  padding: 20px 20px 40px 20px;
   background-color: #f9f9f9;
   text-align: start;
 }
@@ -547,6 +547,10 @@ table {
   }
   #different{
     font-size: 23px;
+    letter-spacing: 1px;
+  }
+  #key-points {
+    font-size: 21px;
     letter-spacing: 1px;
   }
 }
