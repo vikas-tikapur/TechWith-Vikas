@@ -11,14 +11,12 @@
       .quiz-container {
     padding: 20px 10px 20px 10px !important;
       }
-      .option {
-        line-height: 40px;
-      }
     .option {
-    padding: 10px !important;
-    margin: 0px 10px !important;
-    font-size: 15px !important;
+    font-size: 16px !important;
     border-radius: 50px !important;
+}
+label.option {
+    display: table;
 }
     }
     .quiz-container {
@@ -34,7 +32,7 @@
     .option {
       padding: 10px;
       margin: 5px 0;
-      border-radius: 10px;
+      border-radius: 50px;
       cursor: pointer;
       font-size: 18px;
     }
@@ -119,7 +117,7 @@
     { q: "Which method is used to count occurrences in a tuple?", options: ["find()", "index()", "count()", "search()"], answer: 2 },
     { q: "Which of the following is a valid variable name?", options: ["1value", "value_1", "value-1", "@value"], answer: 1 },
     { q: "What is the output of len((10, 20, 30))?", options: ["2", "3", "1", "Error"], answer: 1 },
-    { q: "Which comment is valid in Python?", options: ["// this is comment", "# this is comment", "<!-- comment -->", "** comment **"], answer: 1 },
+    { q: "Which comment is valid in Python?", options: ["// this is comment", "# this is comment", "-- comment --", "** comment **"], answer: 1 },
     { q: "Which of these will install Python?", options: ["python.org", "npm install python", "pip install python", "java.com"], answer: 0 }
   ];
 
