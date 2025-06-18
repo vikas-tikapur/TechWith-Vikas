@@ -433,6 +433,16 @@ table {
       letter-spacing: 1px;
       color: rgba(242, 113, 0, 1);
     }
+  #pythonPagesDropdown {
+    font-family: serif;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 160%;
+    text-align: justify;
+    color: rgba(107, 107, 107, 1);
+    padding: 8px 10px 8px 10px;
+    letter-spacing: .5px;
+  }
 
 @media (max-width: 768px) {
   .main-header .container {

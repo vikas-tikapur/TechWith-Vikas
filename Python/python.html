@@ -7,15 +7,20 @@
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-</head>
-<body>
-    <header class="main-header">
+<header class="main-header">
   <div class="container">
     <div><a href="../index.html" class="logo">TechWith <span>Vikas</span></a></div>
-    <div class="search-box">
-      <input type="text" placeholder="Search topics...">
-      <button><i class="fas fa-search">Go</i></button>
-    </div>
+    <select id="pythonPagesDropdown" onchange="if(this.value) window.location.href=this.value;">
+      <div class="custom-dropdown">
+      <option value="">Go to Python Topic...</option>
+      <option value="python_p1.html">Python Introduction</option>
+      <option value="python_p2.html">History of Python</option>
+      <option value="python_p3.html">Why Learn Python?</option>
+      <option value="python_p4.html">Python Syntax</option>
+      <option value="python_p5.html">Python Data Types</option>
+      <option value="python_p6.html">Python Quiz</option>
+      <option value="python_p7.html">Python Advanced</option>
+    </select>
   </div>
 </header>
 
