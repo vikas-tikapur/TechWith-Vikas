@@ -1,3 +1,6 @@
+* {
+  margin: 0;
+}
 /* Header Styling */
 .main-header {
   background-color: #ffffff; 
@@ -98,7 +101,7 @@
   justify-content: space-between;
   max-width: 1500px;
   margin: auto;
-  padding: 0 20px;
+  padding: 30px 20px 0px 20px;
 }
 
 .footer-left,
@@ -112,11 +115,13 @@
   color: rgb(255, 255, 255);
   font-size: 30px;
   letter-spacing: 1px;
+  padding-bottom: 20px;
 }
 .footer h3 {
   color: rgb(255, 255, 255);
   letter-spacing: 1px;
   font-size: 22px;
+  padding-bottom: 20px;
 }
 .footer h2 span {
   color: rgba(242, 113, 0, 1);
@@ -214,7 +219,7 @@
 
 /* Courses Section */
 .courses-section {
-  padding: 20px 20px;
+  padding: 50px 20px;
   background-color: #f8f9fa;
   text-align: center;
 }
