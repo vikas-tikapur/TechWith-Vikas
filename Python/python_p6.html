@@ -21,6 +21,7 @@ label.option {
 .quiz-section h2 {
     font-size: 24px !important;
     letter-spacing: 1px;
+    padding-bottom: 20px;
 }
 .question {
     font-size: 20px !important;
@@ -28,7 +29,7 @@ label.option {
     margin: 0 !important;
 }
 section.quiz-section{
-  padding: 0 !important;
+  padding-top: 30px !important;
 }
     }
     .quiz-container {
@@ -37,8 +38,8 @@ section.quiz-section{
       color: rgba(71, 71, 71, 1);
     }
     section.quiz-section{
-      padding: 20px;
-    }
+  padding: 50px 20px 0px 20px !important;
+}
     .question {
       font-size: 25px;
       margin: 25px 0 25px;
@@ -100,12 +101,19 @@ section.quiz-section{
 <header class="main-header">
   <div class="container">
     <div><a href="../index.html" class="logo">TechWith <span>Vikas</span></a></div>
-    <div class="search-box">
-      <input type="text" placeholder="Search topics...">
-      <button><i class="fas fa-search">Go</i></button>
-    </div>
+    <select id="pythonPagesDropdown" onchange="if(this.value) window.location.href=this.value;">
+      <div class="custom-dropdown">
+      <option value="">Go to Python Topic...</option>
+      <option value="python.html">Python Introduction</option>
+      <option value="python_p1.html">Python Syntax</option>
+      <option value="python_p2.html">Python Comments & Variables</option>
+      <option value="python_p3.html">Python Data Types-1</option>
+      <option value="python_p4.html">Python Data Types-2</option>
+      <option value="python_p5.html">Python Data Types-3</option>
+      <option value="python_p6.html">Python Quiz-1</option>
+    </select>
   </div>
-</header>
+</header> 
 
 <section class="quiz-section">
   <h2>Start The Quiz</h2>

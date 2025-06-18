@@ -338,7 +338,7 @@
 }
 
 .python-intro {
-  padding: 20px 20px 40px 20px;
+  padding: 50px 20px 50px 20px;
   background-color: #f9f9f9;
   text-align: start;
 }
@@ -379,6 +379,7 @@
   font-size: 30px;
   line-height: 100%;
   letter-spacing: 1px;
+  padding: 20px 0px 20px 0px;
 }
 .Code-box pre{
 background-color: black;
@@ -387,6 +388,7 @@ padding: 10px;
 border-radius: 5px;
 line-height: 2;
 font-size: 16px;
+margin: 20px 0px 20px 0px;
 }
 
 .navigation-buttons {
@@ -437,6 +439,7 @@ table {
       font-size: 20px;
       letter-spacing: 1px;
       color: rgba(242, 113, 0, 1);
+      padding: 10px 0px 10px 0px;
     }
   #pythonPagesDropdown {
     font-family: serif;
@@ -458,7 +461,7 @@ table {
     font-size: 26px;
 }
 .footer-container {
-    padding: 0px 10px 0px 10px;
+    padding: 30px 10px 30px 10px;
 }
 .footer-left, .footer-links, .footer-social {
     flex: none;
@@ -478,6 +481,7 @@ table {
 .footer h3 {
     font-size: 22px;
     letter-spacing: 1.5px;
+    padding: 20px 0px;
 }
 .footer h2 {
     font-size: 26px;
@@ -512,7 +516,7 @@ table {
   padding: 0px 10px 0px 10px;
 }
 .python-intro{
-  padding: 10px 10px 30px 10px;
+  padding: 30px 10px 0px 10px;
 }
 .python-intro h1{
   font-size: 30px;
@@ -533,8 +537,7 @@ table {
 .Code-box {
     background-color: #000;
     color: #fff;
-    padding: 15px;
-    margin-bottom: 20px;
+    margin: 20px 0px 20px 0px;
     border-radius: 8px;
     overflow-x: auto; /* Enables horizontal scroll */
   }
