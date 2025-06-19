@@ -309,10 +309,10 @@
 
 /* Python page */
 .python-banner {
-  background-image: url('images/python_ban1.jpg'); 
+  background-image: url('images/python_bann.jpg'); 
   background-size: cover;
   background-position: center;
-  height: 75vh;
+  height: 70vh;
   width: 100%;
   position: relative;
   display: flex;
@@ -450,6 +450,19 @@ table {
     color: rgba(107, 107, 107, 1);
     padding: 8px 10px 8px 10px;
     letter-spacing: .5px;
+  }
+
+  #practice_h2 {
+    color: rgba(71, 71, 71, 1);
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: 1px;
+    padding: 20px 0px 20px 0px;
+  }
+
+  .practice-section{
+    padding: 40px 20px 20px 20px;
   }
 
 @media (max-width: 768px) {

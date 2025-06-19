@@ -22,45 +22,52 @@
       <option value="python_p6.html">Python Quiz-1</option>
     </select>
   </div>
-</header> 
+</header>
+
 
 <section class="python-intro">
   <div class="container">
-    <h2>Tuples</h2>
-    <p>A tuple in Python is a collection that is ordered and unchangeable (also called immutable). 
-        It's very similar to a list, but once a tuple is created, you cannot modify its elements.</p>
+    <h2>Python Sets</h2>
+    <p>Sets in Python are a powerful and versatile data type used to store unique, unordered elements. 
+        They are highly optimized for operations like membership testing, union, intersection, and difference.</p>
 
-    <h3><b>🔸How to Create a Tuple:</b></h3>
+    <h3><b>🔸What is a Set?:</b></h3>
+    <ul>
+        <li>A set is an unordered collection of unique elements.</li>
+        <li>Sets are mutable (can be changed).</li>
+        <li>Sets do not allow duplicates.</li>
+        <li>Sets are written with curly braces {} (like dictionaries, but without key-value pairs).</li>
+    </ul>
     <div class="Code-box">
-    <pre><code>my_tuple = (10, 20, 30)
+    <pre><code>my_set = {10, 20, 30}
 </code></pre>
   </div>
-  <p>Even if a tuple has only one item, you <b>must include a comma:</b></p>
+  <p>Even if a set has only one item, you <b>must include a comma:</b></p>
   <div class="Code-box">
-    <pre><code>single_item_tuple = (42,)    # ← Notice the comma
+    <pre><code>single_item_set = {42,}
 </code></pre>
   </div>
 </div>
 
 <p>Without the comma, Python will treat it as just a number.</p>
 
-<h3><b>🔸 Key Features of Tuples: </b></h3>
+<h3><b>🔸 Key Features of Sets: </b></h3>
 <p><b>1. Immutability - Cannot be changed.</b></p>
-<p>Once a tuple is created, you cannot modify, add, or remove elements.</p>
+<p>Once a set is created, you cannot modify, add, or remove elements.</p>
 <div class="Code-box">
-    <pre><code># Creating a tuple
-tup = (11, 22, 33, 44)
+    <pre><code># Creating a set
+my_set = {11, 22, 33, 44}
 # Trying to change the third element
-tup[2] = 59
+my_set[2] = 59
 
-#Output - Error: 'tuple' object does not support item assignment 
+#Output - Error: 'set' object does not support item assignment
 </code></pre>
   </div>
-<p><b>2. Ordered Collection - Elements have fixed positions.</b></p>
-<p>Elements in a tuple maintain their order and can be accessed by index.</p>
+<p><b>2. Unordered Collection - Elements have no fixed positions.</b></p>
+<p>Elements in a set do not maintain any order, and you cannot access them by index.</p>
 <div class="Code-box">
     <pre><code># Example
-animals = ("cat", "dog", "bird", "fish")
+animals = {"cat", "dog", "bird", "fish"}
 
 # Access items by position
 first_animal = animals[0]    # "cat"
@@ -201,6 +208,7 @@ print("Student marks:", marks)
   <a href="python_p5.html" class="nav-btn next-btn">Next →</a>
 </div>
 </section>
+
 
 
 </section>
