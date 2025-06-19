@@ -468,6 +468,29 @@ table {
     display:none
   }
 
+  .set-methods-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 1rem;
+}
+.set-methods-table th,
+.set-methods-table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+.set-methods-table thead tr {
+  background: #f2f2f2;
+}
+.set-methods-table code {
+  background: #f8f8f8;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #f27100;
+  font-weight: bold;
+}
+
 @media (max-width: 768px) {
   .main-header .container {
     flex-direction: column;

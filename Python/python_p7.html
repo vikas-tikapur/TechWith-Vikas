@@ -16,11 +16,11 @@
       <option value="python.html">Python Introduction</option>
       <option value="python_p1.html">Python Syntax</option>
       <option value="python_p2.html">Python Comments & Variables</option>
-      <option value="python_p3.html">Python Data Types-1</option>
-      <option value="python_p4.html">Python Data Types-2</option>
-      <option value="python_p5.html">Python Data Types-3</option>
+      <option value="python_p3.html">Python Data Types/List</option>
+      <option value="python_p4.html">Python Tuples</option>
+      <option value="python_p5.html">Python Tuples-2</option>
       <option value="python_p6.html">Python Quiz-1</option>
-      <option value="python_p7.html">Python Data Types-4</option>
+      <option value="python_p7.html">Python Sets</option>
     </select>
   </div>
 </header>
@@ -39,174 +39,293 @@
         <li>Sets do not allow duplicates.</li>
         <li>Sets are written with curly braces {} (like dictionaries, but without key-value pairs).</li>
     </ul>
+    <p><b>Example: </b></p>
     <div class="Code-box">
-    <pre><code>my_set = {10, 20, 30}
+    <pre><code>fruits = {"apple", "banana", "cherry"}
+print(fruits)  # Output: {'banana', 'apple', 'cherry'} (order may vary)
 </code></pre>
   </div>
-  <p>Even if a set has only one item, you <b>must include a comma:</b></p>
+  
+  <h3><b>🔸Creating a Set:</b></h3>
+  <p>You can create a set in two ways:</p>
+    <ul>
+        <li>Using curly braces { }</li>
+        <li>Using the set( ) constructor.</li>
+    </ul>
+    <p><b>Example: </b></p>
+    <div class="Code-box">
+    <pre><code># Method 1: Using curly braces
+colors = {"red", "green", "blue"}
+
+# Method 2: Using set()
+numbers = set([1, 2, 3, 4])
+
+# Empty set (Note: { } creates a dictionary, not a set)
+empty_set = set( )
+</code></pre>
+  </div>
+
+
+  <h3><b>🔸Set Operations</b></h3>
+  <p>Sets support various operations to manipulate and query the data they contain:</p>
+    <ul>
+        <li><b>Add Elements:</b> Use the <code>add()</code> method to add a single element.</li>
+        <li><b>Update Elements:</b> Use the <code>update()</code> method to add multiple elements.</li>
+        <li><b>Remove Elements:</b> Use the <code>remove()</code> method to remove a specific element.</li>
+        <li><b>Union:</b> Combine two sets using the <code>union()</code> method or the <code>|</code> operator.</li>
+        <li><b>Intersection:</b> Get common elements using the <code>intersection()</code> method or the <code>&</code> operator.</li>
+        <li><b>Difference:</b> Get elements in one set but not the other using the <code>difference()</code> method or the <code>-</code> operator.</li>
+    </ul>
+    <p><b>Example: </b></p>
+    <div class="Code-box">
+    <pre><code># Adding elements
+fruits = {"apple", "banana", "cherry"}
+fruits.add("orange")
+print(fruits)  # Output: {'banana', 'apple', 'cherry', 'orange'} (order may vary)
+
+# Updating elements
+fruits.update(["kiwi", "grape"])
+print(fruits)  # Output: {'banana', 'apple', 'cherry', 'orange', 'kiwi', 'grape'} (order may vary)
+
+# Removing elements
+fruits.remove("banana")
+print(fruits)  # Output: {'apple', 'cherry', 'orange', 'kiwi', 'grape'} (order may vary)
+
+# Union of sets
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+set_union = set1.union(set2)
+print(set_union)  # Output: {1, 2, 3, 4, 5}
+
+# Intersection of sets
+set_intersection = set1.intersection(set2)
+print(set_intersection)  # Output: {3}
+
+# Difference of sets
+set_difference = set1.difference(set2)
+print(set_difference)  # Output: {1, 2}
+</code></pre>
+  </div>
+
+
+  <h3><b>🔸Removing Elements: </b></h3>
+    <ul>
+        <li><b>remove( ): </b> Removes an element (raises error if not found).</li>
+        <li><b>discard( ):</b> Removes an element (no error if not found).</li>
+        <li><b>pop( ):</b> Removes & returns a random element.</li>
+        <li><b>clear( ):</b> Removes all elements.(Empties the set.)</li>
+    </ul>
+    <p><b>Example: </b></p>
+    <div class="Code-box">
+    <pre><code>s = {1, 2, 3, 4}
+s.remove(3)    # {1, 2, 4}
+s.discard(10)  # No error
+s.pop()        # Removes random element (e.g., 1)
+s.clear()      # set()
+</code></pre>
+  </div>
+
+  <h3><b>🔸Checking Membership: </b></h3>
+  <p>You can check if an element is in a set using the <code>in</code> keyword.</p>
+  <p><b>Example: </b></p>
   <div class="Code-box">
-    <pre><code>single_item_set = {42,}
-</code></pre>
-  </div>
-</div>
-
-<p>Without the comma, Python will treat it as just a number.</p>
-
-<h3><b>🔸 Key Features of Sets: </b></h3>
-<p><b>1. Immutability - Cannot be changed.</b></p>
-<p>Once a set is created, you cannot modify, add, or remove elements.</p>
-<div class="Code-box">
-    <pre><code># Creating a set
-my_set = {11, 22, 33, 44}
-# Trying to change the third element
-my_set[2] = 59
-
-#Output - Error: 'set' object does not support item assignment
-</code></pre>
-  </div>
-<p><b>2. Unordered Collection - Elements have no fixed positions.</b></p>
-<p>Elements in a set do not maintain any order, and you cannot access them by index.</p>
-<div class="Code-box">
-    <pre><code># Example
-animals = {"cat", "dog", "bird", "fish"}
-
-# Access items by position
-first_animal = animals[0]    # "cat"
-second_animal = animals[1]   # "dog"
-last_animal = animals[-1]    # "fish" (negative means from end)
-
-print("First animal:", first_animal)
-print("Last animal:", last_animal)
+    <pre><code>fruits = {"apple", "banana"}
+print("apple" in fruits)  # True
+print("mango" in fruits)  # False
 </code></pre>
   </div>
 
-<p><b>3. Allows Duplicate Values.</b></p>
-<p>Tuples can contain multiple instances of the same value.</p>
-<div class="Code-box">
-    <pre><code># Example
-grades = (85, 90, 85, 78, 90, 85)
-print("All grades:", grades)
-print("How many 85s:", grades.count(85))  # Output: 3
-</code></pre>
-  </div>
+  
+<h3><b>🔸Set Methods: </b></h3>
+<table class="set-methods-table">
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>add( )</code></td>
+      <td>Adds an element to the set</td>
+    </tr>
+    <tr>
+      <td><code>remove( )</code></td>
+      <td>Removes an element; raises error if not found</td>
+    </tr>
+    <tr>
+      <td><code>discard( )</code></td>
+      <td>Removes an element if present (no error if not found)</td>
+    </tr>
+    <tr>
+      <td><code>pop( )</code></td>
+      <td>Removes and returns a random element</td>
+    </tr>
+    <tr>
+      <td><code>clear( )</code></td>
+      <td>Removes all elements from the set</td>
+    </tr>
+    <tr>
+      <td><code>update( )</code></td>
+      <td>Adds elements from another set or iterable</td>
+    </tr>
+    <tr>
+      <td><code>union( )</code></td>
+      <td>Returns a new set with all elements from both sets</td>
+    </tr>
+    <tr>
+      <td><code>intersection( )</code></td>
+      <td>Returns a set with common elements</td>
+    </tr>
+    <tr>
+      <td><code>difference( )</code></td>
+      <td>Returns a set with elements not in another set</td>
+    </tr>
+    <tr>
+      <td><code>copy( )</code></td>
+      <td>Returns a shallow copy of the set</td>
+    </tr>
+    <tr>
+      <td><code>symmetric_difference( )</code></td>
+      <td>Returns elements in either set, but not both</td>
+  </tbody>
+</table>
 
-  <p><b>4. Multiple Data Types.</b></p>
-  <p>Tuples can store different types of data in a single collection.</p>
+ <h3><b>🔸Frozen Sets (Immutable Sets): </b></h3>
+  <ul>
+    <li>Frozen sets are immutable (cannot be changed after creation).</li>
+    <li>Created using frozenset( ).</li>
+  </ul>
+  <p><b>Example: </b></p>
   <div class="Code-box">
-    <pre><code># Example
-mixed_tuple = (42, "Hello", 3.14, True)
-print("Mixed tuple:", mixed_tuple)
+    <pre><code>fs = frozenset([1, 2, 3])
+# fs.add(4) → Error (frozen sets are immutable)
 </code></pre>
   </div>
 
-  <p><b>5. Tuple Packing and Unpacking.</b></p>
-  <p>You can pack multiple values into a tuple and unpack them into separate variables.</p>
+  <h3><b>🔸Set Operations (Union, Intersection, Difference): </b></h3>
+  <p><b>Union ( | or union( ) )</b></p>
+  <p>Combines elements from both sets.</p>
+  <p><b>Example: </b></p>
   <div class="Code-box">
-    <pre><code># Different ways to create tuples
-way1 = (1, 2, 3)           # With parentheses
-way2 = 1, 2, 3             # Without parentheses
-way3 = (10,)               # Single item (comma needed!)
-print("Way 1:", way1)
-print("Way 2:", way2)
-print("Way 3:", way3)
+    <pre><code>A = {1, 2, 3}
+B = {3, 4, 5}
+print(A | B)          # {1, 2, 3, 4, 5}
+print(A.union(B))     # Same output
 </code></pre>
   </div>
 
-<p><b>6. Slicing - Extract Portions of Tuple.</b></p>
-<p>You can extract a portion of a tuple using slicing.</p>
+  <p><b>Intersection ( & or intersection( ) )</b></p>
+  <p>Returns common elements.</p>
+  <p><b>Example: </b></p>
   <div class="Code-box">
-    <pre><code># Example: Weekly Temperature Data
-temperatures = (22, 25, 28, 30, 27, 24, 21)
-
-# Slicing syntax: tuple[start:end:step]
-weekdays = temperatures[0:5]        # First 5 days
-weekend = temperatures[5:7]         # Last 2 days
-every_other_day = temperatures[::2] # Every alternate day
-
-print(f"Weekday temps: {weekdays}")      # (22, 25, 28, 30, 27)
-print(f"Weekend temps: {weekend}")       # (24, 21)
-print(f"Alternate days: {every_other_day}") # (22, 28, 27, 21)
+    <pre><code>print(A & B)          # {3}
+print(A.intersection(B))  # Same output
 </code></pre>
   </div>
 
-  <p><b>7. Loop Through Tuple</b></p>
+  <p><b>Difference ( - or difference( ) )</b></p>
+  <p>Returns elements in A but not in B.</p>
+  <p><b>Example: </b></p>
   <div class="Code-box">
-    <pre><code># Example
-fruits = ("apple", "banana", "cherry")
-
-# Looping through the tuple
-for fruit in fruits:
-    print("Fruit:", fruit)
+    <pre><code>print(A - B)          # {1, 2}
+print(A.difference(B)) # Same output
 </code></pre>
   </div>
 
-  <h3><b>🔸Simple Examples:</b></h3>
-  <p><b>Example 1: Store Coordinates</b></p>
+  <p><b>Symmetric Difference ( ^ or symmetric_difference( ) )</b></p>
+  <p>Returns elements in either set but not both.</p>
+  <p><b>Example: </b></p>
   <div class="Code-box">
-    <pre><code># Store x, y position
-my_position = (10, 20)
-x = my_position[0]  # 10
-y = my_position[1]  # 20
-print(f"I am at position ({x}, {y})")
+    <pre><code>print(A ^ B)          # {1, 2, 4, 5}
 </code></pre>
   </div>
 
-  <p><b>Example 2: Store Person Information</b></p>
+  <h3><b>🔸Practical Use Cases: </b></h3>
+  <ul>
+    <li><b>Removing duplicates</b> from a list.</li>
+    <li><b>Membership testing </b>(faster than lists).</li>
+    <li><b>Mathematical operations </b>(union, intersection).</li>
+  </ul>
+  <p><b>Example: </b></p>
   <div class="Code-box">
-    <pre><code>person = ("Alice", 25, "Teacher")
-name = person[0]
-age = person[1]
-job = person[2]
-print(f"Name: {name}")
-print(f"Age: {age}")
-print(f"Job: {job}")
+    <pre><code># Remove duplicates from a list
+names = ["Alice", "Bob", "Alice", "Charlie"]
+unique_names = set(names)  # {'Alice', 'Bob', 'Charlie'}
 </code></pre>
   </div>
 
-  <p><b>Example 3: Store Multiple Values</b></p>
+   <h3><b>🔸Tricky Concepts & Common Mistakes: </b></h3>
+   <p><b>1. Sets are Unordered</b></p>
+  <ul>
+    <li>Sets do not maintain insertion order.</li>
+  </ul>
+  <p><b>Example: </b></p>
   <div class="Code-box">
-    <pre><code># Test scores
-scores = (85, 92, 78, 96, 88)
-print("All scores:", scores)
-print("Highest score:", max(scores))
-print("Lowest score:", min(scores))
-print("Total scores:", len(scores))
+    <pre><code>s = {3, 1, 2}
+print(s)  # May print {1, 2, 3} or any order
 </code></pre>
   </div>
 
-<p><b>Example 4: Compare Tuples</b></p>
+  <p><b>2. Sets Cannot Contain Mutable Elements</b></p>
+  <ul>
+    <li>You cannot have lists or dictionaries inside a set.</li>
+  </ul>
+  <p><b>Example: </b></p>
   <div class="Code-box">
-    <pre><code>score1 = (85, 90)
-score2 = (85, 88)
-print("Score1 > Score2:", score1 > score2)  # True
-print("Scores are same:", score1 == score2)  # False
+    <pre><code># invalid_set = {1, [2, 3]} → Error (unhashable type: 'list')
+valid_set = {1, (2, 3)}  # Tuples are allowed (immutable)
 </code></pre>
   </div>
 
-  <h3><b>🔸Simple Tricks</b></h3>
-<p><b>Swap Two Variables.</b></p>
+  <p><b>3. pop( ) Removes a Random Element</b></p>
+  <ul>
+    <li>Since sets are unordered, pop( ) removes an arbitrary element.</li>
+  </ul>
+  <p><b>Example: </b></p>
   <div class="Code-box">
-    <pre><code>a = 10
-b = 20
-a,b = b,a
-print("a:",a,"b:",b)
+    <pre><code>s = {5, 10, 15}
+print( s.pop( ) )  # Could be 5, 10, or 15
 </code></pre>
   </div>
 
-  <p><b>Unpack Tuple Values</b></p>
+  <p><b>4. { } is Not an Empty Set!</b></p>
+  <ul>
+    <li>{ } creates an empty dictionary, not a set.</li>
+  </ul>
+  <p><b>Example: </b></p>
   <div class="Code-box">
-    <pre><code>student_info = ("Bob", 18, 95)
-# Get all values at once
-name, age, marks = student_info
-print("Student name:", name)
-print("Student age:", age)
-print("Student marks:", marks)
+    <pre><code>empty_set = set( )
+</code></pre>
+  </div>
+
+  <p><b>5. len( ) - Finding the Length of a Set</b></p>
+  <ul>
+    <li>len(set) returns the number of elements in a set.</li>
+    <li>Since sets store only unique elements, duplicates are not counted.</li>
+  </ul>
+  <p><b>Example: </b></p>
+  <div class="Code-box">
+    <pre><code>fruits = {"apple", "banana", "cherry", "apple"}  
+print(len(fruits))  # Output: 3 (because "apple" is duplicate)
+</code></pre>
+  </div>
+
+  <p><b>6. type( ) - Checking Data Type of a Set</b></p>
+  <ul>
+    <li><b>type( )</b> helps identify if a variable is a <b>set, list, tuple,</b> etc.</li>
+    <li>Useful for debugging and type-checking.</li>
+  </ul>
+  <p><b>Example: </b></p>
+  <div class="Code-box">
+    <pre><code>fruits = {"apple", "banana", "cherry", "apple"}  
+print(len(fruits))  # Output: 3 (because "apple" is duplicate)
 </code></pre>
   </div>
 
   <div class="navigation-buttons">
-  <a href="python_p3.html" class="nav-btn prev-btn">← Previous</a>
-  <a href="python_p5.html" class="nav-btn next-btn">Next →</a>
+  <a href="python_p6.html" class="nav-btn prev-btn">← Previous</a>
+  <a href="python_p8.html" class="nav-btn next-btn">Next →</a>
 </div>
 </section>
 
