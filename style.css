@@ -500,17 +500,18 @@ table {
 
 @media (max-width: 768px) {
   .main-header .container {
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
+    padding: 0 10px;
 }
 .main-header {
-     height: 80px;
+     height: 40px;
 }
 .hero-section{
   padding: 90px 0px 50px 0px;
 }
 .logo {
-    font-size: 26px;
+    font-size: 20px;
 }
 .footer-container {
     padding: 30px 10px 30px 10px;
