@@ -46,8 +46,8 @@ body {
 
 .search-box input[type="text"] {
   color: rgba(107, 107, 107, 1); 
-  background-color: transparent; /* Optional: keep background transparent */
-  border: 1px solid rgba(242, 113, 0, 1); /* Optional: white border */
+  background-color: transparent; 
+  border: 1px solid rgba(242, 113, 0, 1);
   padding: 8px 10px;
 }
 
@@ -58,7 +58,7 @@ body {
 
 .search-box button {
   color: white; 
-  background-color: transparent; /* Optional */
+  background-color: transparent; 
   border: 1px solid white;
   padding: 8px 12px;
   cursor: pointer;
@@ -177,15 +177,16 @@ body {
   text-align: center;
   position: relative;
   z-index: 1;
-  background-image: url('images/hero.jpg');
+  background-image: url('images/main_bann.jpg');
   background-size: cover;
   /* background-position: center; */
   background-repeat: no-repeat;
+  height: 40vh;
 }
 
 .hero-content {
   max-width: 1500px;
-  margin: auto;
+  margin-top: 40px;
 }
 
 .hero-section h1 {
@@ -504,11 +505,19 @@ table {
     gap: 10px;
     padding: 0 10px;
 }
+
+.hero-content{
+  margin: auto;
+}
 .main-header {
      height: 80px;
 }
 .hero-section{
   padding: 90px 0px 50px 0px;
+  height: 15vh;
+}
+.hero-btn{
+  font-size: 16px;
 }
 .logo {
     font-size: 20px;
