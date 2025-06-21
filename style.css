@@ -503,6 +503,12 @@ table {
     flex-direction: column;
     gap: 10px;
 }
+.main-header {
+     height: 80px;
+}
+.hero-section{
+  padding: 90px 0px 50px 0px;
+}
 .logo {
     font-size: 26px;
 }
@@ -562,7 +568,10 @@ table {
   padding: 0px 10px 0px 10px;
 }
 .python-intro{
-  padding: 30px 10px 0px 10px;
+  padding: 60px 10px 0px 10px;
+}
+section#with_banner {
+    padding: 10px 10px 0px 10px;
 }
 .python-intro h1{
   font-size: 30px;
@@ -576,9 +585,7 @@ table {
 .python-intro li {
   font-size: 16px;
 }
-.hero-section{
-  padding: 40px 0px 40px 0px;
-}
+
 
 .Code-box {
     background-color: #e7e9eb;
