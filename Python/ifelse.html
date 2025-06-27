@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechWith Vikas</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<header class="main-header">
+  <div class="container">
+    <div><a href="../index.html" class="logo">TechWith <span>Vikas</span></a></div>
+    <select id="pythonPagesDropdown" onchange="if(this.value) window.location.href=this.value;">
+      <div class="custom-dropdown">
+      <option value="">Go to Python Topic...</option>
+      <option value="python.html">Python Introduction</option>
+      <option value="python_p1.html">Python Syntax</option>
+      <option value="python_p2.html">Python Comments & Variables</option>
+      <option value="python_p3.html">Python Data Types/List</option>
+      <option value="python_p4.html">Python Tuples</option>
+      <option value="python_p5.html">Python Tuples-2</option>
+      <option value="python_p6.html">Python Quiz-1</option>
+      <option value="python_p7.html">Python Sets</option>
+      <option value="python_p8.html">Python Dictionaries</option>
+      <option value="ifelse.html">Python If/Else</option>
+    </select>
+  </div>
+</header>
+
+
+
+<section class="python-intro">
+  <div class="container">
+    <h2><b>if</b> Statement</h2>
+    <p>The if statement in Python is used to make decisions in your code. It allows your program to 
+        execute a block of code only if a certain condition is true.</p>
+
+    <p><b>Basic Syntax: </b></p>
+    <div class="Code-box">
+    <pre><code>if condition:
+    # code block to execute if condition is true
+</code></pre>
+  </div>
+
+    <ul>
+        <li>The condition must return True or False.</li>
+        <li>Python uses indentation (usually 4 spaces) to define the block of code.</li>
+    </ul>
+    <p><b>Example: </b></p>
+    <div class="Code-box">
+    <pre><code>age = 18
+if age >= 18:
+    print("You are eligible to vote.")     #Output - You are eligible to vote.
+</code></pre>
+  </div>
+
+
+  <h3><b>🔸How it works:</b></h3>
+    <ul>
+        <li>The condition <b>age >= 18</b> is checked.</li>
+        <li>If it's True, the code inside the <b>if </b> block runs.</li>
+        <li>If it's <b>False, </b> the code is skipped.</li>
+    </ul>
+
+
+  <h3><b>🔸if with else: </b></h3>
+  <p><b>Adds an alternative path when the condition is False.</b></p>
+
+    <p><b>Syntax: </b></p>
+    <div class="Code-box">
+    <pre><code>if condition:
+    # code if True
+else:
+    # code if False
+</code></pre>
+  </div>
+
+  <p><b>Example: </b></p>
+    <div class="Code-box">
+    <pre><code>temperature = 25
+if temperature > 30:
+    print("It's hot")
+else:
+    print("It's not hot")
+# Output: It's not hot
+</code></pre>
+  </div>
+
+  <h3><b>🔸if-elif-else Statement: </b></h3>
+  <p>Handles multiple conditions in sequence.</p>
+  <p><b>Syntax: </b></p>
+  <div class="Code-box">
+    <pre><code>if condition1:
+    # code
+elif condition2:
+    # code
+else:
+    # code
+</code></pre>
+  </div>
+
+  <p><b>Example: </b></p>
+  <div class="Code-box">
+    <pre><code>score = 85
+if score >= 90:
+    grade = "A"
+elif score >= 80:
+    grade = "B"
+elif score >= 70:
+    grade = "C"
+else:
+    grade = "D"
+print(f"Your grade is {grade}")
+# Output: Your grade is B
+</code></pre>
+  </div>
+
+  <h3><b>🔸Nested if Statements : </b></h3>
+  <p><b>if</b> statements inside other <b>if</b> statements.</p>
+  <p><b>Example: </b></p>
+  <div class="Code-box">
+    <pre><code>num = 15
+if num > 10:
+    print("Greater than 10")
+    if num % 2 == 0:
+        print("Even number")
+    else:
+        print("Odd number")
+# Output: Greater than 10
+#         Odd number
+</code></pre>
+  </div>
+
+  <h3><b>🔸Ternary Operator (Conditional Expression) : </b></h3>
+  <p>A concise way to write simple if-else statements.</p>
+  <p><b>Syntax: </b></p>
+  <div class="Code-box">
+    <pre><code>value_if_true if condition else value_if_false
+</code></pre>
+  </div>
+  <p><b>Example: </b></p>
+  <div class="Code-box">
+    <pre><code>age = 20
+status = "Adult" if age >= 18 else "Minor"
+print(status)  # Output: Adult
+</code></pre>
+  </div>
+
+<h3><b>🔸Logical Operators in Conditions : </b></h3>
+<p>Combine multiple conditions using <b>and, or, not.</b></p>
+
+  <p><b>Example: </b></p>
+  <div class="Code-box">
+    <pre><code># AND (both must be True)
+if age > 12 and age < 20:
+    print("Teenager")
+# OR (at least one True)
+if day == "Saturday" or day == "Sunday":
+    print("Weekend")
+# NOT (inverts the condition)
+if not is_raining:
+    print("No umbrella needed")
+</code></pre>
+  </div>
+
+
+<h3><b>🔸Truthy and Falsy Values : </b></h3>
+<p>Python treats certain values as implicitly <b>False :</b></b></p>
+<ul>
+    <li><b>False</b></li>
+    <li><b>None</b></li>
+    <li><b>0</b>  (any numeric zero)</li>
+    <li>Empty sequences: <b>"", [], (), {}</b></li>
+</ul>
+
+  <p><b>Example: </b></p>
+  <div class="Code-box">
+    <pre><code>name = ""
+if not name:
+    print("Name is empty")  # This will execute
+</code></pre>
+  </div>
+  <h3><b>🔸Common Mistakes to Avoid : </b></h3>
+
+  <div class="navigation-buttons">
+  <a href="python_p6.html" class="nav-btn prev-btn">← Previous</a>
+  <a href="python_p8.html" class="nav-btn next-btn">Next →</a>
+</div>
+</section>
+
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <h2>CodeWith <span>Vikas</span></h2>
+      <p>Learn programming from scratch.<br> Start your journey today!</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Python</a></li>
+        <li><a href="#">Java</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h3>Follow Me</h3>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-x"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 TechWith Vikas | Created by Vikas Mishra</p>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>
