@@ -179,6 +179,97 @@ else:
   <p>In Example 3.1, <b>score >= 90</b> is <b>False</b>, but <b>score >= 80</b> is <b>True</b>, so "Grade: B" is printed, and 
     the rest of the ladder is ignored. Example 3.2 dynamically greets the user based on the current hour.</p>
 
+  <h3><b>🔸4. Nested if-else Statements : </b></h3>
+  <p>You can place <b>if-else</b> statements inside other <b>if-else</b> statements. This is called <b>nesting</b>. 
+    It's useful when you need to check multiple layers of conditions.</p>
+
+<p><b>Syntax : </b></p>
+  <div class="Code-box">
+    <pre><code>if outer_condition:
+    # Code for outer_condition being True
+    if inner_condition1:
+        # Code for inner_condition1 being True
+    else:
+        # Code for inner_condition1 being False
+else:
+    # Code for outer_condition being False
+    if another_inner_condition:
+        # Code for another_inner_condition being True
+    else:
+        # Code for another_inner_condition being False
+</code></pre>
+  </div>
+  <h3><b>🔸Key Points : </b></h3>
+  <ul>
+    <li>Indentation is crucial for nested statements to maintain clarity and correct execution flow.</li>
+    <li>Too many levels of nesting can make code hard to read and maintain. Consider refactoring complex 
+      nested if statements <b>if </b> they become too deep.</li>
+  </ul>
+  <p><b>Example : </b></p>
+  <div class="Code-box">
+    <pre><code># Example 4.1: Movie ticket pricing with nested if-else
+age = 15
+is_student = True
+if age < 18:
+    if is_student:
+        print("Student discount: Ticket price is $5.")
+    else:
+        print("Child price: Ticket price is $8.")
+else:
+    # Age is 18 or above
+    if age >= 60:
+        print("Senior discount: Ticket price is $7.")
+    else:
+        print("Adult price: Ticket price is $12.")
+</code></pre>
+  </div>
+  <h3><b>🔸Explanation : </b></h3>
+  <p>Here, the outer <b>if</b> checks the <b>age</b>. If <b>age < 18</b> is true, then an inner <b>if</b> checks <b>is_student</b>. 
+    If <b>age >= 18</b> is true (the <b>else</b> block of the outer <b>if</b>), then another inner if checks for senior discount.</p>
+
+  <h3><b>🔸5. Logical Operators (and, or, not) : </b></h3>
+  <p>You can combine multiple conditions using logical operators to create more complex conditional expressions.</p>
+  <ul>
+    <li><b>and</b>: Returns <b>True</b> if <b>both </b> conditions are <b>True</b>.</li>
+    <li><b>or</b>: Returns <b>True</b> if <b>at least </b>one condition is <b>True</b>.</li>
+    <li><b>not</b>: Reverses the boolean value of a condition (e.g., <b>not True</b> is <b>False</b>).</li>
+  </ul>
+
+  <p><b>Example : </b></p>
+  <div class="Code-box">
+    <pre><code># Example 5.1: Using 'and'
+temperature = 28
+is_sunny = True
+if temperature > 25 and is_sunny:
+    print("Great day for an outdoor activity!")
+else:
+    print("Might be better to stay indoors or find another activity.")
+# Example 5.2: Using 'or'
+has_ticket = False
+has_invitation = True
+if has_ticket or has_invitation:
+    print("Welcome to the event!")
+else:
+    print("Sorry, you need a ticket or an invitation to enter.")
+# Example 5.3: Using 'not'
+is_logged_in = False
+if not is_logged_in:
+    print("Please log in to access this feature.")
+else:
+    print("Welcome, user!")
+# Example 5.4: Combining logical operators
+age = 22
+has_drivers_license = True
+has_car = False
+if (age >= 18 and has_drivers_license) and not has_car:
+    print("You can drive, but you need a car!")
+elif (age >= 18 and has_drivers_license) and has_car:
+    print("You're all set to drive!")
+else:
+    print("You cannot drive yet or don't have a license.")
+</code></pre>
+  </div>
+
   <div class="navigation-buttons">
   <a href="python_p6.html" class="nav-btn prev-btn">← Previous</a>
   <a href="python_p8.html" class="nav-btn next-btn">Next →</a>

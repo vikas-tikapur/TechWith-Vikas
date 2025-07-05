@@ -374,11 +374,12 @@ body {
 .python-intro p{
   font-family: serif;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 25px;
   line-height: 160%;
   letter-spacing: 2%;
   text-align: justify;
   color: rgba(107, 107, 107, 1);
+  padding-top: 20px;
 }
 
 .python-intro h2{
