@@ -31,156 +31,153 @@
 
 <section class="python-intro">
   <div class="container">
-    <h2><b>if</b> Statement</h2>
-    <p>The if statement in Python is used to make decisions in your code. It allows your program to 
-        execute a block of code only if a certain condition is true.</p>
+    <h2>Python's <b>if</b> and <b>else</b> Statements:</h2>
+    <p>In Python, <b>if</b> and <b>else</b> statements are used for conditional execution. They allow your program to 
+      make decisions and execute different blocks of code based on whether certain conditions are true or 
+      false. This is a core concept in programming, enabling dynamic and responsive applications.
+</p>
 
-    <p><b>Basic Syntax: </b></p>
-    <div class="Code-box">
-    <pre><code>if condition:
-    # code block to execute if condition is true
-</code></pre>
-  </div>
-
-    <ul>
-        <li>The condition must return True or False.</li>
-        <li>Python uses indentation (usually 4 spaces) to define the block of code.</li>
-    </ul>
-    <p><b>Example: </b></p>
-    <div class="Code-box">
-    <pre><code>age = 18
-if age >= 18:
-    print("You are eligible to vote.")     #Output - You are eligible to vote.
-</code></pre>
-  </div>
-
-
-  <h3><b>🔸How it works:</b></h3>
-    <ul>
-        <li>The condition <b>age >= 18</b> is checked.</li>
-        <li>If it's True, the code inside the <b>if </b> block runs.</li>
-        <li>If it's <b>False, </b> the code is skipped.</li>
-    </ul>
-
-
-  <h3><b>🔸if with else: </b></h3>
-  <p><b>Adds an alternative path when the condition is False.</b></p>
+  <h3><b>🔸1. The if Statement :</b></h3>
+    <p>The <b>if</b> statement is the simplest form of conditional control. It executes a block of code only if a 
+      specified condition evaluates to <b>True.</b></p>
 
     <p><b>Syntax: </b></p>
     <div class="Code-box">
     <pre><code>if condition:
-    # code if True
-else:
-    # code if False
+    # Code to execute if the condition is True
+    # (Indented block)
 </code></pre>
   </div>
 
-  <p><b>Example: </b></p>
-    <div class="Code-box">
-    <pre><code>temperature = 25
+  <h3><b>🔸Key Points : </b></h3>
+  <ul>
+    <li>The <b>condition</b> is a boolean expression (something that evaluates to <b>True</b> or <b>False</b>).</li>
+    <li>The colon <b>( : )</b> after the condition is mandatory.</li>
+    <li>The code block to be executed must be <b>indented.</b> Python uses indentation (whitespace) to define code 
+      blocks, unlike other languages that use curly braces <b>{ }</b>. Typically, 4 spaces are used for indentation.</li>
+  </ul>
+  <p><b>Example : </b></p>
+  <div class="Code-box">
+    <pre><code>#Example 1.1: Simple if statement
+age = 20
+if age >= 18:
+    print("You are eligible to vote.")
+print("This line runs regardless of the condition.")
+</code></pre>
+  </div>
+
+  <h3><b>🔸Explanation : </b></h3>
+  <p>In this example, <b>age >= 18</b> evaluates to <b>True</b>, so "You are eligible to vote." is printed. 
+    The last <b>print</b> statement is outside the <b>if</b> block, so it always executes.</p>
+
+  <h3><b>🔸What if the condition is False? : </b></h3>
+  <div class="Code-box">
+    <pre><code># Example 1.2 : If condition is False
+temperature = 25
 if temperature > 30:
-    print("It's hot")
-else:
-    print("It's not hot")
-# Output: It's not hot
+    print("It's a hot day!")
+print("Enjoy the weather!")
 </code></pre>
   </div>
 
-  <h3><b>🔸if-elif-else Statement: </b></h3>
-  <p>Handles multiple conditions in sequence.</p>
+<h3><b>🔸Explanation : </b></h3>
+<p>Here, <b>temperature > 30</b> is <b>False</b>. Therefore, the indented <b>print</b> statement inside the <b>if</b> block is skipped. 
+  "Enjoy the weather!" is still printed.</b></p>
+
+<h3><b>🔸2. The if-else Statement : </b></h3>
+<p>The <b>if-else</b> statement provides an alternative path of execution when the <b>if</b> condition is <b>False</b>.</p>
+
+  <p><b>Syntax: </b></p>
+  <div class="Code-box">
+    <pre><code>if condition:
+    # Code to execute if the condition is True
+else:
+    # Code to execute if the condition is False
+</code></pre>
+  </div>
+  <h3><b>🔸Key Points : </b></h3>
+  <ul>
+    <li>The <b>else</b> block does not have a condition. It acts as a catch-all for when the <b>if</b> condition is <b>False</b>.</li>
+    <li>Both the <b>if</b> and <b>else</b> blocks must be indented.</li>
+  </ul>
+
+  <p><b>Example : </b></p>
+  <div class="Code-box">
+    <pre><code>#Example 2.1: if-else statement
+num = 7
+if num % 2 == 0:
+    print(f"{num} is an even number.")
+else:
+    print(f"{num} is an odd number.")
+# Example 2.2: User input with if-else
+user_input = input("Enter a number: ")
+number = int(user_input) # Convert input to integer
+if number > 0:
+    print("The number is positive.")
+else:
+    print("The number is non-positive (zero or negative).")
+</code></pre>
+  </div>
+
+  <h3><b>🔸Explanation : </b></h3>
+  <p>In Example 2.1, <b>7 % 2 == 0</b> is <b>False</b>, so the <b>else</b> block executes. In Example 2.2,
+    the program takes user input, converts it to an integer, and then checks if it's positive or not.</p>
+
+  <h3><b>🔸3. The if-elif-else Ladder : </b></h3>
+  <p>When you have multiple conditions to check, the <b>if-elif-else</b> (pronounced "if-else if-else") ladder is 
+    used. <b>elif</b> is short for "else if".</p>
+
   <p><b>Syntax: </b></p>
   <div class="Code-box">
     <pre><code>if condition1:
-    # code
+    # Code to execute if condition1 is True
 elif condition2:
-    # code
+    # Code to execute if condition1 is False AND condition2 is True
+elif condition3:
+    # Code to execute if condition1 and condition2 are False AND condition3 is True
 else:
-    # code
+    # Code to execute if all preceding conditions (condition1, condition2, condition3, etc.) are False
 </code></pre>
   </div>
 
-  <p><b>Example: </b></p>
+  <h3><b>🔸Key Points : </b></h3>
+  <ul>
+    <li>Python checks conditions sequentially from top to bottom.</li>
+    <li>As soon as a condition evaluates to <b>True</b>, its corresponding block of code is executed, 
+      and the rest of the <b>elif</b> and <b>else</b> statements in that ladder are <b>skipped</b>.</li>
+      <li>You can have any number of <b>elif</b> blocks.</li>
+      <li>The <b>else</b> block is optional. If omitted and none of the <b>if</b> or <b>elif</b> conditions are true, nothing in the conditional structure will execute.</li>
+  </ul>
+
+  <p><b>Example : </b></p>
   <div class="Code-box">
-    <pre><code>score = 85
+    <pre><code># Example 3.1: Grade calculation
+score = 85
 if score >= 90:
-    grade = "A"
+    print("Grade: A")
 elif score >= 80:
-    grade = "B"
+    print("Grade: B")
 elif score >= 70:
-    grade = "C"
+    print("Grade: C")
+elif score >= 60:
+    print("Grade: D")
 else:
-    grade = "D"
-print(f"Your grade is {grade}")
-# Output: Your grade is B
+    print("Grade: F")
+# Example 3.2: Time-based greeting
+import datetime
+current_hour = datetime.datetime.now().hour
+if current_hour < 12:
+    print("Good morning!")
+elif 12 <= current_hour < 18:
+    print("Good afternoon!")
+else:
+    print("Good evening!")
 </code></pre>
   </div>
 
-  <h3><b>🔸Nested if Statements : </b></h3>
-  <p><b>if</b> statements inside other <b>if</b> statements.</p>
-  <p><b>Example: </b></p>
-  <div class="Code-box">
-    <pre><code>num = 15
-if num > 10:
-    print("Greater than 10")
-    if num % 2 == 0:
-        print("Even number")
-    else:
-        print("Odd number")
-# Output: Greater than 10
-#         Odd number
-</code></pre>
-  </div>
-
-  <h3><b>🔸Ternary Operator (Conditional Expression) : </b></h3>
-  <p>A concise way to write simple if-else statements.</p>
-  <p><b>Syntax: </b></p>
-  <div class="Code-box">
-    <pre><code>value_if_true if condition else value_if_false
-</code></pre>
-  </div>
-  <p><b>Example: </b></p>
-  <div class="Code-box">
-    <pre><code>age = 20
-status = "Adult" if age >= 18 else "Minor"
-print(status)  # Output: Adult
-</code></pre>
-  </div>
-
-<h3><b>🔸Logical Operators in Conditions : </b></h3>
-<p>Combine multiple conditions using <b>and, or, not.</b></p>
-
-  <p><b>Example: </b></p>
-  <div class="Code-box">
-    <pre><code># AND (both must be True)
-if age > 12 and age < 20:
-    print("Teenager")
-# OR (at least one True)
-if day == "Saturday" or day == "Sunday":
-    print("Weekend")
-# NOT (inverts the condition)
-if not is_raining:
-    print("No umbrella needed")
-</code></pre>
-  </div>
-
-
-<h3><b>🔸Truthy and Falsy Values : </b></h3>
-<p>Python treats certain values as implicitly <b>False :</b></b></p>
-<ul>
-    <li><b>False</b></li>
-    <li><b>None</b></li>
-    <li><b>0</b>  (any numeric zero)</li>
-    <li>Empty sequences: <b>"", [], (), {}</b></li>
-</ul>
-
-  <p><b>Example: </b></p>
-  <div class="Code-box">
-    <pre><code>name = ""
-if not name:
-    print("Name is empty")  # This will execute
-</code></pre>
-  </div>
-  <h3><b>🔸Common Mistakes to Avoid : </b></h3>
+  <h3><b>🔸Explanation : </b></h3>
+  <p>In Example 3.1, <b>score >= 90</b> is <b>False</b>, but <b>score >= 80</b> is <b>True</b>, so "Grade: B" is printed, and 
+    the rest of the ladder is ignored. Example 3.2 dynamically greets the user based on the current hour.</p>
 
   <div class="navigation-buttons">
   <a href="python_p6.html" class="nav-btn prev-btn">← Previous</a>
