@@ -270,9 +270,376 @@ else:
 </code></pre>
   </div>
 
+  <h3><b>🔸6. Ternary Operator (Conditional Expressions - Advanced Basic): </b></h3>
+  <p>For simple <b>if-else</b> assignments, Python offers a concise one-line syntax called the ternary 
+    operator or conditional expression.</p>
+  <p><b>Syntax:</b></p>
+  <div class="Code-box">
+    <pre><code>value_if_true if condition else value_if_false</code></pre>
+  </div>
+  <h3><b>🔸Key Points : </b></h3>
+  <ul>
+    <li>This is an <b>expression</b>, meaning it evaluates to a value, which can then be assigned to a variable or used directly.</li>
+    <li>It's ideal for simple assignments, not for executing complex blocks of code.</li>
+  </ul>
+  <p><b>Example : </b></p>
+  <div class="Code-box">
+    <pre><code># Example 6.1: Simple even/odd check
+number = 10
+status = "Even" if number % 2 == 0 else "Odd"
+print(f"The number {number} is {status}.")
+# Example 6.2: Assigning a message
+is_open = True
+message = "Store is open!" if is_open else "Store is closed."
+print(message)
+# Example 6.3: Using directly in print
+score = 75
+print("Passed" if score >= 60 else "Failed")</code></pre>
+  </div>
+  <h3><b>🔸7. Chained Comparisons (Advanced) : </b></h3>
+  <p>Python allows you to chain comparison operators, which can make your conditions more readable, 
+    especially when checking if a value falls within a range.
+</p>
+  <p><b>Syntax:</b></p>
+  <div class="Code-box">
+    <pre><code>lower_bound <= value <= upper_bound</code></pre>
+  </div>
+  <p>This is equivalent to <b>lower_bound <= value and value <= upper_bound.</b></p>
+  <p><b>Example : </b></p>
+  <div class="Code-box">
+    <pre><code># Example 7.1: Checking if a number is within a range
+num = 15
+if 10 <= num <= 20:
+    print(f"{num} is between 10 and 20 (inclusive).")
+else:
+    print(f"{num} is outside the range 10-20.")
+# Example 7.2: Grade check with chained comparison
+score = 88
+if 90 <= score <= 100:
+    print("Excellent (A)")
+elif 80 <= score < 90: # Note: 'score < 90' is naturally handled by elif order, but explicit range is clearer
+    print("Very Good (B)")
+else:
+    print("Needs Improvement")</code></pre>
+  </div>
+
+  <h3><b>🔸8. if with in and not in Operators (Advanced) : </b></h3>
+  <p>These operators are useful for checking membership in sequences (strings, lists, tuples, sets, 
+    dictionaries).
+</p>
+<p><b>Syntax:</b></p>
+  <div class="Code-box">
+    <pre><code>element in sequence
+element not in sequence</code></pre>
+  </div>
+<p><b>Example : </b></p>
+  <div class="Code-box">
+    <pre><code># Example 8.1: Checking if an item is in a list
+fruits = ["apple", "banana", "cherry"]
+favorite_fruit = "banana"
+if favorite_fruit in fruits:
+    print(f"Yes, {favorite_fruit} is in the list.")
+else:
+    print(f"No, {favorite_fruit} is not in the list.")
+# Example 8.2: Checking if a character is in a string
+text = "Hello World"
+if "o" in text:
+    print("The letter 'o' is in the text.")
+# Example 8.3: Checking if an item is NOT in a list
+disallowed_words = ["badword1", "badword2"]
+user_comment = "This is a good comment."
+if user_comment not in disallowed_words:
+    print("Comment approved.")
+else:
+    print("Comment contains disallowed words.")</code></pre>
+  </div>
+
+  <h3><b>🔸9. Truthiness and Falsiness (Deep Dive) : </b></h3>
+  <p>In Python, many values are inherently considered "truthy" or "falsy" when evaluated in a boolean context 
+    (like an <b>if </b> condition), even if they are not explicitly <b>True</b> or <b>False</b>.
+</p>
+  <h3><b>🔸Falsy Values : </b></h3>
+  <ul>
+    <li><b>None</b></li>
+    <li><b>False</b></li>
+    <li>Numeric zero of all types: <b>0, 0.0, 0j</b> (complex zero)</li>
+    <li><b>' '</b> (empty string)</li>
+    <li><b>[ ]</b> (empty list)</li>
+    <li><b>{ }</b> (empty dictionary)</li>
+    <li><b>( )</b> (empty tuple)</li>
+    </ul>
+
+  <h3><b>🔸Truthy Values : </b></h3>
+  <ul>
+    <li>Any non-empty sequence or mapping (e.g., <b>[1, 2], 'hello', {1: 'a'}</b>)</li>
+    <li>Any non-zero number (e.g., <b>1, -5, 3.14</b>)</li>
+    <li><b>True</b></li>
+    <li>Objects (by default, they are truthy unless their <b>__bool__()</b> or <b>__len__()</b> methods are defined to 
+      return <b>False</b> or zero, respectively).</li>
+    </ul>
+  <p><b>Example : </b></p>
+  <div class="Code-box">
+  <pre><code>element in sequence
+element not in sequence</code></pre>
+  </div>
+<p><b>Example : </b></p>
+  <div class="Code-box">
+    <pre><code># Example 9.1: Truthiness of numbers
+if 0:
+    print("This will not print (0 is falsy)")
+if 1:
+    print("This will print (1 is truthy)")
+if -5:
+    print("This will print (-5 is truthy)")
+# Example 9.2: Falsiness of empty sequences
+my_list = []
+if my_list:
+    print("List is not empty.")
+else:
+    print("List is empty (falsy).")
+my_string = "Hello"
+if my_string:
+    print("String is not empty.")
+else:
+    print("String is empty (falsy).")
+# Example 9.3: Falsiness of None
+value = None
+if value:
+    print("Value is not None.")
+else:
+    print("Value is None (falsy).")</code></pre>
+  </div>
+
+  <h3><b>🔸10. if with try-except (Advanced Error Handling with Conditionals) : </b></h3>
+  <p>Often, you'll need to check for conditions that might raise errors (exceptions). 
+    <b>try-except</b> blocks are used for this, and <b>if</b> statements can be used within them to handle 
+    different scenarios after an exception.
+</p>
+  <p><b>Example:</b></p>
+  <div class="Code-box">
+    <pre><code># Example 10.1: Handling invalid input
+try:
+    user_input = input("Enter a number: ")
+    number = int(user_input)
+    if number % 2 == 0:
+        print(f"{number} is an even number.")
+    else:
+        print(f"{number} is an odd number.")
+except ValueError:
+    print("Invalid input! Please enter a valid integer.")
+except Exception as e:
+    print(f"An unexpected error occurred: {e}")</code></pre>
+  </div>
+<h3><b>🔸Explanation : </b></h3>
+<p>The <b>try</b> block attempts to convert <b>user_input</b> to an integer. If the input is not a valid integer 
+  (e.g., "hello"), a <b>ValueError</b> is raised, and the <b>except ValueError</b> block is executed. If the conversion 
+  is successful, the <b>if-else</b> statement proceeds normally.
+</p>
+
+  <h3><b>🔸11. if with Functions (High Level) : </b></h3>
+  <p>Conditions are often used within functions to control their behavior and return different 
+    results based on inputs.</p>
+  <p><b>Example:</b></p>
+  <div class="Code-box">
+    <pre><code># Example 11.1: Function returning different values
+def get_discounted_price(original_price, customer_type):
+    if customer_type == "premium":
+        return original_price * 0.8  # 20% discount
+    elif customer_type == "student":
+        return original_price * 0.9  # 10% discount
+    else:
+        return original_price # No discount
+price1 = get_discounted_price(100, "premium")
+print(f"Premium price: ${price1}")
+price2 = get_discounted_price(100, "regular")
+print(f"Regular price: ${price2}")
+# Example 11.2: Function with validation
+def divide_numbers(a, b):
+    if b == 0:
+        print("Error: Cannot divide by zero!")
+        return None # Return None to indicate failure
+    else:
+        return a / b
+result1 = divide_numbers(10, 2)
+if result1 is not None:
+    print(f"Result of division: {result1}")
+result2 = divide_numbers(5, 0)
+if result2 is None: # Check if the function returned None
+    print("Division failed as expected.")</code></pre>
+  </div>
+  <h3><b>🔸12. if with List Comprehensions and Generator Expressions (Advanced/Concise) : </b></h3>
+  <p><b>if</b> can be embedded within list comprehensions and generator expressions to filter elements or apply conditional transformations.</p>
+  <p><b>Syntax (Filtering) :</b></p>
+  <div class="Code-box">
+    <pre><code>[expression for item in iterable if condition]</code></pre>
+  </div>
+
+   <p><b>Syntax (Conditional Expression within Comprehension) :</b></p>
+  <div class="Code-box">
+    <pre><code>[value_if_true if condition else value_if_false for item in iterable]</code></pre>
+  </div>
+
+  <p><b>Example :</b></p>
+  <div class="Code-box">
+    <pre><code># Example 12.1: Filtering even numbers from a list
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+even_numbers = [num for num in numbers if num % 2 == 0]
+print(f"Even numbers: {even_numbers}") # Output: [2, 4, 6, 8, 10]
+# Example 12.2: Applying conditional transformation
+transformed_numbers = [num * 2 if num % 2 == 0 else num for num in numbers]
+print(f"Transformed numbers: {transformed_numbers}") # Output: [1, 4, 3, 8, 5, 12, 7, 16, 9, 20]
+# Example 12.3: Generator expression (similar to list comprehension but lazy evaluation)
+squared_odds = (num**2 for num in numbers if num % 2 != 0)
+print("Squared odd numbers (generator):")
+for sq in squared_odds:
+    print(sq)</code></pre>
+  </div>
+
+  <h3><b>🔸13. Short-Circuit Evaluation (Deep Dive) : </b></h3>
+  <p>Python's logical operators <b>(and, or)</b> use short-circuit evaluation. This means that they evaluate 
+    conditions only as much as necessary to determine the overall result.</p>
+  <ul>
+    <li><b>and:</b> If the first condition is <b>False</b>, the entire expression is <b>False</b>, and the second condition 
+      is not evaluated.</li>
+    <li><b>or:</b> If the first condition is <b>True</b>, the entire expression is <b>True</b>, and the second condition is not evaluated.</li>
+  </ul>
+  <p>This can be useful for performance optimization and preventing errors.</p>
+  <p><b>Example:</b></p>
+  <div class="Code-box">
+    <pre><code># Example 13.1: Short-circuiting with 'and' to prevent ZeroDivisionError
+def check_and_divide(numerator, denominator):
+    # If denominator is 0, the first part is False, and (numerator / denominator) is never evaluated
+    if denominator != 0 and (numerator / denominator) > 5:
+        print("Division result is greater than 5.")
+    else:
+        print("Cannot divide by zero or result is not greater than 5.")
+
+check_and_divide(10, 2)
+check_and_divide(10, 0) # No ZeroDivisionError
+check_and_divide(10, 3) # 3.33 is not > 5
+
+# Example 13.2: Short-circuiting with 'or'
+def is_valid_input(value):
+    print(f"Checking value: {value}")
+    return value is not None and value != ""
+
+# If is_valid_input("hello") is True, is_valid_input("world") is NOT called.
+if is_valid_input("hello") or is_valid_input("world"):
+    print("At least one input is valid.")
+</code></pre>
+  </div>
+
+  <h3><b>🔸14. match-case Statement (Python 3.10+) - Structured Pattern Matching : </b></h3>
+  <p>While not strictly <b>if-else</b>, Python 3.10 introduced the <b>match-case</b> statement, which is a powerful way
+    to handle multiple conditions in a more structured way, especially when dealing with different data
+    patterns. It's an alternative to long <b>if-elif-else</b> chains for certain scenarios.</p>
+<p><b>Syntax :</b></p>
+  <div class="Code-box">
+    <pre><code>match subject:
+    case pattern1:
+        # Code if subject matches pattern1
+    case pattern2:
+        # Code if subject matches pattern2
+    case _: # The "wildcard" or default case (like else)
+        # Code if no other pattern matches</code></pre>
+  </div>
+
+<p><b>Example :</b></p>
+  <div class="Code-box">
+    <pre><code># Example 14.1: Basic match-case
+command = "start"
+match command:
+    case "start":
+        print("Starting the system...")
+    case "stop":
+        print("Stopping the system...")
+    case "restart":
+        print("Restarting the system...")
+    case _: # Default case
+        print("Unknown command.")
+
+# Example 14.2: Match-case with multiple values or patterns
+status_code = 403
+match status_code:
+    case 200:
+        print("OK")
+    case 400 | 401 | 403: # Multiple patterns for the same action
+        print("Client error (Bad Request, Unauthorized, or Forbidden)")
+    case 500:
+        print("Server error")
+    case _:
+        print("Other status code")
+# Example 14.3: Match-case with if-guard (conditional matching)
+point = (10, -5) # A tuple representing (x, y) coordinates
+match point:
+    case (x, y) if x > 0 and y > 0:
+        print(f"Point ({x},{y}) is in the first quadrant.")
+    case (x, y) if x < 0 and y > 0:
+        print(f"Point ({x},{y}) is in the second quadrant.")
+    case (x, y) if x < 0 and y < 0:
+        print(f"Point ({x},{y}) is in the third quadrant.")
+    case (x, y) if x > 0 and y < 0:
+        print(f"Point ({x},{y}) is in the fourth quadrant.")
+    case (0, y) if y != 0:
+        print(f"Point ({y}) is on the Y-axis.")
+    case (x, 0) if x != 0:
+        print(f"Point ({x}) is on the X-axis.")
+    case (0, 0):
+        print("Point is at the origin.")
+    case _:
+        print("Not a 2D point or unhandled case.")</code></pre>
+  </div>
+<p>Note on <b>match-case</b>: While it uses patterns and conditions (<b>if </b> guards), it's a distinct control flow 
+  statement from the <b>if-elif-else</b> ladder. It excels in pattern matching against various data structures,
+  not just simple boolean conditions.</p>
+
+<p><b>Best Practices and Common Pitfalls :</b></p>
+<ul>
+  <li><b>Indentation is paramount</b>: Incorrect indentation will lead to <b>IndentationError</b> or logical errors.</li>
+  <li><b>Clarity over brevity</b>: While ternary operators are concise, don't overuse them if the logic becomes hard to read.</li>
+  <li><b>Order matters</b> in if-elif-else: Conditions are checked sequentially. Place more specific conditions before more general ones.</li>
+</ul>
+
+  <div class="Code-box">
+    <pre><code># Bad example (will never reach the second elif if score >= 70)
+score = 85
+if score >= 70:
+    print("C")
+elif score >= 80: # This will never be reached if score is 85, as the first condition already matched
+    print("B")
+# Good example
+if score >= 80:
+    print("B")
+elif score >= 70:
+    print("C")</code></pre>
+  </div>
+<ul>
+  <li><b>Avoid excessive nesting</b>: If you have many nested if statements, consider refactoring your code using
+    functions, logical operators, or even the match-case statement for better readability.</li>
+  <li><b>Use meaningful variable names</b>: This helps in understanding the conditions.</li>
+  <li><b>Consider using dictionaries for mapping</b>: If you have many elif conditions that map inputs to 
+    outputs, a dictionary lookup might be more efficient and readable.</li>
+</ul>
+
+  <div class="Code-box">
+    <pre><code># Instead of:
+color = "red"
+if color == "red":
+    code = "#FF0000"
+elif color == "blue":
+    code = "#0000FF"
+# ...
+# Use a dictionary:
+color_codes = {"red": "#FF0000", "blue": "#0000FF", "green": "#00FF00"}
+color = "red"
+code = color_codes.get(color, "Unknown") # .get() allows a default if key not found
+print(code)</code></pre>
+  </div>
+
+
   <div class="navigation-buttons">
-  <a href="python_p6.html" class="nav-btn prev-btn">← Previous</a>
-  <a href="python_p8.html" class="nav-btn next-btn">Next →</a>
+  <a href="python_p8.html" class="nav-btn prev-btn">← Previous</a>
+  <a href="match.html" class="nav-btn next-btn">Next →</a>
 </div>
 </section>
 

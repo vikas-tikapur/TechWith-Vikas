@@ -505,6 +505,9 @@ table {
     gap: 10px;
     padding: 0 10px;
 }
+.navigation-buttons {
+  padding-bottom: 20px;
+}
 
 .hero-content{
   margin: auto;
