@@ -279,6 +279,250 @@ match user:
 <h3><b>🔸Explanation :</b></h3>
 <p>The <b>if age >= 18</b> acts as a guard. The <b>case</b> will only activate if <b>user</b> has <b></b>name</b> and <b>age</b> keys and
   the value of <b>age</b> is 18 or greater.</p>
+
+<h3><b>🔸7. Class Patterns (Matching Objects):</b></h3>
+<p>This is one of the most powerful features. You can match against instances of classes and extract attributes.</p>
+
+<p><b>Syntax </b></p>
+<div class="Code-box">
+<pre><code>case ClassName(attribute1=var1, attribute2=var2, ...):
+    # Code to execute if subject is an instance of ClassName
+    # and attributes match/are captured
+</code></pre>
+</div>
+
+<h3><b>🔸Key Points: </b></h3>
+<ul>
+  <li>The <b>match</b> statement calls <b>__match_args__</b> (if defined in the class) or looks for attributes by name.</li>
+  <li>You can mix literal values for attributes or capture them into variables.</li>
+  <li>You can use nested class patterns.</li>
+</ul>
+
+<p><b>Example 7.1: Matching geometric shapes</b></p>
+<div class="Code-box">
+<pre><code>class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    # Optional: Define __match_args__ for positional matching (more advanced)
+    def __match_args__(self):
+        return ("x", "y")
+
+class Circle:
+    def __init__(self, center, radius):
+        self.center = center # center is a Point object
+        self.radius = radius
+    def __match_args__(self):
+        return ("center", "radius") # Allows matching like Circle(Point(x,y), r)
+
+class Rectangle:
+    def __init__(self, top_left, bottom_right):
+        self.top_left = top_left
+        self.bottom_right = bottom_right
+
+# Create some shape instances
+p1 = Point(10, 20)
+p_origin = Point(0, 0)
+c1 = Circle(Point(5, 5), 10)
+r1 = Rectangle(Point(0, 10), Point(20, 0))
+shapes = [p1, p_origin, c1, r1, "not a shape"]
+
+for shape in shapes:
+    match shape:
+        case Point(0, 0): # Matches Point object where x is 0 and y is 0
+            print(f"Shape: Origin Point at ({shape.x}, {shape.y})")
+        case Point(x=x_coord, y=y_coord): # Matches any Point object, captures x and y
+            print(f"Shape: Generic Point at ({x_coord}, {y_coord})")
+        case Circle(center=Point(cx, cy), radius=r): # Nested pattern: Circle with a Point center
+            print(f"Shape: Circle centered at ({cx}, {cy}) with radius {r}")
+        case Rectangle(top_left=Point(tx, ty), bottom_right=Point(bx, by)):
+            print(f"Shape: Rectangle from ({tx}, {ty}) to ({bx}, {by})")
+        case _:
+            print(f"Shape: Unknown/Unmatched ({type(shape)})")
+</code></pre>
+</div>
+
+<h3><b>🔸Explanation :</b></h3>
+<ul>
+  <li><b>Point(0, 0):</b> Matches a <b>Point</b> object whose <b>x</b> and <b>y</b> attributes are both 0.</li>
+  <li><b>Point(x=x_coord, y=y_coord):</b> Matches any <b>Point</b> object and captures its  <b>x</b> and <b>y</b> attributes into new variables <b>x_coord</b> and <b>y_coord</b>.</li>
+  <li><b>Circle(center=Point(cx, cy), radius=r):</b> This is a <b>nested class pattern</b>. It matches a <b>Circle</b> object. 
+    Inside the <b>Circle</b> pattern, it expects a <b>center</b> attribute which itself must be a <b>Point</b> object. 
+    It then extracts <b>cx</b> and <b>cy</b> from that nested <b>Point</b> and <b>r</b> from the <b>Circle</b>'s radius attribute.</li>
+</ul>
+
+<h3><b>🔸8. as keyword for Alias (Subpatterns):</b></h3>
+<p>You can use the <b>as</b> keyword to give an alias to a subpattern, allowing you to refer to the matched part of the subject directly.</p>
+<p><b>Example 8.1: Capturing the entire matched object or sub-structure</b></p>
+<div class="Code-box">
+<pre><code>data_item1 = ["command", "start"]
+data_item2 = ("log", "info", "User logged in.")
+data_item3 = {"type": "user", "id": 123}
+
+for item in [data_item1, data_item2, data_item3]:
+    match item:
+        case ["command", action] as full_command: # Captures 'action' and the entire list as 'full_command'
+            print(f"Detected command: {action} (Full: {full_command})")
+        case ("log", level, _) as log_entry if level == "error": # Captures level, ignores third, and captures full tuple
+            print(f"Critical Log Entry: {log_entry}")
+        case {"type": "user", "id": user_id} as user_obj: # Captures user_id and the entire dict as user_obj
+            print(f"Matched User object: ID {user_id}, Object: {user_obj}")
+        case _:
+            print(f"Unmatched item: {item}")
+</code></pre>
+</div>
+
+<h3><b>🔸Explanation :</b></h3>
+<p>In <b>case ["command", action] as full_command:, action</b> gets the second element, and <b>full_command</b> gets
+  the entire list <b>["command", "start"]</b>. This is useful when you need to inspect individual parts but also
+  operate on the whole matched structure.</p>
+
+<h3><b>🔸9. Underscore _ as a Wildcard or Ignored Value:</b></h3>
+<p>The underscore <b>_</b> has two main uses:</p>
+<ul>
+  <li><b>Wildcard Pattern:</b>  As seen in <b>case _:</b>, it matches anything and is used as the default.</li>
+  <li><b>Ignored Value:</b> Within a pattern,<b> _ </b> means "match this position/attribute, but I don't care about its value, so don't bind it to a variable."</li>
+</ul>
+<p><b>Example 9.1: Ignoring values in sequence patterns</b></p>
+<div class="Code-box">
+<pre><code>point_3d = (10, 20, 30)
+point_2d = (5, 8)
+invalid_point = (1, 2, 3, 4)
+
+for p in [point_3d, point_2d, invalid_point]:
+    match p:
+        case (x, y, _): # Matches a 3-element tuple, captures first two, ignores third
+            print(f"3D point (first two coords): ({x}, {y})")
+        case (x, _): # Matches a 2-element tuple, captures first, ignores second
+            print(f"2D point (first coord): ({x})")
+        case _:
+            print(f"Not a recognized point: {p}")
+</code></pre>
+</div>
+
+<h3><b>🔸Explanation :</b></h3>
+<p><b>case (x, y, _)</b> matches <b>(10, 20, 30)</b>, captures <b>10</b> to <b>x</b>, <b>20</b> to <b>y</b>, and discards <b>30</b>.</p>
+
+<h3><b>🔸Advantages of match-case over if-elif-else :</b></h3>
+<ol>
+  <li><b>Readability:</b> Especially for complex, nested data structures, <b>match</b> makes the code much cleaner and
+     easier to understand by explicitly showing the expected structure.</li>
+  <li><b>Exhaustiveness Checks (potential future tooling):</b> While not a built-in feature of Python's 
+    runtime, pattern matching in other languages often allows static analysis tools to warn you if you 
+    haven't covered all possible cases, which could be a future benefit for Python.</li>
+  <li><b>Conciseness:</b> It can significantly reduce boilerplate code compared to multiple <b>if</b> and <b>and</b> conditions.</li>
+  <li><b>No Fall-through:</b> Unlike some other languages (like C's <b>switch</b>), 
+    Python's <b>match</b> does not fall through. Only the first matching <b>case</b> is executed.</li>
+<li><b>Direct Deconstruction:</b> It directly deconstructs values (like extracting elements from a list or 
+  attributes from an object) into variables, which reduces manual assignments.</li>
+</ol>
+  <h3><b>🔸When to use match-case? </b></h3>
+    <ul>
+      <li><b>Handling different types of data/objects:</b> When your logic depends on the type or class of 
+        an object.</li>
+      <li><b>Processing structured data:</b> Ideal for parsing messages, commands, or data from APIs where 
+        the shape of the data varies.</li>
+      <li><b>Finite state machines:</b> When your program's behavior changes based on its current state and incoming events.</li>
+      <li><b>Replacing long if-elif-else chains</b>  that primarily check the type or structure of a variable.</li>
+    </ul>
+  
+  <h3><b>🔸When if-elif-else might still be better?</b></h3>
+  <ul>
+    <li><b>Simple boolean conditions:</b> When you're just checking if a single variable is greater than, 
+      less than, or equal to a value, <b>if-elif-else</b> is often more direct.</li>
+    <li><b>Complex arithmetic or logical operations:</b> If your conditions involve extensive calculations
+       or complex <b>and/or</b> combinations that don't involve deconstructing data.</li>
+    <li><b>Python versions older than 3.10:</b> Obviously, <b>match</b> is not available.</li>
+  </ul>
+<p><b>Here are 5 simple and easy-to-understand examples of the match statement in Python:</b></p>
+<p> <b>Note:</b> These examples require  <b>Python 3.10 or higher.</b> </p>
+  <h3><b>🔸 Example 1: Match a String</b></h3>
+  <div class="Code-box">
+    <pre><code>day = "Sunday"
+match day:
+    case "Monday":
+        print("Start of the week")
+    case "Sunday":
+        print("Relax! It's weekend.")
+    case _:
+        print("Just a regular day")
+
+#Output- Relax! It's weekend.
+</code></pre>
+  </div>
+
+  <h3><b>🔸 Example 2: Match a Number</b></h3>
+  <div class="Code-box">
+    <pre><code>number = 5
+
+match number:
+    case 1:
+        print("One")
+    case 5:
+        print("Five")
+    case _:
+        print("Unknown number")
+#Output- Five
+</code></pre>
+  </div>
+
+  <h3><b>🔸 Example 3: Match with Multiple Values</b></h3>
+  <div class="Code-box">
+    <pre><code>fruit = "apple"
+match fruit:
+    case "apple" | "banana" | "mango":
+        print("It's a fruit we love!")
+    case _:
+        print("It's some other fruit.")
+#Output- It's a fruit we love!
+</code></pre>
+  </div>
+
+  <h3><b>🔸Example 4: Match a Tuple</b></h3>
+  <div class="Code-box">
+    <pre><code>point = (0, 5)
+
+match point:
+    case (0, 0):
+        print("Origin")
+    case (0, y):
+        print(f"Y-axis at y = {y}")
+    case (x, 0):
+        print(f"X-axis at x = {x}")
+    case (x, y):
+        print(f"Point is at ({x}, {y})")
+#Output- Y-axis at y = 5
+</code></pre>
+  </div>
+
+  <h3><b>🔸 Example 5: Match with Condition (Guard)</b></h3>
+  <div class="Code-box">
+    <pre><code>age = 17
+
+match age:
+    case x if x < 18:
+        print("You are a minor.")
+    case x if x >= 18:
+        print("You are an adult.")
+#Output- You are a minor.
+</code></pre>
+  </div>
+
+<p><b>Conclusion:</b></p>
+<p>The <b>match</b> statement is a powerful addition to Python's control flow mechanisms. It encourages a 
+  more declarative style of programming when dealing with varied data structures and provides a cleaner, 
+  more readable way to express complex conditional logic. While it takes some getting used to, mastering
+   <b>match</b> will undoubtedly make your Python code more elegant and maintainable for many real-world
+    scenarios.</p>
+
+
+
+
+
+
+
+
+
   <div class="navigation-buttons">
   <a href="ifelse.html" class="nav-btn prev-btn">← Previous</a>
   <a href="ifelse.html" class="nav-btn next-btn">Next →</a>
