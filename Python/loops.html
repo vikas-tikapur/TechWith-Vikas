@@ -25,6 +25,7 @@
       <option value="ifelse.html">Python If/Else</option>
       <option value="match.html">Python Match</option>
       <option value="loops.html">Python Loops</option>
+      <option value="functions.html">Python Functions</option>
     </select>
   </div>
 </header>
@@ -51,10 +52,464 @@
     # (Indented)
 </code></pre>
   </div>
+  <h3><b>🔸Key Points :</b></h3>
+  <ul>
+    <li><b>variable:</b> A temporary variable that takes on the value of each item in the <b>iterable</b> during each iteration.</li>
+    <li><b>iterable:</b> Any object that can be iterated over (e.g., lists, tuples, strings, ranges, dictionaries, sets, files, custom iterators).</li>
+    <li>The loop continues until all items in the <b>iterable</b> have been processed.</li>
+  </ul>
+
+  <p><b>Examples: </b></p>
+  <h3>1.1. Iterating over a list: </h3>
+    <div class="Code-box">
+    <pre><code>fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(f"I like {fruit}.")
+
+# Output:
+I like apple.
+I like banana.
+I like cherry.
+</code></pre>
+  </div>
+
+<h3>1.2. Iterating over a string (characters): </h3>
+    <div class="Code-box">
+    <pre><code>name = "Python"
+for char in name:
+    print(char)
+
+# Output:
+P
+y
+t
+h
+o
+n
+</code></pre>
+  </div>
+
+<h3>1.3. Iterating using range( ) (Numbers): </h3>
+<p><b>range( )</b> is a built-in function that generates a sequence of numbers. It's commonly used with <b>for loops</b>.</p>
+<ul>
+  <li><b>range(stop):</b> Generates numbers from 0 up to (but not including) <b>stop</b>.</li>
+  <li><b>range(start, stop):</b> Generates numbers from start up to (but not including) <b>stop</b>.</li>
+  <li><b>range(start, stop, step):</b> Generates numbers from <b>start</b> up to (but not including) <b>stop</b>, incrementing by <b>step</b>.</li>
+</ul>
+    <div class="Code-box">
+    <pre><code># From 0 to 4 (exclusive of 5)
+for i in range(5):
+    print(i) # Output: 0, 1, 2, 3, 4
+print("-" * 10)
+# From 2 to 5 (exclusive of 6)
+for i in range(2, 6):
+    print(i) # Output: 2, 3, 4, 5
+print("-" * 10)
+# From 1 to 10, incrementing by 2
+for i in range(1, 11, 2):
+    print(i) 
+
+# Output: 1, 3, 5, 7, 9
+</code></pre>
+  </div>
+
+<h3>1.4. Iterating over a dictionary: </h3>
+<ul>
+  <li>By default, iterating over a dictionary iterates over its keys.</li>
+  <li>Use <b>.values( )</b> to iterate over values.</li>
+  <li>Use <b>.items( )</b> to iterate over key-value pairs.</li>
+</ul>
+
+<div class="Code-box">
+    <pre><code>student_scores = {"Alice": 95, "Bob": 88, "Charlie": 72}
+print("Iterating over keys:")
+for name in student_scores: # Or student_scores.keys()
+    print(name)
+print("\nIterating over values:")
+for score in student_scores.values():
+    print(score)
+print("\nIterating over key-value pairs:")
+for name, score in student_scores.items(): # Unpacking the (key, value) tuple
+    print(f"{name}: {score}")
+
+# Output:
+Iterating over keys:
+Alice
+Bob
+Charlie
+
+Iterating over values:
+95
+88
+72
+
+Iterating over key-value pairs:
+Alice: 95
+Bob: 88
+Charlie: 72
+</code></pre>
+  </div>
+
+<h3><b>🔸2. The while Loop: Repeating Until a Condition is Met</b></h3>
+<p>The <b>while</b> loop repeatedly executes a block of code as long as a specified condition is <b>True.</b></p>
+<p><b>OR</b></p>
+<p><b>While loop</b> will run a piece of code while a <b>condition</b> is <b>True.</b> it is based on a <b>boolean</b> condition.</p>
+<p><b>Syntax: </b></p>
+    <div class="Code-box">
+    <pre><code>while condition:
+    # Code block to execute as long as condition is True
+    # (Indented)
+</code></pre>
+  </div>
+  <h3><b>🔸Key Points :</b></h3>
+  <ul>
+    <li><b>condition:</b> A boolean expression that is evaluated before each iteration.</li>
+    <li>If the <b>condition</b> is initially <b>False</b>, the loop body will not execute even once.</li>
+    <li>It's crucial to include code within the loop body that eventually makes the <b>condition False</b>, otherwise,
+        you'll create an <b>infinite loop.</b></li>
+  </ul>
+
+  <p><b>Examples: </b></p>
+  <h3>2.1. Counting up to a number : </h3>
+    <div class="Code-box">
+    <pre><code>count = 1
+while count <= 5:
+    print(count)
+    count += 1 # Increment count to eventually make the condition False
+
+# Output:
+1
+2
+3
+4
+5
+</code></pre>
+  </div>
+
+<h3>2.2. User input until a specific value : </h3>
+    <div class="Code-box">
+    <pre><code>user_input = ""
+while user_input != "quit":
+    user_input = input("Enter something (type 'quit' to exit): ")
+    if user_input != "quit":
+        print(f"You entered: {user_input}")
+    
+# Sample Output:
+Enter something (type 'quit' to exit): Hello
+You entered: Hello
+Enter something (type 'quit' to exit): 123
+You entered: 123
+Enter something (type 'quit' to exit): quit
+
+#No output is printed after "quit" because the condition user_input != "quit" fails, and the loop exits.
+</code></pre>
+  </div>
+<h3><b>Explanation :</b></h3>
+<ul>
+  <li>This is a <b>while</b> loop that keeps asking the user for input until the user types <b>"quit"</b>.</li>
+  <li>If the input is not <b>"quit"</b>, it prints what the user typed.</li>
+  <li>When the user finally types <b>"quit"</b>, the loop stops and nothing more is printed.</li>
+</ul>
+
+<h3>2.3. Infinite Loop (and how to avoid/handle it) : </h3>
+<p>An infinite loop occurs when the loop's condition never becomes <b>False</b>. This will freeze your program.</p>
+    <div class="Code-box">
+    <pre><code># DANGER: This is an infinite loop!
+# while True:
+#     print("This will print forever...")
+
+# To stop an infinite loop in most environments (like a terminal), press Ctrl+C.
+</code></pre>
+  </div>
+<p>Always ensure your <b>while</b> loop has a mechanism to terminate.</p>
+
+<h3><b>🔸3. Loop Control Statements</b></h3>
+<p>Python provides specific statements to alter the normal execution flow of loops:</p>
+
+<h3><b>🔸3.1. break Statement :</b></h3>
+<p>The <b>break</b> statement immediately terminates the loop (both <b>for</b> and <b>while</b>) and transfers control
+  to the statement immediately following the loop.</p>
+
+<p><b>Examples: </b></p>
+    <div class="Code-box">
+    <pre><code>for i in range(1, 10):
+    if i == 5:
+        print("Breaking loop at 5!")
+        break
+    print(i)
+print("Loop finished.")
+
+# Output:
+1
+2
+3
+4
+Breaking loop at 5!
+Loop finished.
+</code></pre>
+  </div>
+
+
+<h3><b>🔸3.2. continue Statement :</b></h3>
+<p>The <b>continue</b> statement skips the rest of the current iteration of the loop and proceeds to the next iteration.</p>
+
+<p><b>Examples: </b></p>
+    <div class="Code-box">
+    <pre><code>for i in range(1, 6):
+    if i % 2 == 0: # If i is even
+        print(f"Skipping even number: {i}")
+        continue # Skip the rest of this iteration
+    print(f"Odd number: {i}")
+
+# Output:
+Odd number: 1
+Skipping even number: 2
+Odd number: 3
+Skipping even number: 4
+Odd number: 5
+</code></pre>
+  </div>
+
+<h3><b>🔸3.3. pass Statement :</b></h3>
+<p>The <b>pass</b> statement is a null operation; nothing happens when it executes. It's often used as a
+  placeholder where syntax requires a statement but you don't want any code to execute yet.</p>
+
+<p><b>Examples: </b></p>
+    <div class="Code-box">
+    <pre><code># Placeholder for future code
+for item in some_list:
+    if item.is_valid():
+        pass # TODO: Implement validation logic here later
+    else:
+        print("Invalid item found.")
+</code></pre>
+  </div>
+
+
+<h3><b>🔸4. else Clause with Loops (Advanced)</b></h3>
+<p>Both <b>for</b> and <b>while</b> loops can have an optional <b>else</b> block. The code in the else block executes only 
+  if the loop completes without encountering a <b>break</b> statement.</p>
+
+<p><b>Example 4.1: for loop with else : </b></p>
+    <div class="Code-box">
+    <pre><code>numbers = [1, 3, 5, 7, 9]
+search_item = 6 # Item not in list
+for num in numbers:
+    if num == search_item:
+        print(f"{search_item} found in the list!")
+        break # This break will prevent the else block from executing
+else: # Executes if loop completes normally (no break)
+    print(f"{search_item} not found in the list.")
+print("-" * 20)
+numbers = [1, 3, 5, 7, 9]
+search_item = 5 # Item is in list
+for num in numbers:
+    if num == search_item:
+        print(f"{search_item} found in the list!")
+        break
+else:
+    print(f"{search_item} not found in the list.")
+
+# Output:
+6 not found in the list.
+--------------------
+5 found in the list!
+</code></pre>
+  </div>
+
+
+<p><b>Example 4.2: while loop with else : </b></p>
+    <div class="Code-box">
+    <pre><code>count = 0
+while count < 3:
+    print(f"Count is {count}")
+    count += 1
+else: # Executes because the loop finished naturally (count reached 3)
+    print("While loop finished normally.")
+print("-" * 20)
+count = 0
+while True: # An infinite loop without a break
+    print(f"Count is {count}")
+    count += 1
+    if count == 2:
+        print("Breaking the while loop!")
+        break # This break will prevent the else block from executing
+else:
+    print("While loop finished normally.") # This will NOT print
+
+# Output:
+Count is 0
+Count is 1
+Count is 2
+While loop finished normally.
+--------------------
+Count is 0
+Count is 1
+Breaking the while loop!
+</code></pre>
+  </div>
+<p><b>Use Case for else with loops:</b> This <b>else</b> clause is particularly useful for "search" loops,
+  where you want to perform an action if an item is not found after checking all possibilities.</p>
+
+
+<h3><b>🔸5. Nested Loops (Advanced Basic)</b></h3>
+<p>You can place a loop inside another loop. This is called <b>nesting</b>. Nested loops are commonly used for
+   tasks like iterating over 2D data structures (matrices), or generating combinations.</p>
+
+<p><b>Example 5.1: Printing a multiplication table : </b></p>
+    <div class="Code-box">
+    <pre><code>print("Multiplication Table:")
+for i in range(1, 4): # Outer loop for rows
+    for j in range(1, 4): # Inner loop for columns
+        print(f"{i} * {j} = {i*j}", end="\t") # '\t' for tab spacing
+    print() # New line after each row
+
+# Output:
+Multiplication Table:
+1 * 1 = 1	1 * 2 = 2	1 * 3 = 3
+2 * 1 = 2	2 * 2 = 4	2 * 3 = 6
+3 * 1 = 3	3 * 2 = 6	3 * 3 = 9
+</code></pre>
+  </div>
+
+  <p><b>Example 5.2: Generating coordinate pairs : </b></p>
+    <div class="Code-box">
+    <pre><code>for x in range(3): # x values: 0, 1, 2
+    for y in range(2): # y values: 0, 1
+        print(f"({x}, {y})")
+
+# Output:
+(0, 0)
+(0, 1)
+(1, 0)
+(1, 1)
+(2, 0)
+(2, 1)
+</code></pre>
+  </div>
+<p><b>Key point for nested loops:</b> The inner loop completes all its iterations for each single iteration of the outer loop.</p>
+
+
+<h3><b>🔸6. Loop Optimizations and Advanced Techniques</b></h3>
+<h3><b>🔸6.1. enumerate( ) for Index and Value :</b></h3>
+<p>When you need both the index and the value while iterating, <b>enumerate( )</b> is highly efficient and Pythonic.</p>
+
+<p><b>Example : </b></p>
+    <div class="Code-box">
+    <pre><code>my_list = ["apple", "banana", "cherry"]
+for index, value in enumerate(my_list):
+    print(f"Index {index}: {value}")
+
+# Output:
+Index 0: apple
+Index 1: banana
+Index 2: cherry
+</code></pre>
+  </div>
+
+<h3><b>🔸6.2. zip() for Parallel Iteration :</b></h3>
+<p><b>zip( )</b> combines multiple iterables element-wise. It stops when the shortest iterable is exhausted.</p>
+
+<p><b>Example : </b></p>
+    <div class="Code-box">
+    <pre><code>names = ["Alice", "Bob", "Charlie"]
+ages = [25, 30, 22]
+for name, age in zip(names, ages):
+    print(f"{name} is {age} years old.")
+
+# Output:
+Alice is 25 years old.
+Bob is 30 years old.
+Charlie is 22 years old.
+</code></pre>
+  </div>
+
+<h3><b>🔸6.3. List Comprehensions (Advanced for loop shortcut) :</b></h3>
+<p>A powerful and concise way to create lists based on existing iterables, often replacing simple <b>for</b> loops.</p>
+
+<p><b>Syntax : </b></p>
+<p><b>Mapping:</b> [expression for item in iterable]</p>
+<p><b>Filtering:</b> [expression for item in iterable if condition]</p>
+    <div class="Code-box">
+    <pre><code># Traditional loop to square numbers
+squares_loop = []
+for i in range(5):
+    squares_loop.append(i**2)
+print(f"Squares (loop): {squares_loop}") # Output: [0, 1, 4, 9, 16]
+# List comprehension for squares
+squares_comp = [i**2 for i in range(5)]
+print(f"Squares (comprehension): {squares_comp}") # Output: [0, 1, 4, 9, 16]
+# Filtering even numbers
+even_numbers = [num for num in range(10) if num % 2 == 0]
+print(f"Even numbers: {even_numbers}") # Output: [0, 2, 4, 6, 8]
+</code></pre>
+  </div>
+
+<h3><b>🔸6.4. Dictionary and Set Comprehensions :</b></h3>
+<p>Similar to list comprehensions, for creating dictionaries and sets.</p>
+
+    <div class="Code-box">
+    <pre><code># Dictionary comprehension
+word = "hello"
+char_counts = {char: word.count(char) for char in set(word)}
+print(f"Character counts: {char_counts}") # Output: {'e': 1, 'o': 1, 'l': 2, 'h': 1}
+# Set comprehension
+unique_squares = {x**2 for x in [1, 2, 2, 3, 4, 4, 5]}
+print(f"Unique squares: {unique_squares}") # Output: {1, 4, 9, 16, 25}
+</code></pre>
+  </div>
+
+<h3><b>🔸6.5. Generator Expressions (Lazy Evaluation) :</b></h3>
+<p>Similar to list comprehensions but use parentheses <b>( )</b> instead of square brackets <b>[ ]</b>. They create 
+  generators, which are iterators that produce values one at a time on demand (lazy evaluation), 
+  saving memory for large datasets.</p>
+
+    <div class="Code-box">
+    <pre><code># List comprehension (creates entire list in memory)
+list_of_squares = [x*x for x in range(1000000)]
+# Generator expression (creates values on the fly)
+gen_of_squares = (x*x for x in range(1000000))
+# You can iterate over a generator
+for sq in gen_of_squares:
+    # process sq
+    if sq > 100:
+        break
+</code></pre>
+  </div>
+
+<h3><b>🔸When to choose for vs. while?</b></h3>
+<p><b>for loop:</b> Use when you know in advance how many times you need to loop, or when you need to 
+  iterate over a collection of items (lists, strings, ranges, etc.). It's ideal for definite iteration.</p>
+<p><b>while loop:</b> Use when the number of iterations is unknown and depends on a condition being met. 
+  It's ideal for indefinite iteration, such as waiting for user input, reading from a file 
+  until an end-of-file marker is reached, or simulating a game loop.</p>
+<h3><b>🔸Common Pitfalls :</b></h3>
+<p><b>Infinite Loops:</b> Always ensure your while loop condition eventually becomes False.</p>
+<p><b>Modifying a list while iterating over it:</b> This can lead to unexpected behavior. 
+  If you need to modify a list, it's often safer to iterate over a copy or build a new list.</p>
+
+<div class="Code-box">
+    <pre><code>my_list = [1, 2, 3, 4]
+# DON'T DO THIS without careful consideration!
+# for item in my_list:
+#     if item == 2:
+#         my_list.remove(item) # Modifies list during iteration!
+# Output might be [1, 3, 4] but often skips items.
+
+# Instead, create a new list or iterate over a copy:
+new_list = [item for item in my_list if item != 2]
+# Or:
+# for item in list(my_list): # Iterate over a copy
+</code></pre>
+  </div>
+<p><b>Off-by-one errors with range( )</b> or <b>while</b> conditions: Carefully check your start, stop, and step values 
+  in <b>range( )</b>, and boundary conditions in <b>while</b> <br> loops <b>( <= vs < ).</b></p>
+<p><b>Incorrect Indentation:</b> Python relies heavily on indentation to define code blocks. 
+  Incorrect indentation will cause <b>IndentationError</b> or logical errors.</p>
 
   <div class="navigation-buttons">
-  <a href="python_p7.html" class="nav-btn prev-btn">← Previous</a>
-  <a href="ifelse.html" class="nav-btn next-btn">Next →</a>
+  <a href="match.html" class="nav-btn prev-btn">← Previous</a>
+  <a href="functions.html" class="nav-btn next-btn">Next →</a>
 </div>
 </section>
 
