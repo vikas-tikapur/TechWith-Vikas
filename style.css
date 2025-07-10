@@ -660,3 +660,27 @@ section#with_banner {
 .scroll-to-top:hover {
   background: #0a639b;
 }
+
+
+
+/* HTML STYLE */
+
+.html_banner {
+  background-image: url('images/html_ban.png'); 
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+@media (max-width: 768px){
+  .html_banner {
+    height: 25vh;
+  }
+}

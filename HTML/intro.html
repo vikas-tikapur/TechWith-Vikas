@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechWith Vikas</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<header class="main-header">
+  <div class="container">
+    <div><a href="../index.html" class="logo">TechWith <span>Vikas</span></a></div>
+    <select id="pythonPagesDropdown" onchange="if(this.value) window.location.href=this.value;">
+      <div class="custom-dropdown">
+      <option value="">Go to HTML Topic...</option>
+      <option value="intro.html">HTML Introduction</option>
+    </select>
+  </div>
+</header>
+
+ <!-- HTML Banner Section -->
+<section class="html_banner">
+  <div class="banner-overlay">
+  </div>
+</section>
+
+<section class="python-intro" id="with_banner">
+  <div class="container">
+    <h2>What is HTML?</h2>
+    <p>HTML (HyperText Markup Language) is the foundational language used to design and structure content on 
+        the web. It's not a programming language but a markup language that defines how content should appear 
+        in a web browser.
+    </p>
+
+    <p>HTML provides the basic building blocks for web pages by organizing text, images, links, and other 
+        elements into a readable format. It works through a system of tags (or elements) that help browsers 
+        understand the layout and purpose of the content.</p>
+
+    <p>Each HTML element acts as a label that tells the browser how to present specific parts of the content —</p>
+    <p><b>Example:</b></p>
+    <ul>
+        <li><b>&lt;h1&gt;</b> indicates a main heading,</li>
+        <li><b>&lt;p&gt;</b> defines a paragraph,</li>
+        <li><b>&lt;a&gt;</b> creates a hyperlink.</li>
+    </ul>
+    
+    <h2>Basic HTML Document</h2>
+
+<div class="Code-box">
+  <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My First Web Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+    &lt;p&gt;This is my very first HTML page.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+  </code></pre>
+</div>
+    <h3><b>🔸Let's Understand the Parts:</b></h3>
+    <ul>
+        <li>&lt;<b>!DOCTYPE html</b>&gt; - Declares the document type. It tells the browser this is an HTML5 page.</li>
+        <li>&lt;<b>html</b>&gt; - The <b>root element</b> of the page. All other elements are nested inside it.</li>
+        <li>&lt;<b>head</b>&gt; - Contains <b>meta-information</b> like the title, character encoding, links to CSS files, etc.</li>
+        <li>&lt;<b>title</b>&gt; - Sets the title of the page (what you see on the browser tab).</li>
+        <li>&lt;<b>body</b>&gt; - Holds the <b>visible content</b> of the page — headings, text, images, links, etc.</li>
+        <li>&lt;<b>h1</b>&gt; - A <b>heading</b> tag  <b>h1</b> is the top-level heading, usually the title or main heading.</li>
+        <li>&lt;<b>p</b>&gt; - A <b>paragraph</b> tag Used to write regular <b>text content.</b></li>
+    </ul>
+  </div>
+<h2>HTML Elements:</h2>
+<p>An HTML Element is the building block of a web page. It defines how content will appear and behave on the page.</p>
+<p>An HTML element typically consists of:</p>
+<ol>
+    <li><b>Opening tag</b></li>
+    <li><b>Content</b></li>
+    <li><b>Closing tag</b></li>
+</ol>
+<p><b>Basic Structure:</b></p>
+<div class="Code-box">
+  <pre><code>
+&lt;tagname&gt; Content goes here &lt;/tagname&gt;
+  </code></pre>
+</div>
+<p><b>Example:</b></p>
+<div class="Code-box">
+  <pre><code>
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+  </code></pre>
+</div>
+  <div class="navigation-buttons">
+  <!-- <a href="#" class="nav-btn prev-btn">← Previous</a> -->
+  <a href="python_p1.html" class="nav-btn next-btn">Next →</a>
+</div>
+
+</section>
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <h2>CodeWith <span>Vikas</span></h2>
+      <p>Learn programming from scratch.<br> Start your journey today!</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Python</a></li>
+        <li><a href="#">Java</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h3>Follow Me</h3>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-x"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 TechWith Vikas | Created by Vikas Mishra</p>
+  </div>
+ <div class="scroll-to-top" title="Go to Top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+</footer>
+<script src="../main.js"></script>
+</body>
+</html>
