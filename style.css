@@ -317,7 +317,7 @@ body {
 
 /* Python page */
 .python-banner {
-  background-image: url('images/python_bann.jpg'); 
+  background-image: url('images/python_home.png'); 
   background-size: cover;
   background-position: center;
   height: 70vh;
@@ -682,5 +682,26 @@ section#with_banner {
 @media (max-width: 768px){
   .html_banner {
     height: 25vh;
+  }
+}
+
+
+/* Responsive Table Wrapper */
+.responsive-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Table Styling */
+
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .array-methods-table {
+    font-size: 0.9rem;
+    min-width: 400px;
+  }
+  .responsive-table-wrapper {
+    margin-bottom: 20px;
   }
 }

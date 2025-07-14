@@ -26,6 +26,7 @@
       <option value="match.html">Python Match</option>
       <option value="loops.html">Python Loops</option>
       <option value="functions.html">Python Functions</option>
+      <option value="array.html">Python Arrays</option>
     </select>
   </div>
 </header>
@@ -39,7 +40,7 @@
         related action. Functions provide better modularity for your application and a high degree of 
         code reusing.</p>
 
-    <h3><b>🔸Python Functions :</b></h3>
+    <h3><b>🔸1. Python Functions :</b></h3>
     <ul>
         <li>A function is a <b>block of code.</b></li>
         <li><b>Block</b> of statements that perform a <b>specific task.</b></li>
@@ -83,20 +84,398 @@ greet()
 </code></pre>
   </div>
 
+  <h3><b>🔸2. Calling a Function :</b></h3>
+  <p>To execute a function, you simply use its name followed by <b>parentheses ( )</b>. If the function expects 
+    arguments, you pass them inside the parentheses.</p>
 
+  <p><b>Example 2.1: Calling the greet function :</b></p>
 
+<div class="Code-box">
+    <pre><code>greet() # Output: Hello, Python learner!
+</code></pre>
+ </div>
 
+<h3><b>🔸3. Function Parameters and Arguments :</b></h3>
+<ul>
+  <li><b>Parameters:</b> Variables listed inside the parentheses in the function definition. They are placeholders.</li>
+  <li><b>Arguments:</b> The actual values passed to the function when it is called.</li>
+</ul>
 
+<p><b>Example 3.1: Function with one parameter</b></p>
 
+<div class="Code-box">
+    <pre><code>def greet_person(name):
+    """Greets a person by their name."""
+    print(f"Hello, {name}!")
+greet_person("Alice") # "Alice" is the argument
+greet_person("Bob")   # "Bob" is the argument
+</code></pre>
+  </div>
 
+  <h3><b>🔸4. The return Statement :</b></h3>
+  <p>The <b>return</b> statement is used to send a value back from the function to the place where it was called. 
+    This allows functions to produce results that can be used in other parts of your program.</p>
+  <p><b>Example 4.1: Function returning a value</b></p>
 
+  <div class="Code-box">
+    <pre><code>def add(a, b):
+    """Adds two numbers and returns their sum."""
+    sum_result = a + b
+    return sum_result
+# Calling the function and storing the returned value
+result = add(5, 3)
+print(f"The sum is: {result}") # Output: The sum is: 8
+# Using the returned value directly
+print(f"10 + 20 = {add(10, 20)}") # Output: 10 + 20 = 30
+</code></pre>
+  </div>
+
+<p><b>Example 4.2: Function returning multiple values (as a tuple)</b></p>
+<p>Functions can implicitly return multiple values by separating them with commas. Python packs them into a tuple.</p>
+  <div class="Code-box">
+    <pre><code>def calculate_metrics(numbers):
+    """Calculates sum and average of a list of numbers."""
+    total = sum(numbers)
+    count = len(numbers)
+    if count == 0:
+        return 0, 0 # Return 0 for both if list is empty
+    average = total / count
+    return total, average # Returns a tuple (total, average)
+data = [10, 20, 30, 40, 50]
+total_sum, avg_value = calculate_metrics(data) # Unpacking the returned tuple
+print(f"Sum: {total_sum}, Average: {avg_value}")
+empty_data = []
+s, a = calculate_metrics(empty_data)
+print(f"Sum (empty): {s}, Average (empty): {a}")
+</code></pre>
+  </div>
+
+<h3><b>🔸5. Types of Arguments :</b></h3>
+<p>Python supports several types of arguments that can be used in function calls:</p>
+<h3><b>🔸5.1. Positional Arguments :</b></h3>
+<p>Arguments passed in the order they are defined in the function signature. The position matters.</p>
+
+<div class="Code-box">
+    <pre><code>def describe_pet(animal_type, pet_name):
+    print(f"I have a {animal_type}.")
+    print(f"Its name is {pet_name}.")
+describe_pet("dog", "Buddy") # Positional: "dog" maps to animal_type, "Buddy" to pet_name
+# describe_pet("Buddy", "dog") # Incorrect order will lead to wrong output
+</code></pre>
+  </div>
+<h3><b>🔸5.2. Keyword Arguments :</b></h3>
+<p>Arguments identified by their parameter names in the function call. Order doesn't matter, but the name must match.</p>
+
+<div class="Code-box">
+    <pre><code>describe_pet(pet_name="Max", animal_type="cat") # Keyword arguments
+describe_pet(animal_type="fish", pet_name="Nemo") # Order doesn't matter
+</code></pre>
+  </div>
+<h3><b>🔸5.3. Default Arguments :</b></h3>
+<p>Parameters can have default values. If an argument is not provided for such a parameter, its default value is used. Default arguments must come after any non-default arguments.</p>
+
+<div class="Code-box">
+    <pre><code>def greet_with_default(name="Guest"): # "Guest" is the default value
+    print(f"Hello, {name}!")
+greet_with_default("Charlie") # Output: Hello, Charlie!
+greet_with_default()          # Output: Hello, Guest! (uses default)
+</code></pre>
+  </div>
+<p><b>Caution with Mutable Default Arguments:</b></p>
+<p>Be careful when using mutable objects (like lists or dictionaries) as default arguments. They are created only once when the function is defined, not on each call.</p>
+<div class="Code-box">
+    <pre><code>def add_to_list(item, my_list=[]): # DANGER! my_list is created once
+    my_list.append(item)
+    return my_list
+list1 = add_to_list(1)
+print(list1) # Output: [1]
+list2 = add_to_list(2)
+print(list2) # Output: [1, 2] - Oops! list2 modified list1's default list!
+# Correct way to handle mutable defaults:
+def add_to_list_safe(item, my_list=None):
+    if my_list is None:
+        my_list = []
+    my_list.append(item)
+    return my_list
+list3 = add_to_list_safe(1)
+print(list3) # Output: [1]
+list4 = add_to_list_safe(2)
+print(list4) # Output: [2] - Correct!
+</code></pre>
+  </div>
+
+<h3><b>🔸6. Arbitrary Arguments (*args and **kwargs) :</b></h3>
+<p>These allow functions to accept a variable number of arguments.</p>
+<h3><b>🔸6.1. *args (Arbitrary Positional Arguments) :</b></h3>
+<p><b>*args</b> allows a function to accept any number of positional arguments. These arguments are packed into a tuple.</p>
+<div class="Code-box">
+    <pre><code>def sum_all_numbers(*numbers):
+    """Sums all numbers passed as arguments."""
+    total = 0
+    for num in numbers:
+        total += num
+    return total
+print(sum_all_numbers(1, 2, 3))         # Output: 6
+print(sum_all_numbers(10, 20, 30, 40))  # Output: 100
+print(sum_all_numbers())                # Output: 0
+</code></pre>
+  </div>
+
+<h3><b>🔸6.2. **kwargs (Arbitrary Keyword Arguments) :</b></h3>
+<p><b>**kwargs</b> allows a function to accept any number of keyword arguments. These arguments are packed into a dictionary.</p>
+<div class="Code-box">
+    <pre><code>def print_user_info(**info):
+    """Prints user information from keyword arguments."""
+    print("User Info:")
+    for key, value in info.items():
+        print(f"  {key.replace('_', ' ').title()}: {value}")
+print_user_info(name="Eve", age=28, city="Paris")
+print_user_info(product="Laptop", price=1200, category="Electronics", brand="XYZ")
+</code></pre>
+  </div>
+
+  <p><b>Order of Arguments in Function Definition :</b></p>
+  <p>If you use a mix of argument types, the order in the function definition matters :</p>
+  <ol>
+    <li>Positional-only parameters (Python 3.8+ with <b>/</b>)</li>
+    <li>Positional or keyword parameters</li>
+    <li><b>*args</b></li>
+    <li>Keyword-only parameters (after <b>*args</b> or <b>*</b>)</li>
+    <li><b>**kwargs</b></li>
+  </ol>
+
+  <p><b>Example of mixed arguments :</b></p>
+  <div class="Code-box">
+    <pre><code>def complex_function(a, b, *args, kw_only1, kw_only2=None, **kwargs):
+    print(f"a: {a}, b: {b}")
+    print(f"args: {args}")
+    print(f"kw_only1: {kw_only1}, kw_only2: {kw_only2}")
+    print(f"kwargs: {kwargs}")
+# complex_function(1, 2, 3, 4, kw_only1="X", kw_only2="Y", extra="Z")
+</code></pre>
+  </div>
+
+  <h3><b>🔸7. Scope of Variables (LEGB Rule) :</b></h3>
+  <p>Understanding variable scope is crucial: where a variable is defined determines where it can be accessed. Python follows the <b>LEGB</b> rule:</p>
+  <ul>
+    <li><b>Local :</b> Variables defined inside a function.</li>
+    <li><b>Enclosing function locals :</b> Variables in the local scope of enclosing functions (for nested functions).</li>
+    <li><b>Global :</b> Variables defined at the top level of a script or module.</li>
+    <li><b>Built-in :</b> Names pre-defined in Python (e.g., <b>print</b>, <b>len</b>).</li>
+  </ul>
+
+  <p><b>Example 7.1: Local vs. Global scope</b></p>
+  <div class="Code-box">
+    <pre><code>global_var = "I am a global variable." # Global scope
+def my_function():
+    local_var = "I am a local variable." # Local scope
+    print(local_var)
+    print(global_var) # Can access global_var
+my_function()
+# print(local_var) # This would cause a NameError because local_var is not defined in global scope
+print(global_var)
+</code></pre>
+  </div>
+
+<p><b>global keyword :</b></p>
+<p>You can modify a global variable from inside a function using the <b>global</b> keyword.</p>
+<div class="Code-box">
+    <pre><code>counter = 0 # Global
+def increment_counter():
+    global counter # Declare intent to modify global 'counter'
+    counter += 1
+    print(f"Counter inside function: {counter}")
+increment_counter() # Output: Counter inside function: 1
+increment_counter() # Output: Counter inside function: 2
+print(f"Counter outside function: {counter}") # Output: Counter outside function: 2
+</code></pre>
+  </div>
+
+  <p><b>nonlocal keyword (for nested functions) :</b></p>
+  <p>Used to modify variables in the nearest enclosing scope that is not global.</p>
+  <div class="Code-box">
+    <pre><code>def outer_function():
+    x = "outer"
+    def inner_function():
+        nonlocal x # Refers to 'x' in outer_function's scope
+        x = "inner"
+        print(f"Inner: {x}")
+    inner_function()
+    print(f"Outer: {x}") # 'x' has been modified by inner_function
+outer_function()
+</code></pre>
+  </div>
+
+  <h3><b>🔸8. First-Class Functions (Advanced) :</b></h3>
+  <p>In Python, functions are "first-class citizens." This means they can be:</p>
+  <ul>
+    <li>Assigned to variables.</li>
+    <li>Passed as arguments to other functions.</li>
+    <li>Returned as values from other functions.</li>
+    <li>Stored in data structures (lists, dictionaries).</li>
+  </ul>
+  <p><b>Example 8.1: Assigning a function to a variable</b></p>
+  <div class="Code-box">
+    <pre><code>def say_hello(name):
+    return f"Hello, {name}!"
+my_greeting_func = say_hello # Assigning the function itself to a variable
+print(my_greeting_func("David")) # Calling it via the variable
+</code></pre>
+  </div>
+
+<p><b>Example 8.2: Passing a function as an argument (Higher-Order Functions)</b></p>
+<div class="Code-box">
+    <pre><code>def apply_operation(func, a, b):
+    return func(a, b)
+def multiply(x, y):
+    return x * y
+def power(x, y):
+    return x ** y
+result1 = apply_operation(multiply, 4, 5) # Passing 'multiply' function
+print(f"Multiply result: {result1}") # Output: 20
+result2 = apply_operation(power, 2, 3) # Passing 'power' function
+print(f"Power result: {result2}")     # Output: 8
+</code></pre>
+  </div>
+
+  <h3><b>🔸9. Lambda Functions (Anonymous Functions) :</b></h3>
+  <p>Lambda functions are small, anonymous functions defined with the <b>lambda</b> keyword. They can only contain a single expression and are often used for short, one-time operations.</p>
+  <div class="Code-box">
+    <pre><code>lambda arguments: expression
+</code></pre>
+  </div>
+
+<p><b>Example 9.1: Basic lambda function</b></p>
+<div class="Code-box">
+    <pre><code>add_one = lambda x: x + 1
+print(add_one(5)) # Output: 6
+# Used with higher-order functions like map(), filter(), sorted()
+numbers = [1, 2, 3, 4, 5]
+squared_numbers = list(map(lambda x: x**2, numbers))
+print(f"Squared: {squared_numbers}") # Output: [1, 4, 9, 16, 25]
+even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
+print(f"Even: {even_numbers}") # Output: [2, 4]
+</code></pre>
+  </div>
+
+<h3><b>🔸10. Recursion (Advanced) :</b></h3>
+<p>A function is recursive if it calls itself directly or indirectly to solve a problem. Recursion is often used for problems that can be broken down into smaller, similar subproblems.</p>
+<h3><b>🔸Key Points :</b></h3>
+<ul>
+  <li><b>Base Case:</b> Every recursive function must have a base case that stops the recursion to prevent infinite loops.</li>
+  <li><b>Recursive Step:</b> The part where the function calls itself with a modified input, moving towards the base case.</li>
+</ul>
+<p><b>Example 10.1: Factorial using recursion</b></p>
+<div class="Code-box">
+    <pre><code>def factorial(n):
+    """Calculates the factorial of a non-negative integer using recursion."""
+    if n == 0 or n == 1: # Base case
+        return 1
+    else: # Recursive step
+        return n * factorial(n - 1)
+print(f"Factorial of 5: {factorial(5)}") # 5 * 4 * 3 * 2 * 1 = 120
+print(f"Factorial of 0: {factorial(0)}") # Output: 1
+</code></pre>
+  </div>
+
+<h3><b>🔸Caution with Recursion :</b></h3>
+<p>Deep recursion can lead to a <b>RecursionError</b> (maximum recursion depth exceeded) because each function 
+  call adds to the call stack. Python has a default recursion limit (usually around 1000-3000). 
+  For very large inputs, iterative solutions are often preferred over recursive ones for performance and memory reasons.</p>
+
+<h3><b>🔸Best Practices for Functions :</b></h3>
+<ul>
+  <li><b>Single Responsibility Principle (SRP) :</b> Each function should do one thing and do it well.</li>
+  <li><b>Meaningful Names :</b> Function names should clearly indicate what they do.</li>
+  <li><b>Docstrings :</b> Always write docstrings to explain your functions.</li>
+  <li><b>Comments:</b> Use comments for complex logic within the function, but good code often needs fewer 
+    comments if it's well-named and structured.</li>
+  <li><b>Avoid Side Effects (where possible) :</b> Functions that modify global state or input arguments 
+    unexpectedly can make code harder to reason about. Aim for pure functions (same input, same output, 
+    no side effects) when feasible.</li>
+  <li><b>Parameter Type Hinting (Python 3.5+) :</b> Use type hints to indicate the expected types of arguments 
+    and return values. This improves readability and allows static analysis tools to catch errors.</li>
+</ul>
+
+  <div class="Code-box">
+    <pre><code>def add_numbers(a: int, b: int) -> int:
+    """Adds two integers and returns their sum."""
+    return a + b
+</code></pre>
+  </div>
+
+<h3><b>🔸5 Basic Python Function Examples :</b></h3>
+<p><b>Example 1: Function without parameters</b></p>
+<div class="Code-box">
+    <pre><code>def greet():
+    print("Hello, welcome to Python!")
+greet()
+
+#output - Hello, welcome to Python!
+</code></pre>
+  </div>
+
+<p><b>Example 2: Function with parameters</b></p>
+<div class="Code-box">
+    <pre><code>def greet_user(name):
+    print("Hello,", name)
+greet_user("Mr. Shankar")
+
+#output - Hello, Mr. Shankar
+</code></pre>
+  </div>
+ 
+<p><b>Example 3: Function that returns a value</b></p>
+<div class="Code-box">
+    <pre><code>def add(a, b):
+    return a + b
+
+result = add(5, 3)
+print("Sum is:", result)
+#output - Sum is: 8
+</code></pre>
+  </div>
+
+<p><b>Example 4: Function with default parameter</b></p>
+
+<div class="Code-box">
+    <pre><code>def greet(name="Guest"):
+    print("Hello,", name)
+greet()         # uses default
+greet("Anita")  # custom value
+#output - 
+'''
+Hello, Guest
+Hello, Anita
+'''
+</code></pre>
+  </div>
+
+<p><b>Example 5: Function with a loop inside</b></p>
+
+<div class="Code-box">
+    <pre><code>def print_table(n):
+    for i in range(1, 11):
+        print(f"{n} x {i} = {n*i}")
+print_table(5)
+
+#output - 
+'''
+5 x 1 = 5
+5 x 2 = 10
+5 x 3 = 15
+...
+5 x 10 = 50
+'''
+</code></pre>
+  </div>
 
 
 
 
   <div class="navigation-buttons">
   <a href="loops.html" class="nav-btn prev-btn">← Previous</a>
-  <a href="functions.html" class="nav-btn next-btn">Next →</a>
+  <a href="array.html" class="nav-btn next-btn">Next →</a>
 </div>
 </section>
 

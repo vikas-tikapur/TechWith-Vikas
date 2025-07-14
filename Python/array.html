@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechWith Vikas</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<header class="main-header">
+  <div class="container">
+    <div><a href="../index.html" class="logo">TechWith <span>Vikas</span></a></div>
+    <select id="pythonPagesDropdown" onchange="if(this.value) window.location.href=this.value;">
+      <div class="custom-dropdown">
+      <option value="">Go to Python Topic...</option>
+      <option value="python.html">Python Introduction</option>
+      <option value="python_p1.html">Python Syntax</option>
+      <option value="python_p2.html">Python Comments & Variables</option>
+      <option value="python_p3.html">Python Data Types/List</option>
+      <option value="python_p4.html">Python Tuples</option>
+      <option value="python_p5.html">Python Tuples-2</option>
+      <option value="python_p6.html">Python Quiz-1</option>
+      <option value="python_p7.html">Python Sets</option>
+      <option value="python_p8.html">Python Dictionaries</option>
+      <option value="ifelse.html">Python If/Else</option>
+      <option value="match.html">Python Match</option>
+      <option value="loops.html">Python Loops</option>
+      <option value="functions.html">Python Functions</option>
+      <option value="array.html">Python Arrays</option>
+    </select>
+  </div>
+</header>
+
+
+
+<section class="python-intro">
+  <div class="container">
+    <h2>Python Arrays</h2> 
+    <p>Arrays in Python are data structures that store multiple values of the same type in a single variable. 
+        While Python has several array-like structures, the most commonly used are:</p>
+    <ul>
+        <li>Lists (most versatile)</li>
+        <li><b>array</b> module arrays (for homogeneous numeric data)</li>
+        <li>NumPy arrays (for advanced numerical computing)</li>
+    </ul>
+    <p><b>Basic List Example :</b></p>
+     <div class="Code-box">
+    <pre><code>fruits = ["apple", "banana", "cherry"]
+</code></pre>
+  </div>
+
+    <h2>Basic Array Operations</h2>
+    <h3><b>🔸Creating Arrays :</b></h3>
+     <div class="Code-box">
+    <pre><code># Using square brackets
+numbers = [1, 2, 3, 4, 5]
+# Using list() constructor
+empty_list = list()
+another_list = list((1, 2, 3))  # Note the double parentheses
+# Using array module
+import array
+int_array = array.array('i', [1, 2, 3])  # 'i' for signed integers
+</code></pre>
+  </div>
+
+  <h3><b>🔸Accessing Elements :</b></h3>
+    <div class="Code-box">
+    <pre><code>fruits = ["apple", "banana", "cherry"]
+print(fruits[0])  # Accessing the first element
+print(fruits[1])  # Accessing the second element
+print(fruits[-1]) # Accessing the last element
+</code></pre>
+  </div>
+
+<h3><b>🔸Modifying Arrays :</b></h3>
+  <div class="Code-box">
+    <pre><code># Changing elements
+my_array[1] = 25  # [10, 25, 30, 40, 50]
+# Adding elements
+my_array.append(60)  # [10, 25, 30, 40, 50, 60]
+my_array.insert(2, 15)  # [10, 25, 15, 30, 40, 50, 60]
+# Removing elements
+my_array.remove(25)  # [10, 15, 30, 40, 50, 60]
+popped = my_array.pop()  # 60, array is now [10, 15, 30, 40, 50]
+</code></pre>
+  </div>
+
+<h2>Intermediate Array Concepts</h2>
+<h3><b>🔸Array Slicing :</b></h3>
+    <div class="Code-box">
+        <pre><code>nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+# Basic slice
+print(nums[2:5])  # [2, 3, 4]
+# With step
+print(nums[1:8:2])  # [1, 3, 5, 7]
+# Negative indices
+print(nums[-5:-2])  # [5, 6, 7]
+# Omitting indices
+print(nums[:3])  # [0, 1, 2]
+print(nums[4:])  # [4, 5, 6, 7, 8, 9]
+print(nums[::2])  # [0, 2, 4, 6, 8]
+</code></pre>
+  </div>
+
+<h3><b>🔸Array Methods :</b></h3>
+    <div class="Code-box">
+        <pre><code># Sorting
+numbers = [3, 1, 4, 1, 5, 9, 2]
+numbers.sort()  # [1, 1, 2, 3, 4, 5, 9]
+numbers.sort(reverse=True)  # [9, 5, 4, 3, 2, 1, 1]
+# Reversing
+numbers.reverse()  # [1, 1, 2, 3, 4, 5, 9]
+# Searching
+index = numbers.index(4)  # 3
+count = numbers.count(1)  # 2
+# Copying
+copy = numbers.copy()  # Shallow copy
+</code></pre>
+  </div>
+
+  <h3><b>🔸List Comprehensions :</b></h3>
+    <div class="Code-box">
+        <pre><code># Basic comprehension
+squares = [x**2 for x in range(10)]
+# With condition
+even_squares = [x**2 for x in range(10) if x % 2 == 0]
+# Nested comprehension
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+flattened = [num for row in matrix for num in row]
+</code></pre>
+  </div>
+
+<h2>Advanced Array Concepts</h2>
+<h3><b>🔸Multidimensional Arrays :</b></h3>
+    <div class="Code-box">
+        <pre><code># 2D array (list of lists)
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+# Accessing elements
+print(matrix[1][2])  # 6
+# Using NumPy for better performance
+import numpy as np
+np_matrix = np.array(matrix)
+print(np_matrix[:, 1])  # Column at index 1: [2, 5, 8]
+</code></pre>
+  </div>
+
+<h3><b>🔸Array Performance Optimization :</b></h3>
+    <div class="Code-box">
+        <pre><code># Time complexity of common operations
+"""
+Operation       | Time Complexity
+----------------+----------------
+Index access    | O(1)
+Append          | O(1)
+Pop last        | O(1)
+Pop intermediate| O(n)
+Insert          | O(n)
+Delete          | O(n)
+Search          | O(n)
+"""
+
+# Using deque for faster appends/pops from both ends
+from collections import deque
+d = deque([1, 2, 3])
+d.appendleft(0)  # Faster than list.insert(0, 0)
+d.popleft()      # Faster than list.pop(0)
+</code></pre>
+  </div>
+
+<h3><b>🔸Memory Efficient Arrays :</b></h3>
+    <div class="Code-box">
+        <pre><code># Using array module for homogeneous data
+import array
+int_arr = array.array('i', [1, 2, 3])  # More memory efficient than list
+float_arr = array.array('d', [1.0, 2.0, 3.0])
+# Typecodes:
+# 'b' - signed char, 'B' - unsigned char
+# 'i' - signed int, 'I' - unsigned int
+# 'f' - float, 'd' - double
+</code></pre>
+  </div>
+
+<h3><b>🔸NumPy Arrays for Scientific Computing :</b></h3>
+    <div class="Code-box">
+        <pre><code>import numpy as np
+# Creating NumPy arrays
+arr = np.array([1, 2, 3])          # 1D array
+matrix = np.array([[1, 2], [3, 4]]) # 2D array
+# Array operations
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+print(a + b)  # [5 7 9]
+print(a * 2)  # [2 4 6]
+# Universal functions
+print(np.sqrt(a))  # [1.         1.41421356 1.73205081]
+</code></pre>
+  </div>
+
+
+<h2>Unique Array Techniques</h2>
+<h3><b>🔸Circular Buffer Implementation :</b></h3>
+    <div class="Code-box">
+        <pre><code>class CircularBuffer:
+    def __init__(self, size):
+        self.buffer = [None] * size
+        self.size = size
+        self.index = 0
+        
+    def add(self, item):
+        self.buffer[self.index % self.size] = item
+        self.index += 1
+        
+    def __getitem__(self, idx):
+        return self.buffer[idx % self.size]
+
+    def __repr__(self):
+        return str(self.buffer)
+# Usage
+cb = CircularBuffer(3)
+cb.add(1); cb.add(2); cb.add(3); cb.add(4)
+print(cb)  # [4, 2, 3] - oldest element (1) was overwritten
+</code></pre>
+  </div>
+
+<h3><b>🔸Array-Based Queue :</b></h3>
+    <div class="Code-box">
+        <pre><code>class ArrayQueue:
+    def __init__(self):
+        self.items = []
+    
+    def enqueue(self, item):
+        self.items.insert(0, item)
+    
+    def dequeue(self):
+        return self.items.pop()
+    
+    def size(self):
+        return len(self.items)
+    
+    def is_empty(self):
+        return self.items == []
+</code></pre>
+  </div>
+<h3><b>🔸Memoryview for Efficient Array Manipulation :</b></h3>
+    <div class="Code-box">
+        <pre><code># Using memoryview for efficient byte manipulation
+data = bytearray(b'abcdef')
+view = memoryview(data)
+view[2:4] = b'XY'
+print(data)  # bytearray(b'abXYef')
+</code></pre>
+  </div>
+
+<h3><b>🔸Array-Based Binary Heap :</b></h3>
+    <div class="Code-box">
+        <pre><code>class MinHeap:
+    def __init__(self):
+        self.heap = []
+    
+    def parent(self, i):
+        return (i-1)//2
+    
+    def insert(self, key):
+        self.heap.append(key)
+        i = len(self.heap) - 1
+        while i != 0 and self.heap[self.parent(i)] > self.heap[i]:
+            self.heap[self.parent(i)], self.heap[i] = self.heap[i], self.heap[self.parent(i)]
+            i = self.parent(i)
+    
+    def extract_min(self):
+        if not self.heap:
+            return None
+        if len(self.heap) == 1:
+            return self.heap.pop()
+        
+        root = self.heap[0]
+        self.heap[0] = self.heap.pop()
+        self.heapify(0)
+        return root
+    
+    def heapify(self, i):
+        smallest = i
+        left = 2*i + 1
+        right = 2*i + 2
+        
+        if left < len(self.heap) and self.heap[left] < self.heap[smallest]:
+            smallest = left
+        if right < len(self.heap) and self.heap[right] < self.heap[smallest]:
+            smallest = right
+        if smallest != i:
+            self.heap[i], self.heap[smallest] = self.heap[smallest], self.heap[i]
+            self.heapify(smallest)
+</code></pre>
+  </div>
+    <h3><b>🔸Performance Comparison :</b></h3>
+        <div class="Code-box">
+            <pre><code>import timeit
+import numpy as np
+from array import array
+
+# List vs array module vs NumPy performance
+size = 1_000_000
+
+# Sum operation
+list_time = timeit.timeit('sum(lst)', setup=f'lst = list(range({size}))', number=100)
+array_time = timeit.timeit('sum(arr)', setup=f'arr = array.array("i", range({size}))', number=100)
+numpy_time = timeit.timeit('np.sum(np_arr)', setup=f'import numpy as np; np_arr = np.arange({size})', number=100)
+
+print(f"List sum: {list_time:.4f} sec")
+print(f"Array sum: {array_time:.4f} sec")
+print(f"NumPy sum: {numpy_time:.4f} sec")
+</code></pre>
+    </div>
+
+<h2>Python Array (List) Methods Summary Table</h2>
+<div class="responsive-table-wrapper">
+<table class="array-methods-table">
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Description</th>
+      <th>Example</th>
+      <th>Output</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>append(x)</code></td>
+      <td>Adds item <code>x</code> to the end of the list</td>
+      <td><code>fruits.append("orange")</code></td>
+      <td><code>['apple', 'banana', 'cherry', 'orange']</code></td>
+    </tr>
+    <tr>
+      <td><code>insert(i, x)</code></td>
+      <td>Inserts item <code>x</code> at position <code>i</code></td>
+      <td><code>fruits.insert(1, "grape")</code></td>
+      <td><code>['apple', 'grape', 'banana', 'cherry']</code></td>
+    </tr>
+    <tr>
+      <td><code>remove(x)</code></td>
+      <td>Removes first occurrence of <code>x</code></td>
+      <td><code>fruits.remove("banana")</code></td>
+      <td><code>['apple', 'cherry']</code></td>
+    </tr>
+    <tr>
+      <td><code>pop([i])</code></td>
+      <td>Removes and returns item at index <code>i</code> (last if not given)</td>
+      <td><code>fruits.pop()</code></td>
+      <td><code>'cherry'</code></td>
+    </tr>
+    <tr>
+      <td><code>sort()</code></td>
+      <td>Sorts the list in ascending order</td>
+      <td><code>numbers.sort()</code></td>
+      <td><code>[1, 2, 3, 4, 5]</code></td>
+    </tr>
+    <tr>
+      <td><code>reverse()</code></td>
+      <td>Reverses the list</td>
+      <td><code>numbers.reverse()</code></td>
+      <td><code>[5, 4, 3, 2, 1]</code></td>
+    </tr>
+    <tr>
+      <td><code>index(x)</code></td>
+      <td>Returns index of first occurrence of <code>x</code></td>
+      <td><code>fruits.index("apple")</code></td>
+      <td><code>0</code></td>
+    </tr>
+    <tr>
+      <td><code>count(x)</code></td>
+      <td>Returns number of times <code>x</code> appears</td>
+      <td><code>fruits.count("apple")</code></td>
+      <td><code>1</code></td>
+    </tr>
+    <tr>
+      <td><code>copy()</code></td>
+      <td>Returns a shallow copy of the list</td>
+      <td><code>fruits.copy()</code></td>
+      <td><code>['apple', 'banana', 'cherry']</code></td>
+    </tr>
+    <tr>
+      <td><code>extend(iterable)</code></td>
+      <td>Adds all items from <code>iterable</code> to the end</td>
+      <td><code>fruits.extend(["kiwi", "melon"])</code></td>
+      <td><code>['apple', 'banana', 'cherry', 'kiwi', 'melon']</code></td>
+    </tr>
+    <tr>
+      <td><code>clear()</code></td>
+      <td>Removes all items from the list</td>
+      <td><code>fruits.clear()</code></td>
+      <td><code>[]</code></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+  <div class="navigation-buttons">
+  <a href="functions.html" class="nav-btn prev-btn">← Previous</a>
+  <a href="array.html" class="nav-btn next-btn">Next →</a>
+</div>
+</section>
+
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <h2>CodeWith <span>Vikas</span></h2>
+      <p>Learn programming from scratch.<br> Start your journey today!</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Python</a></li>
+        <li><a href="#">Java</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h3>Follow Me</h3>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-x"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 TechWith Vikas | Created by Vikas Mishra</p>
+  </div>
+<div class="scroll-to-top" title="Go to Top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+</footer>
+
+<script src="../main.js"></script>
+</body>
+</html>
