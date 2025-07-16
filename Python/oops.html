@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechWith Vikas</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<header class="main-header">
+  <div class="container">
+    <div><a href="../index.html" class="logo">TechWith <span>Vikas</span></a></div>
+    <select id="pythonPagesDropdown" onchange="if(this.value) window.location.href=this.value;">
+      <div class="custom-dropdown">
+      <option value="">Go to Python Topic...</option>
+      <option value="python.html">Python Introduction</option>
+      <option value="python_p1.html">Python Syntax</option>
+      <option value="python_p2.html">Python Comments & Variables</option>
+      <option value="python_p3.html">Python Data Types/List</option>
+      <option value="python_p4.html">Python Tuples</option>
+      <option value="python_p5.html">Python Tuples-2</option>
+      <option value="python_p6.html">Python Quiz-1</option>
+      <option value="python_p7.html">Python Sets</option>
+      <option value="python_p8.html">Python Dictionaries</option>
+      <option value="ifelse.html">Python If/Else</option>
+      <option value="match.html">Python Match</option>
+      <option value="loops.html">Python Loops</option>
+      <option value="functions.html">Python Functions</option>
+      <option value="array.html">Python Arrays</option>
+      <option value="oops.html">Python OOP</option>
+    </select>
+  </div>
+</header>
+
+
+
+<section class="python-intro">
+  <div class="container">
+    <h2>Python Object-Oriented Programming (OOP)</h2> 
+    <p><b>Object-Oriented Programming (OOP)</b> is a programming paradigm that organizes software design around <b>data</b>, 
+        or <b>objects</b>, rather than functions and logic. Python is an inherently object-oriented language, 
+        meaning it fully supports <b>OOP</b> concepts.</p>
+    <p>The core idea behind <b>OOP</b> is to model real-world entities as objects in your code. These objects combine 
+        both <b>data</b> (attributes) and <b>behavior</b> (methods).</p>
+
+    <h3><b>🔸Why OOP? </b></h3>
+    <ul>
+        <li><b>Modularity :</b> OOP allows breaking down complex problems into smaller, manageable, and reusable pieces (objects).</li>
+        <li><b>Reusability :</b> Code defined in classes can be reused to create multiple objects, saving development time.</li>
+        <li><b>Maintainability :</b> Changes made in one part of the code are less likely to affect other parts.</li>
+        <li><b>Scalability :</b> Easier to extend and add new features without disrupting existing code.</li>
+        <li><b>Data Hiding/Encapsulation :</b> Protects data from unintended external modification.</li>
+    </ul>
+
+    <h3><b>🔸 Four Pillars of OOP</b></h3>
+    <p>1️⃣ <b>Encapsulation :</b> (Data hiding)</p>
+    <p>2️⃣ <b>Abstraction :</b> (Hiding Complexity)</p>
+    <p>3️⃣ <b>Inheritance :</b> (Reusing Code)</p>
+    <p>4️⃣ <b>Polymorphism :</b> (Many Forms)</p>
+
+
+<h3><b>🔸 Object :</b></h3>
+<ul>
+    <li>Everything exists in this world i.e. object, Object have behavior and properties.</li>
+    <li>Object is a runtime entity.</li>
+</ul>
+<p><b>Example :</b></p>
+<div class="Code-box">
+    <pre><code>obj = Car( )
+</code></pre>
+  </div>
+
+<h3><b>🔸 class :</b></h3>
+<ul>
+    <li>Class is a Template.</li>
+    <li>Class is a blueprint of an object.</li>
+    <li>Class is the best example of encapsulation.</li>
+    <li>Class is a user-defined data type.</li>
+</ul>
+<p><b>Example: Class and Object </b></p>
+<div class="Code-box">
+    <pre><code>class Employee:
+    def __init__(self, fname, lname, salary):
+        self.fname = fname          # First name attribute
+        self.lname = lname          # Last name attribute
+        self.salary = salary        # Salary attribute
+
+# Creating objects of the Employee class
+James = Employee('James', 'Smith', 50000)
+John = Employee('John', 'Johnson', 40000)
+
+# Accessing and printing the salary attributes
+print(John.salary, James.salary)   # Output: 40000 50000
+</code></pre>
+  </div>
+
+<p><b>Other Method :</b></p>
+<div class="Code-box">
+    <pre><code>class Employee:
+    def __init__(self,fname,lname,salary):
+        self.fname = fname
+        self.lname = lname
+        self.salary = salary
+    def info(self):
+        print(self.fname)
+        print(self.lname)
+        print(self.salary)
+emp = Employee("Robert","Williams",1000)
+emp.info()
+
+# Output:
+  Robert
+  Williams
+  1000
+</code></pre>
+  </div>
+
+<h3><b>🔸What is __init__ :</b></h3>
+<p><b>__init__</b>  is a <b>constructor</b> method, and <b>automatically</b> called to allocate memory, when a new object is created.</p>
+
+<h3><b>🔸What is Self( ):</b></h3>
+<p><b>self( )</b> is used to represent the <b>instance</b> (object) of the class.</p>
+<p><b>self( )</b> gives access to instance attribute - <b>(self.age).</b></p>
+<p><b>self( )</b> is <b>automatically</b> passed by python.</p>
+
+<h3><b>🔸Types of variable in Python : </b></h3>
+<p><b>Instance Variables:</b> (Object level variable)</p>
+<p><b>Static Variables:</b> (Class level variable)</p>
+<p><b>Local Variables:</b> (Method level variable)</p>
+
+<h3><b>🔸Instance Variables : </b></h3>
+<p>For every object a seperate copy will be created.</p>
+<p><b>📌 Where can we declare instance variables :</b></p>
+<ul>
+    <li>Outside of the class by using object reference variables</li>
+</ul>
+<p>1️⃣ Inside Constructor <b>(__init__( ))</b> using self.</p>
+<div class="Code-box">
+    <pre><code>class Student:
+    def __init__(self, name, age):
+        self.name = name      # Instance variable
+        self.age = age        # Instance variable
+</code></pre>
+  </div>
+
+  <p>2️⃣ Inside Instance Method using <b>self</b></p>
+<div class="Code-box">
+    <pre><code>class Student:
+    def set_grade(self, grade):
+        self.grade = grade    # Instance variable created in method
+</code></pre>
+  </div>
+
+  <p>3️⃣ Outside the Class using object reference </p>
+
+<div class="Code-box">
+    <pre><code>s1 = Student("Vikas", 23)
+s1.city = "Delhi"   # city is an instance variable added from outside
+</code></pre>
+  </div>
+
+<h3><b>🔸Static Variables : </b></h3>
+<p><b>Static variables </b> (also called <b>class variables</b>) are variables that are <b>shared among all objects</b> of the class.</p>
+<p><b>Only one copy</b> of the variable exists <b>at the class level</b>, not per object.</p>
+
+<p><b>📌 How to Declare Static (Class) Variables in Python : </b></p>
+<p>Static variable = Variable that belongs to the class, not to individual objects.</p>
+<p>1️⃣ Directly inside the class (outside all methods)</p>
+<div class="Code-box">
+    <pre><code>class Student:
+    school_name = "ABC School"  # Static variable
+</code></pre>
+  </div>
+
+<p>2️⃣ Inside the constructor using class name</p>
+<div class="Code-box">
+    <pre><code>class Student:
+    school_name = "ABC School"  # Static variable
+</code></pre>
+  </div>
+  <p><b>Note:</b> Use class name, not self, because static variable is not instance-specific.</p>
+
+<p>3️⃣ Inside instance method using class name</p>
+<div class="Code-box">
+    <pre><code>class Student:
+    def set_school(self):
+        Student.school_name = "XYZ School"
+</code></pre>
+  </div>
+<p>Avoid using <b>self.school_name</b> — it will create an instance variable instead.</p>
+
+<p>4️⃣  Inside class method using <b>cls</b> or class name</p>
+<div class="Code-box">
+    <pre><code>class Student:
+    @classmethod
+    def set_school(cls):
+        cls.school_name = "LMN School"
+</code></pre>
+  </div>
+  <p><b>cls</b> is automatically passed to class methods — recommended way for modifying static variables.</p>
+
+  <p>5️⃣ Inside static method using class name</p>
+<div class="Code-box">
+    <pre><code>class Student:
+    @staticmethod
+    def set_school():
+        Student.school_name = "PQR School"
+</code></pre>
+  </div>
+<p>Static method does not take <b>self</b> or <b>cls</b>, so use class name.</p>
+
+<p>6️⃣ From outside the class using class name</p>
+<div class="Code-box">
+    <pre><code>Student.school_name = "DEF School"
+</code></pre>
+  </div>
+<p>This also directly modifies the class variable — and affects all instances.</p>
+
+<h3><b>🔸Local Variables : </b></h3>
+<p><b>Local variables</b> are variables that are <b>declared inside a method/function/block</b> and can be accessed <b>only within that method.</b></p>
+<p>These variables are created when the function is called and destroyed when the function ends.</p><br>
+
+<p><b>📌 Key Characteristics of Local Variables :</b></p><br>
+<div class="responsive-table-wrapper">
+<table class="array-methods-table">
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Scope</code></td>
+      <td>Limited to the method/block where defined</td>
+    </tr>
+      <td><code>Lifetime</code></td>
+      <td>Exists only while the method is running</td>
+    </tr>
+    <tr>
+      <td><code>Accessed by</code></td>
+      <td>Directly inside the function (no <b>self</b>, no <b>cls</b>)</td>
+    </tr>
+    <tr>
+      <td><code>Shared between objects?</code></td>
+      <td>❌ No (Each call has its own local variables)</td>
+    </tr>
+    <tr>
+      <td><code>Memory location</code></td>
+      <td>Inside method’s stack frame</td>
+    </tr>
+    <tr>
+      <td><code>Not an attribute</code></td>
+      <td>Not part of the object (<b>__dict__</b>) or class</td>
+    </tr>
+  </tbody>
+</table>
+</div><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><b>Employee Salary Increment? </b></p>
+<div class="Code-box">
+    <pre><code>class Employee:
+    increment = 2.5
+    def __init__(self,fname,lname,salary):
+     self.fname = fname
+     self.lname = lname
+     self.salary = salary
+    def increase(self):
+        self.salary = self.salary * Employee.increment
+Michael = Employee("Michael","Brown",5000)
+Michael.increase()
+print(Michael.salary)
+
+# Output: 12500.0
+</code></pre>
+  </div>
+
+  <p><b>celsius to fahrenheit?</b></p>
+
+  <div class="Code-box">
+    <pre><code>def ctof(c):
+    f = (c*9/5)+32
+    print(f)
+ctof(10)
+ctof(20)
+ctof(30)
+
+# Output:
+  50.0
+  68.0
+  86.0
+</code></pre>
+  </div>
+
+  <p><b>Other Method : celsius to fahrenheit?</b></p>
+    <div class="Code-box">
+        <pre><code>class Ctof:
+    def __init__(self,c):
+        self.c = c
+    def ctof(self):
+        f = (self.c*9/5) + 32
+        print(f)
+c1 = Ctof(10)   
+c2 = Ctof(20)      #object
+c3 = Ctof(30)
+c4 = Ctof(40)
+c1.ctof()
+c2.ctof()
+c3.ctof()
+c4.ctof()
+
+# Output:
+  50.0
+  68.0
+  86.0
+  104.0
+</code></pre>
+</div>
+
+<p><b>Employee,name,employeeid,salary :</b></p>
+<div class="Code-box">
+    <pre><code>class Employee:
+    def __init__(self,name,employeeid,salary):
+        self.name = name
+        self.employeeid = employeeid                 # These three are instance variables.
+        self.salary = salary
+    def talk(self):       #its not a function ,talk is a method
+        print("hello my name is:",self.name)
+        print("hello my employeeid is:",self.employeeid)
+        print("hello my salary is:",self.salary)
+emp1 = Employee("William",1234,56789)
+emp2 = Employee("Jones",1290,56700)
+emp1.talk()
+emp2.talk()
+
+# Output:
+  hello my name is: William
+  hello my employeeid is: 1234
+  hello my salary is: 56789
+  hello my name is: Jones
+  hello my employeeid is: 1290
+  hello my salary is: 56700
+</code></pre>
+</div>
+
+<p><b>Movie Example : </b></p>
+
+<div class="Code-box">
+    <pre><code>class Movie:
+    def __init__(self,name,hero,heroine,rating):
+        self.name = name
+        self.hero = hero
+        self.heroine = heroine
+        self.rating = rating
+    def info(self):
+        print("movie name:",self.name)
+        print("movie hero:",self.hero)
+        print("movie heroine:",self.heroine)
+        print("movie rating:",self.rating)
+mov = Movie("PK","AK","AS",8)
+mov.info()
+
+# Output:
+  movie name: PK
+  movie hero: AK
+  movie heroine: AS
+  movie rating: 8
+</code></pre>
+</div>
+
+<p><b>Movie Example through for loop :</b></p>
+
+<div class="Code-box">
+    <pre><code>class Movie:
+    def __init__(self,name,hero,heroine,rating):
+        self.name = name
+        self.hero = hero
+        self.heroine = heroine
+        self.rating = rating
+    def info(self):   #info is method
+        print("movie name:",self.name)
+        print("movie hero:",self.hero)
+        print("movie heroine:",self.heroine)
+        print("movie rating:",self.rating)
+movies = [Movie("PK","AK","AS",10),Movie("AB","CD","EF",10),Movie("GH","IJ","KL" ,6),Movie("MN","OP","QR",0 )]
+for mov in movies:
+    mov.info()
+
+    
+# Output:
+  movie name: PK
+  movie hero: AK
+  movie heroine: AS
+  movie rating: 10
+  movie name: AB
+  movie hero: CD
+  movie heroine: EF
+  movie rating: 10
+  movie name: GH
+  movie hero: IJ
+  movie heroine: KL
+  movie rating: 6
+  movie name: MN
+  movie hero: OP
+  movie heroine: QR
+  movie rating: 0
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <div class="navigation-buttons">
+  <a href="array.html" class="nav-btn prev-btn">← Previous</a>
+  <a href="oops.html" class="nav-btn next-btn">Next →</a>
+</div>
+</section>
+
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <h2>CodeWith <span>Vikas</span></h2>
+      <p>Learn programming from scratch.<br> Start your journey today!</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Python</a></li>
+        <li><a href="#">Java</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h3>Follow Me</h3>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-x"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 TechWith Vikas | Created by Vikas Mishra</p>
+  </div>
+<div class="scroll-to-top" title="Go to Top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+</footer>
+
+<script src="../main.js"></script>
+</body>
+</html>
