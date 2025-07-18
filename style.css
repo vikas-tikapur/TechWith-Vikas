@@ -707,8 +707,39 @@ section#with_banner {
 .array-methods-table{
   font-size: 15px !important;
 }
+.pillars-animated-btn {
+  font-size: 16px !important;
+}
 }
 
 .array-methods-table{
   font-size: 18px;
+}
+
+.pillars-animated-btn {
+  background: linear-gradient(90deg, #0a639b 0%, #f27100 100%);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 18px 40px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(10,99,155,0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.pillars-animated-btn:hover {
+  transform: scale(1.07);
+  box-shadow: 0 8px 24px rgba(242,113,0,0.18);
+  background: linear-gradient(90deg, #f27100 0%, #0a639b 100%);
+}
+.pillars-animated-btn span {
+  animation: shine 1.5s infinite linear;
+}
+@keyframes shine {
+  0% { text-shadow: 0 0 10px #fff7e6, 0 0 20px #f27100; }
+  50% { text-shadow: 0 0 20px #fff7e6, 0 0 40px #0a639b; }
+  100% { text-shadow: 0 0 10px #fff7e6, 0 0 20px #f27100; }
 }

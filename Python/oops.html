@@ -258,33 +258,165 @@ s1.city = "Delhi"   # city is an instance variable added from outside
 </div><br><br>
 
 
+<h3><b>🔸Types of Methods : </b></h3>
+<p>In Python's object-oriented programming, there are 3 main types of methods defined inside a class: </p>
+<p><h3>1. Instance Method :</h3></p>
+<ul>
+  <li>Most commonly used.</li>
+  <li>Object related method.</li>
+  <li>Any method consists of Instance variable-Instance method</li>
+  <li>Inside the instance method, First Keyword, i.e. self is compulsory.</li>
+</ul>
+<div class="Code-box">
+    <pre><code>class Student:
+    def __init__(self, name):
+        self.name = name
 
+    def greet(self):  # Instance method
+        print(f"Hello, {self.name}")
+</code></pre>
+  </div>
 
+  <p><h3>2. Class Method :</h3></p>
+  <ul>
+    <li>Works with class variables (shared among all objects).</li>
+    <li>Cannot access instance variables directly.</li>
+    <li>Decorated with <b>@classmethod.</b></li>
+  </ul>
+<div class="Code-box">
+    <pre><code>class Student:
+    school = "DPS"  # Class variable
 
+    @classmethod
+    def get_school(cls):  # Class method
+        print(f"School Name: {cls.school}")
+</code></pre>
+  </div>
+  <ul>
+    <li>Called using: <b>ClassName.method_name( )</b> or <b>object.method_name( )</b></li>
+    <li>First argument is always <b>cls.</b></li>
+  </ul>
+  
+  <h3><b>3. Static Method :</b></h3>
+  <ul>
+    <li>Does <b>not</b> access class or instance variables.</li>
+    <li>Like a regular function placed inside a class for logical grouping.</li>
+    <li>Decorated with <b>@staticmethod.</b></li>
+  </ul>
+<div class="Code-box">
+    <pre><code>class MathUtils:
+    @staticmethod
+    def add(a, b):  # Static method
+        return a + b
+</code></pre>
+  </div>
+  <ul>
+    <li>Called using: <b>ClassName.method_name( )</b> or <b>object.method_name( )</b></li>
+    <li>No <b>self</b> or <b>cls</b> needed.</li>
+  </ul>
 
+<p><b>📌 Note :</b></p>
+<ul>
+  <li><b>Instance methed</b> - (No decorator required)</li>
+  <li><b>class method </b> - @classmethed is (mandatory)</li>
+  <li><b>static method </b> - @staticmethed is (optional)</li>
+  <li><b>Instance variables</b> - (Instance method)</li>
+  <li><b>static variable</b> - (class method)</li>
+  <li><b>Instance + Static</b> - (Instance method)</li>
+  <li><b>Instance + local</b> - (Instance method)</li>
+  <li><b>static + local</b> - (Class method)</li>
+  <li><b>local</b> - (static method)</li>
+</ul>
 
+<h3><b>No decorator:-  only two options.</b></h3>
+<ol>
+  <li>Instance method</li>
+  <li>Static method</li>
+</ol>
 
+<h3><b>🔸Setter and Getter Methods :</b></h3>
+<p>In <b>Object-Oriented Programming, getter</b> and <b>setter</b> methods are used to <b>access and modify private data members</b> of a class <b>safely.</b></p>
+<h3><b>🔒 Why use Getter and Setter?</b></h3>
+<ul>
+  <li>To <b>encapsulate</b> data.</li>
+  <li>To <b>control access</b> to variables.</li>
+  <li>To add <b>validation logic</b> while setting or getting a value.</li>
+</ul>
 
+<h3><b>1. Getter Method :</h3></p>
+<p>Used to <b>read/access</b> the value of a private variable.</p>
+<div class="Code-box">
+    <pre><code>class Student:
+    def __init__(self, name):
+        self.__name = name   # private variable using __
 
+    def get_name(self):      # Getter method
+        return self.__name
+</code></pre>
+  </div>
 
+<h3><b>2. Setter Method :</h3></p>
+<p>Used to <b>modify/update</b> the value of a private variable.</p>
+<div class="Code-box">
+    <pre><code>def set_name(self, new_name):   # Setter method
+        if isinstance(new_name, str) and new_name != "":
+            self.__name = new_name
+        else:
+            print("Invalid name")
+</code></pre>
+  </div>
 
+<p><b>Full Example :</b></p>
+<div class="Code-box">
+    <pre><code>class Student:
+    def __init__(self, name):
+        self.__name = name  # private variable
 
+    def get_name(self):     # Getter
+        return self.__name
 
+    def set_name(self, new_name):  # Setter
+        if isinstance(new_name, str) and new_name != "":
+            self.__name = new_name
+        else:
+            print("Invalid name")
 
+# Usage
+s = Student("Vikas")
+print(s.get_name())       # Output: Vikas
 
+s.set_name("Rohan")       # Update name
+print(s.get_name())       # Output: Rohan
 
+s.set_name(123)           # ❌ Invalid name
+</code></pre>
+  </div>
 
+<p><b>📌 Summary :</b></p><br>
+<div class="responsive-table-wrapper">
+<table class="array-methods-table">
+  <thead>
+    <tr>
+      <th>Method Type</th>
+      <th>Purpose</th>
+      <th>Syntax</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Getter</code></td>
+      <td>Access private data</td>
+      <td><code>get_variable()</code></td>
+    </tr>
+      <td><code>Setter</code></td>
+      <td>Modify private data</td>
+      <td><code>set_variable(value)</code></td>
+    </tr>
+  </tbody>
+</table>
+</div><br><br>
 
-
-
-
-
-
-
-
-
-
-<p><b>Employee Salary Increment? </b></p>
+<h3><b>🔸Employee Salary Increment? </h3></p>
 <div class="Code-box">
     <pre><code>class Employee:
     increment = 2.5
@@ -302,7 +434,7 @@ print(Michael.salary)
 </code></pre>
   </div>
 
-  <p><b>celsius to fahrenheit?</b></p>
+  <h3><b>🔸celsius to fahrenheit?</h3></p>
 
   <div class="Code-box">
     <pre><code>def ctof(c):
@@ -319,7 +451,7 @@ ctof(30)
 </code></pre>
   </div>
 
-  <p><b>Other Method : celsius to fahrenheit?</b></p>
+  <h3><b>🔸Other Method : celsius to fahrenheit?</h3></p>
     <div class="Code-box">
         <pre><code>class Ctof:
     def __init__(self,c):
@@ -344,7 +476,7 @@ c4.ctof()
 </code></pre>
 </div>
 
-<p><b>Employee,name,employeeid,salary :</b></p>
+<h3><b>🔸Employee, name, employeeid, salary :</h3></p>
 <div class="Code-box">
     <pre><code>class Employee:
     def __init__(self,name,employeeid,salary):
@@ -370,7 +502,7 @@ emp2.talk()
 </code></pre>
 </div>
 
-<p><b>Movie Example : </b></p>
+<h3><b>🔸Movie Example : </h3></p>
 
 <div class="Code-box">
     <pre><code>class Movie:
@@ -395,7 +527,7 @@ mov.info()
 </code></pre>
 </div>
 
-<p><b>Movie Example through for loop :</b></p>
+<h3><b>🔸Movie Example through for loop :</h3></p>
 
 <div class="Code-box">
     <pre><code>class Movie:
@@ -434,13 +566,561 @@ for mov in movies:
 </code></pre>
 </div>
 
+<h3><b>🔸How to access the instance variable -  Within the class by using self.</b></h3>
+<div class="Code-box">
+    <pre><code>class Test:
+    def __init__(self):
+        self.a = 20         # Instance variable
+        self.b = 30         # Instance variable
+
+    def m1(self):           # Instance method
+        print(self.a)       # Accessing a using self
+        print(self.b)       # Accessing b using self
+
+t = Test()                  # Creating object
+t.m1()                      # Calling instance method
+
+# Output - 
+Value of a: 20  
+Value of b: 30
+</code></pre>
+</div>
+
+<h3><b>🔸How to Delete Instance Variables in Python.</b></h3>
+<p>In Python, we can delete instance variables using the <b>del</b> keyword with <b>self</b> inside the class.</p>
+<div class="Code-box">
+    <pre><code>class Test:
+    def __init__(self):
+        self.a = 10
+        self.b = 20
+        self.c = 30
+        self.d = 40
+
+    def m1(self):
+        del self.b   # Deleting instance variable 'b'
+
+# Create an instance of the Test class
+t = Test()
+
+# Print instance variables before deletion
+print("Before deletion:", t.__dict__)
+
+# Call method to delete variable 'b'
+t.m1()
+
+# Print instance variables after deletion
+print("After deletion:", t.__dict__)
+
+# Output - 
+Before deletion: {'a': 10, 'b': 20, 'c': 30, 'd': 40}
+After deletion: {'a': 10, 'c': 30, 'd': 40}
+</code></pre>
+</div>
+
+<h3><b>🔸How to Modify and Add Instance Variables Dynamically in Python.</b></h3>
+<div class="Code-box">
+    <pre><code>class Test:
+    def __init__(self):
+        self.a = 10    # Instance variable initialized
+
+    def m1(self):
+        self.a = 777   # Modifying existing variable
+        self.b = 888   # New instance variable added
+
+t = Test()
+
+# Print instance variables before method call
+print(t.__dict__)    # {'a': 10}
+
+# Modify instance variables using method
+t.m1()
+print(t.__dict__)    # {'a': 777, 'b': 888}
+
+# Modify 'b' and add new 'c' from outside the class
+t.b = 1000
+print(t.__dict__)    # {'a': 777, 'b': 1000}
+
+t.c = 2000
+print(t.__dict__)    # {'a': 777, 'b': 1000, 'c': 2000}
+</code></pre>
+</div>
+
+<h3><b>🔸Print Fibonacci Series up to n.</b></h3>
+<div class="Code-box">
+    <pre><code>def fib(n):
+    """Print a Fibonacci series up to n."""
+    a, b = 0, 1
+    while a < n:
+        print(a, end=' ')
+        a, b = b, a + b
+
+# Call the function with desired limit
+fib(2000)
+
+# Output : 0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597
+</code></pre>
+</div>
+
+<h3><b>🔸Return Fibonacci Series up to n (as a List).</b></h3>
+<div class="Code-box">
+    <pre><code>def fib2(n):  
+    """Return a list containing the Fibonacci series up to n."""
+    result = []
+    a, b = 0, 1
+    while a < n:
+        result.append(a)
+        a, b = b, a + b
+    return result
+
+# Call the function and store result
+f100 = fib2(100)
+print(f100)
+
+# Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+</code></pre>
+  </div>
+
+  <h3><b>🔸Understanding Static Variables with __dict__ Example</b></h3>
+<div class="Code-box">
+    <pre><code>class Test:
+    a = 100  # Static variable
+
+    def __init__(self):
+        self.b = 200  # Instance variable
+
+    def m1(self):
+        self.c = 300  # Instance variable (added to object)
+
+    @classmethod
+    def m2(cls):
+        cls.d = 400      # Class variable (added to class)
+        Test.e = 500     # Also class variable
+
+    @staticmethod
+    def m3():
+        Test.f = 600     # Static method adding class variable
+
+# Create object
+t = Test()
+
+# 1. Before calling any method
+print(Test.__dict__)  # Only a, not b/c/d/e/f
+
+# 2. Call instance method (modifies object only)
+t.m1()
+print(Test.__dict__)  # No change in class dict
+
+# 3. Call class method (adds d and e)
+t.m2()
+print(Test.__dict__)  # Now includes d and e
+
+# 4. Call class method again (values overwrite)
+t.m2()
+print(Test.__dict__)  # d and e values still there
+
+# Output : 
+{'__module__': '__main__', 'a': 100, '__init__': <function Test.__init__ at 0x1047d5280>, 'm1': <function Test.m1 at 0x1047d53a0>, 'm2': <classmethod object at 0x10478a2e0>, 'm3': <staticmethod object at 0x104825fd0>, '__dict__': <attribute '__dict__' of 'Test' objects>, '__weakref__': <attribute '__weakref__' of 'Test' objects>, '__doc__': None}
+{'__module__': '__main__', 'a': 100, '__init__': <function Test.__init__ at 0x1047d5280>, 'm1': <function Test.m1 at 0x1047d53a0>, 'm2': <classmethod object at 0x10478a2e0>, 'm3': <staticmethod object at 0x104825fd0>, '__dict__': <attribute '__dict__' of 'Test' objects>, '__weakref__': <attribute '__weakref__' of 'Test' objects>, '__doc__': None}
+{'__module__': '__main__', 'a': 100, '__init__': <function Test.__init__ at 0x1047d5280>, 'm1': <function Test.m1 at 0x1047d53a0>, 'm2': <classmethod object at 0x10478a2e0>, 'm3': <staticmethod object at 0x104825fd0>, '__dict__': <attribute '__dict__' of 'Test' objects>, '__weakref__': <attribute '__weakref__' of 'Test' objects>, '__doc__': None, 'd': 400, 'e': 500}
+{'__module__': '__main__', 'a': 100, '__init__': <function Test.__init__ at 0x1047d5280>, 'm1': <function Test.m1 at 0x1047d53a0>, 'm2': <classmethod object at 0x10478a2e0>, 'm3': <staticmethod object at 0x104825fd0>, '__dict__': <attribute '__dict__' of 'Test' objects>, '__weakref__': <attribute '__weakref__' of 'Test' objects>, '__doc__': None, 'd': 400, 'e': 500}
+</code></pre>
+  </div>
 
 
+<h3><b>🔸Difference Between Instance Variable and Static Variable in Python.</b></h3>
+<div class="Code-box">
+    <pre><code>class Test:
+    a = 777               # Static variable (class-level)
+
+    def __init__(self):
+        self.a = 888      # Instance variable (object-level)
+
+# Create object
+t = Test()
+
+# Access instance variable
+print(t.a)        # Output: 888
+
+# Access static variable
+print(Test.a)     # Output: 777
+
+# Output : 
+888
+777
+</code></pre>
+  </div>
+
+<h3><b>🔸How to Access Static Variables in Python (OOP).</b></h3>
+<ul>
+  <li>Inside the constructor Either by self or by class name.</li>
+  <li>Inside the Instance method Either by self or class name.</li>
+  <li>Inside the class method Either by cls or by class name.</li>
+  <li>Inside the static method By class name.</li>
+  <li>Outisde the class Either by object ref or by class name.</li>
+</ul>
+<div class="Code-box">
+    <pre><code>class Test:
+    a = 10   # Static variable
+
+    def __init__(self):
+        print(self.a)     # 1 Access via self (inside constructor)
+        print(Test.a)     # 1 Access via class name
+
+    def m1(self):
+        print(self.a)     # 2 Access via self (inside instance method)
+        print(Test.a)     # 2 Access via class name
+
+    @classmethod
+    def m2(cls):
+        print(cls.a)      # 3 Access via cls (inside class method)
+        print(Test.a)     # 3 Access via class name
+
+    @staticmethod
+    def m3():
+        print(Test.a)     # 4 Access via class name (inside static method)
+
+# 5 Access from outside the class
+t = Test()       # constructor runs
+t.m1()
+t.m2()
+t.m3()
+print(t.a)       # 5 via object reference
+print(Test.a)    # 5 via class name
+
+# Output : 
+10
+10
+10
+10
+10
+10
+10
+10
+10
+</code></pre>
+  </div>
+<p><b>📌 Important Note :</b></p>
+<p>Even when accessed using <b>self, cls,</b> or object reference, the value still comes from the <b>class-level static variable</b> (unless overridden in the instance).</p>
+
+<h3><b>🔸How to Update Static Variable Inside Constructor in Python.</b></h3>
+<div class="Code-box">
+    <pre><code>class Test:
+    a = 10   # Static variable
+
+    def __init__(self):
+        Test.a = 100   # Updating static variable inside constructor
+
+# Create object
+t = Test()
+
+# Print updated static variable
+print(Test.a)
+
+# Output : 100
+</code></pre>
+  </div>
+
+<h3><b>🔸 Where Can We Modify Static Variables in Python?.</b></h3>
+<ul>
+  <li>By using the class name (Inside or outside the class).</li>
+  <li>Inside the class method by using cls variable also.</li>
+</ul>
+<div class="Code-box">
+    <pre><code>class Test:
+    a = 10  # Static (class-level) variable
+
+    def __init__(self):
+        Test.a = 888  # Modify inside constructor
+
+    def m1(self):
+        Test.a = 10000  # Modify inside instance method
+
+    @classmethod
+    def m2(cls):
+        Test.a = 9090   # Modify using class name
+        cls.a = 2222    # Modify using cls
+
+    @staticmethod
+    def m3():
+        Test.a = 22122  # Modify inside static method
+
+# Modify from constructor
+t = Test()
+print(Test.a)    # 888
+
+# Modify from instance method
+t.m1()
+print(Test.a)    # 10000
+
+# Modify from class method
+t.m2()
+print(Test.a)    # 2222
+
+# Modify from static method
+t.m3()
+print(Test.a)    # 22122
+
+# Modify directly using class name
+Test.a = 44322
+print(Test.a)    # 44322
+</code></pre>
+  </div>
+
+<h3><b>🔸Understanding Class, Instance, and Local Variables in Python.</b></h3>
+<div class="Code-box">
+    <pre><code>class Test:
+    a = 10  # Class variable
+
+    def __init__(self):
+        Test.a = 1000     # Modify class variable
+        a = 100           # Local variable (only in constructor)
+        self.a = 90       # Instance variable
+        print(self.a)     # Output: 90 (instance variable)
+        print(Test.a)     # Output: 1000 (modified class variable)
+        # print(b)        # ❌ Will raise NameError (b not defined here)
+
+    def m1(self):
+        b = 10            # Local variable
+        print(b)          # Output: 10
+
+# Create object and call methods
+t = Test()
+t.m1()
+
+# Output :
+90
+1000
+10
+</code></pre>
+  </div>
+
+<h3><b>🔸Python OOP: Difference Between Class and Instance Variables (Shadowing Example).</b></h3>
+<div class="Code-box">
+    <pre><code>class Test:
+    x = 10  # Class variable
+
+    def __init__(self):
+        self.y = 20  # Instance variable
+
+# Create two objects
+t1 = Test()
+t2 = Test()
+
+# Initial values
+print(t1.x, t1.y)  # 10 20
+print(t2.x, t2.y)  # 10 20
+
+# Modify values
+t1.x = 888         # Creates a new instance variable 'x' for t1
+t2.y = 1000        # Modifies instance variable 'y' for t2
+
+# Values after modification
+print(t1.x, t1.y)  # 888 20 (t1.x is now instance-level)
+print(t2.x, t2.y)  # 10 1000 (t2.x still refers to class-level)
+
+# Output :
+10 20
+10 20
+888 20
+10 1000
+</code></pre>
+  </div>
+<p><b>📌 Important Note :</b></p>
+<p>When you assign <b>t1.x = 888,</b> Python <b>does NOT change the class variable.</b></p>
+<p>It creates a <b>new instance variable x</b> only for <b>t1</b>, which <b>shadows</b> the class variable.</p>
+<p>You can confirm this by printing :</p>
+<div class="Code-box">
+    <pre><code>print(Test.__dict__)  # Class variables only
+print(t1.__dict__)    # Instance variables of t1
+print(t2.__dict__)    # Instance variables of t2
+</code></pre>
+  </div>
+
+<h3><b>🔸How Instance Methods Can Shadow Class Variables in Python.</b></h3>
+<div class="Code-box">
+    <pre><code>class Test:
+    a = 10  # Class variable
+
+    def __init__(self):
+        self.b = 20  # Instance variable
+
+    def m1(self):
+        self.a = 888  # Creates an instance variable named 'a'
+        self.b = 999  # Updates the instance variable 'b'
+
+# Create two instances
+t1 = Test()
+t2 = Test()
+
+# Modify t1 only
+t1.m1()
+
+# Print values for t1
+print(t1.a, t1.b)  # Output: 888 999
+
+# Print values for t2 (unaffected)
+print(t2.a, t2.b)  # Output: 10 20
+
+# Output :
+888 999
+10 20
+</code></pre>
+  </div>
+
+<h3><b>🔸Modifying Class Variables Using Class Methods in Python (With Instance Variable Restriction).</b></h3>
+<div class="Code-box">
+    <pre><code>class Test:
+    a = 10  # Class variable
+
+    def __init__(self):
+        self.b = 20  # Instance variable
+
+    @classmethod
+    def m1(cls):
+        cls.a = 888  # Modify class variable
+        # cls.b = 999  # ❌ Error: 'b' is an instance variable, not accessible via cls
+
+# Create two objects
+t1 = Test()
+t2 = Test()
+
+# Call class method using t1
+t1.m1()
+
+# Access variables
+print(t1.a, t1.b)  # 888 20
+print(t2.a, t2.b)  # 888 20
+print(Test.a)      # 888
+
+# print(Test.b)    # ❌ This would raise AttributeError
+
+# Output :
+888 20
+888 20
+888
+</code></pre>
+  </div>
 
 
+<h3><b>🔸Store and Display Multiple Student Records Using Setters and Getters.</b></h3>
+<div class="Code-box">
+    <pre><code>class Student:
+    def setName(self, name):
+        self.name = name  # Set instance variable 'name'
+
+    def getName(self):
+        return self.name  # Get instance variable 'name'
+
+    def setMarks(self, marks):
+        self.marks = marks  # Set instance variable 'marks'
+
+    def getMarks(self):
+        return self.marks  # Get instance variable 'marks'
 
 
+# Create an empty list to store student objects
+students_list = []
 
+# Input: Number of students
+num_students = int(input("Enter the number of students: "))
+
+# Input student details and store objects in the list
+for i in range(num_students):
+    s = Student()
+    name = input(f"Enter name of student {i+1}: ")
+    marks = input("Enter marks: ")
+    s.setName(name)
+    s.setMarks(marks)
+    students_list.append(s)
+
+# Display all student records
+for s in students_list:
+    print("\nStudent Name:", s.getName())
+    print("Student Marks:", s.getMarks())
+
+# Output :
+Enter the number of students: 2
+Enter name of student 1: Ram
+Enter marks: 87
+Enter name of student 2: Shyam
+Enter marks: 90
+
+Student Name: Ram
+Student Marks: 87
+
+Student Name: Shyam
+Student Marks: 90
+</code></pre>
+  </div>
+
+
+  <h3><b>🔸Inner Classes (Class Inside a Class).</b></h3>
+  <ul>
+    <li>Classes defined inside another class.</li>
+    <li>Inner class cannot be used independently without outer class</li>
+  </ul>
+<div class="Code-box">
+    <pre><code>class Outer:
+    def __init__(self):
+        print("Outer class object creation...")
+
+    class Inner:
+        def __init__(self):
+            print("Inner class object creation...")
+
+        def m1(self):
+            print("Inner Class Method")
+
+# Create outer class object
+o = Outer()
+
+# Create inner class object via outer class object
+i = o.Inner()
+i.m1()
+
+# Output :
+Outer class object creation...
+Inner class object creation...
+Inner Class Method
+</code></pre>
+  </div>
+
+<h3>🔸What is Garbage Collector (GC)?</h3>
+<p><b>Garbage Collector (GC)</b> is a <b>part of Python’s memory management system,</b> and it's managed by the <b>Python Virtual Machine (PVM).</b></p>
+<p><b>GC</b> is responsible for <b>automatically deleting unused (unreachable) objects</b> from memory to <b>free up space.</b></p>
+
+<p><b>📌 Key Points :</b></p>
+<ul>
+  <li><b>Reference counting</b> is the primary technique.</li>
+  <li>When the <b>reference count of an object becomes zero</b>, it becomes eligible for garbage collection.</li>
+  <li>GC looks for <b>cyclic references</b> (objects referring to each other but not used anywhere else).</li>
+</ul>
+<p><b>Example :</b></p>
+<div class="Code-box">
+    <pre><code>import gc
+
+class Test:
+    def __del__(self):
+        print("Destructor called, object deleted.")
+
+t1 = Test()
+t2 = t1
+del t1
+del t2
+
+# Forcing garbage collection manually
+gc.collect()
+
+# Output : Destructor called, object deleted.
+</code></pre>
+  </div>
+
+<!-- Four Pillars Button Section -->
+<div class="pillars-btn-section" style="text-align:center; margin:40px 0;">
+  <button class="pillars-animated-btn" onclick="window.location.href='oop_pillars.html'">
+    <span>✨ Explore Four Pillars of OOP ✨</span>
+  </button>
+</div>
 
 
 
