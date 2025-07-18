@@ -41,7 +41,7 @@
         or <b>objects</b>, rather than functions and logic. Python is an inherently object-oriented language, 
         meaning it fully supports <b>OOP</b> concepts.</p>
     <p>The core idea behind <b>OOP</b> is to model real-world entities as objects in your code. These objects combine 
-        both <b>data</b> (attributes) and <b>behavior</b> (methods).</p>
+        both <b>data</b> (attributes) and <b>behavior</b> (methods).</p> <br>
 
     <h3><b>🔸Why OOP? </b></h3>
     <ul>
@@ -51,14 +51,14 @@
         <li><b>Scalability :</b> Easier to extend and add new features without disrupting existing code.</li>
         <li><b>Data Hiding/Encapsulation :</b> Protects data from unintended external modification.</li>
     </ul>
-
+<br>
     <h3><b>🔸 Four Pillars of OOP</b></h3>
     <p><b>1. Encapsulation :</b> (Data hiding)</p>
     <p><b>2. Abstraction :</b> (Hiding Complexity)</p>
     <p><b>3. Inheritance :</b> (Reusing Code)</p>
     <p><b>4. Polymorphism :</b> (Many Forms)</p>
 
-
+<br>
 <h3><b>🔸 Object :</b></h3>
 <ul>
     <li>Everything exists in this world i.e. object, Object have behavior and properties.</li>
@@ -69,7 +69,7 @@
     <pre><code>obj = Car( )
 </code></pre>
   </div>
-
+<br>
 <h3><b>🔸 class :</b></h3>
 <ul>
     <li>Class is a Template.</li>
@@ -77,7 +77,8 @@
     <li>Class is the best example of encapsulation.</li>
     <li>Class is a user-defined data type.</li>
 </ul>
-<p><b>Example: Class and Object </b></p>
+<br>
+<h3><b>Example: Class and Object </b></h3>
 <div class="Code-box">
     <pre><code>class Employee:
     def __init__(self, fname, lname, salary):
@@ -114,27 +115,27 @@ emp.info()
   1000
 </code></pre>
   </div>
-
+<br>
 <h3><b>🔸What is __init__ :</b></h3>
 <p><b>__init__</b>  is a <b>constructor</b> method, and <b>automatically</b> called to allocate memory, when a new object is created.</p>
-
+<br>
 <h3><b>🔸What is Self( ):</b></h3>
 <p><b>self( )</b> is used to represent the <b>instance</b> (object) of the class.</p>
 <p><b>self( )</b> gives access to instance attribute - <b>(self.age).</b></p>
 <p><b>self( )</b> is <b>automatically</b> passed by python.</p>
-
+<br>
 <h3><b>🔸Types of variable in Python : </b></h3>
 <p><b>Instance Variables:</b> (Object level variable)</p>
 <p><b>Static Variables:</b> (Class level variable)</p>
 <p><b>Local Variables:</b> (Method level variable)</p>
-
+<br>
 <h3><b>🔸Instance Variables : </b></h3>
-<p>For every object a seperate copy will be created.</p>
-<p><b>📌 Where can we declare instance variables :</b></p>
+<p>For every object a seperate copy will be created.</p><br>
+<h3><b>📌 Where can we declare instance variables :</b></h3>
 <ul>
     <li>Outside of the class by using object reference variables</li>
-</ul>
-<p><b>1. Inside Constructor (__init__( )) using self.</b></p>
+</ul><br>
+<h3><b>1. Inside Constructor (__init__( )) using self.</b></h3>
 <div class="Code-box">
     <pre><code>class Student:
     def __init__(self, name, age):
@@ -142,45 +143,45 @@ emp.info()
         self.age = age        # Instance variable
 </code></pre>
   </div>
-
-  <p><b>2. Inside Instance Method using self.</b></p>
+<br>
+  <h3><b>2. Inside Instance Method using self.</b></h3>
 <div class="Code-box">
     <pre><code>class Student:
     def set_grade(self, grade):
         self.grade = grade    # Instance variable created in method
 </code></pre>
   </div>
-
-  <p><b>3. Outside the Class using object reference.</b> </p>
+<br>
+  <h3><b>3. Outside the Class using object reference.</b> </h3>
 
 <div class="Code-box">
     <pre><code>s1 = Student("Vikas", 23)
 s1.city = "Delhi"   # city is an instance variable added from outside
 </code></pre>
   </div>
-
+<br>
 <h3><b>🔸Static Variables : </b></h3>
 <p><b>Static variables </b> (also called <b>class variables</b>) are variables that are <b>shared among all objects</b> of the class.</p>
 <p><b>Only one copy</b> of the variable exists <b>at the class level</b>, not per object.</p>
-
-<p><b>📌 How to Declare Static (Class) Variables in Python : </b></p>
-<p>Static variable = Variable that belongs to the class, not to individual objects.</p>
-<p><b>1. Directly inside the class (outside all methods).</b></p>
+<br>
+<h3><b>📌 How to Declare Static (Class) Variables in Python : </b></h3>
+<p>Static variable = Variable that belongs to the class, not to individual objects.</p><br>
+<h3><b>1. Directly inside the class (outside all methods).</b></h3>
 <div class="Code-box">
     <pre><code>class Student:
     school_name = "ABC School"  # Static variable
 </code></pre>
   </div>
-
-<p><b>2. Inside the constructor using class name.</b></p>
+<br>
+<h3><b>2. Inside the constructor using class name.</b></h3>
 <div class="Code-box">
     <pre><code>class Student:
     school_name = "ABC School"  # Static variable
 </code></pre>
-  </div>
+  </div><br>
   <p><b>Note:</b> Use class name, not self, because static variable is not instance-specific.</p>
-
-<p><b>3. Inside instance method using class name.</b></p>
+<br>
+<h3><b>3. Inside instance method using class name.</b></h3>
 <div class="Code-box">
     <pre><code>class Student:
     def set_school(self):
@@ -188,8 +189,8 @@ s1.city = "Delhi"   # city is an instance variable added from outside
 </code></pre>
   </div>
 <p>Avoid using <b>self.school_name</b> — it will create an instance variable instead.</p>
-
-<p><b>4. Inside class method using cls or class name.</b></p>
+<br>
+<h3><b>4. Inside class method using cls or class name.</b></h3>
 <div class="Code-box">
     <pre><code>class Student:
     @classmethod
@@ -198,8 +199,8 @@ s1.city = "Delhi"   # city is an instance variable added from outside
 </code></pre>
   </div>
   <p><b>cls</b> is automatically passed to class methods — recommended way for modifying static variables.</p>
-
-  <p><b>5. Inside static method using class name.</b></p>
+<br>
+  <h3><b>5. Inside static method using class name.</b></h3>
 <div class="Code-box">
     <pre><code>class Student:
     @staticmethod
@@ -208,19 +209,19 @@ s1.city = "Delhi"   # city is an instance variable added from outside
 </code></pre>
   </div>
 <p>Static method does not take <b>self</b> or <b>cls</b>, so use class name.</p>
-
-<p><b>6. From outside the class using class name.</b></p>
+<br>
+<h3><b>6. From outside the class using class name.</b></h3>
 <div class="Code-box">
     <pre><code>Student.school_name = "DEF School"
 </code></pre>
   </div>
 <p>This also directly modifies the class variable — and affects all instances.</p>
-
+<br>
 <h3><b>🔸Local Variables : </b></h3>
 <p><b>Local variables</b> are variables that are <b>declared inside a method/function/block</b> and can be accessed <b>only within that method.</b></p>
 <p>These variables are created when the function is called and destroyed when the function ends.</p><br>
 
-<p><b>📌 Key Characteristics of Local Variables :</b></p><br>
+<h3><b>📌 Key Characteristics of Local Variables :</b></h3><br>
 <div class="responsive-table-wrapper">
 <table class="array-methods-table">
   <thead>
@@ -259,7 +260,7 @@ s1.city = "Delhi"   # city is an instance variable added from outside
 
 
 <h3><b>🔸Types of Methods : </b></h3>
-<p>In Python's object-oriented programming, there are 3 main types of methods defined inside a class: </p>
+<p>In Python's object-oriented programming, there are 3 main types of methods defined inside a class: </p><br>
 <p><h3>1. Instance Method :</h3></p>
 <ul>
   <li>Most commonly used.</li>
@@ -276,7 +277,7 @@ s1.city = "Delhi"   # city is an instance variable added from outside
         print(f"Hello, {self.name}")
 </code></pre>
   </div>
-
+<br>
   <p><h3>2. Class Method :</h3></p>
   <ul>
     <li>Works with class variables (shared among all objects).</li>
@@ -296,7 +297,7 @@ s1.city = "Delhi"   # city is an instance variable added from outside
     <li>Called using: <b>ClassName.method_name( )</b> or <b>object.method_name( )</b></li>
     <li>First argument is always <b>cls.</b></li>
   </ul>
-  
+  <br>
   <h3><b>3. Static Method :</b></h3>
   <ul>
     <li>Does <b>not</b> access class or instance variables.</li>
@@ -314,8 +315,8 @@ s1.city = "Delhi"   # city is an instance variable added from outside
     <li>Called using: <b>ClassName.method_name( )</b> or <b>object.method_name( )</b></li>
     <li>No <b>self</b> or <b>cls</b> needed.</li>
   </ul>
-
-<p><b>📌 Note :</b></p>
+<br>
+<h3><b>📌 Note :</b></h3>
 <ul>
   <li><b>Instance methed</b> - (No decorator required)</li>
   <li><b>class method </b> - @classmethed is (mandatory)</li>
@@ -327,13 +328,13 @@ s1.city = "Delhi"   # city is an instance variable added from outside
   <li><b>static + local</b> - (Class method)</li>
   <li><b>local</b> - (static method)</li>
 </ul>
-
+<br>
 <h3><b>No decorator:-  only two options.</b></h3>
 <ol>
   <li>Instance method</li>
   <li>Static method</li>
 </ol>
-
+<br>
 <h3><b>🔸Setter and Getter Methods :</b></h3>
 <p>In <b>Object-Oriented Programming, getter</b> and <b>setter</b> methods are used to <b>access and modify private data members</b> of a class <b>safely.</b></p>
 <h3><b>🔒 Why use Getter and Setter?</b></h3>
@@ -342,8 +343,8 @@ s1.city = "Delhi"   # city is an instance variable added from outside
   <li>To <b>control access</b> to variables.</li>
   <li>To add <b>validation logic</b> while setting or getting a value.</li>
 </ul>
-
-<h3><b>1. Getter Method :</h3></p>
+<br>
+<h3><b>1. Getter Method :</b></h3></p>
 <p>Used to <b>read/access</b> the value of a private variable.</p>
 <div class="Code-box">
     <pre><code>class Student:
@@ -355,7 +356,8 @@ s1.city = "Delhi"   # city is an instance variable added from outside
 </code></pre>
   </div>
 
-<h3><b>2. Setter Method :</h3></p>
+<br>
+<h3><b>2. Setter Method :</b></h3></p>
 <p>Used to <b>modify/update</b> the value of a private variable.</p>
 <div class="Code-box">
     <pre><code>def set_name(self, new_name):   # Setter method
@@ -391,8 +393,8 @@ print(s.get_name())       # Output: Rohan
 s.set_name(123)           # ❌ Invalid name
 </code></pre>
   </div>
-
-<p><b>📌 Summary :</b></p><br>
+<br>
+<h3><b>📌 Summary :</b></h3><br>
 <div class="responsive-table-wrapper">
 <table class="array-methods-table">
   <thead>
@@ -416,7 +418,7 @@ s.set_name(123)           # ❌ Invalid name
 </table>
 </div><br><br>
 
-<h3><b>🔸Employee Salary Increment? </h3></p>
+<h3><b>🔸Employee Salary Increment? </b></h3></p>
 <div class="Code-box">
     <pre><code>class Employee:
     increment = 2.5
@@ -433,8 +435,8 @@ print(Michael.salary)
 # Output: 12500.0
 </code></pre>
   </div>
-
-  <h3><b>🔸celsius to fahrenheit?</h3></p>
+<br>
+  <h3><b>🔸celsius to fahrenheit?</b></h3></p>
 
   <div class="Code-box">
     <pre><code>def ctof(c):
@@ -450,8 +452,8 @@ ctof(30)
   86.0
 </code></pre>
   </div>
-
-  <h3><b>🔸Other Method : celsius to fahrenheit?</h3></p>
+<br>
+  <h3><b>🔸Other Method : celsius to fahrenheit?</b></h3></p>
     <div class="Code-box">
         <pre><code>class Ctof:
     def __init__(self,c):
@@ -475,8 +477,8 @@ c4.ctof()
   104.0
 </code></pre>
 </div>
-
-<h3><b>🔸Employee, name, employeeid, salary :</h3></p>
+<br>
+<h3><b>🔸Employee, name, employeeid, salary :</b></h3></p>
 <div class="Code-box">
     <pre><code>class Employee:
     def __init__(self,name,employeeid,salary):
@@ -501,8 +503,8 @@ emp2.talk()
   hello my salary is: 56700
 </code></pre>
 </div>
-
-<h3><b>🔸Movie Example : </h3></p>
+<br>
+<h3><b>🔸Movie Example :</b> </h3></p>
 
 <div class="Code-box">
     <pre><code>class Movie:
@@ -526,8 +528,8 @@ mov.info()
   movie rating: 8
 </code></pre>
 </div>
-
-<h3><b>🔸Movie Example through for loop :</h3></p>
+<br>
+<h3><b>🔸Movie Example through for loop :</b></h3></p>
 
 <div class="Code-box">
     <pre><code>class Movie:
@@ -565,7 +567,7 @@ for mov in movies:
   movie rating: 0
 </code></pre>
 </div>
-
+<br>
 <h3><b>🔸How to access the instance variable -  Within the class by using self.</b></h3>
 <div class="Code-box">
     <pre><code>class Test:
@@ -585,7 +587,7 @@ Value of a: 20
 Value of b: 30
 </code></pre>
 </div>
-
+<br>
 <h3><b>🔸How to Delete Instance Variables in Python.</b></h3>
 <p>In Python, we can delete instance variables using the <b>del</b> keyword with <b>self</b> inside the class.</p>
 <div class="Code-box">
@@ -616,7 +618,7 @@ Before deletion: {'a': 10, 'b': 20, 'c': 30, 'd': 40}
 After deletion: {'a': 10, 'c': 30, 'd': 40}
 </code></pre>
 </div>
-
+<br>
 <h3><b>🔸How to Modify and Add Instance Variables Dynamically in Python.</b></h3>
 <div class="Code-box">
     <pre><code>class Test:
@@ -644,7 +646,7 @@ t.c = 2000
 print(t.__dict__)    # {'a': 777, 'b': 1000, 'c': 2000}
 </code></pre>
 </div>
-
+<br>
 <h3><b>🔸Print Fibonacci Series up to n.</b></h3>
 <div class="Code-box">
     <pre><code>def fib(n):
@@ -660,7 +662,7 @@ fib(2000)
 # Output : 0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597
 </code></pre>
 </div>
-
+<br>
 <h3><b>🔸Return Fibonacci Series up to n (as a List).</b></h3>
 <div class="Code-box">
     <pre><code>def fib2(n):  
@@ -679,7 +681,7 @@ print(f100)
 # Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 </code></pre>
   </div>
-
+<br>
   <h3><b>🔸Understanding Static Variables with __dict__ Example</b></h3>
 <div class="Code-box">
     <pre><code>class Test:
@@ -726,7 +728,7 @@ print(Test.__dict__)  # d and e values still there
 </code></pre>
   </div>
 
-
+<br>
 <h3><b>🔸Difference Between Instance Variable and Static Variable in Python.</b></h3>
 <div class="Code-box">
     <pre><code>class Test:
@@ -749,7 +751,7 @@ print(Test.a)     # Output: 777
 777
 </code></pre>
   </div>
-
+<br>
 <h3><b>🔸How to Access Static Variables in Python (OOP).</b></h3>
 <ul>
   <li>Inside the constructor Either by self or by class name.</li>
@@ -798,10 +800,10 @@ print(Test.a)    # 5 via class name
 10
 10
 </code></pre>
-  </div>
-<p><b>📌 Important Note :</b></p>
+  </div><br>
+<h3><b>📌 Important Note :</b></h3>
 <p>Even when accessed using <b>self, cls,</b> or object reference, the value still comes from the <b>class-level static variable</b> (unless overridden in the instance).</p>
-
+<br>
 <h3><b>🔸How to Update Static Variable Inside Constructor in Python.</b></h3>
 <div class="Code-box">
     <pre><code>class Test:
@@ -819,7 +821,7 @@ print(Test.a)
 # Output : 100
 </code></pre>
   </div>
-
+<br>
 <h3><b>🔸 Where Can We Modify Static Variables in Python?.</b></h3>
 <ul>
   <li>By using the class name (Inside or outside the class).</li>
@@ -865,7 +867,7 @@ Test.a = 44322
 print(Test.a)    # 44322
 </code></pre>
   </div>
-
+<br>
 <h3><b>🔸Understanding Class, Instance, and Local Variables in Python.</b></h3>
 <div class="Code-box">
     <pre><code>class Test:
@@ -893,7 +895,7 @@ t.m1()
 10
 </code></pre>
   </div>
-
+<br>
 <h3><b>🔸Python OOP: Difference Between Class and Instance Variables (Shadowing Example).</b></h3>
 <div class="Code-box">
     <pre><code>class Test:
@@ -924,8 +926,8 @@ print(t2.x, t2.y)  # 10 1000 (t2.x still refers to class-level)
 888 20
 10 1000
 </code></pre>
-  </div>
-<p><b>📌 Important Note :</b></p>
+  </div><br>
+<h3><b>📌 Important Note :</h3></p>
 <p>When you assign <b>t1.x = 888,</b> Python <b>does NOT change the class variable.</b></p>
 <p>It creates a <b>new instance variable x</b> only for <b>t1</b>, which <b>shadows</b> the class variable.</p>
 <p>You can confirm this by printing :</p>
@@ -935,7 +937,7 @@ print(t1.__dict__)    # Instance variables of t1
 print(t2.__dict__)    # Instance variables of t2
 </code></pre>
   </div>
-
+<br>
 <h3><b>🔸How Instance Methods Can Shadow Class Variables in Python.</b></h3>
 <div class="Code-box">
     <pre><code>class Test:
@@ -966,7 +968,7 @@ print(t2.a, t2.b)  # Output: 10 20
 10 20
 </code></pre>
   </div>
-
+<br>
 <h3><b>🔸Modifying Class Variables Using Class Methods in Python (With Instance Variable Restriction).</b></h3>
 <div class="Code-box">
     <pre><code>class Test:
@@ -1001,7 +1003,7 @@ print(Test.a)      # 888
 </code></pre>
   </div>
 
-
+<br>
 <h3><b>🔸Store and Display Multiple Student Records Using Setters and Getters.</b></h3>
 <div class="Code-box">
     <pre><code>class Student:
@@ -1053,7 +1055,7 @@ Student Marks: 90
 </code></pre>
   </div>
 
-
+<br>
   <h3><b>🔸Inner Classes (Class Inside a Class).</b></h3>
   <ul>
     <li>Classes defined inside another class.</li>
@@ -1084,17 +1086,17 @@ Inner class object creation...
 Inner Class Method
 </code></pre>
   </div>
-
+<br>
 <h3>🔸What is Garbage Collector (GC)?</h3>
 <p><b>Garbage Collector (GC)</b> is a <b>part of Python’s memory management system,</b> and it's managed by the <b>Python Virtual Machine (PVM).</b></p>
 <p><b>GC</b> is responsible for <b>automatically deleting unused (unreachable) objects</b> from memory to <b>free up space.</b></p>
-
-<p><b>📌 Key Points :</b></p>
+<br>
+<h3><b>📌 Key Points :</b></h3>
 <ul>
   <li><b>Reference counting</b> is the primary technique.</li>
   <li>When the <b>reference count of an object becomes zero</b>, it becomes eligible for garbage collection.</li>
   <li>GC looks for <b>cyclic references</b> (objects referring to each other but not used anywhere else).</li>
-</ul>
+</ul><br>
 <p><b>Example :</b></p>
 <div class="Code-box">
     <pre><code>import gc
