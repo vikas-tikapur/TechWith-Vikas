@@ -367,6 +367,534 @@ It promotes <b>code reusability</b> and reflects <b>real-world relationships.</b
 </table>
 </div><br><br>
 
+<h3><b>📌 Why Use Inheritance?</b></h3>
+<ul>
+  <li>Reuse common logic</li>
+  <li>Promote DRY (Don't Repeat Yourself) principle</li>
+  <li>Better structure & modularity</li>
+  <li>Easy to extend functionality</li>
+</ul>
+<br>
+
+<h3><b>🔸Types of Inheritance :</b></h3>
+<ol>
+  <li>Single Inheritance</li>
+  <li>Multilevel Inheritance</li>
+  <li>Multiple Inheritance</li>
+  <li>Hierarchical Inheritance</li>
+  <li>Hybrid Inheritance</li>
+</ol>
+<br>
+
+<h3><b>🔸Single Inheritance :</b></h3>
+<p>In <b>Single Inheritance</b>, a child (subclass) inherits from <b>only one parent class</b> (superclass). <br>
+It allows the child class to <b>reuse the code</b> (methods, variables) from the parent.</p>
+<br>
+<h3><b>📌 Structure :</b></h3>
+<div class="Code-box">
+    <pre><code>Parent Class
+   ↓
+Child Class
+</code></pre>
+  </div>
+<br>
+
+<h3><b>🔸 Example :</b></h3>
+<div class="Code-box">
+    <pre><code>class P:
+    def m1(self):
+        print("Parent method")
+
+class C(P):  # Inheriting from class P
+    def m2(self):
+        print("Child method")
+
+# Creating object of child class
+c = C()
+c.m1()   # Inherited from parent
+c.m2()   # Defined in child
+
+# Output : 
+Parent method  
+Child method
+</code></pre>
+  </div>
+
+  <br>
+
+<h3><b>🔸Multilevel Inheritance :</b></h3>
+<p>In <b>Multilevel Inheritance,</b> a class inherits from a <b>child class,</b> which itself inherits from a <b>parent class.</b> <br>
+This forms a <b>chain of inheritance,</b> like <b>Grandparent → Parent → Child.</b></p>
+<br>
+<h3><b>📌 Structure :</b></h3>
+<div class="Code-box">
+    <pre><code>Parent Class (P)
+       ↓
+Child Class (C)
+       ↓
+Sub-Child Class (CC)
+</code></pre>
+  </div>
+<br>
+
+<h3><b>🔸 Example :</b></h3>
+<div class="Code-box">
+    <pre><code>class P:
+    def m1(self):
+        print("Parent method")
+
+class C(P):  # Inheriting from P
+    def m2(self):
+        print("Child method")
+
+class CC(C):  # Inheriting from C
+    def m3(self):
+        print("Sub-child method")
+
+# Creating object of CC (sub-child)
+cc = CC()
+cc.m1()  # Inherited from P
+cc.m2()  # Inherited from C
+cc.m3()  # Defined in CC
+
+# Output : 
+Parent method  
+Child method  
+Sub-child method
+</code></pre>
+  </div>
+<br>
+
+<h3><b>🔸Multiple Inheritance :</b></h3>
+<p>When a class is <b>derived from more than one base class,</b> it is called <b>multiple inheritance.</b><br>
+The derived class inherits <b>all accessible attributes and methods</b> from all parent classes.</b></p>
+<br>
+<h3><b>📌 Structure :</b></h3>
+<div class="Code-box">
+    <pre><code>    P1       P2
+     \       /
+      \     /
+        ↓
+        C (Child)
+</code></pre>
+  </div>
+<br>
+
+<h3><b>🔸 Example :</b></h3>
+<div class="Code-box">
+    <pre><code>class P1:
+    def m1(self):
+        print("Parent 1 method")
+
+class P2:
+    def m2(self):
+        print("Parent 2 method")
+
+class C(P1, P2):  # Inheriting from both P1 and P2
+    def m3(self):
+        print("Child method")
+
+# Create object of child class
+c = C()
+c.m1()   # Inherited from P1
+c.m2()   # Inherited from P2
+c.m3()   # Defined in C
+
+# Output : 
+Parent 1 method  
+Parent 2 method  
+Child method
+</code></pre>
+  </div>
+<br>
+
+
+<h3><b>🔸Hierarchical Inheritance :</b></h3>
+<p>In <b>Hierarchical Inheritance, multiple subclasses are derived from a single superclass.</b><br>
+Each child class gets access to the parent class's properties and methods.</p>
+<br>
+<h3><b>📌 Structure :</b></h3>
+<div class="Code-box">
+    <pre><code>         P
+       /   \
+     C1     C2
+</code></pre>
+  </div>
+<br>
+
+<h3><b>🔸 Example :</b></h3>
+<div class="Code-box">
+    <pre><code>class P:
+    def m1(self):
+        print("Parent class")
+
+class C1(P):  # Inherits from P
+    def m2(self):
+        print("Child 1 method")
+
+class C2(P):  # Inherits from P
+    def m3(self):
+        print("Child 2 method")
+
+# Object of C1
+c = C1()
+c.m1()   # Inherited from P
+c.m2()   # Defined in C1
+
+# Object of C2
+c = C2()
+c.m3()   # Defined in C2
+# c.m2() # ❌ Not allowed: m2() belongs to C1, not C2
+
+# Output : 
+Parent class  
+Child 1 method  
+Child 2 method
+</code></pre>
+  </div>
+<br>
+
+<h3><b>🔸Hybrid Inheritance :</b></h3>
+<p><b>Hybrid Inheritance</b> is a combination of <b>two or more types of inheritance,</b> such as <b>multiple</b> and <b>multilevel</b> inheritance.</p>
+<br>
+<h3><b>📌 Structure :</b></h3>
+<div class="Code-box">
+    <pre><code>       A
+      / \
+     B   C
+      \ /
+       D
+</code></pre>
+  </div>
+<ul>
+  <li><b>B</b> and <b>C</b> inherit from <b>A (multilevel inheritance)</b></li>
+  <li><b>D</b> inherits from both <b>B</b> and <b>C (multiple inheritance)</b></li>
+</ul>
+<br>
+
+<h3><b>🔸 Example :</b></h3>
+<div class="Code-box">
+    <pre><code>class A:
+    def m1(self):
+        print("Class A method")
+
+class B(A):  # Inherits from A
+    def m2(self):
+        print("Class B method")
+
+class C(A):  # Inherits from A
+    def m3(self):
+        print("Class C method")
+
+class D(B, C):  # Inherits from both B and C (Hybrid)
+    def m4(self):
+        print("Class D method")
+
+# Creating object of class D
+d = D()
+d.m1()  # From class A
+d.m2()  # From class B
+d.m3()  # From class C
+d.m4()  # From class D
+
+# Output : 
+Class A method  
+Class B method  
+Class C method  
+Class D method
+</code></pre>
+  </div>
+<br>
+
+<h3><b>🔸Create a Car Class with Attributes and Info Display Method</b></h3>
+<div class="Code-box">
+    <pre><code>class Car:
+    def __init__(self, name, model, color):
+        self.name = name
+        self.model = model
+        self.color = color
+
+    def getinfo(self):
+        print("Car Name:", self.name)
+        print("Car Model:", self.model)
+        print("Car Color:", self.color)
+
+c = Car("Maruti 800", 800, "White")
+c.getinfo()
+
+# Output : 
+Car Name: Maruti 800  
+Car Model: 800  
+Car Color: White
+</code></pre>
+  </div>
+<br>
+
+
+<h3><b>🔸Class Containing Object of Another Class (Has-A Relationship)</b></h3>
+<p>In this example, an <b>Employee has a Car.</b></p>
+<p>This is a real-world relationship modeled using <b>object composition,</b> which promotes reusability and modularity.</p>
+<div class="Code-box">
+    <pre><code>class Car:
+    def __init__(self, name, model, color):
+        self.name = name
+        self.model = model
+        self.color = color
+
+    def getinfo(self):
+        print("Car Name:", self.name)
+        print("Car Model:", self.model)
+        print("Car Color:", self.color)
+
+class Employee:
+    def __init__(self, eno, ename, car):
+        self.eno = eno
+        self.ename = ename
+        self.car = car  # Car object is passed as an argument
+
+    def empinfo(self):
+        print("Employee NO:", self.eno)
+        print("Employee Name:", self.ename)
+        print("Car Information --->")
+        self.car.getinfo()  # Calling Car class method from Employee
+
+# Creating Objects:
+c = Car("Maruti 800", 800, "White")
+e = Employee(100, "Satish", c)
+e.empinfo()
+
+# Output : 
+Employee NO: 100  
+Employee Name: Satish  
+Car Information --->  
+Car Name: Maruti 800  
+Car Model: 800  
+Car Color: White
+</code></pre>
+  </div>
+<br>
+
+
+<h2><b>🔸super() Method in Python (OOP) :</b></h2>
+<p><b>super()</b> is a <b>built-in function</b> in Python used in <b>inheritance</b> to access methods and attributes of the <b>parent (super) class</b> from the <b>child (sub) class.</b></p>
+<br>
+<h3><b>📌 Key Points :</b></h3>
+<ol>
+  <li><b>Used in Inheritance</b> to call methods or constructors from the parent class.</li>
+  <li>Avoids code duplication — helps follow the <b>DRY (Don't Repeat Yourself)</b> principle.</li>
+  <li>Returns a <b>temporary object</b> of the <b>parent class,</b> through which you can access parent methods.</li>
+  <li>Useful when <b>method overriding</b> is involved.</li>
+  <li>Supports <b>multiple inheritance</b> with Python's <b>MRO (Method Resolution Order).</b></li>
+</ol><br>
+<h3><b>📌 Syntax :</b></h3>
+<div class="Code-box">
+    <pre><code>super().method_name()
+</code></pre>
+  </div>
+  <br>
+  <h3><b>🔸Example :</b></h3>
+<div class="Code-box">
+    <pre><code>class Animal:
+    def __init__(self):
+        print("Animal constructor")
+
+    def speak(self):
+        print("Animal speaks")
+
+class Dog(Animal):
+    def __init__(self):
+        super().__init__()  # Call parent constructor
+        print("Dog constructor")
+
+    def speak(self):
+        super().speak()  # Call parent method
+        print("Dog barks")
+
+d = Dog()
+d.speak()
+
+# Output : 
+Animal constructor  
+Dog constructor  
+Animal speaks  
+Dog barks
+</code></pre>
+  </div>
+<br>
+
+<h3><b>📌 Why use super( )? </b></h3>
+<br>
+<div class="responsive-table-wrapper">
+<table class="array-methods-table">
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Benefit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Reusability</code></td>
+      <td>Use parent methods without rewriting</td>
+    </tr>
+
+    <tr>
+      <td><code>Clean Code</code></td>
+      <td>Avoids code duplication</td>
+    </tr>
+
+    <tr>
+      <td><code>Extensibility</code></td>
+      <td>Easily extend functionality</td>
+    </tr>
+
+     <tr>
+      <td><code>Multiple Inheritance</code></td>
+      <td>Works with Python’s MRO (C3 Linearization)</td>
+    </tr>
+  </tbody>
+</table>
+</div><br><br>
+
+<h2><b>4. Polymorphism :</b></h2>
+<p><b>I. Polymorphism</b> means having  <b>"many forms".</b></p>
+<p><b>II. </b>It is derived from <b>two Greek words:</b></p>
+<ol>
+  <li><b>Poly</b> → many</li>
+  <li><b>Morphe</b> → forms</li>
+</ol>
+<p><b>III. Polymorphism</b> is an ability by which message. is <b>displayed in many Forms.</b></p>
+<p><b>IV. </b>more than one form is called Polymorphism.</p>
+<br>
+
+<h3><b>🔸In Simple Terms :</b></h3>
+<p><b>Polymorphism</b> allows the <b>same method name</b> to be used for <b>different types</b> (or classes), providing <b>different behaviors</b> depending on the object or class context.</p>
+<br>
+
+<h3><b>🔸Real-life Example :</b></h3>
+<p>A woman can have different roles :</p>
+<ul>
+  <li>At school: she is a <b>teacher</b></li>
+  <li>At home: she is a <b>mother, wife, or daughter</b></li>
+  <li>At the market: she is a <b>customer</b></li>
+</ul>
+<p>Though she is the same person, her behavior changes depending on the context. This is Polymorphism.</p>
+<br>
+
+<h3><b>📌 Types of Polymorphism in Python : </b></h3>
+<br>
+<div class="responsive-table-wrapper">
+<table class="array-methods-table">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code><b>Compile-time Polymorphism</b> (not native in Python)	</code></td>
+      <td>Achieved using method overloading (limited in Python)</td>
+    </tr>
+
+    <tr>
+      <td><code><b>Runtime Polymorphism</b></code></td>
+      <td>Achieved through method overriding</td>
+    </tr>
+  </tbody>
+</table>
+</div><br><br>
+
+<h3><b>🔸 Example in Python (Runtime Polymorphism) :</b></h3>
+<div class="Code-box">
+    <pre><code>class Bird:
+    def fly(self):
+        print("Some birds can fly")
+
+class Sparrow(Bird):
+    def fly(self):
+        print("Sparrow flies high")
+
+class Ostrich(Bird):
+    def fly(self):
+        print("Ostriches cannot fly")
+
+# Same method, different behavior
+for bird in (Sparrow(), Ostrich()):
+    bird.fly()
+
+# Output : 
+Sparrow flies high  
+Ostriches cannot fly
+</code></pre>
+  </div>
+<br>
+
+<h3><b>📌 Key Benefits of Polymorphism : </b></h3>
+<ul>
+  <li>Promotes <b>code reusability</b></li>
+  <li>Makes code <b>cleaner and more flexible</b></li>
+  <li>Supports <b>dynamic method resolution</b></li>
+</ul>
+
+<br>
+
+<h3><b>🔸 Real-World Example of Polymorphism in Python :</b></h3>
+<div class="Code-box">
+    <pre><code>class India():
+    def capital(self):
+        print("New Delhi is the capital of India.")
+
+    def language(self):
+        print("Hindi is the most widely spoken language of India.")
+
+    def type(self):
+        print("India is a developing country.")
+
+class USA():
+    def capital(self):
+        print("Washington, D.C. is the capital of USA.")
+
+    def language(self):
+        print("English is the primary language of USA.")
+
+    def type(self):
+        print("USA is a developed country.")
+
+# Creating objects
+obj_ind = India()
+obj_usa = USA()
+
+# Demonstrating Polymorphism
+for country in (obj_ind, obj_usa):
+    country.capital()
+    country.language()
+    country.type()
+
+# Output : 
+New Delhi is the capital of India.
+Hindi is the most widely spoken language of India.
+India is a developing country.
+Washington, D.C. is the capital of USA.
+English is the primary language of USA.
+USA is a developed country.
+</code></pre>
+  </div>
+
+<h3><b>🔸Explanation :</b></h3>
+<p>In this example :</p>
+<ul>
+  <li>Both <b>India</b> and <b>USA</b> classes have the <b>same method names: capital( ), language( ), and type( ).</b></li>
+  <li>Even though the method names are the same, their <b>implementations are different</b> for each country.</li>
+  <li>When iterating over objects of both classes, <b>polymorphism allows the same method calls (country.capital( )</b>, etc.) to behave differently based on the object.</li>
+</ul>
+<br>
+
+<h2><b>Method Overloading in Python : </b></h2>
+<p><b>Method Overloading</b> is the ability to define <b>multiple methods</b> in the <b>same class with the same name but different parameters</b> (in number or type).</p>
+
+
+
 
 
 
