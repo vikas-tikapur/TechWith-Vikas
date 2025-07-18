@@ -717,6 +717,6 @@ section#with_banner {
 }
 
 .emoji p{
-  font-family:'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji',sans-serif; 
-  font-size:1.1em;
+  font-family:'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji',sans-serif !important; 
+  font-size:1.1em !important;
 }
