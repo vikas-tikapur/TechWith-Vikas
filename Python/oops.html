@@ -52,11 +52,11 @@
         <li><b>Data Hiding/Encapsulation :</b> Protects data from unintended external modification.</li>
     </ul>
 
-    <h3 class="emoji"><b>🔸 Four Pillars of OOP</b></h3>
-    <p>1️⃣ <b>Encapsulation :</b> (Data hiding)</p>
-    <p>2️⃣ <b>Abstraction :</b> (Hiding Complexity)</p>
-    <p>3️⃣ <b>Inheritance :</b> (Reusing Code)</p>
-    <p>4️⃣ <b>Polymorphism :</b> (Many Forms)</p>
+    <h3><b>🔸 Four Pillars of OOP</b></h3>
+    <p><b>1. Encapsulation :</b> (Data hiding)</p>
+    <p><b>2. Abstraction :</b> (Hiding Complexity)</p>
+    <p><b>3. Inheritance :</b> (Reusing Code)</p>
+    <p><b>4. Polymorphism :</b> (Many Forms)</p>
 
 
 <h3><b>🔸 Object :</b></h3>
@@ -134,7 +134,7 @@ emp.info()
 <ul>
     <li>Outside of the class by using object reference variables</li>
 </ul>
-<p>1️⃣ Inside Constructor <b>(__init__( ))</b> using self.</p>
+<p><b>1.</b> Inside Constructor <b>(__init__( ))</b> using self.</p>
 <div class="Code-box">
     <pre><code>class Student:
     def __init__(self, name, age):
@@ -143,7 +143,7 @@ emp.info()
 </code></pre>
   </div>
 
-  <p>2️⃣ Inside Instance Method using <b>self</b></p>
+  <p><b>2. </b>Inside Instance Method using <b>self</b></p>
 <div class="Code-box">
     <pre><code>class Student:
     def set_grade(self, grade):
@@ -151,7 +151,7 @@ emp.info()
 </code></pre>
   </div>
 
-  <p>3️⃣ Outside the Class using object reference </p>
+  <p><b>3. </b>Outside the Class using object reference </p>
 
 <div class="Code-box">
     <pre><code>s1 = Student("Vikas", 23)
@@ -165,14 +165,14 @@ s1.city = "Delhi"   # city is an instance variable added from outside
 
 <p><b>📌 How to Declare Static (Class) Variables in Python : </b></p>
 <p>Static variable = Variable that belongs to the class, not to individual objects.</p>
-<p>1️⃣ Directly inside the class (outside all methods)</p>
+<p><b>1. </b> Directly inside the class (outside all methods)</p>
 <div class="Code-box">
     <pre><code>class Student:
     school_name = "ABC School"  # Static variable
 </code></pre>
   </div>
 
-<p>2️⃣ Inside the constructor using class name</p>
+<p><b>2. </b> Inside the constructor using class name</p>
 <div class="Code-box">
     <pre><code>class Student:
     school_name = "ABC School"  # Static variable
@@ -180,7 +180,7 @@ s1.city = "Delhi"   # city is an instance variable added from outside
   </div>
   <p><b>Note:</b> Use class name, not self, because static variable is not instance-specific.</p>
 
-<p>3️⃣ Inside instance method using class name</p>
+<p><b>3. </b> Inside instance method using class name</p>
 <div class="Code-box">
     <pre><code>class Student:
     def set_school(self):
@@ -189,7 +189,7 @@ s1.city = "Delhi"   # city is an instance variable added from outside
   </div>
 <p>Avoid using <b>self.school_name</b> — it will create an instance variable instead.</p>
 
-<p>4️⃣  Inside class method using <b>cls</b> or class name</p>
+<p><b>4. </b>  Inside class method using <b>cls</b> or class name</p>
 <div class="Code-box">
     <pre><code>class Student:
     @classmethod
@@ -199,7 +199,7 @@ s1.city = "Delhi"   # city is an instance variable added from outside
   </div>
   <p><b>cls</b> is automatically passed to class methods — recommended way for modifying static variables.</p>
 
-  <p>5️⃣ Inside static method using class name</p>
+  <p><b>5. </b> Inside static method using class name</p>
 <div class="Code-box">
     <pre><code>class Student:
     @staticmethod
@@ -209,7 +209,7 @@ s1.city = "Delhi"   # city is an instance variable added from outside
   </div>
 <p>Static method does not take <b>self</b> or <b>cls</b>, so use class name.</p>
 
-<p>6️⃣ From outside the class using class name</p>
+<p><b>6. </b> From outside the class using class name</p>
 <div class="Code-box">
     <pre><code>Student.school_name = "DEF School"
 </code></pre>

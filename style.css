@@ -704,9 +704,6 @@ section#with_banner {
   .responsive-table-wrapper {
     margin-bottom: 20px;
   }
-  body, .python-intro {
-  font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
-}
 .array-methods-table{
   font-size: 15px !important;
 }
@@ -714,9 +711,4 @@ section#with_banner {
 
 .array-methods-table{
   font-size: 18px;
-}
-
-.emoji p{
-  font-family:'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji',sans-serif !important; 
-  font-size:1.1em !important;
 }
