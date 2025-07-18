@@ -41,8 +41,335 @@
     <p><b>2. Abstraction :</b> (Hiding Complexity)</p>
     <p><b>3. Inheritance :</b> (Reusing Code)</p>
     <p><b>4. Polymorphism :</b> (Many Forms)</p>
+<br>
+<h2><b>1. Encapsulation :</b></h2>
+<p><b>Encapsulation</b> means <b> binding variables (data)</b> and <b>methods (functions)</b> together into a <b>single unit (class)</b> i.e. called <b>Encapsulation.</b></p>
+<br>
+<h3><b>📌 Key Points :</b></h3>
+<ul>
+    <li>It is a fundamental concept in <b>Object-Oriented Programming (OOP).</b></li>
+    <li>It allows for <b>data hiding</b> and <b>controlled access</b> using methods.</li>
+    <li><b>Encapsulation</b> protects an object from <b>unwanted access</b> and <b>modification.</b></li>
+</ul><br>
 
-<h3><b>🔸Encapsulation :</b></h3>
+<h3><b>Simplified Explanation :</b></h3>
+<p>Think of a <b>capsule</b> in medicine — it holds different components inside. <br>
+Similarly, a <b>class in Python</b> holds both <b>data (variables)</b> and <b>behavior (methods)</b> together.</p>
+
+<h3><b>Example :</b></h3>
+<div class="Code-box">
+    <pre><code>class Student:
+    def __init__(self):
+        self.__name = None   # Private variable
+
+    def set_name(self, name):   # Public method to set name
+        self.__name = name
+
+    def get_name(self):         # Public method to get name
+        return self.__name
+
+# Using the class
+s = Student()
+s.set_name("Tanay")
+print(s.get_name())   # Output: Tanay
+</code></pre>
+  </div>
+<br>
+<h3><b>🔒 Note :</b></h3>
+<ul>
+    <li><b>__name</b> is a <b>private variable</b> (name mangling used for encapsulation).</li>
+    <li>Access is <b>controlled</b> via public methods <b>set_name()</b> and <b>get_name().</b></li>
+</ul><br>
+
+<h3><b>📌 Benefits of Encapsulation :</b></h3><br>
+<div class="responsive-table-wrapper">
+<table class="array-methods-table">
+  <thead>
+    <tr>
+      <th>Benefit</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code> Data Hiding</code></td>
+      <td>Prevents direct access to data</td>
+    </tr>
+
+    <tr>
+      <td><code>Modularity</code></td>
+      <td>Keeps code organized and reusable</td>
+    </tr>
+
+    <tr>
+      <td><code>Control</code></td>
+      <td>Allows validation logic before modifying variables</td>
+    </tr>
+
+    <tr>
+      <td><code>Flexibility</code></td>
+      <td>Internal implementation can change without affecting external code</td>
+    </tr>
+  </tbody>
+</table>
+</div><br><br>
+<h3><b>🔸 One-Line Summary : </b></h3>
+<p><b>Encapsulation</b> = wrapping <b>data + methods</b> into a <b>single unit</b> (class) and hiding internal details from the outside.</p>
+<br>
+<h3><b>🔸Using Default Arguments in Python Constructor (__init__).</b></h3>
+<div class="Code-box">
+    <pre><code>class Student:
+    def __init__(self, name="Tenali Rama", marks=50):
+        self.name = name
+        self.marks = marks
+
+# Create two Student objects
+s1 = Student()                    # Uses default values
+s2 = Student("Krishndev", 25)     # Uses custom values
+
+# Print details
+print("Name: {} marks: {}".format(s1.name, s2.marks))
+print("Name: {} marks: {}".format(s2.name, s2.marks))
+
+# Output : 
+Name: Tenali Rama marks: 25
+Name: Krishndev marks: 25
+</code></pre>
+  </div>
+<br>
+
+<h3><b>🔸Add Salary & Project Display Feature in HR Management System.</b></h3>
+<div class="Code-box">
+    <pre><code>class Employee:
+    # Constructor to initialize employee details
+    def __init__(self, name, id, salary, project):
+        self.name = name         # Employee name
+        self.id = id             # Employee ID
+        self.salary = salary     # Employee salary
+        self.project = project   # Project assigned
+
+    # Method to show salary details
+    def show_sal(self):
+        print("Name:", self.name, "Salary:", self.salary)
+
+    # Method to show project information
+    def proj(self):
+        print(self.name, "is working on", self.project)
+
+# Creating an object of Employee
+emp = Employee('Rohit', 102, 100000, 'Python')
+
+# Calling methods
+emp.show_sal()
+emp.proj()
+
+# Output : 
+Name: Rohit Salary: 100000
+Rohit is working on Python
+</code></pre>
+  </div>
+
+<br>
+
+<h3><b>🔸Create an Employee Class with Constructor and Display Method.</b></h3>
+<div class="Code-box">
+    <pre><code>class Employee:
+    def __init__(self, name, age):
+        self.name = name  # Instance variable for employee name
+        self.age = age    # Instance variable for employee age
+
+    def display(self):
+        print("Employee Name:", self.name)
+        print("Employee Age:", self.age)
+
+# Creating an object of Employee class
+s = Employee("Kartik Singh", 22)
+
+# Calling the display method
+s.display()
+
+# Output : 
+Employee Name: Kartik Singh
+Employee Age: 22
+</code></pre>
+  </div>
+<br>
+
+<h2><b>2. Abstraction :</b></h2>
+<p><b>Abstraction</b> is the concept of <b>hiding unnecessary internal details</b> and <b>showing only the essential features</b> to the user.</p>
+<br>
+<h3><b>🔸Simple Example :</b></h3>
+<p>Think about a TV remote :</p>
+<ul>
+    <li>You press a button to change the channel.</li>
+    <li>You don’t need to know <b>how</b> the internal circuitry works.</li>
+</ul>
+<p>That’s <b>abstraction</b> — hiding complex internal logic, and showing only what the user needs.</p><br>
+
+<h3><b>📌 Key Points :</b></h3>
+<p>It focuses on what an object does, not how it does it.</p>
+<p>Achieved in Python using :</p>
+<ul>
+    <li><b>Abstract Base Classes (ABC).</b></li>
+    <li><b>Interfaces (via abstract methods).</b></li>
+</ul>
+<br>
+
+<h3><b>🔸Code Example using abc module :</b></h3>
+<div class="Code-box">
+    <pre><code>from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+class Rectangle(Shape):
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+    def area(self):
+        return self.length * self.width
+
+# obj = Shape()         # ❌ Can't instantiate abstract class
+rect = Rectangle(10, 5) #  Concrete class
+print("Area:", rect.area())
+
+# Output : 
+Area: 50
+</code></pre>
+  </div>
+  <br>
+
+<h3><b>📌 Why Use Abstraction?</b></h3>
+<br>
+<div class="responsive-table-wrapper">
+<table class="array-methods-table">
+  <thead>
+    <tr>
+      <th>Benefit</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Clean Code</code></td>
+      <td>Keeps code organized and modular</td>
+    </tr>
+
+    <tr>
+      <td><code>Security</code></td>
+      <td>Hides implementation details</td>
+    </tr>
+
+    <tr>
+      <td><code>Flexibility</code></td>
+      <td>Easy to update or modify logic</td>
+    </tr>
+
+    <tr>
+      <td><code>Reusability</code></td>
+      <td>Promotes reusable components</td>
+    </tr>
+  </tbody>
+</table>
+</div><br><br>
+
+<h3><b>🔸Examples of Data Abstraction Using Abstract Classes in Python :</b></h3>
+<p>In Python, it is implemented using :</p>
+<ul>
+    <li><b>ABC</b> (Abstract Base Class)</li>
+    <li><b>@abstractmethod</b> decorator</li>
+</ul>
+<div class="Code-box">
+    <pre><code>from abc import ABC, abstractmethod
+class Animal(ABC):
+
+    # Concrete method
+    def sleep(self):
+        print("I am going to sleep in a while")
+
+    @abstractmethod
+    def sound(self):
+        print("This function is for defining the sound by any animal")
+
+# Subclasses implementing abstract method
+class Snake(Animal):
+    def sound(self):
+        print("I can hiss")
+
+class Dog(Animal):
+    def sound(self):
+        print("I can bark")
+
+class Lion(Animal):
+    def sound(self):
+        print("I can roar")
+
+class Cat(Animal):
+    def sound(self):
+        print("I can meow")
+
+# Creating objects and calling methods
+c = Cat()
+c.sleep()   # Inherited concrete method
+c.sound()   # Overridden abstract method
+
+c = Snake()
+c.sound()
+
+# Output : 
+I am going to sleep in a while
+I can meow
+I can hiss
+</code></pre>
+  </div>
+  <br>
+
+<h2><b>3. Inheritance :</b></h2>
+<p><b>Inheritance</b> is a core concept in Object-Oriented Programming (OOP) that allows a class (child/subclass) to inherit the properties and methods of another class (parent/superclass).
+It promotes <b>code reusability</b> and reflects <b>real-world relationships.</b></p>
+<br>
+<h3><b>🔸In Simple Terms :</b></h3>
+<ul>
+    <li><b>Inheritance</b> used <b>code reusability.</b></li>
+    <li><b>Inheritance</b> is a <b>relationship between two or more classes.</b> </li>
+    <li><b>Inheritance</b> is a <b>real-world relationship.</b></li>
+</ul> <br>
+
+<h3><b>📌 Key Concepts :</b></h3>
+<br>
+<div class="responsive-table-wrapper">
+<table class="array-methods-table">
+  <thead>
+    <tr>
+      <th>Term</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Superclass</code></td>
+      <td>The class whose properties are inherited</td>
+    </tr>
+
+    <tr>
+      <td><code>Subclass</code></td>
+      <td>The class that inherits from superclass</td>
+    </tr>
+
+    <tr>
+      <td><code>Code Reusability</code></td>
+      <td>Avoids writing the same code again</td>
+    </tr>
+  </tbody>
+</table>
+</div><br><br>
+
+
+
+
 
 
 

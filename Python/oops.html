@@ -179,7 +179,7 @@ s1.city = "Delhi"   # city is an instance variable added from outside
     school_name = "ABC School"  # Static variable
 </code></pre>
   </div><br>
-  <p><b>Note:</b> Use class name, not self, because static variable is not instance-specific.</p>
+  <p><b>🔒 Note:</b> Use class name, not self, because static variable is not instance-specific.</p>
 <br>
 <h3><b>3. Inside instance method using class name.</b></h3>
 <div class="Code-box">
@@ -316,7 +316,7 @@ s1.city = "Delhi"   # city is an instance variable added from outside
     <li>No <b>self</b> or <b>cls</b> needed.</li>
   </ul>
 <br>
-<h3><b>📌 Note :</b></h3>
+<h3><b>🔒 Note :</b></h3>
 <ul>
   <li><b>Instance methed</b> - (No decorator required)</li>
   <li><b>class method </b> - @classmethed is (mandatory)</li>
@@ -801,7 +801,7 @@ print(Test.a)    # 5 via class name
 10
 </code></pre>
   </div><br>
-<h3><b>📌 Important Note :</b></h3>
+<h3><b>🔒 Important Note :</b></h3>
 <p>Even when accessed using <b>self, cls,</b> or object reference, the value still comes from the <b>class-level static variable</b> (unless overridden in the instance).</p>
 <br>
 <h3><b>🔸How to Update Static Variable Inside Constructor in Python.</b></h3>
@@ -896,7 +896,7 @@ t.m1()
 </code></pre>
   </div>
 <br>
-<h3><b>🔸Python OOP: Difference Between Class and Instance Variables (Shadowing Example).</b></h3>
+<h3><b>🔸Difference Between Class and Instance Variables (Shadowing Example).</b></h3>
 <div class="Code-box">
     <pre><code>class Test:
     x = 10  # Class variable
@@ -927,7 +927,8 @@ print(t2.x, t2.y)  # 10 1000 (t2.x still refers to class-level)
 10 1000
 </code></pre>
   </div><br>
-<h3><b>📌 Important Note :</h3></p>
+
+<h3><b>🔒 Important Note :</b></h3></p>
 <p>When you assign <b>t1.x = 888,</b> Python <b>does NOT change the class variable.</b></p>
 <p>It creates a <b>new instance variable x</b> only for <b>t1</b>, which <b>shadows</b> the class variable.</p>
 <p>You can confirm this by printing :</p>
@@ -938,6 +939,7 @@ print(t2.__dict__)    # Instance variables of t2
 </code></pre>
   </div>
 <br>
+
 <h3><b>🔸How Instance Methods Can Shadow Class Variables in Python.</b></h3>
 <div class="Code-box">
     <pre><code>class Test:
