@@ -134,7 +134,7 @@ emp.info()
 <ul>
     <li>Outside of the class by using object reference variables</li>
 </ul>
-<p><b>1.</b> Inside Constructor <b>(__init__( ))</b> using self.</p>
+<p><b>1. Inside Constructor (__init__( )) using self.</b></p>
 <div class="Code-box">
     <pre><code>class Student:
     def __init__(self, name, age):
@@ -143,7 +143,7 @@ emp.info()
 </code></pre>
   </div>
 
-  <p><b>2. </b>Inside Instance Method using <b>self</b></p>
+  <p><b>2. Inside Instance Method using self.</b></p>
 <div class="Code-box">
     <pre><code>class Student:
     def set_grade(self, grade):
@@ -151,7 +151,7 @@ emp.info()
 </code></pre>
   </div>
 
-  <p><b>3. </b>Outside the Class using object reference </p>
+  <p><b>3. Outside the Class using object reference.</b> </p>
 
 <div class="Code-box">
     <pre><code>s1 = Student("Vikas", 23)
@@ -165,14 +165,14 @@ s1.city = "Delhi"   # city is an instance variable added from outside
 
 <p><b>📌 How to Declare Static (Class) Variables in Python : </b></p>
 <p>Static variable = Variable that belongs to the class, not to individual objects.</p>
-<p><b>1. </b> Directly inside the class (outside all methods)</p>
+<p><b>1. Directly inside the class (outside all methods).</b></p>
 <div class="Code-box">
     <pre><code>class Student:
     school_name = "ABC School"  # Static variable
 </code></pre>
   </div>
 
-<p><b>2. </b> Inside the constructor using class name</p>
+<p><b>2. Inside the constructor using class name.</b></p>
 <div class="Code-box">
     <pre><code>class Student:
     school_name = "ABC School"  # Static variable
@@ -180,7 +180,7 @@ s1.city = "Delhi"   # city is an instance variable added from outside
   </div>
   <p><b>Note:</b> Use class name, not self, because static variable is not instance-specific.</p>
 
-<p><b>3. </b> Inside instance method using class name</p>
+<p><b>3. Inside instance method using class name.</b></p>
 <div class="Code-box">
     <pre><code>class Student:
     def set_school(self):
@@ -189,7 +189,7 @@ s1.city = "Delhi"   # city is an instance variable added from outside
   </div>
 <p>Avoid using <b>self.school_name</b> — it will create an instance variable instead.</p>
 
-<p><b>4. </b>  Inside class method using <b>cls</b> or class name</p>
+<p><b>4. Inside class method using cls or class name.</b></p>
 <div class="Code-box">
     <pre><code>class Student:
     @classmethod
@@ -199,7 +199,7 @@ s1.city = "Delhi"   # city is an instance variable added from outside
   </div>
   <p><b>cls</b> is automatically passed to class methods — recommended way for modifying static variables.</p>
 
-  <p><b>5. </b> Inside static method using class name</p>
+  <p><b>5. Inside static method using class name.</b></p>
 <div class="Code-box">
     <pre><code>class Student:
     @staticmethod
@@ -209,7 +209,7 @@ s1.city = "Delhi"   # city is an instance variable added from outside
   </div>
 <p>Static method does not take <b>self</b> or <b>cls</b>, so use class name.</p>
 
-<p><b>6. </b> From outside the class using class name</p>
+<p><b>6. From outside the class using class name.</b></p>
 <div class="Code-box">
     <pre><code>Student.school_name = "DEF School"
 </code></pre>
