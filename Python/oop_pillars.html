@@ -892,20 +892,283 @@ USA is a developed country.
 
 <h2><b>Method Overloading in Python : </b></h2>
 <p><b>Method Overloading</b> is the ability to define <b>multiple methods</b> in the <b>same class with the same name but different parameters</b> (in number or type).</p>
+<br>
 
+<h3><b>🔒 Note :</b></h3>
+<p><b>Python does not support traditional method overloading</b> like Java or C++. Instead, Python handles this using <b>default arguments, *args,</b> or manual parameter checking inside a method.</p>
+<br>
 
+<h3><b>🔸Example (that won’t work in Python) :</b></h3>
+<div class="Code-box">
+    <pre><code>class Demo:
+    def show(self, a):
+        print("One argument:", a)
 
+    def show(self, a, b):
+        print("Two arguments:", a, b)
 
+obj = Demo()
+obj.show(10)  # ❌ Error: missing 1 required positional argument
+</code></pre>
+  </div>
+<h3><b>🔸Explanation :</b></h3>
+<p>Only the <b>last show( ) method is kept,</b> the first one is <b>overwritten.</b></p>
+<br><br>
 
+<h2><b>How to Simulate Method Overloading in Python </b></h2>
+<h3><b>🔸Using Default Arguments :</b></h3>
+<div class="Code-box">
+    <pre><code>class Demo:
+    def show(self, a=None, b=None):
+        if a is not None and b is not None:
+            print("Two arguments:", a, b)
+        elif a is not None:
+            print("One argument:", a)
+        else:
+            print("No arguments")
 
+obj = Demo()
+obj.show()
+obj.show(10)
+obj.show(10, 20)
 
+# Output : 
+No arguments  
+One argument: 10  
+Two arguments: 10 20
+</code></pre>
+  </div>
+<br>
 
+<h3><b>🔸Using *args :</b></h3>
+<div class="Code-box">
+    <pre><code>class Demo:
+    def show(self, *args):
+        for arg in args:
+            print("Argument:", arg)
 
+obj = Demo()
+obj.show(10)
+obj.show(10, 20, 30)
+</code></pre>
+  </div>
+<br>
 
+<h2><b>Method Overriding in Python : </b></h2>
+<p><b>Method Overriding</b> occurs when a <b>child class</b> defines a method with the <b>same name and signature</b> (same number of parameters) as in its <b>parent class.</b></p>
+<p>This allows the child class to provide a <b>specific implementation</b> of a method that is already defined in the parent class.</p>
+<br>
+
+<h3><b>📌 Key Features : </b></h3>
+<ul>
+  <li>Overriding happens <b>automatically</b> if the method name and parameters match.</li>
+  <li>It helps in <b>customizing or extending</b> the behavior of the parent class method.</li>
+  <li>Avoids code duplication (follows the DRY principle).</li>
+</ul>
+<br>
+
+<h3><b>🔸Example 1: Basic Method Inheritance (No Overriding) :</b></h3>
+<div class="Code-box">
+    <pre><code>class P:
+    def property(self):
+        print("cash + gold + car + house")
+
+class C(P):
+    pass
+
+c = C( )
+c.property( )  # Output: cash + gold + car + house
+</code></pre>
+  </div>
+<p><b>No overriding</b> here. The method from the parent class is inherited as-is.</p>
+<br>
+
+<h3><b>🔸Example 2: Child Class Adds New Method :</b></h3>
+<div class="Code-box">
+    <pre><code>class P:
+    def property(self):
+        print("Gold, money, car")
+
+class C(P):
+    def job(self):
+        print("Software Engineer")
+
+c = C()
+c.property()  # Output: Gold, money, car (from parent)
+c.job()       # Output: Software Engineer (from child)
+</code></pre>
+  </div>
+<p>This shows <b>inheritance + extension,</b> not overriding yet.</p>
+<br>
+
+<h3><b>🔸Example 3: Method Overriding :</b></h3>
+<div class="Code-box">
+    <pre><code>class Animal:
+    def sound(self):
+        print("This is a generic animal sound")
+
+class Dog(Animal):
+    def sound(self):
+        print("Dog: Bark")
+
+class Cat(Animal):
+    def sound(self):
+        print("Cat: Meow")
+
+# Create instances
+dog = Dog()
+cat = Cat()
+
+dog.sound()  # Output: Dog: Bark
+cat.sound()  # Output: Cat: Meow
+</code></pre>
+  </div>
+<p> Here, <b>sound( ) </b>is overridden in both child classes to provide specific behavior.</p>
+<br>
+
+<h3><b>🔸Diagram: Method Overriding :</b></h3>
+<div class="Code-box">
+    <pre><code>      ┌────────────┐
+      │  Parent    │
+      │  Class     │
+      └────┬───────┘
+           │
+     defines `sound()`
+           │
+      ┌────▼────┐
+      │  Child  │   ← Overrides `sound()`
+      │  Class  │   ← with own logic
+      └─────────┘
+</code></pre>
+  </div>
+<br>
+
+<h2><b>Operator Overloading in Python (OOP)</b></h2>
+<p><b>Operator Overloading</b> means giving <b>extra/custom functionality</b> to <b>standard Python operators 
+  (like +, -, *, etc.)</b> so they can work with <b>user-defined objects</b> (classes).</p>
+<br>
+
+<h3><b>📌 Why Use It?</b></h3>
+<p>Python allows us to <b>change the behavior of operators</b> when they're used with <b>objects of user-defined classes.</b></p><br>
+<h3><b>🔸For example :</b></h3>
+<ul>
+  <li><b>+ </b>adds integers: <b>10 + 20 → 30</b></li>
+  <li><b>+</b> joins strings: <b>'a' + 'b' → 'ab'</b></li>
+  <li><b>+</b> merges lists: <b>[1, 2] + [3] → [1, 2, 3]</b></li>
+</ul>
+<p>This is possible because the <b>+</b> operator is overloaded in the <b>int, str, and list</b> classes.</p>
+<br>
+
+<h3><b>🔸Example: Without Operator Overloading :</b></h3>
+<div class="Code-box">
+    <pre><code>class Book:
+    def __init__(self, pages):
+        self.pages = pages
+
+b1 = Book(100)
+b2 = Book(200)
+
+# print(b1 + b2)  ❌ Error: unsupported operand type(s)
+</code></pre>
+  </div>
+<br>
+
+<h3><b>🔸With Operator Overloading :</b></h3>
+<div class="Code-box">
+    <pre><code>class Book:
+    def __init__(self, pages):
+        self.pages = pages
+
+    def __add__(self, other):
+        return self.pages + other.pages
+
+b1 = Book(100)
+b2 = Book(200)
+print("Total pages:", b1 + b2)  # Output: Total pages: 300
+</code></pre>
+  </div>
+<br>
+
+<h3><b>📌 Common Magic Methods (Dunder Methods) : </b></h3>
+<br>
+<div class="responsive-table-wrapper">
+<table class="array-methods-table">
+  <thead>
+    <tr>
+      <th>Operator</th>
+      <th>Method</th>
+      <th>Example Use</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code><b>+</code></td>
+      <td>__add__</td>
+      <td>a + b</td>
+    </tr>
+
+    <tr>
+      <td><code><b>-</b></code></td>
+      <td>__sub__</td>
+      <td>a - b</td>
+    </tr>
+
+    <tr>
+      <td><code><b>*</b></code></td>
+      <td>__mul__</td>
+      <td>a * b</td>
+    </tr>
+
+    <tr>
+      <td><code><b>/</b></code></td>
+      <td>__truediv__</td>
+      <td>a / b</td>
+    </tr>
+
+    <tr>
+      <td><code><b>==</b></code></td>
+      <td>__eq__</td>
+      <td>a == b</td>
+    </tr>
+
+    <tr>
+      <td><code><b><</b></code></td>
+      <td>__lt__</td>
+      <td>a < b</td>
+    </tr>
+
+    <tr>
+      <td><code><b>></b></code></td>
+      <td>	__gt__</td>
+      <td>a > b</td>
+    </tr>
+  </tbody>
+</table>
+</div><br><br>
+
+<h3><b>🔸Operator Overloading in Python Using __add__ Method :</b></h3>
+<div class="Code-box">
+    <pre><code>class Book:
+    def __init__(self,pages):
+        self.pages = pages
+    def __add__(self, other):
+        return self.pages+other.pages
+b1 = Book(100)
+b2 = Book(200)        #Magic Method
+print(b1+b2)      # Output - 300
+</code></pre>
+  </div>
+<br>
+
+<!-- Common OOP Questions in Python -->
+<div class="pillars-btn-section" style="text-align:center; margin:40px 0;">
+  <button class="pillars-animated-btn" onclick="window.location.href='common_oop.html'">
+    <span>✨ Common OOP Questions in Python ✨</span>
+  </button>
+</div><br><br>
 
   <div class="navigation-buttons">
   <a href="oops.html" class="nav-btn prev-btn">← Previous</a>
-  <a href="oop_pillars.html" class="nav-btn next-btn">Next →</a>
 </div>
 </section>
 

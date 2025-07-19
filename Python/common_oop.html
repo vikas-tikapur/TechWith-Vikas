@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechWith Vikas</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<header class="main-header">
+  <div class="container">
+    <div><a href="../index.html" class="logo">TechWith <span>Vikas</span></a></div>
+    <select id="pythonPagesDropdown" onchange="if(this.value) window.location.href=this.value;">
+      <div class="custom-dropdown">
+      <option value="">Go to Python Topic...</option>
+      <option value="python.html">Python Introduction</option>
+      <option value="python_p1.html">Python Syntax</option>
+      <option value="python_p2.html">Python Comments & Variables</option>
+      <option value="python_p3.html">Python Data Types/List</option>
+      <option value="python_p4.html">Python Tuples</option>
+      <option value="python_p5.html">Python Tuples-2</option>
+      <option value="python_p6.html">Python Quiz-1</option>
+      <option value="python_p7.html">Python Sets</option>
+      <option value="python_p8.html">Python Dictionaries</option>
+      <option value="ifelse.html">Python If/Else</option>
+      <option value="match.html">Python Match</option>
+      <option value="loops.html">Python Loops</option>
+      <option value="functions.html">Python Functions</option>
+      <option value="array.html">Python Arrays</option>
+      <option value="oops.html">Python OOP</option>
+    </select>
+  </div>
+</header>
+
+
+
+<section class="python-intro">
+  <div class="container">
+    <h2>Common OOP Questions in Python</h2> 
+    <p>Enhance your understanding of Object-Oriented Programming in Python with these commonly asked and important questions every developer should know.</p>
+    <br><br>
+
+    <h2><b>1. What is the difference between a class and an object?</b></h2>
+    <p>A <b>class</b> is a blueprint or template, while an <b>object</b> is an instance of that class. The class defines structure and behavior; the object holds actual data and performs actions.</p>
+    <br>
+
+    <h2><b>2. What are instance variables and class variables?</b></h2>
+    <p><b>Instance variables </b>are specific to each object and stored in the object’s memory.</p>
+    <p><b>Class variables</b> are shared across all objects and defined at the class level.</p>
+    <br>
+
+    <h2><b>3. What is a constructor in Python? How is it defined?</b></h2>
+    <p>A <b>constructor</b> is a special method used to initialize objects when a class is instantiated. In Python, it is defined using the <b>__init__( )</b> method.</p>
+    <br>
+
+    <h2><b>4. What is the __init__ method? Why is it used?</b></h2>
+    <p>The <b> __init__</b> method is a special constructor in Python that is automatically called when a new object is created. It is used to initialize the object's attributes.</p>
+    <br>
+
+    <h2><b>5. What is self in Python classes?</b></h2>
+    <p><b>self</b> refers to the current object (instance) of the class and is used to access instance variables and methods.</p>
+    <br>
+
+    <h2><b>6. What are instance methods, class methods, and static methods?</b></h2>
+    <p><b>Instance methods</b> use <b>self</b> and access instance data.</p>
+    <p><b>Class methods </b>use <b>@classmethod</b> and cls to access class data.</p>
+    <p><b>Static methods</b> use <b>@staticmethod</b> and don’t access instance or class data.</p>
+    <br>
+
+    <h2><b>7. How do you create and use getters and setters?</b></h2>
+    <p>Getters retrieve values, and setters update them. They are defined using regular methods or the <b>@property</b> decorator.</p>
+    <br>
+
+    <h2><b>8. What is the difference between single and multiple inheritance?</b></h2>
+    <p><b>Single inheritance:</b> One child class inherits from one parent.</p>
+    <p><b>Multiple inheritance:</b> One child inherits from multiple parents.</p>
+    <br>
+
+    <h2><b>9. What is method overriding in Python?</b></h2>
+    <p>When a subclass provides its own implementation of a method already defined in the parent class.</p>
+    <br>
+
+    <h2><b>10. What is the use of the super( ) function?</b></h2>
+    <p><b>super( ) </b>is used to call methods or constructors from the parent class inside a child class.</p>
+    <br>
+
+    <h2><b>11. What is operator overloading? How can you implement it?</b></h2>
+    <p>Operator overloading allows custom behavior for operators using <b>magic methods like __add__, __eq__,</b> etc.</p>
+    <br>
+
+    <h2><b>12. What is method overloading? Does Python support it?</b></h2>
+    <p>Method overloading means <b>having multiple methods</b> with the <b>same name but different parameters.</b><br> <b>Python doesn't support</b> it directly; only the last defined method is used.</p>
+    <br>
+
+    <h2><b>13. What are abstract classes and how do you define them?</b></h2>
+    <p>Abstract classes can't be instantiated and must be subclassed. Use ABC module and @abstractmethod to define them.</p>
+    <br>
+
+    <h2><b>14. What is the difference between @classmethod, @staticmethod, and instance methods?</b></h2>
+    <ul>
+        <li><b>@classmethod</b> accesses class-level data <b>(cls)</b></li>
+        <li><b>@staticmethod</b> has no access to class or instance</li>
+        <li>Instance methods access object data using <b>self</b></li>
+    </ul>
+    <br>
+
+    <h2><b>15. What is __str__( ) and __repr__( ) in Python?</b></h2>
+    <p><b>__str__( ) </b>returns a user-friendly string.</p>
+    <p><b>__repr__( )</b> returns a developer-friendly string (for debugging).</p>
+    <br>
+
+    <h2><b>16. How is data hiding achieved in Python?</b></h2>
+    <p>Using single _ (protected) and double __ (private) underscores before variable names.</p>
+    <br>
+
+    <h2><b>17. What are magic methods (dunder methods)?</b></h2>
+    <p>Special methods with double underscores, like <b>__init__, __add__, __str__,</b> that add functionality to classes.</p>
+    <br>
+
+    <h2><b>18. What is the use of __dict__ in Python classes?</b></h2>
+    <p><b>__dict__</b> returns a dictionary of an object’s attributes.</p>
+    <br>
+
+    <h2><b>19. Can you create an inner class in Python? Give an example.</b></h2>
+    <p><b>Yes, a class can be defined inside another class.</b></p>
+    <h3><b> Example :</b></h3>
+    <div class="Code-box">
+    <pre><code>class Outer:
+    class Inner:
+        pass
+</code></pre>
+  </div>
+  <br>
+
+  <h2><b>19. How is memory managed for instance vs class variables?</b></h2>
+  <p>Instance variables are stored separately for each object; class variables are shared and stored in class memory.</p>
+  <br>
+
+  <h2><b>20. How is garbage collection handled in Python OOP?</b></h2>
+  <p>Python uses reference counting and a garbage collector to automatically clean up unused objects.</p>
+  <br>
+
+  <h2>21. Explain the concept of MRO (Method Resolution Order) in multiple inheritance.</h2>
+  <p>MRO defines the order in which methods are searched in a hierarchy. Python uses the C3 linearization algorithm.</p>
+  <br>
+
+  <h2><b>22.  What's the difference between composition and inheritance?</b></h2>
+  <p><b>Inheritance:</b> "Is-a" relationship</p>
+  <p><b>Composition:</b> "Has-a" relationship (using one class inside another)</p>
+  <br>
+
+  <h2><b>23. Can a function return multiple values in Python?</b></h2>
+  <p><b>Yes,</b> a Python function can return multiple values by separating them with commas. Internally, they are returned as a <b>tuple.</b></p>
+  <h3><b> Example :</b></h3>
+    <div class="Code-box">
+    <pre><code>def get_student():
+    name = "Rishik"
+    age = 22
+    marks = 85
+    return name, age, marks
+
+student_info = get_student()
+print(student_info)  # Output: ('Rishik', 22, 85)
+</code></pre>
+  </div>
+
+  <br>
+
+  <h2><b>24. What is the difference between Class Attribute and Instance Attribute in Python?</b></h2>
+  <p>A <b>Class Attribute</b> is shared by <b>all objects</b> of the class.</p>
+  <p>An <b>Instance Attribute</b> is <b>unique</b> to each object.</p>
+  <br>
+
+  <h2><b>25. What is scope in Python?</b></h2>
+  <p><b>Scope</b> refers to the region or area in a program where a variable is recognized or accessible.</p>
+  <br>
+  <h3><b>Types of Scope in Python (LEGB Rule) :</b></h3>
+  <p><b>1. Local -</b>  Inside a function.</p>
+  <p><b>2. Enclosed -</b> Inside a nested function.</p>
+  <p><b>3. Global - </b>At the top-level of the script</p>
+  <p><b>4. Built-in - </b>Python’s reserved names like <b>print( ), len( ),</b> etc.</p>
+<br>
+  
+   <h2><b>26. What is PEP 8 in Python?</b></h2>
+   <p><b>PEP 8</b> is the <b>Python Enhancement Proposal</b> that defines the style <b>guide for writing clean and readable Python code.</b></p>
+   <br>
+
+   <h2><b>27. What is the difference between a Package and a Module in Python?</b></h2>
+   <p>A <b>Module</b> is a single Python file <b>(.py)</b> that contains code — functions, classes, or variables.</p>
+   <p>A <b>Package</b> is a <b>folder</b> that contains multiple modules and an <b>__init__.py</b> file (optional in Python 3.3+).</p>
+   <br>
+
+   <h2><b>28. Can super() be used outside a class in Python?</b></h2>
+   <p> <b>No,</b> super() cannot be used outside a class or outside a method that belongs to a class.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+  <div class="navigation-buttons">
+  <a href="oop_pillars.html" class="nav-btn prev-btn">← Previous</a>
+</div>
+</section>
+
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <h2>CodeWith <span>Vikas</span></h2>
+      <p>Learn programming from scratch.<br> Start your journey today!</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Python</a></li>
+        <li><a href="#">Java</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h3>Follow Me</h3>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-x"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 TechWith Vikas | Created by Vikas Mishra</p>
+  </div>
+<div class="scroll-to-top" title="Go to Top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+</footer>
+
+<script src="../main.js"></script>
+</body>
+</html>
