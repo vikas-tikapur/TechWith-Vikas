@@ -37,28 +37,28 @@
     <h2>Python Sets</h2>
     <p>Sets in Python are a powerful and versatile data type used to store unique, unordered elements. 
         They are highly optimized for operations like membership testing, union, intersection, and difference.</p>
-
-    <h3><b>🔸What is a Set?:</b></h3>
+<br><br>
+    <h2><b>What is a Set?:</b></h2>
     <ul>
         <li>A set is an unordered collection of unique elements.</li>
         <li>Sets are mutable (can be changed).</li>
         <li>Sets do not allow duplicates.</li>
         <li>Sets are written with curly braces {} (like dictionaries, but without key-value pairs).</li>
-    </ul>
-    <p><b>Example: </b></p>
+    </ul><br>
+    <h3><b>Example: </b></h3>
     <div class="Code-box">
     <pre><code>fruits = {"apple", "banana", "cherry"}
 print(fruits)  # Output: {'banana', 'apple', 'cherry'} (order may vary)
 </code></pre>
   </div>
-  
-  <h3><b>🔸Creating a Set:</b></h3>
+  <br><br>
+  <h3><b>Creating a Set:</b></h3>
   <p>You can create a set in two ways:</p>
     <ul>
         <li>Using curly braces { }</li>
         <li>Using the set( ) constructor.</li>
-    </ul>
-    <p><b>Example: </b></p>
+    </ul><br>
+    <h3><b>Example: </b></h3>
     <div class="Code-box">
     <pre><code># Method 1: Using curly braces
 colors = {"red", "green", "blue"}
@@ -70,9 +70,9 @@ numbers = set([1, 2, 3, 4])
 empty_set = set( )
 </code></pre>
   </div>
+<br><br>
 
-
-  <h3><b>🔸Set Operations</b></h3>
+  <h3><b>Set Operations</b></h3>
   <p>Sets support various operations to manipulate and query the data they contain:</p>
     <ul>
         <li><b>Add Elements:</b> Use the <code>add()</code> method to add a single element.</li>
@@ -81,8 +81,8 @@ empty_set = set( )
         <li><b>Union:</b> Combine two sets using the <code>union()</code> method or the <code>|</code> operator.</li>
         <li><b>Intersection:</b> Get common elements using the <code>intersection()</code> method or the <code>&</code> operator.</li>
         <li><b>Difference:</b> Get elements in one set but not the other using the <code>difference()</code> method or the <code>-</code> operator.</li>
-    </ul>
-    <p><b>Example: </b></p>
+    </ul><br>
+    <h3><b>Example: </b></h3>
     <div class="Code-box">
     <pre><code># Adding elements
 fruits = {"apple", "banana", "cherry"}
@@ -113,15 +113,15 @@ print(set_difference)  # Output: {1, 2}
 </code></pre>
   </div>
 
-
-  <h3><b>🔸Removing Elements: </b></h3>
+<br><br>
+  <h3><b>Removing Elements: </b></h3>
     <ul>
         <li><b>remove( ): </b> Removes an element (raises error if not found).</li>
         <li><b>discard( ):</b> Removes an element (no error if not found).</li>
         <li><b>pop( ):</b> Removes & returns a random element.</li>
         <li><b>clear( ):</b> Removes all elements.(Empties the set.)</li>
-    </ul>
-    <p><b>Example: </b></p>
+    </ul><br>
+    <h3><b>Example: </b></h3>
     <div class="Code-box">
     <pre><code>s = {1, 2, 3, 4}
 s.remove(3)    # {1, 2, 4}
@@ -130,19 +130,19 @@ s.pop()        # Removes random element (e.g., 1)
 s.clear()      # set()
 </code></pre>
   </div>
-
-  <h3><b>🔸Checking Membership: </b></h3>
-  <p>You can check if an element is in a set using the <code>in</code> keyword.</p>
-  <p><b>Example: </b></p>
+<br><br>
+  <h3><b>Checking Membership: </b></h3>
+  <p>You can check if an element is in a set using the <code>in</code> keyword.</p><br>
+  <h3><b>Example: </b></h3>
   <div class="Code-box">
     <pre><code>fruits = {"apple", "banana"}
 print("apple" in fruits)  # True
 print("mango" in fruits)  # False
 </code></pre>
   </div>
-
+<br><br>
   
-<h3><b>🔸Set Methods: </b></h3>
+<h2><b>Set Methods: </b></h2>
 <table class="set-methods-table">
   <thead>
     <tr>
@@ -197,22 +197,23 @@ print("mango" in fruits)  # False
   </tbody>
 </table>
 
- <h3><b>🔸Frozen Sets (Immutable Sets): </b></h3>
+<br><br>
+ <h3><b>Frozen Sets (Immutable Sets): </b></h3>
   <ul>
     <li>Frozen sets are immutable (cannot be changed after creation).</li>
     <li>Created using frozenset( ).</li>
-  </ul>
-  <p><b>Example: </b></p>
+  </ul><br>
+  <h3><b>Example: </b></h3>
   <div class="Code-box">
     <pre><code>fs = frozenset([1, 2, 3])
 # fs.add(4) → Error (frozen sets are immutable)
 </code></pre>
   </div>
-
-  <h3><b>🔸Set Operations (Union, Intersection, Difference): </b></h3>
-  <p><b>Union ( | or union( ) )</b></p>
-  <p>Combines elements from both sets.</p>
-  <p><b>Example: </b></p>
+<br><br>
+  <h2><b>Set Operations (Union, Intersection, Difference): </b></h2>
+  <h3><b>Union ( | or union( ) )</b></h3>
+  <p>Combines elements from both sets.</p><br>
+  <h3><b>Example: </b></h3>
   <div class="Code-box">
     <pre><code>A = {1, 2, 3}
 B = {3, 4, 5}
@@ -220,47 +221,48 @@ print(A | B)          # {1, 2, 3, 4, 5}
 print(A.union(B))     # Same output
 </code></pre>
   </div>
-
-  <p><b>Intersection ( & or intersection( ) )</b></p>
-  <p>Returns common elements.</p>
-  <p><b>Example: </b></p>
+<br><br>
+  <h3><b>Intersection ( & or intersection( ) )</b></h3>
+  <p>Returns common elements.</p><br>
+  <h3><b>Example: </b></h3>
   <div class="Code-box">
     <pre><code>print(A & B)          # {3}
 print(A.intersection(B))  # Same output
 </code></pre>
   </div>
-
-  <p><b>Difference ( - or difference( ) )</b></p>
-  <p>Returns elements in A but not in B.</p>
-  <p><b>Example: </b></p>
+<br><br>
+  <h3><b>Difference ( - or difference( ) )</b></h3>
+  <p>Returns elements in A but not in B.</p><br>
+  <h3><b>Example: </b></h3>
   <div class="Code-box">
     <pre><code>print(A - B)          # {1, 2}
 print(A.difference(B)) # Same output
 </code></pre>
   </div>
-
-  <p><b>Symmetric Difference ( ^ or symmetric_difference( ) )</b></p>
+<br><br>
+  <h3><b>Symmetric Difference ( ^ or symmetric_difference( ) )</b></h3>
   <p>Returns elements in either set but not both.</p>
-  <p><b>Example: </b></p>
+  <h3><b>Example: </b></h3><br>
   <div class="Code-box">
     <pre><code>print(A ^ B)          # {1, 2, 4, 5}
 </code></pre>
   </div>
+<br><br>
 
-  <h3><b>🔸Practical Use Cases: </b></h3>
+  <h2><b>Practical Use Cases: </b></h2>
   <ul>
     <li><b>Removing duplicates</b> from a list.</li>
     <li><b>Membership testing </b>(faster than lists).</li>
     <li><b>Mathematical operations </b>(union, intersection).</li>
-  </ul>
-  <p><b>Example: </b></p>
+  </ul><br><br>
+  <h3><b>Example: </b></h3>
   <div class="Code-box">
     <pre><code># Remove duplicates from a list
 names = ["Alice", "Bob", "Alice", "Charlie"]
 unique_names = set(names)  # {'Alice', 'Bob', 'Charlie'}
 </code></pre>
   </div>
-
+<br><br>
    <h3><b>🔸Tricky Concepts & Common Mistakes: </b></h3>
    <p><b>1. Sets are Unordered</b></p>
   <ul>

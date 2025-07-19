@@ -36,8 +36,9 @@
     <h2>Tuples</h2>
     <p>A tuple in Python is a collection that is ordered and unchangeable (also called immutable). 
         It's very similar to a list, but once a tuple is created, you cannot modify its elements.</p>
+<br><br>
 
-    <h3><b>🔸How to Create a Tuple:</b></h3>
+    <h3><b>How to Create a Tuple:</b></h3>
     <div class="Code-box">
     <pre><code>my_tuple = (10, 20, 30)
 </code></pre>
@@ -51,8 +52,9 @@
 
 <p>Without the comma, Python will treat it as just a number.</p>
 
-<h3><b>🔸 Key Features of Tuples: </b></h3>
-<p><b>1. Immutability - Cannot be changed.</b></p>
+<br><br>
+<h2><b>Key Features of Tuples: </b></h2>
+<h3><b>1. Immutability - Cannot be changed.</b></h3>
 <p>Once a tuple is created, you cannot modify, add, or remove elements.</p>
 <div class="Code-box">
     <pre><code># Creating a tuple
@@ -62,8 +64,9 @@ tup[2] = 59
 
 #Output - Error: 'tuple' object does not support item assignment 
 </code></pre>
-  </div>
-<p><b>2. Ordered Collection - Elements have fixed positions.</b></p>
+  </div> <br><br>
+
+<h3><b>2. Ordered Collection - Elements have fixed positions.</b></h3>
 <p>Elements in a tuple maintain their order and can be accessed by index.</p>
 <div class="Code-box">
     <pre><code># Example
@@ -78,8 +81,9 @@ print("First animal:", first_animal)
 print("Last animal:", last_animal)
 </code></pre>
   </div>
+<br><br>
 
-<p><b>3. Allows Duplicate Values.</b></p>
+<h3><b>3. Allows Duplicate Values.</b></h3>
 <p>Tuples can contain multiple instances of the same value.</p>
 <div class="Code-box">
     <pre><code># Example
@@ -88,8 +92,9 @@ print("All grades:", grades)
 print("How many 85s:", grades.count(85))  # Output: 3
 </code></pre>
   </div>
+<br><br>
 
-  <p><b>4. Multiple Data Types.</b></p>
+  <h3><b>4. Multiple Data Types.</b></h3>
   <p>Tuples can store different types of data in a single collection.</p>
   <div class="Code-box">
     <pre><code># Example
@@ -97,8 +102,9 @@ mixed_tuple = (42, "Hello", 3.14, True)
 print("Mixed tuple:", mixed_tuple)
 </code></pre>
   </div>
+<br><br>
 
-  <p><b>5. Tuple Packing and Unpacking.</b></p>
+  <h3><b>5. Tuple Packing and Unpacking.</b></h3>
   <p>You can pack multiple values into a tuple and unpack them into separate variables.</p>
   <div class="Code-box">
     <pre><code># Different ways to create tuples
@@ -111,7 +117,8 @@ print("Way 3:", way3)
 </code></pre>
   </div>
 
-<p><b>6. Slicing - Extract Portions of Tuple.</b></p>
+  <br><br>
+<h3><b>6. Slicing - Extract Portions of Tuple.</b></h3>
 <p>You can extract a portion of a tuple using slicing.</p>
   <div class="Code-box">
     <pre><code># Example: Weekly Temperature Data
@@ -127,8 +134,9 @@ print(f"Weekend temps: {weekend}")       # (24, 21)
 print(f"Alternate days: {every_other_day}") # (22, 28, 27, 21)
 </code></pre>
   </div>
+<br><br>
 
-  <p><b>7. Loop Through Tuple</b></p>
+  <h3><b>7. Loop Through Tuple</b></h3>
   <div class="Code-box">
     <pre><code># Example
 fruits = ("apple", "banana", "cherry")
@@ -139,8 +147,8 @@ for fruit in fruits:
 </code></pre>
   </div>
 
-  <h3><b>🔸Simple Examples:</b></h3>
-  <p><b>Example 1: Store Coordinates</b></p>
+  <h2><b>Simple Examples:</b></h2>
+  <h3><b>Example 1: Store Coordinates</b></h3>
   <div class="Code-box">
     <pre><code># Store x, y position
 my_position = (10, 20)
@@ -149,8 +157,9 @@ y = my_position[1]  # 20
 print(f"I am at position ({x}, {y})")
 </code></pre>
   </div>
+<br><br>
 
-  <p><b>Example 2: Store Person Information</b></p>
+  <h3><b>Example 2: Store Person Information</b></h3>
   <div class="Code-box">
     <pre><code>person = ("Alice", 25, "Teacher")
 name = person[0]
@@ -162,7 +171,8 @@ print(f"Job: {job}")
 </code></pre>
   </div>
 
-  <p><b>Example 3: Store Multiple Values</b></p>
+  <br><br>
+  <h3><b>Example 3: Store Multiple Values</b></h3>
   <div class="Code-box">
     <pre><code># Test scores
 scores = (85, 92, 78, 96, 88)
@@ -172,8 +182,9 @@ print("Lowest score:", min(scores))
 print("Total scores:", len(scores))
 </code></pre>
   </div>
+<br><br>
 
-<p><b>Example 4: Compare Tuples</b></p>
+<h3><b>Example 4: Compare Tuples</b></h3>
   <div class="Code-box">
     <pre><code>score1 = (85, 90)
 score2 = (85, 88)
@@ -181,9 +192,10 @@ print("Score1 > Score2:", score1 > score2)  # True
 print("Scores are same:", score1 == score2)  # False
 </code></pre>
   </div>
+<br><br>
 
-  <h3><b>🔸Simple Tricks</b></h3>
-<p><b>Swap Two Variables.</b></p>
+  <h2><b>Simple Tricks</b></h2>
+<h3><b>Swap Two Variables.</b></h3>
   <div class="Code-box">
     <pre><code>a = 10
 b = 20
@@ -191,8 +203,9 @@ a,b = b,a
 print("a:",a,"b:",b)
 </code></pre>
   </div>
+<br><br>
 
-  <p><b>Unpack Tuple Values</b></p>
+  <h3><b>Unpack Tuple Values</b></h3>
   <div class="Code-box">
     <pre><code>student_info = ("Bob", 18, 95)
 # Get all values at once
