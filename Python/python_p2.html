@@ -36,7 +36,7 @@
     <h2>Python Comments</h2>
     <p>Comments are lines in your code that are ignored during execution. They help you and others 
         understand what the code does or why something is written a certain way.</p>
-
+<br>
     <ul>
         <li><b> Single-Line Comments : </b>Use the # symbol at the beginning of the line.</li>
     </ul>
@@ -45,7 +45,7 @@
 print("Hello, Python")  # This prints a message
 </code></pre>
   </div>
-
+<br>
   <ul>
         <li><b>Multi-Line Comments (Using #) : </b>You can use # at the beginning of multiple lines to create multi-line comments.</li>
     </ul>
@@ -56,7 +56,7 @@ print("Hello, Python")  # This prints a message
 # lines using the hash symbol
 </code></pre>
   </div>
-  
+  <br>
   <ul>
         <li><b>Multi-Line Comments (Using Triple Quotes) : </b>Although not officially for comments, Python 
             allows multi-line strings using triple quotes (''' or """). <br>These are often used as docstrings 
@@ -72,7 +72,7 @@ It is not executed by Python.
 print("Python is fun!")
 </code></pre>
   </div>
-
+<br>
   <ul>
         <li><b>Docstrings : </b>Special multi-line strings used to describe functions, classes, or modules.</li>
     </ul>
@@ -83,7 +83,7 @@ print("Python is fun!")
     print("Hello!")
 </code></pre>
   </div>
-
+<br><br>
   <h2>Why Use Comments?</h2>
   <ul>
     <li>To explain complex logic.</li>
@@ -92,10 +92,12 @@ print("Python is fun!")
     <li>Can be used to explain Python code.</li>
     <li>Can be used to make the code more readable.</li>
   </ul>
+<br><br>
 
   <h2>Python Variables</h2>
   <p>A variable in Python is used to store data or information that can be referenced and 
     manipulated later in the program. <br> In simple terms, Variables are containers for storing data values.</p>
+<br><br>
 
 <h2>Creating Variables</h2>
 <p>You don’t need to declare the type — just assign a value directly.</p>
@@ -106,9 +108,10 @@ price = 99.99
 </code></pre>
   </div>
   <p>Python automatically understands the data type (integer, string, float, etc.) based on the value.</p>
+<br><br>
 
 <h2>Variable Naming Rules</h2>
-<p>Here are the rules for naming variables in Python:</p>
+<p>Here are the rules for naming variables in Python:</p><br>
 <ul>
     <li><b>Start: </b>Variable names must begin with a letter (a-z, A-Z) or an underscore (_). 
         They cannot start with a digit (0-9).</li>
@@ -123,6 +126,7 @@ price = 99.99
     <li><b>Length: </b>Variable names can be of any length, but it's a good practice to keep them concise and meaningful.</li>
     <li><b>Convention: </b>Use lowercase letters and underscores for variable names (e.g., my_variable) to improve readability.</li>
 </ul>
+<br>
 
 <p><b>Valid Example:</b></p>
 <div class="Code-box">
@@ -132,7 +136,7 @@ variable2 = 3.14
 userName = "John Doe"
 </code></pre>
   </div>
-
+<br>
   <p><b>Invalid Examples:</b></p>
   <div class="Code-box">
     <pre><code>2my_variable = 10 #cannot start with a number
@@ -140,12 +144,14 @@ my-variable = 10 #cannot contain a hyphen
 my variable = 10 #cannot contain spaces
 </code></pre>
   </div>
+<br>
 
   <ul>
     <li><b>Reassigning Variables: </b>In Python, you can reassign a variable to a new value or 
         even change its data type at any time.<br> To reassign a variable, simply use the assignment operator 
         (=) with the variable name on the left and the new value on the right.</li>
-  </ul>
+  </ul><br>
+
   <p><b>Example:</b></p>
   <div class="Code-box">
     <pre><code>x = 10    # x is assigned the integer value 10
@@ -157,10 +163,12 @@ print(x)  # Output: hello
 x = True  # x is reassigned to a boolean value
 print(x)  # Output: True
 </code></pre>
-  </div>
+  </div><br>
+
 <ul><li>
     <b>Multiple Assignments: </b>Python allows you to assign values to multiple variables in a single line.
-</li></ul>
+</li></ul><br>
+
 <p><b>Example:</b></p>
   <div class="Code-box">
     <pre><code>   x, y, z = 1, 2, 3
@@ -169,62 +177,68 @@ print(x)  # Output: True
    print(z)  # Output: 3
 </code></pre>
   </div>
+<br>
 
 <ul>
     <li><b>Printing Variables: </b>Use the print() function to display variable values.</li>
-</ul>
+</ul><br>
 <p><b>Example:</b></p>
 <div class="Code-box">
     <pre><code>   x = 10
     print(x)  # Output: 10
 </code></pre>
   </div>
+<br>
 
-<ul><li><b>Printing Variables: </b>Use the print() function to display variable values.</li></ul>
+<ul><li><b>Printing Variables: </b>Use the print() function to display variable values.</li></ul><br>
     <p><b>Example:</b></p>
   <div class="Code-box">
     <pre><code>    x = 10
     print(x)  # Output: 10
 </code></pre>
-</div>
-  <ul><li>To print a string, enclose it in single or double quotes.</li></ul>
+</div><br>
+
+  <ul><li>To print a string, enclose it in single or double quotes.</li></ul><br>
+
     <p><b>Example:</b></p>
   <div class="Code-box">
     <pre><code>    print("Hello, World!")
 </code></pre>
-</div>
-<ul><li>You can also use f-strings for formatted output:</li></ul>
+</div><br>
+
+<ul><li>You can also use f-strings for formatted output:</li></ul><br>
+
 <p><b>Example:</b></p>
   <div class="Code-box">
     <pre><code>name = "Ram"
 age = 30
 print(f"My name is {name} and I am {age} years old.")
 </code></pre>
-  </div>
+  </div><br>
 
-  <ul><li><b>Dynamic Typing: </b>Python is dynamically typed, meaning you don't have to declare the variable type explicitly.</li></ul>
+  <ul><li><b>Dynamic Typing: </b>Python is dynamically typed, meaning you don't have to declare the variable type explicitly.</li></ul><br>
 <p><b>Example:</b></p>
   <div class="Code-box">
     <pre><code>value = 100     # int
 value = "Text"  # now string
 </code></pre>
-  </div>
+  </div><br>
 
-<ul><li><b>Variable Type Checking: </b>You can check the data type using the type() function.</li></ul>
+<ul><li><b>Variable Type Checking: </b>You can check the data type using the type() function.</li></ul><br>
 <p><b>Example:</b></p>
   <div class="Code-box">
     <pre><code>x = 10
 print(type(x)) 
 </code></pre>
-  </div>
+  </div><br>
 
-<ul><li><b>Deleting a Variable: </b>You can delete a variable using the del keyword.</li></ul>
+<ul><li><b>Deleting a Variable: </b>You can delete a variable using the del keyword.</li></ul><br>
 <p><b>Example:</b></p>
   <div class="Code-box">
     <pre><code>x = 100
 del x
 </code></pre>
-</div>
+</div><br><br>
 
 <h2>Why Use Variables?</h2>
 <ul>
@@ -233,6 +247,8 @@ del x
     <li><b>Flexibility: </b>Variables can change values, making your code adaptable.</li>
 </ul>
   </div> 
+  <br><br>
+  
   <div class="navigation-buttons">
   <a href="python_p1.html" class="nav-btn prev-btn">← Previous</a>
   <a href="python_p3.html" class="nav-btn next-btn">Next →</a>

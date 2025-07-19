@@ -384,7 +384,7 @@ body {
 .python-intro h2{
   color: rgba(242, 113, 0, 1);
   font-weight: 600;
-  font-size: 30px;
+  font-size: 40px;
   line-height: 100%;
   letter-spacing: 1px;
   padding: 20px 0px 20px 0px;
@@ -444,9 +444,9 @@ table {
     }
 
     h3{
-      font-size: 20px;
+      font-size: 25px;
       letter-spacing: 1px;
-      color: rgba(242, 113, 0, 1);
+      color: rgba(10, 99, 155, 1);
       padding: 10px 0px 10px 0px;
     }
   #pythonPagesDropdown {
