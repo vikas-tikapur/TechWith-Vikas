@@ -40,27 +40,29 @@
       make decisions and execute different blocks of code based on whether certain conditions are true or 
       false. This is a core concept in programming, enabling dynamic and responsive applications.
 </p>
+<br><br>
 
-  <h3><b>🔸1. The if Statement :</b></h3>
+  <h2><b>1. The if Statement :</b></h2>
     <p>The <b>if</b> statement is the simplest form of conditional control. It executes a block of code only if a 
       specified condition evaluates to <b>True.</b></p>
-
-    <p><b>Syntax: </b></p>
+<br>
+    <h3><b>Syntax: </b></h3>
     <div class="Code-box">
     <pre><code>if condition:
     # Code to execute if the condition is True
     # (Indented block)
 </code></pre>
   </div>
-
-  <h3><b>🔸Key Points : </b></h3>
+<br><br>
+  <h3><b>Key Points : </b></h3>
   <ul>
     <li>The <b>condition</b> is a boolean expression (something that evaluates to <b>True</b> or <b>False</b>).</li>
     <li>The colon <b>( : )</b> after the condition is mandatory.</li>
     <li>The code block to be executed must be <b>indented.</b> Python uses indentation (whitespace) to define code 
       blocks, unlike other languages that use curly braces <b>{ }</b>. Typically, 4 spaces are used for indentation.</li>
-  </ul>
-  <p><b>Example : </b></p>
+  </ul><br>
+
+  <h3><b>Example : </b></h3>
   <div class="Code-box">
     <pre><code>#Example 1.1: Simple if statement
 age = 20
@@ -69,12 +71,13 @@ if age >= 18:
 print("This line runs regardless of the condition.")
 </code></pre>
   </div>
-
-  <h3><b>🔸Explanation : </b></h3>
+<br>
+  <h3><b>Explanation : </b></h3>
   <p>In this example, <b>age >= 18</b> evaluates to <b>True</b>, so "You are eligible to vote." is printed. 
     The last <b>print</b> statement is outside the <b>if</b> block, so it always executes.</p>
+<br><br>
 
-  <h3><b>🔸What if the condition is False? : </b></h3>
+  <h3><b>What if the condition is False? </b></h3>
   <div class="Code-box">
     <pre><code># Example 1.2 : If condition is False
 temperature = 25
@@ -82,30 +85,32 @@ if temperature > 30:
     print("It's a hot day!")
 print("Enjoy the weather!")
 </code></pre>
-  </div>
+  </div><br>
 
-<h3><b>🔸Explanation : </b></h3>
+<h3><b>Explanation : </b></h3>
 <p>Here, <b>temperature > 30</b> is <b>False</b>. Therefore, the indented <b>print</b> statement inside the <b>if</b> block is skipped. 
   "Enjoy the weather!" is still printed.</b></p>
 
-<h3><b>🔸2. The if-else Statement : </b></h3>
+  <br><br>
+<h3><b>2. The if-else Statement : </b></h3>
 <p>The <b>if-else</b> statement provides an alternative path of execution when the <b>if</b> condition is <b>False</b>.</p>
+<br>
 
-  <p><b>Syntax: </b></p>
+  <h3><b>Syntax: </b></h3>
   <div class="Code-box">
     <pre><code>if condition:
     # Code to execute if the condition is True
 else:
     # Code to execute if the condition is False
 </code></pre>
-  </div>
-  <h3><b>🔸Key Points : </b></h3>
+  </div><br><br>
+  <h3><b>Key Points : </b></h3>
   <ul>
     <li>The <b>else</b> block does not have a condition. It acts as a catch-all for when the <b>if</b> condition is <b>False</b>.</li>
     <li>Both the <b>if</b> and <b>else</b> blocks must be indented.</li>
   </ul>
-
-  <p><b>Example : </b></p>
+<br>
+  <h3><b>Example : </b></h3>
   <div class="Code-box">
     <pre><code>#Example 2.1: if-else statement
 num = 7
@@ -122,16 +127,17 @@ else:
     print("The number is non-positive (zero or negative).")
 </code></pre>
   </div>
-
-  <h3><b>🔸Explanation : </b></h3>
+<br>
+  <h3><b>Explanation : </b></h3>
   <p>In Example 2.1, <b>7 % 2 == 0</b> is <b>False</b>, so the <b>else</b> block executes. In Example 2.2,
     the program takes user input, converts it to an integer, and then checks if it's positive or not.</p>
+<br><br>
 
-  <h3><b>🔸3. The if-elif-else Ladder : </b></h3>
+  <h3><b>3. The if-elif-else Ladder : </b></h3>
   <p>When you have multiple conditions to check, the <b>if-elif-else</b> (pronounced "if-else if-else") ladder is 
-    used. <b>elif</b> is short for "else if".</p>
+    used. <b>elif</b> is short for "else if".</p><br>
 
-  <p><b>Syntax: </b></p>
+  <h3><b>Syntax: </b></h3>
   <div class="Code-box">
     <pre><code>if condition1:
     # Code to execute if condition1 is True
@@ -143,17 +149,17 @@ else:
     # Code to execute if all preceding conditions (condition1, condition2, condition3, etc.) are False
 </code></pre>
   </div>
-
-  <h3><b>🔸Key Points : </b></h3>
+<br><br>
+  <h3><b>Key Points : </b></h3>
   <ul>
     <li>Python checks conditions sequentially from top to bottom.</li>
     <li>As soon as a condition evaluates to <b>True</b>, its corresponding block of code is executed, 
       and the rest of the <b>elif</b> and <b>else</b> statements in that ladder are <b>skipped</b>.</li>
       <li>You can have any number of <b>elif</b> blocks.</li>
       <li>The <b>else</b> block is optional. If omitted and none of the <b>if</b> or <b>elif</b> conditions are true, nothing in the conditional structure will execute.</li>
-  </ul>
+  </ul><br>
 
-  <p><b>Example : </b></p>
+  <h3><b>Example : </b></h3>
   <div class="Code-box">
     <pre><code># Example 3.1: Grade calculation
 score = 85
@@ -178,16 +184,17 @@ else:
     print("Good evening!")
 </code></pre>
   </div>
-
-  <h3><b>🔸Explanation : </b></h3>
+<br>
+  <h3><b>Explanation : </b></h3>
   <p>In Example 3.1, <b>score >= 90</b> is <b>False</b>, but <b>score >= 80</b> is <b>True</b>, so "Grade: B" is printed, and 
     the rest of the ladder is ignored. Example 3.2 dynamically greets the user based on the current hour.</p>
+<br><br>
 
-  <h3><b>🔸4. Nested if-else Statements : </b></h3>
+  <h3><b>4. Nested if-else Statements : </b></h3>
   <p>You can place <b>if-else</b> statements inside other <b>if-else</b> statements. This is called <b>nesting</b>. 
-    It's useful when you need to check multiple layers of conditions.</p>
+    It's useful when you need to check multiple layers of conditions.</p><br>
 
-<p><b>Syntax : </b></p>
+<h3><b>Syntax : </b></h3>
   <div class="Code-box">
     <pre><code>if outer_condition:
     # Code for outer_condition being True
@@ -202,14 +209,16 @@ else:
     else:
         # Code for another_inner_condition being False
 </code></pre>
-  </div>
-  <h3><b>🔸Key Points : </b></h3>
+  </div><br><br>
+
+  <h3><b>Key Points : </b></h3>
   <ul>
     <li>Indentation is crucial for nested statements to maintain clarity and correct execution flow.</li>
     <li>Too many levels of nesting can make code hard to read and maintain. Consider refactoring complex 
       nested if statements <b>if </b> they become too deep.</li>
-  </ul>
-  <p><b>Example : </b></p>
+  </ul><br>
+
+  <h3><b>Example : </b></h3>
   <div class="Code-box">
     <pre><code># Example 4.1: Movie ticket pricing with nested if-else
 age = 15
@@ -226,20 +235,22 @@ else:
     else:
         print("Adult price: Ticket price is $12.")
 </code></pre>
-  </div>
-  <h3><b>🔸Explanation : </b></h3>
+  </div><br>
+
+  <h3><b>Explanation : </b></h3>
   <p>Here, the outer <b>if</b> checks the <b>age</b>. If <b>age < 18</b> is true, then an inner <b>if</b> checks <b>is_student</b>. 
     If <b>age >= 18</b> is true (the <b>else</b> block of the outer <b>if</b>), then another inner if checks for senior discount.</p>
+<br><br>
 
-  <h3><b>🔸5. Logical Operators (and, or, not) : </b></h3>
+  <h3><b>5. Logical Operators (and, or, not) : </b></h3>
   <p>You can combine multiple conditions using logical operators to create more complex conditional expressions.</p>
   <ul>
     <li><b>and</b>: Returns <b>True</b> if <b>both </b> conditions are <b>True</b>.</li>
     <li><b>or</b>: Returns <b>True</b> if <b>at least </b>one condition is <b>True</b>.</li>
     <li><b>not</b>: Reverses the boolean value of a condition (e.g., <b>not True</b> is <b>False</b>).</li>
   </ul>
-
-  <p><b>Example : </b></p>
+<br>
+  <h3><b>Example : </b></h3>
   <div class="Code-box">
     <pre><code># Example 5.1: Using 'and'
 temperature = 28
@@ -273,20 +284,22 @@ else:
     print("You cannot drive yet or don't have a license.")
 </code></pre>
   </div>
+<br><br>
 
-  <h3><b>🔸6. Ternary Operator (Conditional Expressions - Advanced Basic): </b></h3>
+  <h3><b>6. Ternary Operator (Conditional Expressions - Advanced Basic): </b></h3>
   <p>For simple <b>if-else</b> assignments, Python offers a concise one-line syntax called the ternary 
-    operator or conditional expression.</p>
-  <p><b>Syntax:</b></p>
+    operator or conditional expression.</p><br>
+  <h3><b>Syntax:</b></h3>
   <div class="Code-box">
     <pre><code>value_if_true if condition else value_if_false</code></pre>
-  </div>
-  <h3><b>🔸Key Points : </b></h3>
+  </div><br><br>
+
+  <h3><b>Key Points : </b></h3>
   <ul>
     <li>This is an <b>expression</b>, meaning it evaluates to a value, which can then be assigned to a variable or used directly.</li>
     <li>It's ideal for simple assignments, not for executing complex blocks of code.</li>
-  </ul>
-  <p><b>Example : </b></p>
+  </ul><br>
+  <h3><b>Example : </b></h3>
   <div class="Code-box">
     <pre><code># Example 6.1: Simple even/odd check
 number = 10
@@ -299,17 +312,18 @@ print(message)
 # Example 6.3: Using directly in print
 score = 75
 print("Passed" if score >= 60 else "Failed")</code></pre>
-  </div>
-  <h3><b>🔸7. Chained Comparisons (Advanced) : </b></h3>
+  </div><br><br>
+
+  <h3><b>7. Chained Comparisons (Advanced) : </b></h3>
   <p>Python allows you to chain comparison operators, which can make your conditions more readable, 
     especially when checking if a value falls within a range.
-</p>
-  <p><b>Syntax:</b></p>
+</p><br>
+  <h3><b>Syntax:</b></h3>
   <div class="Code-box">
     <pre><code>lower_bound <= value <= upper_bound</code></pre>
   </div>
-  <p>This is equivalent to <b>lower_bound <= value and value <= upper_bound.</b></p>
-  <p><b>Example : </b></p>
+  <p>This is equivalent to <b>lower_bound <= value and value <= upper_bound.</b></p><br>
+  <h3><b>Example : </b></h3>
   <div class="Code-box">
     <pre><code># Example 7.1: Checking if a number is within a range
 num = 15
@@ -326,17 +340,18 @@ elif 80 <= score < 90: # Note: 'score < 90' is naturally handled by elif order, 
 else:
     print("Needs Improvement")</code></pre>
   </div>
+<br><br>
 
-  <h3><b>🔸8. if with in and not in Operators (Advanced) : </b></h3>
+  <h3><b>8. if with in and not in Operators (Advanced) : </b></h3>
   <p>These operators are useful for checking membership in sequences (strings, lists, tuples, sets, 
     dictionaries).
-</p>
-<p><b>Syntax:</b></p>
+</p><br>
+<h3><b>Syntax:</b></h3>
   <div class="Code-box">
     <pre><code>element in sequence
 element not in sequence</code></pre>
-  </div>
-<p><b>Example : </b></p>
+  </div><br>
+<h3><b>Example : </b></h3>
   <div class="Code-box">
     <pre><code># Example 8.1: Checking if an item is in a list
 fruits = ["apple", "banana", "cherry"]
@@ -357,12 +372,14 @@ if user_comment not in disallowed_words:
 else:
     print("Comment contains disallowed words.")</code></pre>
   </div>
+<br><br>
 
-  <h3><b>🔸9. Truthiness and Falsiness (Deep Dive) : </b></h3>
+  <h3><b>9. Truthiness and Falsiness (Deep Dive) : </b></h3>
   <p>In Python, many values are inherently considered "truthy" or "falsy" when evaluated in a boolean context 
     (like an <b>if </b> condition), even if they are not explicitly <b>True</b> or <b>False</b>.
-</p>
-  <h3><b>🔸Falsy Values : </b></h3>
+</p><br><br>
+
+  <h3><b>Falsy Values : </b></h3>
   <ul>
     <li><b>None</b></li>
     <li><b>False</b></li>
@@ -372,21 +389,22 @@ else:
     <li><b>{ }</b> (empty dictionary)</li>
     <li><b>( )</b> (empty tuple)</li>
     </ul>
+<br><br>
 
-  <h3><b>🔸Truthy Values : </b></h3>
+  <h3><b>Truthy Values : </b></h3>
   <ul>
     <li>Any non-empty sequence or mapping (e.g., <b>[1, 2], 'hello', {1: 'a'}</b>)</li>
     <li>Any non-zero number (e.g., <b>1, -5, 3.14</b>)</li>
     <li><b>True</b></li>
     <li>Objects (by default, they are truthy unless their <b>__bool__()</b> or <b>__len__()</b> methods are defined to 
       return <b>False</b> or zero, respectively).</li>
-    </ul>
-  <p><b>Example : </b></p>
+    </ul><br>
+  <h3><b>Example : </b></h3>
   <div class="Code-box">
   <pre><code>element in sequence
 element not in sequence</code></pre>
-  </div>
-<p><b>Example : </b></p>
+  </div><br>
+<h3><b>Example : </b></h3>
   <div class="Code-box">
     <pre><code># Example 9.1: Truthiness of numbers
 if 0:
@@ -413,13 +431,15 @@ if value:
 else:
     print("Value is None (falsy).")</code></pre>
   </div>
+<br><br>
 
-  <h3><b>🔸10. if with try-except (Advanced Error Handling with Conditionals) : </b></h3>
+  <h3><b>10. if with try-except (Advanced Error Handling with Conditionals) : </b></h3>
   <p>Often, you'll need to check for conditions that might raise errors (exceptions). 
     <b>try-except</b> blocks are used for this, and <b>if</b> statements can be used within them to handle 
     different scenarios after an exception.
-</p>
-  <p><b>Example:</b></p>
+</p><br>
+
+  <h3><b>Example:</b></h3>
   <div class="Code-box">
     <pre><code># Example 10.1: Handling invalid input
 try:
@@ -433,17 +453,19 @@ except ValueError:
     print("Invalid input! Please enter a valid integer.")
 except Exception as e:
     print(f"An unexpected error occurred: {e}")</code></pre>
-  </div>
-<h3><b>🔸Explanation : </b></h3>
+  </div><br>
+
+<h3><b>Explanation : </b></h3>
 <p>The <b>try</b> block attempts to convert <b>user_input</b> to an integer. If the input is not a valid integer 
   (e.g., "hello"), a <b>ValueError</b> is raised, and the <b>except ValueError</b> block is executed. If the conversion 
   is successful, the <b>if-else</b> statement proceeds normally.
 </p>
+<br><br>
 
-  <h3><b>🔸11. if with Functions (High Level) : </b></h3>
+  <h3><b>11. if with Functions (High Level) : </b></h3>
   <p>Conditions are often used within functions to control their behavior and return different 
-    results based on inputs.</p>
-  <p><b>Example:</b></p>
+    results based on inputs.</p><br>
+  <h3><b>Example:</b></h3>
   <div class="Code-box">
     <pre><code># Example 11.1: Function returning different values
 def get_discounted_price(original_price, customer_type):
@@ -471,19 +493,22 @@ result2 = divide_numbers(5, 0)
 if result2 is None: # Check if the function returned None
     print("Division failed as expected.")</code></pre>
   </div>
-  <h3><b>🔸12. if with List Comprehensions and Generator Expressions (Advanced/Concise) : </b></h3>
+  <br><br>
+
+  <h3><b>12. if with List Comprehensions and Generator Expressions (Advanced/Concise) : </b></h3>
   <p><b>if</b> can be embedded within list comprehensions and generator expressions to filter elements or apply conditional transformations.</p>
-  <p><b>Syntax (Filtering) :</b></p>
+  <br>
+  <h3><b>Syntax (Filtering) :</b></h3>
   <div class="Code-box">
     <pre><code>[expression for item in iterable if condition]</code></pre>
   </div>
-
-   <p><b>Syntax (Conditional Expression within Comprehension) :</b></p>
+<br><br>
+   <h3><b>Syntax (Conditional Expression within Comprehension) :</b></h3>
   <div class="Code-box">
     <pre><code>[value_if_true if condition else value_if_false for item in iterable]</code></pre>
   </div>
-
-  <p><b>Example :</b></p>
+<br>
+  <h3><b>Example :</b></h3>
   <div class="Code-box">
     <pre><code># Example 12.1: Filtering even numbers from a list
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -498,8 +523,9 @@ print("Squared odd numbers (generator):")
 for sq in squared_odds:
     print(sq)</code></pre>
   </div>
+<br><br>
 
-  <h3><b>🔸13. Short-Circuit Evaluation (Deep Dive) : </b></h3>
+  <h3><b>13. Short-Circuit Evaluation (Deep Dive) : </b></h3>
   <p>Python's logical operators <b>(and, or)</b> use short-circuit evaluation. This means that they evaluate 
     conditions only as much as necessary to determine the overall result.</p>
   <ul>
@@ -507,8 +533,8 @@ for sq in squared_odds:
       is not evaluated.</li>
     <li><b>or:</b> If the first condition is <b>True</b>, the entire expression is <b>True</b>, and the second condition is not evaluated.</li>
   </ul>
-  <p>This can be useful for performance optimization and preventing errors.</p>
-  <p><b>Example:</b></p>
+  <p>This can be useful for performance optimization and preventing errors.</p><br>
+  <h3><b>Example:</b></h3>
   <div class="Code-box">
     <pre><code># Example 13.1: Short-circuiting with 'and' to prevent ZeroDivisionError
 def check_and_divide(numerator, denominator):
@@ -532,12 +558,13 @@ if is_valid_input("hello") or is_valid_input("world"):
     print("At least one input is valid.")
 </code></pre>
   </div>
+<br><br>
 
-  <h3><b>🔸14. match-case Statement (Python 3.10+) - Structured Pattern Matching : </b></h3>
+  <h3><b>14. match-case Statement (Python 3.10+) - Structured Pattern Matching : </b></h3>
   <p>While not strictly <b>if-else</b>, Python 3.10 introduced the <b>match-case</b> statement, which is a powerful way
     to handle multiple conditions in a more structured way, especially when dealing with different data
-    patterns. It's an alternative to long <b>if-elif-else</b> chains for certain scenarios.</p>
-<p><b>Syntax :</b></p>
+    patterns. It's an alternative to long <b>if-elif-else</b> chains for certain scenarios.</p><br>
+<h3><b>Syntax :</b></h3>
   <div class="Code-box">
     <pre><code>match subject:
     case pattern1:
@@ -547,8 +574,8 @@ if is_valid_input("hello") or is_valid_input("world"):
     case _: # The "wildcard" or default case (like else)
         # Code if no other pattern matches</code></pre>
   </div>
-
-<p><b>Example :</b></p>
+<br>
+<h3><b>Example :</b></h3>
   <div class="Code-box">
     <pre><code># Example 14.1: Basic match-case
 command = "start"
@@ -596,8 +623,9 @@ match point:
 <p>Note on <b>match-case</b>: While it uses patterns and conditions (<b>if </b> guards), it's a distinct control flow 
   statement from the <b>if-elif-else</b> ladder. It excels in pattern matching against various data structures,
   not just simple boolean conditions.</p>
+<br><br>
 
-<p><b>Best Practices and Common Pitfalls :</b></p>
+<h3><b>Best Practices and Common Pitfalls :</b></h3>
 <ul>
   <li><b>Indentation is paramount</b>: Incorrect indentation will lead to <b>IndentationError</b> or logical errors.</li>
   <li><b>Clarity over brevity</b>: While ternary operators are concise, don't overuse them if the logic becomes hard to read.</li>
@@ -640,7 +668,7 @@ code = color_codes.get(color, "Unknown") # .get() allows a default if key not fo
 print(code)</code></pre>
   </div>
 
-
+<br><br>
   <div class="navigation-buttons">
   <a href="python_p8.html" class="nav-btn prev-btn">← Previous</a>
   <a href="match.html" class="nav-btn next-btn">Next →</a>
