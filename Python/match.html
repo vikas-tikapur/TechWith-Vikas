@@ -43,10 +43,10 @@
       structure or shape of data.</p>
 
     <p>It's inspired by pattern matching features found in functional programming languages.</p>
-
-    <h3><b>🔸1. Basic match Statement:</b></h3>
+<br><br>
+    <h3><b>1. Basic match Statement:</b></h3>
     <p>The simplest form involves matching a single value against literal patterns.</p>
-    <p><b>Syntax : </b></p>
+    <h3><b>Syntax : </b></h3>
     <div class="Code-box">
     <pre><code>match subject:
     case pattern1:
@@ -57,16 +57,17 @@
         # Code to execute if no other pattern matches
 </code></pre>
   </div>
-  
-  <h3><b>🔸Key Points :</b></h3>
+  <br><br>
+
+  <h3><b>Key Points :</b></h3>
     <ul>
         <li><b>subject:</b> The expression whose value you want to match.</li>
         <li><b>case:</b> Introduces a pattern.</li>
         <li><b>pattern:</b> What you are trying to match the <b>subject</b> against.</li>
         <li><b>_ (Wildcard Pattern):</b> Catches anything that hasn't been matched by previous <b>case</b> statements. 
           It acts like an <b>else</b> block and should typically be the last <b>case</b>.</li>
-    </ul>
-    <p><b>Example 1.1: Matching a string (commands) : </b></p>
+    </ul><br>
+    <h3><b>Example 1.1: Matching a string (commands) : </b></h3>
     <div class="Code-box">
     <pre><code>command = "start"
 match command:
@@ -91,15 +92,17 @@ match command:
         print(f"Unknown command: '{command}'")
 </code></pre>
   </div>
-<h3><b>🔸Explanation :</b></h3>
+ 
+<h3><b>Explanation :</b></h3>
 <p>The <b>command</b> variable is the <b>subject</b>. Each case checks if <b>command</b> exactly matches the string literal 
   ("start", "stop", "restart"). If <b>command</b> is "status", it doesn't match any of the explicit cases, so 
   the wildcard <b>_</b> case is executed.
 </p>
 
-<h3><b>🔸2. Matching Multiple Literals with | (OR operator) :</b></h3>
-<p>You can match against multiple literal values using the <b>|</b> (OR) operator within a single <b>case</b>.</p>
-<p>Example 2.1: Matching multiple HTTP status codes :</p>
+<br><br>
+<h3><b>2. Matching Multiple Literals with | (OR operator) :</b></h3>
+<p>You can match against multiple literal values using the <b>|</b> (OR) operator within a single <b>case</b>.</p><br>
+<h3>Example 2.1: Matching multiple HTTP status codes :</h3>
 <div class="Code-box">
 <pre><code>status_code = 403
 match status_code:
@@ -113,13 +116,15 @@ match status_code:
         print(f"Unhandled status code: {status_code}")
 </code></pre>
   </div>
-<h3><b>🔸Explanation :</b></h3>
+
+<h3><b>Explanation :</b></h3>
 <p>If <b>status_code</b> is 403, it matches <b>400 | 401 | 403 | 404</b> and the corresponding message is printed.</p>
 
-<h3><b>🔸3. Capturing Patterns (Variable Patterns) :</b></h3>
+<br><br>
+<h3><b>3. Capturing Patterns (Variable Patterns) :</b></h3>
 <p>You can capture parts of the subject into variables for later use within the <b>case</b> block. 
-  This is done by using a variable name as a pattern.</p>
-<p><b>Example 3.1: Capturing a simple value :</b></p>
+  This is done by using a variable name as a pattern.</p><br>
+<h3><b>Example 3.1: Capturing a simple value :</b></h3>
 <div class="Code-box">
 <pre><code>action = "download"
 match action:
@@ -141,20 +146,24 @@ match action:
 </code></pre>
   </div>
 
-<h3><b>🔸Explanation :</b></h3>
+<h3><b>Explanation :</b></h3>
 <p>When <b>action</b> is "download", it matches <b>case "download" as file_action:</b>, and the string 
   "download" is assigned to the <b>file_action</b> variable. If <b>action</b> is "process", it doesn't match 
   the specific literals, so it falls to <b>case cmd:</b>, and "process" is assigned to <b>cmd</b>.</p>
+<br><br>
 
-<h3><b>🔸4. Matching Sequence Patterns (Lists and Tuples) :</b></h3>
+<h3><b>4. Matching Sequence Patterns (Lists and Tuples) :</b></h3>
 <p>You can match against the structure and elements of sequences like lists and tuples.</p>
-<h3><b>🔸Key Points: </b></h3>
+<br><br>
+
+<h3><b>Key Points: </b></h3>
 <ul>
   <li><b>Exact length matching:</b> case [a, b, c] will only match a list of exactly three elements.</li>
   <li><b>Star pattern (*):</b>Matches zero or more elements. It captures them into a list. <b>*</b> can appear only once in a sequence pattern.</li>
   <li><b>Nested patterns:</b> You can nest patterns within sequences.</li>
-</ul>
-<p><b>Example 4.1: Matching coordinates :</b></p>
+</ul><br><br>
+
+<h3><b>Example 4.1: Matching coordinates :</b></h3>
 <div class="Code-box">
 <pre><code>point1 = (1, 2)
 point2 = [5, 10, 15]
@@ -172,15 +181,17 @@ for point in [point1, point2, point3, point4]:
             print(f"{point}: Unrecognized point format.")
 </code></pre>
   </div>
-<h3><b>🔸Explanation :</b></h3>
+
+<h3><b>Explanation :</b></h3>
 <ul>
   <li><b>(0, 0)</b> matches the specific literal tuple.</li>
   <li><b>(x, y)</b> matches any 2-element tuple, capturing its elements.</li>
   <li><b>[x, y, z]</b> matches any 3-element list.</li>
   <li><b>_</b> matches anything else, acting as a catch-all.</li>
 </ul>
+<br><br>
 
-<p><b>Example 4.2: Using the star pattern * (variable-length sequences)</b></p>
+<h3><b>Example 4.2: Using the star pattern * (variable-length sequences)</b></h3>
 <div class="Code-box">
 <pre><code>data_entry1 = ["log", "info", "User logged in."]
 data_entry2 = ["error", "Permission denied.", "main.py", 102]
@@ -197,21 +208,23 @@ for entry in [data_entry1, data_entry2, data_entry3]:
             print(f"Unknown data entry: {entry}")
 </code></pre>
   </div>
-<h3><b>🔸Explanation :</b></h3>
+<h3><b>Explanation :</b></h3>
 <ul>
   <li><b>["log", level, message]</b> requires exactly 3 elements, starting with "log". <b>level</b> and <b>message</b> capture the second and third elements.</li>
   <li><b>["error", message, *details]</b>  requires at least 2 elements, starting with "error". 
     <b>message</b> captures the second, and <b>details</b> captures all subsequent elements as a list (can be empty).</li>
 </ul>
 
-<h3><b>🔸5. Matching Mapping Patterns (Dictionaries):</b></h3>
-<p>You can match against the structure and keys/values of dictionaries.</p>
-<h3><b>🔸Key Points: </b></h3>
+<br><br>
+<h3><b>5. Matching Mapping Patterns (Dictionaries):</b></h3>
+<p>You can match against the structure and keys/values of dictionaries.</p><br>
+<h3><b>Key Points: </b></h3>
 <ul>
   <li>You can specify required keys and capture their values.</li>
   <li><b>**rest </b> (double-star) captures remaining key-value pairs into a new dictionary.</li>
-</ul>
-<p><b>Example 5.1: Matching user profiles :</b></p>
+</ul><br><br>
+
+<h3><b>Example 5.1: Matching user profiles :</b></h3>
 <div class="Code-box">
 <pre><code>user1 = {"name": "Alice", "age": 30, "city": "New York"}
 user2 = {"name": "Bob", "role": "admin"}
@@ -231,27 +244,31 @@ for user in [user1, user2, user3, user4]:
             print(f"Unknown user format: {user}")
 </code></pre>
 </div>
-<h3><b>🔸Explanation :</b></h3>
+<h3><b>Explanation :</b></h3>
 <ul>
   <li><b>{"name": name, "age": age}</b> matches if both <b>name</b> and <b>age</b> keys are present. Their values are 
     captured into <b>name</b> and <b>age</b> variables.</li>
 </ul>
 
-<h3><b>🔸6. Guards (if clauses in case):</b></h3>
+<br><br>
+<h3><b>6. Guards (if clauses in case):</b></h3>
 <p>You can add an <b>if</b> clause (a "guard") to a <b>case</b> pattern. The <b>case</b> only matches if both the pattern 
   matches and the <b>if</b> condition is true.</p>
-  <p><b>Syntax:</b></p>
+  <h3><b>Syntax:</b></h3>
 <div class="Code-box">
 <pre><code>case pattern if condition:
     # Code to execute if pattern matches AND condition is True
 </code></pre>
 </div>
-<h3><b>🔸Key Points: </b></h3>
+<br>
+<h3><b>Key Points: </b></h3>
 <ul>
   <li>The <b>condition</b> can use any variables captured by the pattern.</li>
   <li>Guards allow for more fine-grained control beyond just structural matching.</li> 
 </ul>
-<p><b>Example 6.1: Filtering numbers</b></p>
+<br><br>
+
+<h3><b>Example 6.1: Filtering numbers</b></h3>
 <div class="Code-box">
 <pre><code>num = 7
 match num:
@@ -263,8 +280,9 @@ match num:
         print("Not a number?")
 </code></pre>
 </div>
+<br><br>
 
-<p><b>Example 6.2: Combining patterns and guards (from user profile example) </b></p>
+<h3><b>Example 6.2: Combining patterns and guards (from user profile example) </b></h3>
 <div class="Code-box">
 <pre><code>user = {"name": "Charlie", "age": 15, "city": "London"}
 match user:
@@ -279,14 +297,15 @@ match user:
 </code></pre>
 </div>
 
-<h3><b>🔸Explanation :</b></h3>
+<h3><b>Explanation :</b></h3>
 <p>The <b>if age >= 18</b> acts as a guard. The <b>case</b> will only activate if <b>user</b> has <b></b>name</b> and <b>age</b> keys and
   the value of <b>age</b> is 18 or greater.</p>
+<br><br>
 
-<h3><b>🔸7. Class Patterns (Matching Objects):</b></h3>
+<h3><b>7. Class Patterns (Matching Objects):</b></h3>
 <p>This is one of the most powerful features. You can match against instances of classes and extract attributes.</p>
 
-<p><b>Syntax </b></p>
+<h3><b>Syntax </b></h3>
 <div class="Code-box">
 <pre><code>case ClassName(attribute1=var1, attribute2=var2, ...):
     # Code to execute if subject is an instance of ClassName
@@ -294,14 +313,15 @@ match user:
 </code></pre>
 </div>
 
-<h3><b>🔸Key Points: </b></h3>
+<h3><b>Key Points: </b></h3>
 <ul>
   <li>The <b>match</b> statement calls <b>__match_args__</b> (if defined in the class) or looks for attributes by name.</li>
   <li>You can mix literal values for attributes or capture them into variables.</li>
   <li>You can use nested class patterns.</li>
 </ul>
+<br><br>
 
-<p><b>Example 7.1: Matching geometric shapes</b></p>
+<h3><b>Example 7.1: Matching geometric shapes</b></h3>
 <div class="Code-box">
 <pre><code>class Point:
     def __init__(self, x, y):
@@ -345,7 +365,7 @@ for shape in shapes:
 </code></pre>
 </div>
 
-<h3><b>🔸Explanation :</b></h3>
+<h3><b>Explanation :</b></h3>
 <ul>
   <li><b>Point(0, 0):</b> Matches a <b>Point</b> object whose <b>x</b> and <b>y</b> attributes are both 0.</li>
   <li><b>Point(x=x_coord, y=y_coord):</b> Matches any <b>Point</b> object and captures its  <b>x</b> and <b>y</b> attributes into new variables <b>x_coord</b> and <b>y_coord</b>.</li>
@@ -353,10 +373,12 @@ for shape in shapes:
     Inside the <b>Circle</b> pattern, it expects a <b>center</b> attribute which itself must be a <b>Point</b> object. 
     It then extracts <b>cx</b> and <b>cy</b> from that nested <b>Point</b> and <b>r</b> from the <b>Circle</b>'s radius attribute.</li>
 </ul>
+<br><br>
 
-<h3><b>🔸8. as keyword for Alias (Subpatterns):</b></h3>
+<h3><b>8. as keyword for Alias (Subpatterns) :</b></h3>
 <p>You can use the <b>as</b> keyword to give an alias to a subpattern, allowing you to refer to the matched part of the subject directly.</p>
-<p><b>Example 8.1: Capturing the entire matched object or sub-structure</b></p>
+<br>
+<h3><b>Example 8.1: Capturing the entire matched object or sub-structure</b></h3>
 <div class="Code-box">
 <pre><code>data_item1 = ["command", "start"]
 data_item2 = ("log", "info", "User logged in.")
@@ -375,18 +397,20 @@ for item in [data_item1, data_item2, data_item3]:
 </code></pre>
 </div>
 
-<h3><b>🔸Explanation :</b></h3>
+<h3><b>Explanation :</b></h3>
 <p>In <b>case ["command", action] as full_command:, action</b> gets the second element, and <b>full_command</b> gets
   the entire list <b>["command", "start"]</b>. This is useful when you need to inspect individual parts but also
   operate on the whole matched structure.</p>
 
-<h3><b>🔸9. Underscore _ as a Wildcard or Ignored Value:</b></h3>
+  <br><br>
+<h3><b>9. Underscore _ as a Wildcard or Ignored Value :</b></h3>
 <p>The underscore <b>_</b> has two main uses:</p>
 <ul>
   <li><b>Wildcard Pattern:</b>  As seen in <b>case _:</b>, it matches anything and is used as the default.</li>
   <li><b>Ignored Value:</b> Within a pattern,<b> _ </b> means "match this position/attribute, but I don't care about its value, so don't bind it to a variable."</li>
-</ul>
-<p><b>Example 9.1: Ignoring values in sequence patterns</b></p>
+</ul><br>
+
+<h3><b>Example 9.1: Ignoring values in sequence patterns</b></h3>
 <div class="Code-box">
 <pre><code>point_3d = (10, 20, 30)
 point_2d = (5, 8)
@@ -403,10 +427,11 @@ for p in [point_3d, point_2d, invalid_point]:
 </code></pre>
 </div>
 
-<h3><b>🔸Explanation :</b></h3>
+<h3><b>Explanation :</b></h3>
 <p><b>case (x, y, _)</b> matches <b>(10, 20, 30)</b>, captures <b>10</b> to <b>x</b>, <b>20</b> to <b>y</b>, and discards <b>30</b>.</p>
 
-<h3><b>🔸Advantages of match-case over if-elif-else :</b></h3>
+<br><br>
+<h3><b>Advantages of match-case over if-elif-else :</b></h3>
 <ol>
   <li><b>Readability:</b> Especially for complex, nested data structures, <b>match</b> makes the code much cleaner and
      easier to understand by explicitly showing the expected structure.</li>
@@ -419,7 +444,9 @@ for p in [point_3d, point_2d, invalid_point]:
 <li><b>Direct Deconstruction:</b> It directly deconstructs values (like extracting elements from a list or 
   attributes from an object) into variables, which reduces manual assignments.</li>
 </ol>
-  <h3><b>🔸When to use match-case? </b></h3>
+<br><br>
+
+  <h3><b>When to use match-case? </b></h3>
     <ul>
       <li><b>Handling different types of data/objects:</b> When your logic depends on the type or class of 
         an object.</li>
@@ -429,17 +456,21 @@ for p in [point_3d, point_2d, invalid_point]:
       <li><b>Replacing long if-elif-else chains</b>  that primarily check the type or structure of a variable.</li>
     </ul>
   
-  <h3><b>🔸When if-elif-else might still be better?</b></h3>
+    <br><br>
+  <h3><b>When if-elif-else might still be better?</b></h3>
   <ul>
     <li><b>Simple boolean conditions:</b> When you're just checking if a single variable is greater than, 
       less than, or equal to a value, <b>if-elif-else</b> is often more direct.</li>
     <li><b>Complex arithmetic or logical operations:</b> If your conditions involve extensive calculations
        or complex <b>and/or</b> combinations that don't involve deconstructing data.</li>
     <li><b>Python versions older than 3.10:</b> Obviously, <b>match</b> is not available.</li>
-  </ul>
-<p><b>Here are 5 simple and easy-to-understand examples of the match statement in Python:</b></p>
+  </ul><br><br>
+
+<h3><b>Here are 5 simple and easy-to-understand examples of the match statement in Python:</b></h3>
 <p> <b>Note:</b> These examples require  <b>Python 3.10 or higher.</b> </p>
-  <h3><b>🔸 Example 1: Match a String</b></h3>
+<br><br>
+
+  <h3><b> Example 1: Match a String</b></h3>
   <div class="Code-box">
     <pre><code>day = "Sunday"
 match day:
@@ -453,8 +484,9 @@ match day:
 #Output- Relax! It's weekend.
 </code></pre>
   </div>
+<br><br>
 
-  <h3><b>🔸 Example 2: Match a Number</b></h3>
+  <h3><b>Example 2: Match a Number</b></h3>
   <div class="Code-box">
     <pre><code>number = 5
 
@@ -469,7 +501,8 @@ match number:
 </code></pre>
   </div>
 
-  <h3><b>🔸 Example 3: Match with Multiple Values</b></h3>
+  <br><br>
+  <h3><b>Example 3: Match with Multiple Values</b></h3>
   <div class="Code-box">
     <pre><code>fruit = "apple"
 match fruit:
@@ -481,7 +514,9 @@ match fruit:
 </code></pre>
   </div>
 
-  <h3><b>🔸Example 4: Match a Tuple</b></h3>
+  <br><br>
+
+  <h3><b>Example 4: Match a Tuple</b></h3>
   <div class="Code-box">
     <pre><code>point = (0, 5)
 
@@ -498,7 +533,8 @@ match point:
 </code></pre>
   </div>
 
-  <h3><b>🔸 Example 5: Match with Condition (Guard)</b></h3>
+  <br><br>
+  <h3><b>Example 5: Match with Condition (Guard)</b></h3>
   <div class="Code-box">
     <pre><code>age = 17
 
@@ -511,7 +547,7 @@ match age:
 </code></pre>
   </div>
 
-<p><b>Conclusion:</b></p>
+<h2><b>Conclusion :</b></h2>
 <p>The <b>match</b> statement is a powerful addition to Python's control flow mechanisms. It encourages a 
   more declarative style of programming when dealing with varied data structures and provides a cleaner, 
   more readable way to express complex conditional logic. While it takes some getting used to, mastering
