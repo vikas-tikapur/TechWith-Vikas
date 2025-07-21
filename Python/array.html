@@ -43,14 +43,17 @@
         <li><b>array</b> module arrays (for homogeneous numeric data)</li>
         <li>NumPy arrays (for advanced numerical computing)</li>
     </ul>
-    <p><b>Basic List Example :</b></p>
+
+    <br><br>
+    <h3><b>Basic List Example :</b></h3>
      <div class="Code-box">
     <pre><code>fruits = ["apple", "banana", "cherry"]
 </code></pre>
   </div>
+<br><br>
 
     <h2>Basic Array Operations</h2>
-    <h3><b>🔸Creating Arrays :</b></h3>
+    <h3><b>Creating Arrays :</b></h3>
      <div class="Code-box">
     <pre><code># Using square brackets
 numbers = [1, 2, 3, 4, 5]
@@ -62,8 +65,9 @@ import array
 int_array = array.array('i', [1, 2, 3])  # 'i' for signed integers
 </code></pre>
   </div>
+<br><br>
 
-  <h3><b>🔸Accessing Elements :</b></h3>
+  <h3><b>Accessing Elements :</b></h3>
     <div class="Code-box">
     <pre><code>fruits = ["apple", "banana", "cherry"]
 print(fruits[0])  # Accessing the first element
@@ -71,8 +75,9 @@ print(fruits[1])  # Accessing the second element
 print(fruits[-1]) # Accessing the last element
 </code></pre>
   </div>
+<br><br>
 
-<h3><b>🔸Modifying Arrays :</b></h3>
+<h3><b>Modifying Arrays :</b></h3>
   <div class="Code-box">
     <pre><code># Changing elements
 my_array[1] = 25  # [10, 25, 30, 40, 50]
@@ -84,9 +89,10 @@ my_array.remove(25)  # [10, 15, 30, 40, 50, 60]
 popped = my_array.pop()  # 60, array is now [10, 15, 30, 40, 50]
 </code></pre>
   </div>
+<br><br>
 
 <h2>Intermediate Array Concepts</h2>
-<h3><b>🔸Array Slicing :</b></h3>
+<h3><b>Array Slicing :</b></h3>
     <div class="Code-box">
         <pre><code>nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 # Basic slice
@@ -101,8 +107,9 @@ print(nums[4:])  # [4, 5, 6, 7, 8, 9]
 print(nums[::2])  # [0, 2, 4, 6, 8]
 </code></pre>
   </div>
+<br><br>
 
-<h3><b>🔸Array Methods :</b></h3>
+<h3><b>Array Methods :</b></h3>
     <div class="Code-box">
         <pre><code># Sorting
 numbers = [3, 1, 4, 1, 5, 9, 2]
@@ -117,8 +124,9 @@ count = numbers.count(1)  # 2
 copy = numbers.copy()  # Shallow copy
 </code></pre>
   </div>
+<br><br>
 
-  <h3><b>🔸List Comprehensions :</b></h3>
+  <h3><b>List Comprehensions :</b></h3>
     <div class="Code-box">
         <pre><code># Basic comprehension
 squares = [x**2 for x in range(10)]
@@ -129,9 +137,10 @@ matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 flattened = [num for row in matrix for num in row]
 </code></pre>
   </div>
+<br><br>
 
 <h2>Advanced Array Concepts</h2>
-<h3><b>🔸Multidimensional Arrays :</b></h3>
+<h3><b>Multidimensional Arrays :</b></h3>
     <div class="Code-box">
         <pre><code># 2D array (list of lists)
 matrix = [
@@ -147,8 +156,9 @@ np_matrix = np.array(matrix)
 print(np_matrix[:, 1])  # Column at index 1: [2, 5, 8]
 </code></pre>
   </div>
+<br><br>
 
-<h3><b>🔸Array Performance Optimization :</b></h3>
+<h3><b>Array Performance Optimization :</b></h3>
     <div class="Code-box">
         <pre><code># Time complexity of common operations
 """
@@ -170,8 +180,9 @@ d.appendleft(0)  # Faster than list.insert(0, 0)
 d.popleft()      # Faster than list.pop(0)
 </code></pre>
   </div>
+<br><br>
 
-<h3><b>🔸Memory Efficient Arrays :</b></h3>
+<h3><b>Memory Efficient Arrays :</b></h3>
     <div class="Code-box">
         <pre><code># Using array module for homogeneous data
 import array
@@ -183,8 +194,9 @@ float_arr = array.array('d', [1.0, 2.0, 3.0])
 # 'f' - float, 'd' - double
 </code></pre>
   </div>
+<br><br>
 
-<h3><b>🔸NumPy Arrays for Scientific Computing :</b></h3>
+<h3><b>NumPy Arrays for Scientific Computing :</b></h3>
     <div class="Code-box">
         <pre><code>import numpy as np
 # Creating NumPy arrays
@@ -200,9 +212,9 @@ print(np.sqrt(a))  # [1.         1.41421356 1.73205081]
 </code></pre>
   </div>
 
-
+<br><br>
 <h2>Unique Array Techniques</h2>
-<h3><b>🔸Circular Buffer Implementation :</b></h3>
+<h3><b>Circular Buffer Implementation :</b></h3>
     <div class="Code-box">
         <pre><code>class CircularBuffer:
     def __init__(self, size):
@@ -225,8 +237,9 @@ cb.add(1); cb.add(2); cb.add(3); cb.add(4)
 print(cb)  # [4, 2, 3] - oldest element (1) was overwritten
 </code></pre>
   </div>
+<br><br>
 
-<h3><b>🔸Array-Based Queue :</b></h3>
+<h3><b>Array-Based Queue :</b></h3>
     <div class="Code-box">
         <pre><code>class ArrayQueue:
     def __init__(self):
@@ -244,8 +257,9 @@ print(cb)  # [4, 2, 3] - oldest element (1) was overwritten
     def is_empty(self):
         return self.items == []
 </code></pre>
-  </div>
-<h3><b>🔸Memoryview for Efficient Array Manipulation :</b></h3>
+  </div><br><br>
+
+<h3><b>Memoryview for Efficient Array Manipulation :</b></h3>
     <div class="Code-box">
         <pre><code># Using memoryview for efficient byte manipulation
 data = bytearray(b'abcdef')
@@ -254,8 +268,9 @@ view[2:4] = b'XY'
 print(data)  # bytearray(b'abXYef')
 </code></pre>
   </div>
+<br><br>
 
-<h3><b>🔸Array-Based Binary Heap :</b></h3>
+<h3><b>Array-Based Binary Heap :</b></h3>
     <div class="Code-box">
         <pre><code>class MinHeap:
     def __init__(self):
@@ -295,8 +310,9 @@ print(data)  # bytearray(b'abXYef')
             self.heap[i], self.heap[smallest] = self.heap[smallest], self.heap[i]
             self.heapify(smallest)
 </code></pre>
-  </div>
-    <h3><b>🔸Performance Comparison :</b></h3>
+  </div><br><br>
+
+    <h3><b>Performance Comparison :</b></h3>
         <div class="Code-box">
             <pre><code>import timeit
 import numpy as np
@@ -315,8 +331,9 @@ print(f"Array sum: {array_time:.4f} sec")
 print(f"NumPy sum: {numpy_time:.4f} sec")
 </code></pre>
     </div>
+<br><br>
 
-<h2>Python Array (List) Methods Summary Table</h2>
+<h2>Python Array (List) Methods Summary Table</h2><br>
 <div class="responsive-table-wrapper">
 <table class="array-methods-table">
   <thead>
@@ -398,7 +415,7 @@ print(f"NumPy sum: {numpy_time:.4f} sec")
 </table>
 </div>
 
-
+<br><br>
   <div class="navigation-buttons">
   <a href="functions.html" class="nav-btn prev-btn">← Previous</a>
   <a href="oops.html" class="nav-btn next-btn">Next →</a>

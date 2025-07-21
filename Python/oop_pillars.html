@@ -44,7 +44,7 @@
 <h2><b>1. Encapsulation :</b></h2>
 <p><b>Encapsulation</b> means <b> binding variables (data)</b> and <b>methods (functions)</b> together into a <b>single unit (class)</b> i.e. called <b>Encapsulation.</b></p>
 <br>
-<h3><b>📌 Key Points :</b></h3>
+<h3><b>Key Points :</b></h3>
 <ul>
     <li>It is a fundamental concept in <b>Object-Oriented Programming (OOP).</b></li>
     <li>It allows for <b>data hiding</b> and <b>controlled access</b> using methods.</li>
@@ -54,6 +54,7 @@
 <h3><b>Simplified Explanation :</b></h3>
 <p>Think of a <b>capsule</b> in medicine — it holds different components inside. <br>
 Similarly, a <b>class in Python</b> holds both <b>data (variables)</b> and <b>behavior (methods)</b> together.</p>
+<br>
 
 <h3><b>Example :</b></h3>
 <div class="Code-box">
@@ -73,14 +74,15 @@ s.set_name("Tanay")
 print(s.get_name())   # Output: Tanay
 </code></pre>
   </div>
-<br>
+<br><br>
+
 <h3><b>🔒 Note :</b></h3>
 <ul>
     <li><b>__name</b> is a <b>private variable</b> (name mangling used for encapsulation).</li>
     <li>Access is <b>controlled</b> via public methods <b>set_name()</b> and <b>get_name().</b></li>
-</ul><br>
+</ul><br><br>
 
-<h3><b>📌 Benefits of Encapsulation :</b></h3><br>
+<h3><b>Benefits of Encapsulation :</b></h3><br>
 <div class="responsive-table-wrapper">
 <table class="array-methods-table">
   <thead>
@@ -112,10 +114,12 @@ print(s.get_name())   # Output: Tanay
   </tbody>
 </table>
 </div><br><br>
-<h3><b>🔸 One-Line Summary : </b></h3>
+
+<h3><b>One-Line Summary : </b></h3>
 <p><b>Encapsulation</b> = wrapping <b>data + methods</b> into a <b>single unit</b> (class) and hiding internal details from the outside.</p>
-<br>
-<h3><b>🔸Using Default Arguments in Python Constructor (__init__).</b></h3>
+<br><br>
+
+<h3><b>Using Default Arguments in Python Constructor (__init__).</b></h3>
 <div class="Code-box">
     <pre><code>class Student:
     def __init__(self, name="Tenali Rama", marks=50):
@@ -135,9 +139,9 @@ Name: Tenali Rama marks: 25
 Name: Krishndev marks: 25
 </code></pre>
   </div>
-<br>
+<br><br>
 
-<h3><b>🔸Add Salary & Project Display Feature in HR Management System.</b></h3>
+<h3><b>Add Salary & Project Display Feature in HR Management System.</b></h3>
 <div class="Code-box">
     <pre><code>class Employee:
     # Constructor to initialize employee details
@@ -168,9 +172,9 @@ Rohit is working on Python
 </code></pre>
   </div>
 
-<br>
+<br><br>
 
-<h3><b>🔸Create an Employee Class with Constructor and Display Method.</b></h3>
+<h3><b>Create an Employee Class with Constructor and Display Method.</b></h3>
 <div class="Code-box">
     <pre><code>class Employee:
     def __init__(self, name, age):
@@ -192,12 +196,12 @@ Employee Name: Kartik Singh
 Employee Age: 22
 </code></pre>
   </div>
-<br>
+<br><br>
 
 <h2><b>2. Abstraction :</b></h2>
 <p><b>Abstraction</b> is the concept of <b>hiding unnecessary internal details</b> and <b>showing only the essential features</b> to the user.</p>
 <br>
-<h3><b>🔸Simple Example :</b></h3>
+<h3><b>Simple Example :</b></h3>
 <p>Think about a TV remote :</p>
 <ul>
     <li>You press a button to change the channel.</li>
@@ -205,16 +209,16 @@ Employee Age: 22
 </ul>
 <p>That’s <b>abstraction</b> — hiding complex internal logic, and showing only what the user needs.</p><br>
 
-<h3><b>📌 Key Points :</b></h3>
+<h3><b>Key Points :</b></h3>
 <p>It focuses on what an object does, not how it does it.</p>
 <p>Achieved in Python using :</p>
 <ul>
     <li><b>Abstract Base Classes (ABC).</b></li>
     <li><b>Interfaces (via abstract methods).</b></li>
 </ul>
-<br>
+<br><br>
 
-<h3><b>🔸Code Example using abc module :</b></h3>
+<h3><b>Code Example using abc module :</b></h3>
 <div class="Code-box">
     <pre><code>from abc import ABC, abstractmethod
 
@@ -239,9 +243,9 @@ print("Area:", rect.area())
 Area: 50
 </code></pre>
   </div>
-  <br>
+  <br><br>
 
-<h3><b>📌 Why Use Abstraction?</b></h3>
+<h3><b>Why Use Abstraction?</b></h3>
 <br>
 <div class="responsive-table-wrapper">
 <table class="array-methods-table">
@@ -275,7 +279,7 @@ Area: 50
 </table>
 </div><br><br>
 
-<h3><b>🔸Examples of Data Abstraction Using Abstract Classes in Python :</b></h3>
+<h3><b>Examples of Data Abstraction Using Abstract Classes in Python :</b></h3>
 <p>In Python, it is implemented using :</p>
 <ul>
     <li><b>ABC</b> (Abstract Base Class)</li>
@@ -330,14 +334,14 @@ I can hiss
 <p><b>Inheritance</b> is a core concept in Object-Oriented Programming (OOP) that allows a class (child/subclass) to inherit the properties and methods of another class (parent/superclass).
 It promotes <b>code reusability</b> and reflects <b>real-world relationships.</b></p>
 <br>
-<h3><b>🔸In Simple Terms :</b></h3>
+<h3><b>In Simple Terms :</b></h3>
 <ul>
     <li><b>Inheritance</b> used <b>code reusability.</b></li>
     <li><b>Inheritance</b> is a <b>relationship between two or more classes.</b> </li>
     <li><b>Inheritance</b> is a <b>real-world relationship.</b></li>
-</ul> <br>
+</ul> <br><br>
 
-<h3><b>📌 Key Concepts :</b></h3>
+<h3><b>Key Concepts :</b></h3>
 <br>
 <div class="responsive-table-wrapper">
 <table class="array-methods-table">
@@ -366,7 +370,7 @@ It promotes <b>code reusability</b> and reflects <b>real-world relationships.</b
 </table>
 </div><br><br>
 
-<h3><b>📌 Why Use Inheritance?</b></h3>
+<h2><b>Why Use Inheritance?</b></h2>
 <ul>
   <li>Reuse common logic</li>
   <li>Promote DRY (Don't Repeat Yourself) principle</li>
@@ -375,7 +379,7 @@ It promotes <b>code reusability</b> and reflects <b>real-world relationships.</b
 </ul>
 <br>
 
-<h3><b>🔸Types of Inheritance :</b></h3>
+<h2><b>Types of Inheritance :</b></h2>
 <ol>
   <li>Single Inheritance</li>
   <li>Multilevel Inheritance</li>
@@ -385,11 +389,11 @@ It promotes <b>code reusability</b> and reflects <b>real-world relationships.</b
 </ol>
 <br>
 
-<h3><b>🔸Single Inheritance :</b></h3>
+<h3><b>Single Inheritance :</b></h3>
 <p>In <b>Single Inheritance</b>, a child (subclass) inherits from <b>only one parent class</b> (superclass). <br>
 It allows the child class to <b>reuse the code</b> (methods, variables) from the parent.</p>
 <br>
-<h3><b>📌 Structure :</b></h3>
+<h3><b>Structure :</b></h3>
 <div class="Code-box">
     <pre><code>Parent Class
    ↓
@@ -398,7 +402,7 @@ Child Class
   </div>
 <br>
 
-<h3><b>🔸 Example :</b></h3>
+<h3><b>Example :</b></h3>
 <div class="Code-box">
     <pre><code>class P:
     def m1(self):
@@ -419,13 +423,13 @@ Child method
 </code></pre>
   </div>
 
-  <br>
+  <br><br>
 
-<h3><b>🔸Multilevel Inheritance :</b></h3>
+<h3><b>Multilevel Inheritance :</b></h3>
 <p>In <b>Multilevel Inheritance,</b> a class inherits from a <b>child class,</b> which itself inherits from a <b>parent class.</b> <br>
 This forms a <b>chain of inheritance,</b> like <b>Grandparent → Parent → Child.</b></p>
 <br>
-<h3><b>📌 Structure :</b></h3>
+<h3><b>Structure :</b></h3>
 <div class="Code-box">
     <pre><code>Parent Class (P)
        ↓
@@ -436,7 +440,7 @@ Sub-Child Class (CC)
   </div>
 <br>
 
-<h3><b>🔸 Example :</b></h3>
+<h3><b>Example :</b></h3>
 <div class="Code-box">
     <pre><code>class P:
     def m1(self):
@@ -462,13 +466,13 @@ Child method
 Sub-child method
 </code></pre>
   </div>
-<br>
+<br><br>
 
-<h3><b>🔸Multiple Inheritance :</b></h3>
+<h3><b>Multiple Inheritance :</b></h3>
 <p>When a class is <b>derived from more than one base class,</b> it is called <b>multiple inheritance.</b><br>
 The derived class inherits <b>all accessible attributes and methods</b> from all parent classes.</b></p>
 <br>
-<h3><b>📌 Structure :</b></h3>
+<h3><b>Structure :</b></h3>
 <div class="Code-box">
     <pre><code>    P1       P2
      \       /
@@ -479,7 +483,7 @@ The derived class inherits <b>all accessible attributes and methods</b> from all
   </div>
 <br>
 
-<h3><b>🔸 Example :</b></h3>
+<h3><b>Example :</b></h3>
 <div class="Code-box">
     <pre><code>class P1:
     def m1(self):
@@ -505,14 +509,14 @@ Parent 2 method
 Child method
 </code></pre>
   </div>
-<br>
+<br><br>
 
 
-<h3><b>🔸Hierarchical Inheritance :</b></h3>
+<h3><b>Hierarchical Inheritance :</b></h3>
 <p>In <b>Hierarchical Inheritance, multiple subclasses are derived from a single superclass.</b><br>
 Each child class gets access to the parent class's properties and methods.</p>
 <br>
-<h3><b>📌 Structure :</b></h3>
+<h3><b>Structure :</b></h3>
 <div class="Code-box">
     <pre><code>         P
        /   \
@@ -521,7 +525,7 @@ Each child class gets access to the parent class's properties and methods.</p>
   </div>
 <br>
 
-<h3><b>🔸 Example :</b></h3>
+<h3><b>Example :</b></h3>
 <div class="Code-box">
     <pre><code>class P:
     def m1(self):
@@ -551,12 +555,12 @@ Child 1 method
 Child 2 method
 </code></pre>
   </div>
-<br>
+<br><br>
 
-<h3><b>🔸Hybrid Inheritance :</b></h3>
+<h3><b>Hybrid Inheritance :</b></h3>
 <p><b>Hybrid Inheritance</b> is a combination of <b>two or more types of inheritance,</b> such as <b>multiple</b> and <b>multilevel</b> inheritance.</p>
 <br>
-<h3><b>📌 Structure :</b></h3>
+<h3><b>Structure :</b></h3>
 <div class="Code-box">
     <pre><code>       A
       / \
@@ -571,7 +575,7 @@ Child 2 method
 </ul>
 <br>
 
-<h3><b>🔸 Example :</b></h3>
+<h3><b>Example :</b></h3>
 <div class="Code-box">
     <pre><code>class A:
     def m1(self):
@@ -603,9 +607,9 @@ Class C method
 Class D method
 </code></pre>
   </div>
-<br>
+<br><br>
 
-<h3><b>🔸Create a Car Class with Attributes and Info Display Method</b></h3>
+<h3><b>Create a Car Class with Attributes and Info Display Method</b></h3>
 <div class="Code-box">
     <pre><code>class Car:
     def __init__(self, name, model, color):
@@ -627,10 +631,10 @@ Car Model: 800
 Car Color: White
 </code></pre>
   </div>
-<br>
+<br><br>
 
 
-<h3><b>🔸Class Containing Object of Another Class (Has-A Relationship)</b></h3>
+<h3><b>Class Containing Object of Another Class (Has-A Relationship)</b></h3>
 <p>In this example, an <b>Employee has a Car.</b></p>
 <p>This is a real-world relationship modeled using <b>object composition,</b> which promotes reusability and modularity.</p>
 <div class="Code-box">
@@ -671,13 +675,13 @@ Car Model: 800
 Car Color: White
 </code></pre>
   </div>
-<br>
+<br><br>
 
 
-<h2><b>🔸super() Method in Python (OOP) :</b></h2>
+<h2><b>super() Method in Python (OOP) :</b></h2>
 <p><b>super()</b> is a <b>built-in function</b> in Python used in <b>inheritance</b> to access methods and attributes of the <b>parent (super) class</b> from the <b>child (sub) class.</b></p>
 <br>
-<h3><b>📌 Key Points :</b></h3>
+<h3><b>Key Points :</b></h3>
 <ol>
   <li><b>Used in Inheritance</b> to call methods or constructors from the parent class.</li>
   <li>Avoids code duplication — helps follow the <b>DRY (Don't Repeat Yourself)</b> principle.</li>
@@ -685,13 +689,13 @@ Car Color: White
   <li>Useful when <b>method overriding</b> is involved.</li>
   <li>Supports <b>multiple inheritance</b> with Python's <b>MRO (Method Resolution Order).</b></li>
 </ol><br>
-<h3><b>📌 Syntax :</b></h3>
+<h3><b>Syntax :</b></h3>
 <div class="Code-box">
     <pre><code>super().method_name()
 </code></pre>
   </div>
   <br>
-  <h3><b>🔸Example :</b></h3>
+  <h3><b>Example :</b></h3>
 <div class="Code-box">
     <pre><code>class Animal:
     def __init__(self):
@@ -719,9 +723,9 @@ Animal speaks
 Dog barks
 </code></pre>
   </div>
-<br>
+<br><br>
 
-<h3><b>📌 Why use super( )? </b></h3>
+<h3><b>Why use super( )? </b></h3>
 <br>
 <div class="responsive-table-wrapper">
 <table class="array-methods-table">
@@ -766,11 +770,11 @@ Dog barks
 <p><b>IV. </b>more than one form is called Polymorphism.</p>
 <br>
 
-<h3><b>🔸In Simple Terms :</b></h3>
+<h3><b>In Simple Terms :</b></h3>
 <p><b>Polymorphism</b> allows the <b>same method name</b> to be used for <b>different types</b> (or classes), providing <b>different behaviors</b> depending on the object or class context.</p>
-<br>
+<br><br>
 
-<h3><b>🔸Real-life Example :</b></h3>
+<h3><b>Real-life Example :</b></h3>
 <p>A woman can have different roles :</p>
 <ul>
   <li>At school: she is a <b>teacher</b></li>
@@ -778,9 +782,9 @@ Dog barks
   <li>At the market: she is a <b>customer</b></li>
 </ul>
 <p>Though she is the same person, her behavior changes depending on the context. This is Polymorphism.</p>
-<br>
+<br><br>
 
-<h3><b>📌 Types of Polymorphism in Python : </b></h3>
+<h3><b>Types of Polymorphism in Python : </b></h3>
 <br>
 <div class="responsive-table-wrapper">
 <table class="array-methods-table">
@@ -804,7 +808,7 @@ Dog barks
 </table>
 </div><br><br>
 
-<h3><b>🔸 Example in Python (Runtime Polymorphism) :</b></h3>
+<h3><b>Example in Python (Runtime Polymorphism) :</b></h3>
 <div class="Code-box">
     <pre><code>class Bird:
     def fly(self):
@@ -827,18 +831,18 @@ Sparrow flies high
 Ostriches cannot fly
 </code></pre>
   </div>
-<br>
+<br><br>
 
-<h3><b>📌 Key Benefits of Polymorphism : </b></h3>
+<h3><b>Key Benefits of Polymorphism : </b></h3>
 <ul>
   <li>Promotes <b>code reusability</b></li>
   <li>Makes code <b>cleaner and more flexible</b></li>
   <li>Supports <b>dynamic method resolution</b></li>
 </ul>
 
-<br>
+<br><br>
 
-<h3><b>🔸 Real-World Example of Polymorphism in Python :</b></h3>
+<h3><b>Real-World Example of Polymorphism in Python :</b></h3>
 <div class="Code-box">
     <pre><code>class India():
     def capital(self):
@@ -880,7 +884,7 @@ USA is a developed country.
 </code></pre>
   </div>
 
-<h3><b>🔸Explanation :</b></h3>
+<h3><b>Explanation :</b></h3>
 <p>In this example :</p>
 <ul>
   <li>Both <b>India</b> and <b>USA</b> classes have the <b>same method names: capital( ), language( ), and type( ).</b></li>
@@ -891,7 +895,7 @@ USA is a developed country.
 
 <h2><b>Method Overloading in Python : </b></h2>
 <p><b>Method Overloading</b> is the ability to define <b>multiple methods</b> in the <b>same class with the same name but different parameters</b> (in number or type).</p>
-<br>
+<br><br>
 
 <h3><b>🔒 Note :</b></h3>
 <p><b>Python does not support traditional method overloading</b> like Java or C++. Instead, Python handles this using <b>default arguments, *args,</b> or manual parameter checking inside a method.</p>
@@ -910,12 +914,12 @@ obj = Demo()
 obj.show(10)  # ❌ Error: missing 1 required positional argument
 </code></pre>
   </div>
-<h3><b>🔸Explanation :</b></h3>
+<h3><b>Explanation :</b></h3>
 <p>Only the <b>last show( ) method is kept,</b> the first one is <b>overwritten.</b></p>
 <br><br>
 
 <h2><b>How to Simulate Method Overloading in Python </b></h2>
-<h3><b>🔸Using Default Arguments :</b></h3>
+<h3><b>Using Default Arguments :</b></h3>
 <div class="Code-box">
     <pre><code>class Demo:
     def show(self, a=None, b=None):
@@ -937,9 +941,9 @@ One argument: 10
 Two arguments: 10 20
 </code></pre>
   </div>
-<br>
+<br><br>
 
-<h3><b>🔸Using *args :</b></h3>
+<h3><b>Using *args :</b></h3>
 <div class="Code-box">
     <pre><code>class Demo:
     def show(self, *args):
@@ -958,15 +962,15 @@ obj.show(10, 20, 30)
 <p>This allows the child class to provide a <b>specific implementation</b> of a method that is already defined in the parent class.</p>
 <br>
 
-<h3><b>📌 Key Features : </b></h3>
+<h3><b>Key Features : </b></h3>
 <ul>
   <li>Overriding happens <b>automatically</b> if the method name and parameters match.</li>
   <li>It helps in <b>customizing or extending</b> the behavior of the parent class method.</li>
   <li>Avoids code duplication (follows the DRY principle).</li>
 </ul>
-<br>
+<br><br>
 
-<h3><b>🔸Example 1: Basic Method Inheritance (No Overriding) :</b></h3>
+<h3><b>Example 1: Basic Method Inheritance (No Overriding) :</b></h3>
 <div class="Code-box">
     <pre><code>class P:
     def property(self):
@@ -980,9 +984,9 @@ c.property( )  # Output: cash + gold + car + house
 </code></pre>
   </div>
 <p><b>No overriding</b> here. The method from the parent class is inherited as-is.</p>
-<br>
+<br><br>
 
-<h3><b>🔸Example 2: Child Class Adds New Method :</b></h3>
+<h3><b>Example 2: Child Class Adds New Method :</b></h3>
 <div class="Code-box">
     <pre><code>class P:
     def property(self):
@@ -998,9 +1002,9 @@ c.job()       # Output: Software Engineer (from child)
 </code></pre>
   </div>
 <p>This shows <b>inheritance + extension,</b> not overriding yet.</p>
-<br>
+<br><br>
 
-<h3><b>🔸Example 3: Method Overriding :</b></h3>
+<h3><b>Example 3: Method Overriding :</b></h3>
 <div class="Code-box">
     <pre><code>class Animal:
     def sound(self):
@@ -1023,9 +1027,9 @@ cat.sound()  # Output: Cat: Meow
 </code></pre>
   </div>
 <p> Here, <b>sound( ) </b>is overridden in both child classes to provide specific behavior.</p>
-<br>
+<br><br>
 
-<h3><b>🔸Diagram: Method Overriding :</b></h3>
+<h3><b>Diagram: Method Overriding :</b></h3>
 <div class="Code-box">
     <pre><code>      ┌────────────┐
       │  Parent    │
@@ -1040,25 +1044,25 @@ cat.sound()  # Output: Cat: Meow
       └─────────┘
 </code></pre>
   </div>
-<br>
+<br><br>
 
 <h2><b>Operator Overloading in Python (OOP)</b></h2>
 <p><b>Operator Overloading</b> means giving <b>extra/custom functionality</b> to <b>standard Python operators 
   (like +, -, *, etc.)</b> so they can work with <b>user-defined objects</b> (classes).</p>
-<br>
+<br><br>
 
-<h3><b>📌 Why Use It?</b></h3>
+<h3><b>Why Use It?</b></h3>
 <p>Python allows us to <b>change the behavior of operators</b> when they're used with <b>objects of user-defined classes.</b></p><br>
-<h3><b>🔸For example :</b></h3>
+<h3><b>For example :</b></h3>
 <ul>
   <li><b>+ </b>adds integers: <b>10 + 20 → 30</b></li>
   <li><b>+</b> joins strings: <b>'a' + 'b' → 'ab'</b></li>
   <li><b>+</b> merges lists: <b>[1, 2] + [3] → [1, 2, 3]</b></li>
 </ul>
 <p>This is possible because the <b>+</b> operator is overloaded in the <b>int, str, and list</b> classes.</p>
-<br>
+<br><br>
 
-<h3><b>🔸Example: Without Operator Overloading :</b></h3>
+<h3><b>Example: Without Operator Overloading :</b></h3>
 <div class="Code-box">
     <pre><code>class Book:
     def __init__(self, pages):
@@ -1070,9 +1074,9 @@ b2 = Book(200)
 # print(b1 + b2)  ❌ Error: unsupported operand type(s)
 </code></pre>
   </div>
-<br>
+<br><br>
 
-<h3><b>🔸With Operator Overloading :</b></h3>
+<h3><b>With Operator Overloading :</b></h3>
 <div class="Code-box">
     <pre><code>class Book:
     def __init__(self, pages):
@@ -1086,9 +1090,9 @@ b2 = Book(200)
 print("Total pages:", b1 + b2)  # Output: Total pages: 300
 </code></pre>
   </div>
-<br>
+<br><br>
 
-<h3><b>📌 Common Magic Methods (Dunder Methods) : </b></h3>
+<h3><b>Common Magic Methods (Dunder Methods) : </b></h3>
 <br>
 <div class="responsive-table-wrapper">
 <table class="array-methods-table">
@@ -1143,9 +1147,9 @@ print("Total pages:", b1 + b2)  # Output: Total pages: 300
     </tr>
   </tbody>
 </table>
-</div><br><br>
+</div><br><br><br>
 
-<h3><b>🔸Operator Overloading in Python Using __add__ Method :</b></h3>
+<h3><b>Operator Overloading in Python Using __add__ Method :</b></h3>
 <div class="Code-box">
     <pre><code>class Book:
     def __init__(self,pages):
