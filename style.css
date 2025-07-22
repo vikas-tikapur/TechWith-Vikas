@@ -713,6 +713,10 @@ section#with_banner {
 .pillars-animated-btn {
   font-size: 16px !important;
 }
+
+.accordion-header {
+  font-size: 18px !important;
+}
 }
 
 .array-methods-table{
@@ -759,7 +763,7 @@ section#with_banner {
   text-align: left;
   background: #f7f7f7;
   color: #0a639b;
-  font-size: 1.1rem;
+  font-size: 25px;
   font-weight: 600;
   padding: 16px 20px;
   border: none;
@@ -767,6 +771,7 @@ section#with_banner {
   cursor: pointer;
   transition: background 0.2s;
   position: relative;
+  letter-spacing: 1px;
 }
 .accordion-header::after {
   content: '\25BC';
@@ -794,3 +799,4 @@ section#with_banner {
   max-height: 500px;
   transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
 }
+

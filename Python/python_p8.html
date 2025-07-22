@@ -55,9 +55,336 @@ print(student)
 # Output: {'name': 'Alice', 'age': 21, 'courses': ['Math', 'CS']}
 </code></pre>
   </div>
-  
-  
 <br><br>
+
+<h3><b>1. Creating Dictionaries</b></h3>
+<div class="Code-box">
+    <pre><code># Using curly braces
+person = {"name": "John", "age": 30, "city": "New York"}
+
+# Using dict() constructor
+person2 = dict(name="Jane", age=25, city="London")
+</code></pre>
+  </div>
+  <br><br>
+
+<h3><b>2. Accessing Values</b></h3>
+<div class="Code-box">
+    <pre><code>print(person["name"])       # Output: John
+print(person.get("age"))    # Output: 30
+print(person.get("salary", "Not found"))  # Default value
+</code></pre>
+  </div>
+<br><br>
+
+  <h3><b>3. Updating Values</b></h3>
+<div class="Code-box">
+    <pre><code>person["age"] = 35
+person["salary"] = 50000  # Adds new key
+</code></pre>
+  </div>
+<br><br>
+
+  <h3><b>4. Deleting Items</b></h3>
+<div class="Code-box">
+    <pre><code>del person["city"]          # Deletes 'city'
+person.pop("salary")        # Removes 'salary'
+person.clear()              # Removes all items
+</code></pre>
+  </div>
+<br><br>
+
+  <h3><b>5. Looping Through a Dictionary</b></h3>
+<div class="Code-box">
+    <pre><code>for key in person:
+    print(key, person[key])
+
+for key, value in person.items():
+    print(key, ":", value)
+
+print(person.keys())        # dict_keys(['name', 'age'])
+print(person.values())      # dict_values(['John', 35])
+print(person.items())       # dict_items([('name', 'John'), ('age', 35)])
+</code></pre>
+  </div>
+  <br><br>
+
+  <h3><b>6. Dictionary Methods :</b></h3><br>
+<div class="responsive-table-wrapper">
+<table class="array-methods-table">
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>get(key)</code></td>
+      <td>Returns value for key or None</td>
+    </tr>
+      <td><code>keys( )</code></td>
+      <td>Returns all keys</td>
+    </tr>
+    <tr>
+      <td><code>values( )</code></td>
+      <td>Returns all values</td>
+    </tr>
+    <tr>
+      <td><code>items( )</code></td>
+      <td>Returns key-value pairs</td>
+    </tr>
+    <tr>
+      <td><code>update(dict)</code></td>
+      <td>Updates one dict with another</td>
+    </tr>
+    <tr>
+      <td><code>pop(key)</code></td>
+      <td>Removes key and returns value</td>
+    </tr>
+    <tr>
+      <td><code>clear( )</code></td>
+      <td>Empties the dictionary</td>
+    </tr>
+    <tr>
+      <td><code>copy( )</code></td>
+      <td>Shallow copy of the dictionary</td>
+    </tr>
+    <tr>
+      <td><code>setdefault(k,v)</code></td>
+      <td>Returns key value or sets default</td>
+    </tr>
+  </tbody>
+</table>
+</div><br><br>
+
+<h3><b>7. Nested Dictionaries</b></h3>
+<div class="Code-box">
+    <pre><code>students = {
+    "101": {"name": "Alice", "marks": 85},
+    "102": {"name": "Bob", "marks": 90}
+}
+print(students["101"]["name"])  # Output: Alice
+</code></pre>
+  </div>
+  <br><br>
+
+  <h3><b>8. Dictionary Comprehension</b></h3>
+<div class="Code-box">
+    <pre><code>squares = {x: x**2 for x in range(5)}
+print(squares)  # Output: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
+</code></pre>
+  </div>
+  <br><br>
+
+  <h3><b>9. Merging Dictionaries</b></h3>
+<div class="Code-box">
+    <pre><code>a = {"x": 1, "y": 2}
+b = {"y": 3, "z": 4}
+c = {**a, **b}  # Merges a and b, b's values override
+print(c)       # Output: {'x': 1, 'y': 3, 'z': 4}
+</code></pre>
+  </div>
+  <br><br>
+
+<h3><b>10. Use Case: Counting Elements</b></h3>
+<div class="Code-box">
+    <pre><code>text = "banana"
+count = {}
+for char in text:
+    count[char] = count.get(char, 0) + 1
+print(count)
+# Output: {'b': 1, 'a': 3, 'n': 2}
+</code></pre>
+  </div>
+  <br><br>
+
+<h3><b>11. Immutable Keys Only</b></h3>
+<div class="Code-box">
+    <pre><code>d = {("a", "b"): 1}  # Tuple as key
+</code></pre>
+  </div>
+  <br><br>
+
+  <h3><b>12. Dictionary vs List</b></h3><br>
+  <div class="responsive-table-wrapper">
+<table class="array-methods-table">
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Dictionary</th>
+      <th>List</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Access</code></td>
+      <td>Key-based <b>(dict[key])</b></td>
+      <td>Index-based <b>(list[index])</b></td>
+    </tr>
+      <td><code>Uniqueness</code></td>
+      <td>Keys must be unique</td>
+      <td>Duplicates allowed</td>
+    </tr>
+    <tr>
+      <td><code>Lookup speed</code></td>
+      <td>Fast</td>
+      <td>Slower (in large data)</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<br><br>
+
+<h2>Common Python Dictionary Questions</h2>
+<p>Here are some of the most common and important dictionary questions in Python, suitable for interviews, exams, and practice:</p>
+<br><br>
+
+<div class="accordion">
+
+  <div class="accordion-item">
+    <button class="accordion-header">1. What is a dictionary in Python?</button>
+    <div class="accordion-body">
+      <p>A dictionary is an unordered collection of key-value pairs. Keys must be unique and immutable.</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-header">2. How do you create a dictionary?</button>
+    <div class="accordion-body">
+      <div class="Code-box">
+<pre><code>my_dict = {"name": "Alice", "age": 25}</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-header">3. How to access a value from a dictionary?</button>
+    <div class="accordion-body">
+      <div class="Code-box">
+<pre><code>print(my_dict["name"])
+print(my_dict.get("age"))</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-header">4. What happens if you access a missing key using [ ] vs get( )?</button>
+    <div class="accordion-body">
+      <p><b>d["missing"]</b> → raises <b>KeyError</b></p>
+      <p><b>d.get("missing")</b> → returns <b>None</b> (or default value if provided)</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-header">5. How to add or update a value?</button>
+    <div class="accordion-body">
+      <div class="Code-box">
+<pre><code>my_dict["city"] = "Delhi"
+my_dict["age"] = 30</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-header">6. How to delete a key-value pair?</button>
+    <div class="accordion-body">
+      <div class="Code-box">
+<pre><code>del my_dict["city"]
+my_dict.pop("age")</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-header">7. How to loop through a dictionary?</button>
+    <div class="accordion-body">
+      <div class="Code-box">
+<pre><code>for k, v in my_dict.items():
+    print(k, v)</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-header">8. What is dict.get( ) used for?</button>
+    <div class="accordion-body">
+      <p>Used to safely access keys with a default return value.</p>
+      <div class="Code-box">
+<pre><code>my_dict.get("salary", "Not Found")</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-header">9. Can dictionary keys be mutable?</button>
+    <div class="accordion-body">
+      <p>No, keys must be <b>immutable</b> (e.g., int, str, tuple).</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-header">10. How to merge two dictionaries?</button>
+    <div class="accordion-body">
+      <div class="Code-box">
+<pre><code>d1 = {"a": 1}
+d2 = {"b": 2}
+d3 = {**d1, **d2}</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-header">11. How to copy a dictionary?</button>
+    <div class="accordion-body">
+      <div class="Code-box">
+<pre><code>new_dict = my_dict.copy()</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-header">12. What is dictionary comprehension?</button>
+    <div class="accordion-body">
+      <div class="Code-box">
+<pre><code>squares = {x: x*x for x in range(5)}</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-header">13. How to count frequency of characters using dict?</button>
+    <div class="accordion-body">
+      <div class="Code-box">
+<pre><code>text = "banana"
+count = {}
+for char in text:
+    count[char] = count.get(char, 0) + 1</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-header">14. What is the difference between keys(), values(), and items()?</button>
+    <div class="accordion-body">
+      <p><b>keys()</b> → returns keys</p>
+      <p><b>values()</b> → returns values</p>
+      <p><b>items()</b> → returns key-value pairs</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-header">15. Can a dictionary have duplicate keys?</button>
+    <div class="accordion-body">
+      <p>No, duplicate keys overwrite the previous value.</p>
+      <div class="Code-box">
+<pre><code>d = {"a": 1, "a": 2}  # Final dict: {"a": 2}</code></pre>
+      </div>
+    </div>
+  </div>
+
+</div> 
+<br>
   <div class="navigation-buttons">
   <a href="python_p7.html" class="nav-btn prev-btn">← Previous</a>
   <a href="ifelse.html" class="nav-btn next-btn">Next →</a>
