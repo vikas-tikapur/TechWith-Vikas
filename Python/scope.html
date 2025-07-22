@@ -34,8 +34,161 @@
 
 <section class="python-intro">
   <div class="container">
-    <h2><b>Python Scope</b></h2>
+    <h2><b>What is Scope in Python?</b></h2>
+    <p><b>Scope</b> refers to the area in a Python program where a <b>variable is recognized and can be used.</b> It tells us <b>where</b> in the code you can access a variable or a function.</p>
+    <p><b>In simple words: </b>“Scope defines the visibility of variables in your program.”</p>
+    <br><br>
+    <p>Imagine your house has different rooms - your bedroom, kitchen, living room, and maybe a study. Some items belong to specific rooms (like your toothbrush in the bathroom), while others are shared throughout the house (like the WiFi password).</p>
+    <br><br>
+    <p>In Python, scope works similarly - it determines where in your code a variable can be "seen" and used. Understanding scope helps you write cleaner code and avoid confusing bugs!</p>
+    <br><br>
+
+    <h2><b>Why is Scope Important?</b></h2>
+    <p>Without scope, your code would get confused between different variables with the same name. It helps Python know <b>which variable you’re talking about</b> at any point in the program.</p>
+    <br><br>
+
+    <h2><b>The LEGB Detective Story</b></h2>
+    <p>Python follows a specific order when searching for variables, known as the <b>LEGB Rule.</b></p>
+    <p>Think of Python as a detective searching for clues :</p>
+    <br>
+    <p><b>1. L – Local:</b> First, look inside the current function.</p>
+    <p><b>2. E – Enclosing:</b> Then check the outer (enclosing) function, if you're in a nested function.</p>
+    <p><b>3. G – Global:</b> If not found, look at the global level (outside all functions).</p>
+    <br><br>
+
+    <h3><b>L - Local Scope (The Bedroom) :</b></h3>
+    <p>Variables created inside a function - they're private to that function.</p>
+    <div class="Code-box">
+        <pre><code>def my_bedroom():
+    secret_diary = "Today I learned Python!"  # Only exists in this function
+    print(secret_diary)
+
+my_bedroom()  # Works fine
+# print(secret_diary)  # ❌ Error! Can't access from outside
+</code></pre>
+  </div>
+<h3><b>Key Point :</b></h3>
+<p>Local variables are created when a function runs and destroyed when it ends.</p>
+
+<br><br>
+
+<h3><b>E - Enclosing Scope (The House) :</b></h3>
+    <p>Variables in outer functions that inner functions can access.</p>
+    <div class="Code-box">
+        <pre><code>def house():
+    wifi_password = "Python123"  # Available to all rooms in this house
     
+    def living_room():
+        print(f"WiFi password is: {wifi_password}")  # Can access it!
+    
+    def kitchen():
+        print(f"Still remember: {wifi_password}")  # This too!
+    
+    living_room()
+    kitchen()
+
+house()
+</code></pre>
+  </div>
+
+  <br><br>
+
+  <h3><b>Real-world Example :</b></h3>
+<div class="Code-box">
+        <pre><code>def create_calculator(operation):
+    def calculator(a, b):
+        if operation == "add":
+            return a + b
+        elif operation == "multiply":
+            return a * b
+    return calculator
+
+add_calc = create_calculator("add")
+print(add_calc(5, 3))  # 8 - operation remembered from enclosing scope!
+</code></pre>
+  </div>
+
+<br><br>
+
+<h3><b>G - Global Scope (The Neighborhood) :</b></h3>
+    <p>Variables defined at the top level of your script - available everywhere.</p>
+    <div class="Code-box">
+        <pre><code>neighborhood_name = "Pythonville"  # Global variable
+
+def introduce_yourself():
+    print(f"I live in {neighborhood_name}")
+
+def give_directions():
+    print(f"Welcome to {neighborhood_name}!")
+
+introduce_yourself()  # I live in Pythonville
+give_directions()     # Welcome to Pythonville!
+</code></pre>
+  </div>
+
+  <br><br>
+
+  <h3><b>Modifying Global Variables :</b></h3>
+<div class="Code-box">
+        <pre><code>bank_account = 100  # Global
+
+def spend_money(amount):
+    global bank_account  # Tell Python we want to modify the global
+    bank_account -= amount
+    print(f"Spent ${amount}. Balance: ${bank_account}")
+
+spend_money(20)  # Spent $20. Balance: $80
+print(bank_account)  # 80 - global variable was modified!
+</code></pre>
+  </div>
+
+  <br><br>
+
+  <h3><b>B - Built-in Scope (The Government) :</b></h3>
+  <p>Pre-installed Python functions and constants available everywhere.</p>
+<div class="Code-box">
+        <pre><code># These are all built-in - no import needed!
+numbers = [1, 2, 3, 4, 5]
+print(len(numbers))    # len is built-in
+print(max(numbers))    # max is built-in
+print(type(numbers))   # type is built-in
+
+# You can even override them (but don't!)
+# len = "I broke len!"  # Don't do this!
+</code></pre>
+  </div>
+
+  <br><br>
+
+  <h3><b>Tips to Remember :</b></h3>
+  <ul>
+    <li>A variable inside a function = <b>Local</b></li>
+    <li>A variable outside all functions = <b>Global</b></li>
+    <li>Functions can access <b>outer function variables</b> (Enclosing)</li>
+    <li>Python has many <b>built-in names</b> you can use directly</li>
+  </ul>
+  <br><br>
+
+  <h2><b>Summary</b></h2>
+  <p>Python's scope system follows the <b>LEGB rule :</b></p>
+  <ul>
+    <li><b>Local:</b> Inside current function</li>
+    <li><b>Enclosing:</b> Inside outer functions</li>
+    <li><b>Global:</b> At module level</li>
+    <li><b>Built-in:</b> Python's pre-defined names</li>
+  </ul>
+  <br><br>
+
+  <p><b>Understanding scope helps you :</b></p>
+  <ul>
+    <li>Avoid variable conflicts</li>
+    <li>Write more maintainable code</li>
+    <li>Debug issues faster</li>
+    <li>Use advanced patterns like closures and decorators</li>
+  </ul>
+
+
+<br><br>
 <div class="navigation-buttons">
   <a href="oops.html" class="nav-btn prev-btn">← Previous</a>
   <a href="scope.html" class="nav-btn next-btn">Next →</a>
