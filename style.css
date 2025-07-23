@@ -317,10 +317,10 @@ body {
 
 /* Python page */
 .python-banner {
-  background-image: url('images/python_home.png'); 
+  background-image: url('images/WhatsApp\ Image\ 2025-07-23\ at\ 14.03.46_9e910e20.jpg'); 
   background-size: cover;
   background-position: center;
-  height: 70vh;
+  height: 35vh;
   width: 100%;
   position: relative;
   display: flex;
@@ -573,7 +573,7 @@ h3 {
     font-size: 25px;
   }
   .python-banner {
-    height: 25vh;
+    height: 15vh;
     margin-top: 25px;
   }
   
@@ -810,7 +810,7 @@ section#with_banner {
   overflow-x: auto;
   background: #f7f7f7;
   border-bottom: 1.5px solid #f27100;
-  margin-bottom: 24px;
+  padding-bottom: 8px;
 }
 .python-tabs-list {
   display: flex;
@@ -846,7 +846,7 @@ section#with_banner {
 .tab-link:hover,
 .tab-link.active {
   color: #f27100;
-  border-bottom: 2.5px solid #f27100;
+  border-bottom: 2.5px solid #0a639b;
   background: #fff3e6;
 }
 @media (max-width: 600px) {
