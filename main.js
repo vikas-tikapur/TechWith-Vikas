@@ -27,13 +27,10 @@ document.addEventListener("DOMContentLoaded", function () {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
-});
 
-// Accordion functionality
-document.addEventListener("DOMContentLoaded", function () {
+  // Accordion functionality
   const accHeaders = document.querySelectorAll('.accordion-header');
   if (accHeaders.length > 0) {
-    // Open first by default
     accHeaders[0].classList.add('active');
     accHeaders[0].nextElementSibling.classList.add('open');
   }
@@ -48,5 +45,14 @@ document.addEventListener("DOMContentLoaded", function () {
       this.classList.toggle('active');
       this.nextElementSibling.classList.toggle('open');
     });
+  });
+
+  // Tabs active highlight
+  const tabs = document.querySelectorAll('.python-tabs-list .tab-link');
+  tabs.forEach(tab => {
+    if (window.location.pathname.endsWith(tab.getAttribute('href'))) {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+    }
   });
 });
