@@ -63,82 +63,145 @@
 </nav>
 <section class="python-intro">
   <div class="container">
-    <h1>Python Syntax</h1>
-    <p>Python syntax refers to the set of rules that define how a Python program is written and interpreted.</p>
+    <h2><b>What is a Python Module?</b></h2>
+    <p>A <b>module</b> in Python is simply a file that contains <b>Python code</b> — like variables, functions, classes, or even runnable scripts.</p>
+    <p>A module is simply a <b>.py</b> file containing Python code that you can reuse in other programs.</p>
 <br><br>
 
-    <h2 id="key-points">Key Points of Python Syntax: </h2>
-    <ul>
-        <li><b>No Semicolons (;) </b>Unlike other languages, Python does not require semicolons to end a line.</li>
-    </ul>
-    <div class="Code-box">
-    <pre><code>print("Hello, World")</code></pre>
-  </div>
+<h2><b>Why Use Modules?</b></h2>
+<p><b>1. Code Reusability : </b>Write once, use many times.</p>
+<p><b>2. Organized Code : </b>Split large programs into smaller, manageable files.</p>
+<p><b>3. Built-in Help : </b>Python has many useful built-in modules (like <b> math, random,</b> etc.).</p>
+<p><b>4. Easy Collaboration : </b>Teams can work on different modules.</p>
+<p><b>5. Maintainability :</b>When you need to fix a bug or add a new feature, you only have to work on the relevant module, not sift through thousands of lines of code.</p>
 
-  <ul>
-        <li><b>Indentation is Mandatory </b>Python uses indentation (spaces or tabs) to define blocks of code like loops, functions, or conditionals.</li>
-    </ul>
+<br><br>
 
-    <div class="Code-box">
-    <pre><code>if 5 > 2:
-    print("5 is greater than 2")</code></pre>
-  </div>
-  
-  <ul>
-        <li><b>Case-Sensitive </b>Python is a case-sensitive programming language. This means that uppercase 
-            and lowercase letters are treated as distinct in identifiers (like variable names and function 
-            names). For example, the variable name is different from Name in Python.</li>
-    </ul>
+<h3><b>How to Create a Module?</b></h3>
+<p>Any <b>.py </b>file is a module!</p>
 
-    <div class="Code-box">
-    <pre><code>name = "Vikas"
-Name = "Mishra"
+<br><br>
+
+<h3><b>Example : </b>calculator.py</h3>
+
+<div class="Code-box">
+    <pre><code>def add(x, y):
+    return x + y
+def subtract(x, y):
+    return x - y
 </code></pre>
   </div>
 
-  <ul>
-        <li><b>Comments </b>Use # for single-line comments.</li>
-    </ul>
+<p>You can use this module in another file :</p>
 
-    <div class="Code-box">
-    <pre><code># This is a comment
-print("Hello, Vikas")
+<div class="Code-box">
+    <pre><code>import calculator
+print(calculator.add(5, 3))  # Output: 8
 </code></pre>
   </div>
+
+<br><br>
+
+<h2>Importing Modules :</h2>
+<p>Python provides multiple ways to import :</p><br>
+<div class="responsive-table-wrapper">
+<table class="array-methods-table">
+  <thead>
+    <tr>
+      <th>Syntax</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code><b>import module_name</b></code></td>
+      <td>Import whole module</td>
+    </tr>
+      <td><code><b>import module_name as alias</b></code></td>
+      <td>Import with an alias</td>
+    </tr>
+    <tr>
+      <td><code><b>from module import func</b></code></td>
+      <td>Import specific function or class</td>
+    </tr>
+    <tr>
+      <td><code><b>from module import *</b></code></td>
+      <td>Import everything (not recommended)</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<br><br>
+
+<h2>Built-in Modules (No Installation Needed) :</h2>
+<br>
+<div class="responsive-table-wrapper">
+<table class="array-methods-table">
+  <thead>
+    <tr>
+      <th>Module</th>
+      <th>Use Case</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code><b>math</b></code></td>
+      <td>Advanced math functions</td>
+    </tr>
+      <td><code><b>random</b></code></td>
+      <td>Random number generation</td>
+    </tr>
+    <tr>
+      <td><code><b>datetime</b></code></td>
+      <td>Work with dates and time</td>
+    </tr>
+    <tr>
+      <td><code><b>os</b></code></td>
+      <td>Interact with operating system</td>
+    </tr>
+    <tr>
+      <td><code><b>sys</b></code></td>
+      <td>System-specific functions</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<br><br>
+
+<h2><b>Python datetime Module :</b></h2>
+<p>The <b>datetime</b> module in Python is used to <b>work with dates and times.</b> It allows you to perform tasks like <b>getting the current date, 
+    formatting time, adding/subtracting time,</b> and much more.</p>
+
+<br><br>
+
+<h3>Why Use datetime?</h3>
+<p>Python doesn’t handle date/time operations natively. The datetime module:</p>
+<ul>
+    <li>Manages <b>dates</b></li>
+    <li>Works with <b>time</b></li>
     
-  <ul>
-        <li><b>Variables Don't Need Declaration
- </b>You can directly assign values to variables without declaring their type.</li>
 </ul>
 
-<div class="Code-box">
-    <pre><code>x = 10
-name = "Vikas"
-print(x)
-print(name)
-</code></pre>
-  </div>
 
-  <ul>
-        <li><b>Simple Print Statement
- </b>Output is printed using print().</li>
-</ul>
 
-<div class="Code-box">
-    <pre><code>print("Welcome to Python!")
-</code></pre>
-  </div>
 
-  <ul>
-    <li><b>Function Definition
- </b>Functions are defined using def keyword.</li>
-</ul>
-    
-<div class="Code-box">
-    <pre><code>def greet():
-    print("Hello from Python!")
-</code></pre>
-  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <br><br>
   <div class="navigation-buttons">
   <a href="python.html" class="nav-btn prev-btn">← Previous</a>
