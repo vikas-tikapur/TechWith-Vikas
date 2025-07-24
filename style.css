@@ -328,6 +328,17 @@ body {
   justify-content: center;
 }
 
+.numpy-banner {
+  background-image: url('images/numpyn.png'); 
+  background-size: cover;
+  background-position: center;
+  height: 35vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 /* .banner-overlay {
   background-color: rgba(0, 0, 0, 0.6); 
   width: 100%;
@@ -575,6 +586,13 @@ h3 {
   .python-banner {
     height: 15vh;
     margin-top: 25px;
+  }
+
+  .numpy-banner {
+    height: 12vh;
+    margin-top: 25px;
+    background-position: left;
+    background-size: contain;
   }
   
 .banner-overlay h1{
