@@ -598,9 +598,11 @@ section#with_banner {
 }
 .python-intro p{
   font-size: 16px;
+  text-align: left;
 }
 .python-intro li {
   font-size: 16px;
+  text-align: left;
 }
 
 

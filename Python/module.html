@@ -181,8 +181,374 @@ print(calculator.add(5, 3))  # Output: 8
 <ul>
     <li>Manages <b>dates</b></li>
     <li>Works with <b>time</b></li>
-    
+    <li>Combines date & time as a single object</li>
+    <li>Allows <b>date/time</b> arithmetic</li>
+    <li> Formats date/time into strings or vice versa</li>
 </ul>
+<br><br>
+
+<h3>Importing datetime</h3>
+<div class="Code-box">
+    <pre><code>import datetime
+</code></pre>
+  </div>
+
+  <br><br>
+
+<h3>Getting Current Date & Time</h3>
+<div class="Code-box">
+    <pre><code>from datetime import datetime
+
+now = datetime.now()
+print("Current date and time:", now)
+
+#Output - Current date and time: 2025-07-16 16:45:23.456123
+</code></pre>
+  </div>
+
+<br><br>
+
+<h2>Useful Classes in datetime :</h2>
+<br>
+<div class="responsive-table-wrapper">
+<table class="array-methods-table">
+  <thead>
+    <tr>
+      <th>Class</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code><b>date</b></code></td>
+      <td>Deals with dates only</td>
+    </tr>
+      <td><code><b>time</b></code></td>
+      <td>Deals with time only</td>
+    </tr>
+    <tr>
+      <td><code><b>datetime</b></code></td>
+      <td>Combines date and time</td>
+    </tr>
+    <tr>
+      <td><code><b>timedelta</b></code></td>
+      <td>Represents time difference</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<br><br>
+
+<h3>Working with date</h3>
+<div class="Code-box">
+    <pre><code>from datetime import date
+
+today = date.today()
+print("Today's date:", today)
+print("Year:", today.year)
+print("Month:", today.month)
+print("Day:", today.day)
+
+#Output - 
+Today's date: 2025-07-23
+Year: 2025
+Month: 7
+Day: 23
+</code></pre>
+  </div>
+
+<br><br>
+
+<h3>Formatting Date and Time</h3>
+<div class="Code-box">
+    <pre><code>from datetime import datetime
+
+now = datetime.now()
+print(now.strftime("%d-%m-%Y %H:%M:%S"))  # DD-MM-YYYY HH:MM:SS
+
+#Output - 24-07-2025 03:02:58
+</code></pre>
+  </div>
+
+<br><br>
+
+<h3>Creating a Custom Date or Time</h3>
+<div class="Code-box">
+    <pre><code>from datetime import datetime
+
+dt = datetime(2024, 12, 25, 10, 30)
+print("Custom datetime:", dt)
+
+#Output - 
+Custom datetime: 2024-12-25 10:30:00
+</code></pre>
+  </div>
+
+<br><br>
+
+<h3>Date Arithmetic with timedelta</h3>
+<div class="Code-box">
+    <pre><code>from datetime import timedelta, date
+
+today = date.today()
+future = today + timedelta(days=10)
+past = today - timedelta(days=5)
+
+print("Today:", today)
+print("10 days later:", future)
+print("5 days ago:", past)
+
+#Output - 
+Today: 2025-07-24
+10 days later: 2025-08-03
+5 days ago: 2025-07-19
+</code></pre>
+  </div>
+
+<br><br>
+
+<h3>Parsing String to Date</h3>
+<div class="Code-box">
+    <pre><code>from datetime import datetime
+
+date_str = "16-07-2025"
+date_obj = datetime.strptime(date_str, "%d-%m-%Y")
+print("Parsed date:", date_obj)
+
+#Output - 
+Parsed date: 2025-07-16 00:00:00
+</code></pre>
+  </div>
+
+<br><br>
+
+<h2>Python math Module</h2>
+<p>The <b>math</b> module in Python provides access to <b>mathematical functions and constants.</b></p>
+<p>It's widely used for performing operations like square root, trigonometry, logarithms, rounding, etc.</p>
+
+<br><br>
+
+<h3>How to Use math Module?</h3>
+<p>You need to import it first :</p>
+<div class="Code-box">
+    <pre><code>import math
+</code></pre>
+  </div>
+
+<br><br>
+
+<h3>Commonly Used Functions</h3><br>
+<div class="responsive-table-wrapper">
+<table class="array-methods-table">
+  <thead>
+    <tr>
+      <th>Function</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code><b>math.sqrt(x)</b></code></td>
+      <td>Square root of x</td>
+      <td><b>math.sqrt(16) → 4.0</b></td>
+    </tr>
+      <td><code><b>math.pow(x, y)</b></code></td>
+      <td>x raised to the power y (x^y)</td>
+      <td><b>math.pow(2, 3) → 8.0</b></td>
+    </tr>
+    <tr>
+      <td><code><b>math.floor(x)</b></code></td>
+      <td>Rounds down to nearest integer</td>
+      <td><b>math.floor(3.7) → 3</b></td>
+    </tr>
+    <tr>
+      <td><code><b>math.ceil(x)</b></code></td>
+      <td>Rounds up to nearest integer</td>
+      <td><b>math.ceil(3.1) → 4</b></td>
+    </tr>
+    <tr>
+      <td><code><b>math.factorial(x)</b></code></td>
+      <td>Factorial of x</td>
+      <td><b>math.factorial(5) → 120</b></td>
+    </tr>
+    <tr>
+      <td><code><b>math.fabs(x)</b></code></td>
+      <td>Absolute value (float)</td>
+      <td><b>math.fabs(-5.2) → 5.2</b></td>
+    </tr>
+    <tr>
+      <td><code><b>math.log(x)</b></code></td>
+      <td>Natural log (base e)</td>
+      <td><b>math.log(10)</b></td>
+    </tr>
+    <tr>
+      <td><code><b>math.log10(x)</b></code></td>
+      <td>Log base 10</td>
+      <td><b>math.log10(100) → 2</b></td>
+    </tr>
+    <tr>
+      <td><code><b>math.exp(x)</b></code></td>
+      <td>Returns e^x</td>
+      <td><b>math.exp(2)</b></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<br><br>
+<h3>Trigonometric Functions</h3><br>
+<div class="responsive-table-wrapper">
+<table class="array-methods-table">
+  <thead>
+    <tr>
+      <th>Function</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code><b>math.sin(x)</b></code></td>
+      <td>Sine of x (x in radians)</td>
+    </tr>
+      <td><code><b>math.cos(x)</b></code></td>
+      <td>Cosine of x</td>
+    </tr>
+    <tr>
+      <td><code><b>math.tan(x)</b></code></td>
+      <td>Tangent of x</td>
+    </tr>
+    <tr>
+      <td><code><b>math.radians(x)</b></code></td>
+      <td>Converts degrees to radians</td>
+    </tr>
+    <tr>
+      <td><code><b>math.degrees(x)</b></code></td>
+      <td>Converts radians to degrees</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<br><br>
+
+<h3>Example :</h3>
+<div class="Code-box">
+    <pre><code>import math
+angle = 90
+radian = math.radians(angle)
+print("sin(90°):", math.sin(radian))  # Output: 1.0
+</code></pre>
+  </div>
+
+<br><br>
+
+<h3>Math Constants</h3><br>
+<div class="responsive-table-wrapper">
+<table class="array-methods-table">
+  <thead>
+    <tr>
+      <th>Constant</th>
+      <th>Description</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code><b>math.pi</b></code></td>
+      <td>π (pi)</td>
+      <td>3.141592653589793</td>
+    </tr>
+      <td><code><b>math.e</b></code></td>
+      <td>Euler’s number (e)</td>
+      <td>2.718281828459045</td>
+    </tr>
+    <tr>
+      <td><code><b>math.tau</b></code></td>
+      <td>2π</td>
+      <td>6.283185307179586</td>
+    </tr>
+    <tr>
+      <td><code><b>math.inf</b></code></td>
+      <td>Infinity</td>
+      <td><code><b>math.inf</b></code></td>
+    </tr>
+    <tr>
+      <td><code><b>math.nan</b></code></td>
+      <td>Not a Number</td>
+      <td><code><b>math.nan</b></code></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<br><br>
+
+<h3>Example Use Case :</h3>
+<div class="Code-box">
+    <pre><code>import math
+radius = 7
+area = math.pi * math.pow(radius, 2)
+print("Area of circle:", area)
+
+#Output - 
+Area of circle: 153.93804002589985
+</code></pre>
+  </div>
+
+<br><br>
+
+<h3>Rounding Functions</h3><br>
+<div class="responsive-table-wrapper">
+<table class="array-methods-table">
+  <thead>
+    <tr>
+      <th>Function</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code><b>round(x)</b></code></td>
+      <td>Rounds to nearest integer</td>
+    </tr>
+      <td><code><b>math.trunc(x)</b></code></td>
+      <td>Rounds to nearest integer</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<br><br>
+
+<h2>Python Built-in Math Functions</h2>
+<p>Python provides several <b>built-in mathematical functions</b> (that don’t require importing the math module). These are helpful for <b>basic arithmetic, rounding, and type conversion.</b></p>
+<br>
+<p><b>Let’s explore them with simple examples :</b></p>
+<br><br>
+
+<h3>1. abs( ) – Absolute Value :</h3>
+<p>Returns the absolute (non-negative) value of a number.</p>
+<div class="Code-box">
+    <pre><code>print(abs(-7))      # Output: 7
+print(abs(5.2))     # Output: 5.2
+</code></pre>
+  </div>
+
+<br><br>
+
+<h3>2. round( ) – Round to Nearest Integer :</h3>
+<p>Rounds a number to the nearest integer or to a specified number of decimal places.</p>
+<div class="Code-box">
+    <pre><code>print(round(3.6))        # Output: 4
+print(round(3.14159, 2)) # Output: 3.14
+</code></pre>
+  </div>
+
+<br><br>
+
+
 
 
 
