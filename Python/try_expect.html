@@ -57,190 +57,159 @@
     <li><a href="regex.html" class="tab-link">Regular Expressions</a></li>
     <li><a href="pip.html" class="tab-link">Python PIP</a></li>
     <li><a href="try_expect.html" class="tab-link">Try Except</a></li>
+
   </ul>
 </nav>
 <section class="python-intro">
   <div class="container">
-    <h1>What is JSON?</h1>
-    <p><b>JSON</b> (JavaScript Object Notation) is a <b>lightweight data-interchange format</b> used for storing and exchanging data between a server and a client (like a website or app).</p>
-    <p>It is <b>language-independent</b> and easy to read/write for both humans and machines.</p>
+    <h2>Python try and except – Handling Errors Gracefully</h2>
+    <p>In Python, <b>errors (also called exceptions)</b> can crash your program if not handled properly.</p>
+    <p>The <b>try</b> and <b>except</b> block helps you <b>catch and handle those errors,</b> allowing your code to run <b>safely</b> even when something goes wrong.</p>
 <br><br>
 
-    <h2 id="key-points">Why Use JSON in Python?: </h2>
-    <ul>
-        <li>Exchange data between Python and web APIs.</li>
-        <li>Store structured data (e.g., settings, configurations).</li>
-        <li>Easily serialize Python objects.</li>
-    </ul>
-<br><br>
-
-<h2>Python & JSON Integration</h2>
-<p>Python comes with a built-in module called <b>json</b> to work with JSON data.</p>
-    <div class="Code-box">
-    <pre><code>import json
-</code></pre>
-  </div>
-<br><br>
-
-<h2>Converting Between JSON and Python</h2>
-<br>
-<div class="responsive-table-wrapper">
-<table class="array-methods-table">
-  <thead>
-    <tr>
-      <th>JSON</th>
-      <th>Python Equivalent</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>Object</code></td>
-      <td><b>dict</b></td>
-    </tr>
-      <td><code>Array</code></td>
-      <td><b>list</b></td>
-    </tr>
-    <tr>
-      <td><code>String</code></td>
-      <td><b>str</b></td>
-    </tr>
-    <tr>
-      <td><code><b>Number</b></code></td>
-      <td><b>int or float</b></td>
-    </tr>
-    <tr>
-      <td><code><b>true / false</b></code></td>
-      <td><b>True / False</b></td>
-    </tr>
-    <tr>
-      <td><code><b>null</b></code></td>
-      <td><b>None</b></td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<br><br>
-
-<h3>Convert Python → JSON (json.dumps( ))</h3>
-<div class="Code-box">
-    <pre><code>import json
-
-data = {"name": "Alice", "age": 25, "is_student": False}
-json_string = json.dumps(data)
-
-print(json_string)
-# Output: {"name": "Alice", "age": 25, "is_student": false}
-</code></pre>
-  </div>
-<br><br>
-
-<p><b>You can also pretty print it :</b></p>
-<div class="Code-box">
-    <pre><code>print(json.dumps(data, indent=4))
-</code></pre>
-  </div>
-<br><br>
-
-<h3>Convert JSON → Python (json.loads( ))</h3>
-<div class="Code-box">
-    <pre><code>json_data = '{"name": "Alice", "age": 25}'
-python_dict = json.loads(json_data)
-
-print(python_dict["name"])  # Output: Alice
-</code></pre>
-  </div>
-<br><br>
-
-<h2>Working with JSON Files</h2>
-<h3>Write to a JSON file</h3>
-<div class="Code-box">
-    <pre><code>data = {"name": "Bob", "age": 30}
-
-with open("data.json", "w") as file:
-    json.dump(data, file, indent=4)
-</code></pre>
-  </div>
-<br><br>
-
-<h3>Read from a JSON file</h3>
-<div class="Code-box">
-    <pre><code>with open("data.json", "r") as file:
-    loaded_data = json.load(file)
-print(loaded_data)
-</code></pre>
-  </div>
-<br><br>
-
-<h2>Advanced Options in json Module</h2>
-<br>
-<div class="responsive-table-wrapper">
-<table class="array-methods-table">
-  <thead>
-    <tr>
-      <th>Function</th>
-      <th>Use Case</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code><b>json.dumps( )</b></code></td>
-      <td>Convert Python → JSON string</td>
-    </tr>
-      <td><code><b>json.dump( )</b></code></td>
-      <td>Write Python object to file (as JSON)</td>
-    </tr>
-    <tr>
-      <td><code><b>json.loads( )</b></code></td>
-      <td>Parse JSON string → Python object</td>
-    </tr>
-    <tr>
-      <td><code><b>json.load( )</b></code></td>
-      <td>Read JSON from file → Python object</td>
-    </tr>
-    <tr>
-      <td><code><b>sort_keys=True</b></code></td>
-      <td><b>Sort keys in output JSON</b></td>
-    </tr>
-    <tr>
-      <td><code><b>indent=4</b></code></td>
-      <td>Pretty-print JSON</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<br><br>
-
-<h3>Example Use Case</h3>
-<div class="Code-box">
-    <pre><code>import json
-
-person = {"name": "John", "skills": ["Python", "Django"], "active": True}
-
-# Convert and save
-with open("person.json", "w") as f:
-    json.dump(person, f, indent=2)
-
-# Load and access
-with open("person.json") as f:
-    data = json.load(f)
-    print(data["skills"][0])  # Output: Python
-</code></pre>
-  </div>
-<br><br>
-
-<h2>Summary</h2>
+<h2>Why Use try and except?</h2>
 <ul>
-    <li>Use <b>json</b> module to work with JSON data in Python.</li>
-    <li>Convert between JSON strings and Python objects.</li>
-    <li>Easily read/write JSON files for APIs and data storage.</li>
+    <li>Prevents program crash during runtime errors.</li>
+    <li>Lets you display user-friendly error messages.</li>
+    <li>Useful for validating inputs, file handling, API calls, etc.</li>
+</ul>
+
+<br><br>
+
+<h2>Basic Syntax</h2>
+    <div class="Code-box">
+    <pre><code>try:
+    # Code that may raise an error
+except:
+    # Code that runs if an error occurs
+</code></pre>
+  </div>
+<br><br>
+
+<h3>Example 1: Handling Division by Zero</h3>
+<div class="Code-box">
+    <pre><code>try:
+    result = 10 / 0
+except:
+    print("Oops! You cannot divide by zero.")
+
+#Output - 
+Oops! You cannot divide by zero.
+</code></pre>
+  </div>
+<br><br>
+
+
+<h3>Example 2: Catching Specific Exceptions</h3>
+<div class="Code-box">
+    <pre><code>try:
+    num = int(input("Enter a number: "))
+    print(100 / num)
+except ZeroDivisionError:
+    print("Cannot divide by zero.")
+except ValueError:
+    print("Please enter a valid number.")
+</code></pre>
+  </div>
+<br><br>
+
+<h3>Example 3: Using else and finally</h3>
+<div class="Code-box">
+    <pre><code>try:
+    x = int(input("Enter a number: "))
+    print("You entered:", x)
+except ValueError:
+    print("That's not a number!")
+else:
+    print("No exceptions occurred!")
+finally:
+    print("This block always runs.")
+</code></pre>
+  </div>
+<br><br>
+
+<div class="responsive-table-wrapper">
+  <table class="array-methods-table">
+    <thead>
+      <tr>
+        <th>Keyword</th>
+        <th>Meaning</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>try</code></td>
+        <td>Code you want to test (may cause error)</td>
+      </tr>
+      <tr>
+        <td><code>except</code></td>
+        <td>Code that runs if an error occurs</td>
+      </tr>
+      <tr>
+        <td><code>else</code></td>
+        <td>(Optional) Code that runs if <strong>no error occurs</strong></td>
+      </tr>
+      <tr>
+        <td><code>finally</code></td>
+        <td>(Optional) Code that <strong>always runs</strong>, error or not (e.g., cleanup)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br><br>
+
+<h2>Common Built-in Exceptions</h2><br>
+<div class="responsive-table-wrapper">
+  <table class="array-methods-table">
+    <thead>
+      <tr>
+        <th>Exception Name</th>
+        <th>Triggered When...</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>ZeroDivisionError</code></td>
+        <td>You divide a number by zero</td>
+      </tr>
+      <tr>
+        <td><code>ValueError</code></td>
+        <td>Invalid value (e.g., converting text to int)</td>
+      </tr>
+      <tr>
+        <td><code>TypeError</code></td>
+        <td>Operation on incompatible data types</td>
+      </tr>
+      <tr>
+        <td><code>FileNotFoundError</code></td>
+        <td>File doesn’t exist</td>
+      </tr>
+      <tr>
+        <td><code>IndexError</code></td>
+        <td>List index out of range</td>
+      </tr>
+      <tr>
+        <td><code>KeyError</code></td>
+        <td>Dictionary key not found</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<br><br>
+
+<h2>Summary</h2><br>
+<ul>
+    <li><b>try</b> → Code to test</li>
+    <li><b>except</b> → Handles errors</li>
+    <li><b>else</b> → Runs if no errors</li>
+    <li><b>finally</b> → Always runs</li>
 </ul>
 
 <br><br>
   <div class="navigation-buttons">
-  <a href="module.html" class="nav-btn prev-btn">← Previous</a>
-  <a href="regex.html" class="nav-btn next-btn">Next →</a>
+  <a href="pip.html" class="nav-btn prev-btn">← Previous</a>
+  <a href="json.html" class="nav-btn next-btn">Next →</a>
 </div>
 </div>
 
