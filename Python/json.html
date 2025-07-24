@@ -58,82 +58,182 @@
 </nav>
 <section class="python-intro">
   <div class="container">
-    <h1>Python Syntax</h1>
-    <p>Python syntax refers to the set of rules that define how a Python program is written and interpreted.</p>
+    <h1>What is JSON?</h1>
+    <p><b>JSON</b> (JavaScript Object Notation) is a <b>lightweight data-interchange format</b> used for storing and exchanging data between a server and a client (like a website or app).</p>
+    <p>It is <b>language-independent</b> and easy to read/write for both humans and machines.</p>
 <br><br>
 
-    <h2 id="key-points">Key Points of Python Syntax: </h2>
+    <h2 id="key-points">Why Use JSON in Python?: </h2>
     <ul>
-        <li><b>No Semicolons (;) </b>Unlike other languages, Python does not require semicolons to end a line.</li>
+        <li>Exchange data between Python and web APIs.</li>
+        <li>Store structured data (e.g., settings, configurations).</li>
+        <li>Easily serialize Python objects.</li>
     </ul>
-    <div class="Code-box">
-    <pre><code>print("Hello, World")</code></pre>
-  </div>
+<br><br>
 
-  <ul>
-        <li><b>Indentation is Mandatory </b>Python uses indentation (spaces or tabs) to define blocks of code like loops, functions, or conditionals.</li>
-    </ul>
-
+<h2>Python & JSON Integration</h2>
+<p>Python comes with a built-in module called <b>json</b> to work with JSON data.</p>
     <div class="Code-box">
-    <pre><code>if 5 > 2:
-    print("5 is greater than 2")</code></pre>
-  </div>
+    <pre><code>import json
+</code></pre>
   
-  <ul>
-        <li><b>Case-Sensitive </b>Python is a case-sensitive programming language. This means that uppercase 
-            and lowercase letters are treated as distinct in identifiers (like variable names and function 
-            names). For example, the variable name is different from Name in Python.</li>
-    </ul>
+<br><br>
 
-    <div class="Code-box">
-    <pre><code>name = "Vikas"
-Name = "Mishra"
+<h2>Converting Between JSON and Python</h2>
+<br>
+<div class="responsive-table-wrapper">
+<table class="array-methods-table">
+  <thead>
+    <tr>
+      <th>JSON</th>
+      <th>Python Equivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Object</code></td>
+      <td><b>dict</b></td>
+    </tr>
+      <td><code>Array</code></td>
+      <td><b>list</b></td>
+    </tr>
+    <tr>
+      <td><code>String</code></td>
+      <td><b>str</b></td>
+    </tr>
+    <tr>
+      <td><code><b>Number</b></code></td>
+      <td><b>int or float</b></td>
+    </tr>
+    <tr>
+      <td><code><b>true / false</b></code></td>
+      <td><b>True / False</b></td>
+    </tr>
+    <tr>
+      <td><code><b>null</b></code></td>
+      <td><b>None</b></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<br><br>
+
+<h3>Convert Python → JSON (json.dumps( ))</h3>
+<div class="Code-box">
+    <pre><code>import json
+
+data = {"name": "Alice", "age": 25, "is_student": False}
+json_string = json.dumps(data)
+
+print(json_string)
+# Output: {"name": "Alice", "age": 25, "is_student": false}
 </code></pre>
-  </div>
+  
+<br><br>
 
-  <ul>
-        <li><b>Comments </b>Use # for single-line comments.</li>
-    </ul>
-
-    <div class="Code-box">
-    <pre><code># This is a comment
-print("Hello, Vikas")
+<p><b>You can also pretty print it :</b></p>
+<div class="Code-box">
+    <pre><code>print(json.dumps(data, indent=4))
 </code></pre>
-  </div>
-    
-  <ul>
-        <li><b>Variables Don't Need Declaration
- </b>You can directly assign values to variables without declaring their type.</li>
+  
+<br><br>
+
+<h3>Convert JSON → Python (json.loads( ))</h3>
+<div class="Code-box">
+    <pre><code>json_data = '{"name": "Alice", "age": 25}'
+python_dict = json.loads(json_data)
+
+print(python_dict["name"])  # Output: Alice
+</code></pre>
+  
+<br><br>
+
+<h2>Working with JSON Files</h2>
+<h3>Write to a JSON file</h3>
+<div class="Code-box">
+    <pre><code>data = {"name": "Bob", "age": 30}
+
+with open("data.json", "w") as file:
+    json.dump(data, file, indent=4)
+</code></pre>
+  
+<br><br>
+
+<h3>Read from a JSON file</h3>
+<div class="Code-box">
+    <pre><code>with open("data.json", "r") as file:
+    loaded_data = json.load(file)
+print(loaded_data)
+</code></pre>
+  
+<br><br>
+
+<h2>Advanced Options in json Module</h2>
+<br>
+<div class="responsive-table-wrapper">
+<table class="array-methods-table">
+  <thead>
+    <tr>
+      <th>Function</th>
+      <th>Use Case</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code><b>json.dumps( )</b></code></td>
+      <td>Convert Python → JSON string</td>
+    </tr>
+      <td><code><b>json.dump( )</b></code></td>
+      <td>Write Python object to file (as JSON)</td>
+    </tr>
+    <tr>
+      <td><code><b>json.loads( )</b></code></td>
+      <td>Parse JSON string → Python object</td>
+    </tr>
+    <tr>
+      <td><code><b>json.load( )</b></code></td>
+      <td>Read JSON from file → Python object</td>
+    </tr>
+    <tr>
+      <td><code><b>sort_keys=True</b></code></td>
+      <td><b>Sort keys in output JSON</b></td>
+    </tr>
+    <tr>
+      <td><code><b>indent=4</b></code></td>
+      <td>Pretty-print JSON</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<br><br>
+
+<h3>Example Use Case</h3>
+<div class="Code-box">
+    <pre><code>import json
+
+person = {"name": "John", "skills": ["Python", "Django"], "active": True}
+
+# Convert and save
+with open("person.json", "w") as f:
+    json.dump(person, f, indent=2)
+
+# Load and access
+with open("person.json") as f:
+    data = json.load(f)
+    print(data["skills"][0])  # Output: Python
+</code></pre>
+  
+<br><br>
+
+<h2>Summary</h2>
+<ul>
+    <li>Use <b>json</b> module to work with JSON data in Python.</li>
+    <li>Convert between JSON strings and Python objects.</li>
+    <li>Easily read/write JSON files for APIs and data storage.</li>
 </ul>
 
-<div class="Code-box">
-    <pre><code>x = 10
-name = "Vikas"
-print(x)
-print(name)
-</code></pre>
-  </div>
-
-  <ul>
-        <li><b>Simple Print Statement
- </b>Output is printed using print().</li>
-</ul>
-
-<div class="Code-box">
-    <pre><code>print("Welcome to Python!")
-</code></pre>
-  </div>
-
-  <ul>
-    <li><b>Function Definition
- </b>Functions are defined using def keyword.</li>
-</ul>
-    
-<div class="Code-box">
-    <pre><code>def greet():
-    print("Hello from Python!")
-</code></pre>
-  </div>
 <br><br>
   <div class="navigation-buttons">
   <a href="python.html" class="nav-btn prev-btn">← Previous</a>
