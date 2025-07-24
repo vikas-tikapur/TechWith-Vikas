@@ -177,7 +177,7 @@ body {
   text-align: center;
   position: relative;
   z-index: 1;
-  background-image: url('images/main_bann.jpg');
+  background-image: url('images/tech_vikas.jpg');
   background-size: cover;
   /* background-position: center; */
   background-repeat: no-repeat;
@@ -523,6 +523,11 @@ h3 {
   padding-bottom: 20px;
 }
 
+.hero-section {
+    background-image: url('images/tech_vikas_mobile.jpg') !important;
+    padding: 60px 10px;
+  }
+
 .hero-content{
   margin: auto;
 }
@@ -531,7 +536,7 @@ h3 {
 }
 .hero-section{
   padding: 90px 0px 50px 0px;
-  height: 15vh;
+  height: 6vh;
 }
 .hero-btn{
   font-size: 16px;
