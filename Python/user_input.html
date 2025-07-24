@@ -58,159 +58,122 @@
     <li><a href="pip.html" class="tab-link">Python PIP</a></li>
     <li><a href="try_expect.html" class="tab-link">Try Except</a></li>
     <li><a href="str_format.html" class="tab-link">String Formatting</a></li>
+    <li><a href="user_input.html" class="tab-link">Python User Input</a></li>
+    <li><a href="virtual.html" class="tab-link">Python Virtual Environment</a></li>
 
   </ul>
 </nav>
 <section class="python-intro">
   <div class="container">
-    <h2>Python try and except – Handling Errors Gracefully</h2>
-    <p>In Python, <b>errors (also called exceptions)</b> can crash your program if not handled properly.</p>
-    <p>The <b>try</b> and <b>except</b> block helps you <b>catch and handle those errors,</b> allowing your code to run <b>safely</b> even when something goes wrong.</p>
+    <h2>Python User Input – Taking Input from the User</h2>
+    <p>Python allows you to interact with users by taking <b>keyboard input using the input( )</b> function.</p>
 <br><br>
 
-<h2>Why Use try and except?</h2>
-<ul>
-    <li>Prevents program crash during runtime errors.</li>
-    <li>Lets you display user-friendly error messages.</li>
-    <li>Useful for validating inputs, file handling, API calls, etc.</li>
-</ul>
-
-<br><br>
-
-<h2>Basic Syntax</h2>
+<h3>Basic Syntax</h3>
     <div class="Code-box">
-    <pre><code>try:
-    # Code that may raise an error
-except:
-    # Code that runs if an error occurs
+    <pre><code>input("Your message here")
 </code></pre>
   </div>
+  <p>It always returns the input as a string by default.</p>
 <br><br>
 
-<h3>Example 1: Handling Division by Zero</h3>
+<h3>Example 1: Take a name from the user</h3>
 <div class="Code-box">
-    <pre><code>try:
-    result = 10 / 0
-except:
-    print("Oops! You cannot divide by zero.")
+    <pre><code>name = input("Enter your name: ")
+print("Hello,", name)
 
 #Output - 
-Oops! You cannot divide by zero.
+Enter your name: Rishik
+Hello, Rishik
 </code></pre>
   </div>
 <br><br>
 
+<h3>Example 2: Take a number (convert to int)</h3>
+    <div class="Code-box">
+    <pre><code>age = input("Enter your age: ")
+age = int(age)  # Convert to integer
+print("Next year, you will be", age + 1)
 
-<h3>Example 2: Catching Specific Exceptions</h3>
+#Output -
+Enter your age: 25
+Next year, you will be 26
+</code></pre>
+  </div><br>
+
+<h3>Example 3: Multiple Inputs (Using split( ))</h3>
 <div class="Code-box">
-    <pre><code>try:
-    num = int(input("Enter a number: "))
-    print(100 / num)
-except ZeroDivisionError:
-    print("Cannot divide by zero.")
-except ValueError:
-    print("Please enter a valid number.")
+    <pre><code>name, age = input("Enter your name and age: ").split()
+print("Name:", name)
+print("Age:", age)
+
+#Output - 
+Enter your name and age: Alice 25
+Name: Alice
+Age: 25
 </code></pre>
   </div>
 <br><br>
 
-<h3>Example 3: Using else and finally</h3>
-<div class="Code-box">
-    <pre><code>try:
-    x = int(input("Enter a number: "))
-    print("You entered:", x)
-except ValueError:
-    print("That's not a number!")
-else:
-    print("No exceptions occurred!")
-finally:
-    print("This block always runs.")
-</code></pre>
-  </div>
-<br><br>
-
+<h2>Important Points</h2><br>
 <div class="responsive-table-wrapper">
   <table class="array-methods-table">
     <thead>
       <tr>
-        <th>Keyword</th>
-        <th>Meaning</th>
+        <th>Feature</th>
+        <th>Details</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><code>try</code></td>
-        <td>Code you want to test (may cause error)</td>
+        <td><code>input()</code></td>
+        <td>Takes user input (returns as string)</td>
       </tr>
       <tr>
-        <td><code>except</code></td>
-        <td>Code that runs if an error occurs</td>
+        <td><code>int(input())</code></td>
+        <td>Converts input to integer</td>
       </tr>
       <tr>
-        <td><code>else</code></td>
-        <td>(Optional) Code that runs if <strong>no error occurs</strong></td>
+        <td><code>float(input())</code></td>
+        <td>Converts input to float</td>
       </tr>
       <tr>
-        <td><code>finally</code></td>
-        <td>(Optional) Code that <strong>always runs</strong>, error or not (e.g., cleanup)</td>
+        <td><code>input().split()</code></td>
+        <td>Splits input into multiple values</td>
+      </tr>
+      <tr>
+        <td><code>input().upper()</code></td>
+        <td>Converts input to uppercase</td>
       </tr>
     </tbody>
   </table>
 </div>
 <br><br>
 
-<h2>Common Built-in Exceptions</h2><br>
-<div class="responsive-table-wrapper">
-  <table class="array-methods-table">
-    <thead>
-      <tr>
-        <th>Exception Name</th>
-        <th>Triggered When...</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>ZeroDivisionError</code></td>
-        <td>You divide a number by zero</td>
-      </tr>
-      <tr>
-        <td><code>ValueError</code></td>
-        <td>Invalid value (e.g., converting text to int)</td>
-      </tr>
-      <tr>
-        <td><code>TypeError</code></td>
-        <td>Operation on incompatible data types</td>
-      </tr>
-      <tr>
-        <td><code>FileNotFoundError</code></td>
-        <td>File doesn’t exist</td>
-      </tr>
-      <tr>
-        <td><code>IndexError</code></td>
-        <td>List index out of range</td>
-      </tr>
-      <tr>
-        <td><code>KeyError</code></td>
-        <td>Dictionary key not found</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<h3>Example 4: Safely Taking Integer Input</h3>
+<div class="Code-box">
+    <pre><code>try:
+    number = int(input("Enter a number: "))
+    print("Double of your number:", number * 2)
+except ValueError:
+    print("Please enter a valid number!")
+</code></pre>
+  </div>
 <br><br>
 
 <h2>Summary</h2><br>
 <ul>
-    <li><b>try</b> → Code to test</li>
-    <li><b>except</b> → Handles errors</li>
-    <li><b>else</b> → Runs if no errors</li>
-    <li><b>finally</b> → Always runs</li>
+    <li>Use <b>input( )</b> to take user input.</li>
+    <li>Always convert to <b>int, float,</b> etc. if needed.</li>
+    <li>Use <b>split( )</b> for multiple values in one line.</li>
+    <li>Wrap in <b>try-except</b> for safer code.</li>
 </ul>
+
 
 <br><br>
   <div class="navigation-buttons">
-  <a href="pip.html" class="nav-btn prev-btn">← Previous</a>
-  <a href="str_format.html" class="nav-btn next-btn">Next →</a>
+  <a href="str_format.html" class="nav-btn prev-btn">← Previous</a>
+  <a href="virtual.html" class="nav-btn next-btn">Next →</a>
 </div>
 </div>
 

@@ -58,73 +58,59 @@
     <li><a href="pip.html" class="tab-link">Python PIP</a></li>
     <li><a href="try_expect.html" class="tab-link">Try Except</a></li>
     <li><a href="str_format.html" class="tab-link">String Formatting</a></li>
+    <li><a href="user_input.html" class="tab-link">Python User Input</a></li>
 
   </ul>
 </nav>
 <section class="python-intro">
   <div class="container">
-    <h2>Python try and except – Handling Errors Gracefully</h2>
-    <p>In Python, <b>errors (also called exceptions)</b> can crash your program if not handled properly.</p>
-    <p>The <b>try</b> and <b>except</b> block helps you <b>catch and handle those errors,</b> allowing your code to run <b>safely</b> even when something goes wrong.</p>
+    <h2>Python String Formatting – Insert Values into Strings Easily</h2>
+    <p><b>String formatting</b> lets you insert variables into strings in a clean, readable way — instead of messy concatenation.</p>
 <br><br>
 
-<h2>Why Use try and except?</h2>
-<ul>
-    <li>Prevents program crash during runtime errors.</li>
-    <li>Lets you display user-friendly error messages.</li>
-    <li>Useful for validating inputs, file handling, API calls, etc.</li>
-</ul>
-
-<br><br>
-
-<h2>Basic Syntax</h2>
+<h2>3 Main Ways to Format Strings in Python :</h2>
+<h3>1. f-string</h3>
+<p><b>(Fastest & Most Recommended – Python 3.6+)</b></p>
     <div class="Code-box">
-    <pre><code>try:
-    # Code that may raise an error
-except:
-    # Code that runs if an error occurs
-</code></pre>
-  </div>
-<br><br>
-
-<h3>Example 1: Handling Division by Zero</h3>
-<div class="Code-box">
-    <pre><code>try:
-    result = 10 / 0
-except:
-    print("Oops! You cannot divide by zero.")
+    <pre><code>name = "Alice"
+age = 25
+print(f"My name is {name} and I am {age} years old.")
 
 #Output - 
-Oops! You cannot divide by zero.
+My name is Alice and I am 25 years old.
+</code></pre>
+  </div>
+<br>
+
+<p><b> Supports expressions too :</b></p>
+<div class="Code-box">
+    <pre><code>print(f"In 5 years, I will be {age + 5} years old.")
 </code></pre>
   </div>
 <br><br>
 
+<h3>2. format( )</h3>
+<p><b>Method (Compatible with older versions)</b></p>
+    <div class="Code-box">
+    <pre><code>name = "Vikas"
+age = 25
+print("My name is {} and I am {} years old.".format(name, age))
+</code></pre>
+  </div><br>
 
-<h3>Example 2: Catching Specific Exceptions</h3>
+  <p><b>You can also use positional or named arguments :</b></p>
 <div class="Code-box">
-    <pre><code>try:
-    num = int(input("Enter a number: "))
-    print(100 / num)
-except ZeroDivisionError:
-    print("Cannot divide by zero.")
-except ValueError:
-    print("Please enter a valid number.")
+    <pre><code>print("My name is {1} and I am {0} years old.".format(age, name))  # Positional
+print("My name is {n} and I am {a} years old.".format(n=name, a=age))  # Named
 </code></pre>
   </div>
-<br><br>
 
-<h3>Example 3: Using else and finally</h3>
+<h3>3. % Operator</h3>
+<p><b>(Old Style – Not Recommended Today)</b></p>
 <div class="Code-box">
-    <pre><code>try:
-    x = int(input("Enter a number: "))
-    print("You entered:", x)
-except ValueError:
-    print("That's not a number!")
-else:
-    print("No exceptions occurred!")
-finally:
-    print("This block always runs.")
+    <pre><code>name = "Shivansh"
+age = 25
+print("My name is %s and I am %d years old." % (name, age))
 </code></pre>
   </div>
 <br><br>
@@ -133,84 +119,82 @@ finally:
   <table class="array-methods-table">
     <thead>
       <tr>
-        <th>Keyword</th>
+        <th>Code</th>
         <th>Meaning</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><code>try</code></td>
-        <td>Code you want to test (may cause error)</td>
+        <td><code>%s</code></td>
+        <td>String</td>
       </tr>
       <tr>
-        <td><code>except</code></td>
-        <td>Code that runs if an error occurs</td>
+        <td><code>%d</code></td>
+        <td>Integer</td>
       </tr>
       <tr>
-        <td><code>else</code></td>
-        <td>(Optional) Code that runs if <strong>no error occurs</strong></td>
-      </tr>
-      <tr>
-        <td><code>finally</code></td>
-        <td>(Optional) Code that <strong>always runs</strong>, error or not (e.g., cleanup)</td>
+        <td><code>%f</code></td>
+        <td>Float (decimal)</td>
       </tr>
     </tbody>
   </table>
 </div>
+
 <br><br>
 
-<h2>Common Built-in Exceptions</h2><br>
+<h2>Formatting Numbers</h2>
+<h3>With f-string :</h3>
+<div class="Code-box">
+    <pre><code>price = 49.9999
+print(f"Price: ₹{price:.2f}")  # ₹49.99
+</code></pre>
+  </div>
+<br><br>
+
+<h3>With format( ) :</h3>
+<div class="Code-box">
+    <pre><code>print("Price: ₹{:.2f}".format(price))
+</code></pre>
+  </div>
+<br><br>
+
+
+<h2>Summary Table</h2><br>
+<br>
 <div class="responsive-table-wrapper">
   <table class="array-methods-table">
     <thead>
       <tr>
-        <th>Exception Name</th>
-        <th>Triggered When...</th>
+        <th>Method</th>
+        <th>Syntax Example</th>
+        <th>Notes</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><code>ZeroDivisionError</code></td>
-        <td>You divide a number by zero</td>
+        <td><code>f-string</code></td>
+        <td><code>f"Hello {name}"</code></td>
+        <td>Modern, clean, efficient</td>
       </tr>
       <tr>
-        <td><code>ValueError</code></td>
-        <td>Invalid value (e.g., converting text to int)</td>
+        <td><code>format()</code></td>
+        <td><code>"Hello {}".format(name)</code></td>
+        <td>Flexible, older syntax</td>
       </tr>
       <tr>
-        <td><code>TypeError</code></td>
-        <td>Operation on incompatible data types</td>
-      </tr>
-      <tr>
-        <td><code>FileNotFoundError</code></td>
-        <td>File doesn’t exist</td>
-      </tr>
-      <tr>
-        <td><code>IndexError</code></td>
-        <td>List index out of range</td>
-      </tr>
-      <tr>
-        <td><code>KeyError</code></td>
-        <td>Dictionary key not found</td>
+        <td><code>% formatting</code></td>
+        <td><code>"Hello %s" % name</code></td>
+        <td>Outdated, not recommended</td>
       </tr>
     </tbody>
   </table>
 </div>
 
-<br><br>
-
-<h2>Summary</h2><br>
-<ul>
-    <li><b>try</b> → Code to test</li>
-    <li><b>except</b> → Handles errors</li>
-    <li><b>else</b> → Runs if no errors</li>
-    <li><b>finally</b> → Always runs</li>
-</ul>
 
 <br><br>
   <div class="navigation-buttons">
-  <a href="pip.html" class="nav-btn prev-btn">← Previous</a>
-  <a href="str_format.html" class="nav-btn next-btn">Next →</a>
+  <a href="try_expect.html" class="nav-btn prev-btn">← Previous</a>
+  <a href="user_input.html" class="nav-btn next-btn">Next →</a>
 </div>
 </div>
 
