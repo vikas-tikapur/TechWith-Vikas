@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechWith Vikas</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<header class="main-header">
+  <div class="container">
+    <div><a href="../index.html" class="logo">TechWith <span>Vikas</span></a></div>
+    <select id="pythonPagesDropdown" onchange="if(this.value) window.location.href=this.value;">
+      <div class="custom-dropdown">
+      <option value="">Start Learning...</option>
+      <option value="Python/python.html">Python</option>
+      <option value="NumPy/np_intro.html">NumPy</option>
+      <option value="#">Machine Learning</option>
+      <option value="#">Artificial Intelligence</option>
+      <option value="#">Deep Learning</option>
+      <option value="#">MY SQL</option>
+      <option value="#">GIT & GitHub</option>
+      <option value="HTML/intro.html">HTML</option>
+      <option value="#">CSS</option>
+      <option value="#">JavaScript</option>
+    </select>
+  </div>
+</header>
+
+ <!-- Python Banner Section -->
+<section class="numpy-banner">
+  <div class="banner-overlay">
+  </div>
+</section>
+
+<!-- Python Internal Pages Tabs -->
+<nav class="python-tabs-nav">
+  <ul class="python-tabs-list">
+    <li><a href="np_intro.html" class="tab-link active">NumPy Introduction</a></li>
+    <li><a href="dimenstion.html" class="tab-link">Dimensions in Arrays</a></li>
+  </ul>
+</nav>
+
+<section class="python-intro" id="with_banner">
+  <div class="container">
+    <h2>What is a Dimension (Axis)?</h2>
+    <ul>
+        <li>A dimension (or axis) represents a direction along which you can access elements in an array.</li>
+        <li>For a 1-dimensional array, there's only one axis.</li>
+        <li>For a 2-dimensional array, there are two axes (rows and columns).</li>
+        <li>For a 3-dimensional array, there are three axes (e.g., depth, rows, columns).</li>
+    </ul>
+  <br><br>
+
+  <h3>ndim Attribute</h3>
+  <p>Every NumPy array has an <b>ndim</b> attribute, which returns the number of dimensions (axes) of the array.</p>
+<br><br>
+
+<h3>shape Attribute</h3>
+<p>The <b>shape</b> attribute returns a tuple of integers indicating the size of the array along each dimension.</p>
+<p>The length of the <b>shape</b> tuple is equal to <b>ndim</b>.</p>
+
+<br><br>  
+<h2>Dimensions</h2>
+<h2>0-D Array (Scalar)</h2>
+<p>A 0-dimensional array, also known as a scalar, is a single element. It has no axes.</p>
+<div class="Code-box">
+    <pre><code>import numpy as np
+arr = np.array(42)
+print(arr)
+print("Dimension:", arr.ndim)
+
+#Output - 
+42  
+Dimension: 0
+</code></pre>
+  </div>
+<br><br>
+
+<h3>Key Points :</h3>
+<ul>
+    <li>It’s the <b>simplest form</b> of a NumPy array.</li>
+    <li>Used when a single value is returned as an array object.</li>
+    <li><b>.ndim</b> returns <b>0</b>, meaning zero dimensions.</li>
+</ul>
+
+<br><br>
+
+<h3>Real-World Analogy :</h3>
+<p>Think of a <b>0-D array</b> like a <b>single coin</b> — it’s not a row or table, just one item.</p>
+<br><br>
+
+<h2>1-D Array (Vector)</h2>
+<p>A <b>1-D array (one-dimensional array)</b> is like a <b>simple list</b> of values — a row of elements stored in a single line.</p>
+<p>It has one axis.</p>
+<div class="Code-box">
+    <pre><code>import numpy as np
+
+arr = np.array([10, 20, 30, 40, 50])
+print(arr)
+print("Dimension:", arr.ndim)
+
+#Output - 
+[10 20 30 40 50]  
+Dimension: 1
+</code></pre>
+  </div>
+<br><br>
+
+<h3>Key Points :</h3>
+<ul>
+    <li>It's <b>like a list or a row</b> of elements.</li>
+    <li>Has <b>only one axis</b> (axis 0).</li>
+    <li>Very useful for simple data like marks, ages, etc.</li>
+</ul>
+
+<br><br>
+
+<h3>Real-World Analogy :</h3>
+<p>A 1-D array is like a <b>single row in Excel</b> — just values from left to right.</p>
+<br><br>
+
+
+
+
+
+
+
+
+<br><br>
+  <div class="navigation-buttons">
+  <a href="np_intro.html" class="nav-btn prev-btn">← Previous</a>
+  <a href="#" class="nav-btn next-btn">Next →</a>
+</div>
+
+</section>
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <h2>CodeWith <span>Vikas</span></h2>
+      <p>Learn programming from scratch.<br> Start your journey today!</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Python</a></li>
+        <li><a href="#">Java</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h3>Follow Me</h3>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-x"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 TechWith Vikas | Created by Vikas Mishra</p>
+  </div>
+ <div class="scroll-to-top" title="Go to Top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+</footer>
+<script src="../main.js"></script>
+</body>
+</html>

@@ -375,7 +375,7 @@ body {
 .python-intro li{
   font-family: serif;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 21px;
   line-height: 160%;
   letter-spacing: 2%;
   text-align: justify;
@@ -880,3 +880,8 @@ section#with_banner {
     font-size: 0.98rem;
   }
 }
+
+
+
+
+/* Numpy */

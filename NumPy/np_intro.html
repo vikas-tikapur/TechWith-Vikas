@@ -14,6 +14,7 @@
       <div class="custom-dropdown">
       <option value="">Start Learning...</option>
       <option value="Python/python.html">Python</option>
+      <option value="NumPy/np_intro.html">NumPy</option>
       <option value="#">Machine Learning</option>
       <option value="#">Artificial Intelligence</option>
       <option value="#">Deep Learning</option>
@@ -36,39 +37,245 @@
 <nav class="python-tabs-nav">
   <ul class="python-tabs-list">
     <li><a href="np_intro.html" class="tab-link active">NumPy Introduction</a></li>
-    <li><a href="python_p1.html" class="tab-link">Syntax</a></li>
-    <li><a href="python_p2.html" class="tab-link">Comments & Variables</a></li>
-    <li><a href="python_p3.html" class="tab-link">Data Types</a></li>
-    <li><a href="python_p4.html" class="tab-link">Tuples</a></li>
-    <li><a href="python_p5.html" class="tab-link">Tuples-2</a></li>
-    <li><a href="python_p6.html" class="tab-link">Quiz-1</a></li>
-    <li><a href="python_p7.html" class="tab-link">Sets</a></li>
-    <li><a href="python_p8.html" class="tab-link">Dictionaries</a></li>
-    <li><a href="ifelse.html" class="tab-link">If/Else</a></li>
-    <li><a href="match.html" class="tab-link">Match</a></li>
-    <li><a href="python_loop.html" class="tab-link">Loops</a></li>
-    <li><a href="functions.html" class="tab-link">Functions</a></li>
-    <li><a href="array.html" class="tab-link">Arrays</a></li>
-    <li><a href="oops.html" class="tab-link">OOP</a></li>
-    <li><a href="scope.html" class="tab-link">Scope</a></li>
-    <li><a href="module.html" class="tab-link">Python Module</a></li>
-    <li><a href="json.html" class="tab-link">Python JSON</a></li>
-    <li><a href="regex.html" class="tab-link">Regular Expressions</a></li>
-    <li><a href="pip.html" class="tab-link">Python PIP</a></li>
-    <li><a href="try_expect.html" class="tab-link">Try Except</a></li>
+    <li><a href="dimenstion.html" class="tab-link">Dimensions in Arrays</a></li>
   </ul>
 </nav>
 
 <section class="python-intro" id="with_banner">
   <div class="container">
     <h2>What is NumPy?</h2>
-    <p>NumPy stands for Numerical Python.</p>
-    <p>NumPy is a Python Library Used for working with array.</p>
-    <p>It's Faster than Python list bacause :</p>
+    <p><b>NumPy</b> stands for <b>Numerical Python.</b></p>
+    <p>It is a powerful <b>Python library</b> used for <b>working with arrays</b> (especially large, multi-dimensional arrays) and performing 
+      <b>high-level mathematical operations</b> efficiently.</p>
+  <br><br>
 
+  <h2>Why NumPy is Faster than Python Lists?</h2>
+  <ul>
+    <li>Uses fixed-type arrays (no runtime type checking like lists)</li>
+    <li>Built-in vectorized operations (faster computation without loops)</li>
+    <li>Backed by C/C++ code internally for speed</li>
+    <li>Offers broadcasting and optimized math functions</li>
+  </ul>
+<br><br>
+
+<h2>Difference Between NumPy Array and Python List</h2><br>
+
+<div class="responsive-table-wrapper">
+  <table class="array-methods-table">
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th><strong>Python List</strong></th>
+        <th><strong>NumPy Array (<code>ndarray</code>)</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Data Type</strong></td>
+        <td>Can store mixed types (int, str, etc.)</td>
+        <td>Stores only same-type data (homogeneous)</td>
+      </tr>
+      <tr>
+        <td><strong>Performance</strong></td>
+        <td>Slower in numerical operations</td>
+        <td>Much faster due to internal C implementation</td>
+      </tr>
+      <tr>
+        <td><strong>Operations</strong></td>
+        <td>Element-wise ops require loops</td>
+        <td>Supports vectorized operations (no loops)</td>
+      </tr>
+      <tr>
+        <td><strong>Memory Usage</strong></td>
+        <td>Consumes more memory</td>
+        <td>More memory-efficient</td>
+      </tr>
+      <tr>
+        <td><strong>Functionality</strong></td>
+        <td>Basic operations (append, pop, etc.)</td>
+        <td>Advanced math/statistical functions built-in</td>
+      </tr>
+      <tr>
+        <td><strong>Multidimensional</strong></td>
+        <td>Difficult to implement cleanly</td>
+        <td>Easily supports 1D, 2D, 3D, etc.</td>
+      </tr>
+      <tr>
+        <td><strong>Use Cases</strong></td>
+        <td>General-purpose programming</td>
+        <td>Data science, machine learning, simulations</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br><br>
+
+<h2>Why Use NumPy?</h2>
+<p><b>NumPy</b> is used because it makes numerical and scientific computing <b>faster, easier, and more efficient</b> compared to using regular Python lists.</p>
+<br><br>
+
+<h2>Key Reasons to Use NumPy :</h2>
+<h3>1. Speed :</h3>
+<p>NumPy arrays are much faster than Python lists due to optimized C-based backend.</p>
+<br>
+<h3>2. Less Memory Usage :</h3>
+<p>NumPy uses fixed-type arrays, which are more memory efficient than lists.</p>
+<br>
+<h3>3. Powerful Array Operations :</h3>
+<p>You can perform mathematical operations (like add, multiply, divide) directly on arrays <b>without using loops.</b></p>
+<br>
+<h3>4. Multi-dimensional Arrays :</h3>
+<p>Easily handle <b>2D, 3D,</b> and higher-dimensional data using <b>arrays and matrices.</b></p>
+<br>
+<h3>5. Broadcasting :</h3>
+<p>Automatically handles operations between arrays of different shapes (e.g., add scalar to array).</p>
+<br>
+<h3>6. Built-in Math Functions :</h3>
+<p>NumPy provides functions like <b>mean( ), sum( ), sqrt( ), sin( ),</b> etc., for quick mathematical and statistical analysis.</p>
+<br>
+<h3>7. Foundation for Data Science :</h3>
+<p>Libraries like <b>Pandas, TensorFlow, Scikit-learn,</b> and <b>Matplotlib</b> are built on or use NumPy internally.</p>
+
+<br><br>
+
+<h2>Which Language is NumPy Written In?</h2>
+<p><b>NumPy</b> is primarily written in <b>Python</b>, but its core performance-critical parts are implemented in <b>C</b> and <b>Cython.</b></p>
+<br>
+<div class="responsive-table-wrapper">
+  <table class="array-methods-table">
+    <thead>
+      <tr>
+        <th>Component</th>
+        <th>Language Used</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>High-level API</td>
+        <td>Python</td>
+      </tr>
+      <tr>
+        <td>Core performance</td>
+        <td>C</td>
+      </tr>
+      <tr>
+        <td>Optimization layer</td>
+        <td>Cython</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<br><br>
+<h3>Why this combination?</h3>
+<ul>
+  <li><b>Python: </b> Easy to use, readable, and flexible.</li>
+  <li><b>C:</b> Provides speed and efficiency for array operations and math.</li>
+  <li><b>Cython:</b> Bridges Python and C, allowing faster execution for Python-like syntax.</li>
+</ul>
+
+<br><br>
+
+<h2>Installation of NumPy</h2>
+<p>Installing <b>NumPy</b> is quick and easy! Just follow the steps below based on your environment.</p>
+<br><br>
+
+<h3>1. Using pip (Most Common)</h3>
+    <div class="Code-box">
+    <pre><code>pip install numpy
+</code></pre>
+  </div>
+<p>This will download and install the latest version of NumPy.</p>
+<br><br>
+
+<h3>2. For Jupyter Notebook Users</h3>
+<p>If you're using <b>Jupyter Notebook</b>, run this in a code cell :</p>
+    <div class="Code-box">
+    <pre><code>!pip install numpy
+</code></pre>
+  </div>
+<br><br>
+
+<h3>3. Using conda (Anaconda Users)</h3>
+<p>If you're using the <b>Anaconda distribution</b>, run :</p>
+    <div class="Code-box">
+    <pre><code>conda install numpy
+</code></pre>
+  </div>
+<p>Conda automatically handles dependencies and is great for data science workflows.</p>
+<br><br>
+
+<h3>4. To Check Installation</h3>
+<p>After installation, verify it using Python :</p>
+    <div class="Code-box">
+    <pre><code>import numpy as np
+print(np.__version__)
+</code></pre>
+  </div>
+<br><br>
+
+<h2>Having Issues?</h2>
+<h3>Try upgrading pip :</h3>
+<div class="Code-box">
+    <pre><code>pip install --upgrade pip
+</code></pre>
+  </div>
+<br>
+<p><b>Or reinstall NumPy :</b></p>
+<div class="Code-box">
+    <pre><code>pip uninstall numpy
+pip install numpy
+</code></pre>
+  </div>
+
+<br><br>
+
+<h2>Importing NumPy in Python</h2>
+<p>To start using <b>NumPy</b> in your Python program, you need to <b>import</b> it first.</p>
+<br><br>
+
+<h3>Basic Import</h3>
+<div class="Code-box">
+    <pre><code>import numpy
+</code></pre>
+  </div>
+<p><b>Now you can use NumPy functions like :</b></p>
+<div class="Code-box">
+    <pre><code>arr = numpy.array([1, 2, 3])
+print(arr)
+</code></pre>
+  </div>
+<br><br>
+
+<h2>NumPy Alias (as np)</h2>
+<p>This part creates an <b>alias</b> or a shorter, more convenient name for the <b>numpy</b> library. <br> 
+  Instead of typing <b>numpy.array( )</b> or <b>numpy.mean( ),</b> you can now use <b>np.array( )</b> or <b>np.mean( ).</b></p>
+<br><br>
+
+<h2>Why np?</h2>
+<ul>
+  <li>It’s the official convention used in the documentation.</li>
+  <li>Saves typing and keeps code short and readable.</li>
+</ul>
+<br><br>
+
+<h3>Example</h3>
+<div class="Code-box">
+    <pre><code>import numpy as np
+numbers = np.array([10, 20, 30])
+print("Array:", numbers)
+print("Sum:", np.sum(numbers))
+
+#Output - 
+Array: [10 20 30]
+Sum: 60
+</code></pre>
+  </div>
+
+<br><br>
   <div class="navigation-buttons">
   <!-- <a href="#" class="nav-btn prev-btn">← Previous</a> -->
-  <a href="python_p1.html" class="nav-btn next-btn">Next →</a>
+  <a href="dimenstion.html" class="nav-btn next-btn">Next →</a>
 </div>
 
 </section>
