@@ -61,190 +61,201 @@
     <li><a href="user_input.html" class="tab-link">Python User Input</a></li>
     <li><a href="virtual.html" class="tab-link">Python Virtual Environment</a></li>
     <li><a href="file_hand.html" class="tab-link">Python File Handling</a></li>
+
   </ul>
 </nav>
 <section class="python-intro">
   <div class="container">
-    <h1>What is JSON?</h1>
-    <p><b>JSON</b> (JavaScript Object Notation) is a <b>lightweight data-interchange format</b> used for storing and exchanging data between a server and a client (like a website or app).</p>
-    <p>It is <b>language-independent</b> and easy to read/write for both humans and machines.</p>
+    <h2>Python File Handling – Read, Write, and Manage Files</h2>
+    <p>Python provides built-in functions to <b>create, read, write, and append</b> files — allowing your programs to store and access data anytime.</p>
 <br><br>
 
-    <h2 id="key-points">Why Use JSON in Python?: </h2>
-    <ul>
-        <li>Exchange data between Python and web APIs.</li>
-        <li>Store structured data (e.g., settings, configurations).</li>
-        <li>Easily serialize Python objects.</li>
-    </ul>
-<br><br>
-
-<h2>Python & JSON Integration</h2>
-<p>Python comes with a built-in module called <b>json</b> to work with JSON data.</p>
-    <div class="Code-box">
-    <pre><code>import json
-</code></pre>
-  </div>
-<br><br>
-
-<h2>Converting Between JSON and Python</h2>
-<br>
-<div class="responsive-table-wrapper">
-<table class="array-methods-table">
-  <thead>
-    <tr>
-      <th>JSON</th>
-      <th>Python Equivalent</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>Object</code></td>
-      <td><b>dict</b></td>
-    </tr>
-      <td><code>Array</code></td>
-      <td><b>list</b></td>
-    </tr>
-    <tr>
-      <td><code>String</code></td>
-      <td><b>str</b></td>
-    </tr>
-    <tr>
-      <td><code><b>Number</b></code></td>
-      <td><b>int or float</b></td>
-    </tr>
-    <tr>
-      <td><code><b>true / false</b></code></td>
-      <td><b>True / False</b></td>
-    </tr>
-    <tr>
-      <td><code><b>null</b></code></td>
-      <td><b>None</b></td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<br><br>
-
-<h3>Convert Python → JSON (json.dumps( ))</h3>
-<div class="Code-box">
-    <pre><code>import json
-
-data = {"name": "Alice", "age": 25, "is_student": False}
-json_string = json.dumps(data)
-
-print(json_string)
-# Output: {"name": "Alice", "age": 25, "is_student": false}
-</code></pre>
-  </div>
-<br><br>
-
-<p><b>You can also pretty print it :</b></p>
-<div class="Code-box">
-    <pre><code>print(json.dumps(data, indent=4))
-</code></pre>
-  </div>
-<br><br>
-
-<h3>Convert JSON → Python (json.loads( ))</h3>
-<div class="Code-box">
-    <pre><code>json_data = '{"name": "Alice", "age": 25}'
-python_dict = json.loads(json_data)
-
-print(python_dict["name"])  # Output: Alice
-</code></pre>
-  </div>
-<br><br>
-
-<h2>Working with JSON Files</h2>
-<h3>Write to a JSON file</h3>
-<div class="Code-box">
-    <pre><code>data = {"name": "Bob", "age": 30}
-
-with open("data.json", "w") as file:
-    json.dump(data, file, indent=4)
-</code></pre>
-  </div>
-<br><br>
-
-<h3>Read from a JSON file</h3>
-<div class="Code-box">
-    <pre><code>with open("data.json", "r") as file:
-    loaded_data = json.load(file)
-print(loaded_data)
-</code></pre>
-  </div>
-<br><br>
-
-<h2>Advanced Options in json Module</h2>
-<br>
-<div class="responsive-table-wrapper">
-<table class="array-methods-table">
-  <thead>
-    <tr>
-      <th>Function</th>
-      <th>Use Case</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code><b>json.dumps( )</b></code></td>
-      <td>Convert Python → JSON string</td>
-    </tr>
-      <td><code><b>json.dump( )</b></code></td>
-      <td>Write Python object to file (as JSON)</td>
-    </tr>
-    <tr>
-      <td><code><b>json.loads( )</b></code></td>
-      <td>Parse JSON string → Python object</td>
-    </tr>
-    <tr>
-      <td><code><b>json.load( )</b></code></td>
-      <td>Read JSON from file → Python object</td>
-    </tr>
-    <tr>
-      <td><code><b>sort_keys=True</b></code></td>
-      <td><b>Sort keys in output JSON</b></td>
-    </tr>
-    <tr>
-      <td><code><b>indent=4</b></code></td>
-      <td>Pretty-print JSON</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<br><br>
-
-<h3>Example Use Case</h3>
-<div class="Code-box">
-    <pre><code>import json
-
-person = {"name": "John", "skills": ["Python", "Django"], "active": True}
-
-# Convert and save
-with open("person.json", "w") as f:
-    json.dump(person, f, indent=2)
-
-# Load and access
-with open("person.json") as f:
-    data = json.load(f)
-    print(data["skills"][0])  # Output: Python
-</code></pre>
-  </div>
-<br><br>
-
-<h2>Summary</h2>
+<h2>Why File Handling?</h2>
 <ul>
-    <li>Use <b>json</b> module to work with JSON data in Python.</li>
-    <li>Convert between JSON strings and Python objects.</li>
-    <li>Easily read/write JSON files for APIs and data storage.</li>
+    <li>Store user data (like login info).</b></li>
+    <li>Save results (logs, outputs, reports).</li>
+    <li>Work with external data (CSV, JSON, etc.)</li>
 </ul>
+<br><br>
+
+<h3>Opening a File</h3>
+    <div class="Code-box">
+    <pre><code>file = open("example.txt", "mode")
+</code></pre>
+  </div><br>
+
+  <div class="responsive-table-wrapper">
+  <table class="array-methods-table">
+    <thead>
+      <tr>
+        <th>Mode</th>
+        <th>Meaning</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>'r'</code></td>
+        <td>Read (default)</td>
+      </tr>
+      <tr>
+        <td><code>'w'</code></td>
+        <td>Write (overwrite)</td>
+      </tr>
+      <tr>
+        <td><code>'a'</code></td>
+        <td>Append</td>
+      </tr>
+      <tr>
+        <td><code>'x'</code></td>
+        <td>Create new file</td>
+      </tr>
+      <tr>
+        <td><code>'b'</code></td>
+        <td>Binary mode (e.g., images)</td>
+      </tr>
+      <tr>
+        <td><code>'t'</code></td>
+        <td>Text mode (default)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<br><br>
+
+<h3>Reading from a File</h3>
+<div class="Code-box">
+    <pre><code>file = open("example.txt", "r")
+content = file.read()
+print(content)
+file.close()
+</code></pre>
+  </div>
+<br><br>
+
+<h3>Read Line-by-Line</h3>
+    <div class="Code-box">
+    <pre><code>for line in open("example.txt"):
+    print(line)
+</code></pre>
+  </div>
+
+<br><br>
+
+<h3>Writing to a File</h3>
+<div class="Code-box">
+    <pre><code>file = open("example.txt", "w")
+file.write("Hello, world!\n")
+file.write("Python File Handling is easy.")
+file.close()
+</code></pre>
+  </div>
+  <p><b>🔒Note: "w"</b> mode will overwrite the file if it already exists.</p>
+<br><br>
+
+<h3>Appending to a File</h3>
+<div class="Code-box">
+    <pre><code>file = open("example.txt", "a")
+file.write("\nThis line is added at the end.")
+file.close()
+</code></pre>
+  </div>
+
+<br><br>
+
+<h3>Best Practice: Use with Statement (Auto Closes the File)</h3>
+<div class="Code-box">
+    <pre><code>with open("example.txt", "r") as file:
+    data = file.read()
+    print(data)
+</code></pre>
+  </div>
+<br><br>
+
+<h3>Useful File Methods</h3>
+<div class="Code-box">
+    <pre><code>file.read()         # Read entire file
+file.readline()     # Read one line
+file.readlines()    # Read all lines (returns list)
+
+file.write("text")  # Write string to file
+file.close()        # Always close the file
+</code></pre>
+  </div>
+<br><br>
+
+<h3>Example: File Handling Workflow</h3>
+<div class="Code-box">
+    <pre><code>filename = "notes.txt"
+
+# Write
+with open(filename, "w") as f:
+    f.write("Welcome to Python File Handling!\n")
+
+# Append
+with open(filename, "a") as f:
+    f.write("This line is added later.\n")
+
+# Read
+with open(filename, "r") as f:
+    print(f.read())
+</code></pre>
+  </div>
+<br><br>
+
+<h3>Error Handling (Optional)</h3>
+<div class="Code-box">
+    <pre><code>try:
+    with open("file.txt", "r") as f:
+        print(f.read())
+except FileNotFoundError:
+    print("File not found.")
+</code></pre>
+  </div>
+<br><br>
+
+
+
+<h2>Summary</h2><br>
+<div class="responsive-table-wrapper">
+  <table class="array-methods-table">
+    <thead>
+      <tr>
+        <th>Task</th>
+        <th>Method</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Open file</td>
+        <td><code><b>open("file.txt", "r")</b></code></td>
+      </tr>
+      <tr>
+        <td>Read file</td>
+        <td><b>read( ), readline( ), readlines( )</b></td>
+      </tr>
+      <tr>
+        <td>Write file</td>
+        <td><code><b>write( )</b></code></td>
+      </tr>
+      <tr>
+        <td>Append to file</td>
+        <td>Use mode <code><b>"a"</b></code></td>
+      </tr>
+      <tr>
+        <td>Safe handling</td>
+        <td>Use <code><b>with</b></code> statement</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
 
 <br><br>
   <div class="navigation-buttons">
-  <a href="module.html" class="nav-btn prev-btn">← Previous</a>
-  <a href="regex.html" class="nav-btn next-btn">Next →</a>
+  <a href="virtual.html" class="nav-btn prev-btn">← Previous</a>
 </div>
 </div>
 
