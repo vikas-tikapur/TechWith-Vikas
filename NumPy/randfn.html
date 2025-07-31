@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechWith Vikas</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<header class="main-header">
+  <div class="container">
+    <div><a href="../index.html" class="logo">TechWith <span>Vikas</span></a></div>
+    <select id="pythonPagesDropdown" onchange="if(this.value) window.location.href=this.value;">
+      <div class="custom-dropdown">
+      <option value="">Start Learning...</option>
+      <option value="Python/python.html">Python</option>
+      <option value="NumPy/np_intro.html">NumPy</option>
+      <option value="#">Machine Learning</option>
+      <option value="#">Artificial Intelligence</option>
+      <option value="#">Deep Learning</option>
+      <option value="#">MY SQL</option>
+      <option value="#">GIT & GitHub</option>
+      <option value="HTML/intro.html">HTML</option>
+      <option value="#">CSS</option>
+      <option value="#">JavaScript</option>
+    </select>
+  </div>
+</header>
+
+ <!-- Python Banner Section -->
+<section class="numpy-banner">
+  <div class="banner-overlay">
+  </div>
+</section>
+
+<!-- Python Internal Pages Tabs -->
+<nav class="python-tabs-nav">
+  <ul class="python-tabs-list">
+    <li><a href="np_intro.html" class="tab-link active">NumPy Introduction</a></li>
+    <li><a href="dimenstion.html" class="tab-link">Dimensions in Arrays</a></li>
+    <li><a href="randfn.html" class="tab-link">NumPy Random Functions</a></li>
+  </ul>
+</nav>
+
+<section class="python-intro" id="with_banner">
+  <div class="container">
+    <h2>NumPy Random Functions</h2>
+    <p>In data science, simulations, gaming, and machine learning, random numbers play a crucial role — from 
+        generating test data to splitting datasets and creating randomness in models. NumPy makes it super 
+        easy to work with random numbers using its powerful <b>random</b> module. Whether you need a simple random 
+        float, a shuffled array, or numbers following a specific distribution, NumPy provides a wide range of 
+        functions to get the job done efficiently and reliably. Let’s explore some of the most useful <b>NumPy 
+        Random Functions</b> you’ll use often.</p>
+  <br><br>
+
+  <h2>1. rand( ) – Generate Random Float Numbers</h2>
+  <h3>What It Does :</h3>
+  <p>The <b>rand( )</b> function in NumPy is used to <b>generate random float numbers between 0 and 1.</b> The numbers are <b>evenly distributed</b> over this 
+    range (i.e., uniform distribution).</p>
+    <p>It’s part of the <b>numpy.random</b> module.</p>
+    <br><br>
+    <h3> Syntax :</h3>
+  <div class="Code-box">
+    <pre><code>numpy.random.rand(d0, d1, ..., dn)
+</code></pre>
+  </div>
+ <ul>
+    <li><b>d0, d1, ..., dn</b> are the dimensions of the array you want to create.</li>
+    <li>If no argument is given, it returns a single float between 0 and 1.</li>
+ </ul>
+<br><br>
+
+<h3>Examples :</h3>
+<p><b> Generate a single random float :</b></p>
+<div class="Code-box">
+    <pre><code>import numpy as np
+print(np.random.rand( ))
+
+# Output: 0.7380231598689891 (random number)
+</code></pre>
+  </div>
+  <br><br>
+  <p><b>Generate a 1D array of 5 random floats :</b></p>
+<div class="Code-box">
+    <pre><code>import numpy as np
+print(np.random.rand(5))
+
+# Output: [0.73802316 0.12345678 0.98765432 0.45678901 0.23456789]
+</code></pre>
+</div>
+<br><br>
+
+<p><b>Generate a 2D array (3 rows × 2 columns) :</b></p>
+<div class="Code-box">
+    <pre><code>import numpy as np
+print(np.random.rand(3, 2))
+
+# Output: 
+[[0.95645632 0.7948405 ]
+ [0.27238074 0.27654215]
+ [0.7343314  0.63809965]]
+</code></pre>
+</div>
+
+<h3>Key Points :</h3>
+<ul>
+    <li>Always generates numbers between <b>0</b> and <b>1</b> (excluding 1)</li>
+    <li>Float values only</li>
+</ul>
+
+<br><br>  
+<h2>2. randint( ) – Generate Random Integers</h2>
+<h3>What It Does :</h3>
+<p><b>randint( )</b> is used to <b>generate random integers</b> between a specified <b>low (inclusive)</b> and <b>high (exclusive)</b> range. You can also 
+    specify how many numbers you want and in what shape (1D, 2D, etc.).</p>
+<h3>Syntax :</h3>
+<div class="Code-box">
+    <pre><code>numpy.random.randint(low, high=None, size=None, dtype=int)
+</code></pre>
+</div>
+<ul>
+    <li><b>low</b> : Start of the interval (inclusive)</li>
+    <li><b>high</b> : End of the interval (exclusive). If not given, range is <b>[0, low)</b></li>
+    <li><b>size</b> : Number or shape of output array</li>
+    <li><b>dtype</b> : The desired data type (default is <b>int</b>)</li>
+</ul>
+<br><br>
+
+<h3>Examples :</h3>
+<p><b>Generate a single integer between 1 and 10 :</b></p>
+<div class="Code-box">
+    <pre><code>import numpy as np
+print(np.random.randint(1, 10))
+
+# Output: 7 (random)
+</code></pre>
+</div>
+<br><br>
+<p><b>Generate a 1D array of 5 random integers between 1 and 100 :</b></p>
+<div class="Code-box">
+    <pre><code>import numpy as np
+print(np.random.randint(1, 100, size=5))
+
+# Output: [12 45 78 34 23]
+</code></pre>
+</div>
+<br><br>
+<p><b>Generate a 2D array (3 rows × 4 columns) of random integers between 1 and 50 :</b></p>
+<div class="Code-box">
+    <pre><code>import numpy as np
+print(np.random.randint(1, 50, size=(3, 4)))
+
+# Output:
+[[12 25 37 48]
+ [ 5  8 19 32]
+ [22 33 44 11]]
+</code></pre>
+</div>
+<br><br>
+
+<h3>Use Cases :</h3>
+<ul>
+    <li><b>Simulations:</b> Generate random samples for testing algorithms.</li>
+    <li><b>Data Augmentation:</b> Create synthetic data for training machine learning models.</li>
+    <li><b>Games:</b> Randomly place objects or generate levels.</li>
+    <li><b>Statistical Sampling:</b> Draw random samples from a population.</li>
+</ul>
+<br><br>
+
+<h3>Key Points :</h3>
+<ul>
+    <li>Always returns integers</li>
+    <li>Range is inclusive of <b>low</b>, but exclusive of <b>high</b></li>
+    <li>Works with <b>multi-dimensional shapes</b></li>
+    <li>Can be <b>seeded</b> using <b>np.random.seed( )</b> for reproducibility</li>
+</ul>
+
+<br><br>
+
+<h2>3. randn( ) – Generate Random Numbers from Standard Normal Distribution</h2>
+<h3>What It Does :</h3>
+<p><b>randn( )</b> is used to generate <b>random float numbers</b> from the <b>standard normal distribution,</b> also known as a <b>Gaussian distribution,</b> where:</p>
+<ul>
+    <li><b>Mean (μ) = 0</b></li>
+    <li><b>Standard Deviation (σ) = 1</b></li>
+</ul>
+<p>These numbers can be positive or negative and follow the familiar bell curve.</p>
+<br><br>
+<h3>Syntax :</h3>
+<div class="Code-box">
+    <pre><code>numpy.random.randn(d0, d1, ..., dn)
+</code></pre>
+</div>
+<ul>
+    <li><b>d0, d1, ..., dn</b> – Dimensions of the returned array</li>
+</ul>
+<br><br>
+
+<h3>Examples :</h3>
+<p><b>Generate a single random number (standard normal distribution) :</b></p>
+<div class="Code-box">
+    <pre><code>import numpy as np
+print(np.random.randn())
+
+# Output: 0.123456789 (random)
+</code></pre>
+</div>
+<br><br>
+<p><b>Generate a 1D array of 5 random numbers :</b></p>
+<div class="Code-box">
+    <pre><code>import numpy as np
+print(np.random.randn(5))
+
+# Output: [ 0.73802316 -0.12345678  1.98765432  0.45678901 -0.23456789]
+</code></pre>
+</div>
+<br><br>
+<p><b>Generate a 2D array (3 rows × 4 columns) of random numbers :</b></p>
+<div class="Code-box">
+    <pre><code>import numpy as np
+print(np.random.randn(3, 4))
+
+# Output:
+[[ 0.95645632 -0.7948405   1.27238074  0.27654215]
+ [ 0.7343314  -0.63809965  0.12345678 -1.98765432]
+ [-0.45678901  0.23456789 -0.12345678  1.98765432]]
+</code></pre>
+</div>
+<br><br>
+
+<h3>Use Cases :</h3>
+<ul>
+    <li><b>Machine Learning:</b> Initialize weights in neural networks.</li>
+    <li><b>Statistical Analysis:</b> Generate samples for hypothesis testing.</li>
+    <li><b>Simulations:</b> Model real-world phenomena that follow a normal distribution.</li>
+</ul>
+
+<br><br>
+<h3>Key Points :</h3>
+<ul>
+    <li>Returns <b>float numbers</b></li>
+    <li>Numbers can be <b>positive</b> or <b>negative</b></li>
+    <li>Useful for <b>statistical</b> modeling and <b>simulations</b></li>
+    <li>Can be seeded for reproducibility</li>
+</ul>
+<br><br>
+
+<h2>4. random( ) – Generate Random Floats Between 0 and 1</h2>
+<h3>What It Does :</h3>
+<p><b>random( )</b> generates <b>random float numbers</b> from a <b>uniform distribution</b> between <b>0.0</b> (inclusive) and <b>1.0</b> (exclusive).</p>
+<p>It’s useful when you want evenly distributed random numbers in that range.</p>
+<br><br>
+<h3>Syntax :</h3>
+<div class="Code-box">
+    <pre><code>numpy.random.random(size=None)
+</code></pre>
+</div>
+<ul><li><b>size </b> – The shape of the array to generate. If <b>None</b>, returns a single float.</li></ul>
+<br><br>
+
+<h3>Examples :</h3>
+<p><b>Generate a single random float :</b></p>
+<div class="Code-box">
+    <pre><code>import numpy as np
+print(np.random.random())
+
+# Output: 0.123456789 (random)
+</code></pre>
+</div>
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="navigation-buttons">
+  <a href="dimenstion.html" class="nav-btn prev-btn">← Previous</a>
+  <a href="#" class="nav-btn next-btn">Next →</a>
+</div>
+
+</section>
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <h2>CodeWith <span>Vikas</span></h2>
+      <p>Learn programming from scratch.<br> Start your journey today!</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Python</a></li>
+        <li><a href="#">Java</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h3>Follow Me</h3>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-x"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 TechWith Vikas | Created by Vikas Mishra</p>
+  </div>
+ <div class="scroll-to-top" title="Go to Top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+</footer>
+<script src="../main.js"></script>
+</body>
+</html>
