@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechWith Vikas</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<header class="main-header">
+  <div class="container">
+    <div><a href="../index.html" class="logo">TechWith <span>Vikas</span></a></div>
+    <select id="pythonPagesDropdown" onchange="if(this.value) window.location.href=this.value;">
+      <div class="custom-dropdown">
+      <option value="">Start Learning...</option>
+      <option value="../Python/python.html">Python</option>
+      <option value="../NumPy/np_intro.html">NumPy</option>
+      <option value="#">Machine Learning</option>
+      <option value="#">Artificial Intelligence</option>
+      <option value="#">Deep Learning</option>
+      <option value="#">MY SQL</option>
+      <option value="#">GIT & GitHub</option>
+      <option value="HTML/intro.html">HTML</option>
+      <option value="#">CSS</option>
+      <option value="#">JavaScript</option>
+    </select>
+  </div>
+</header>
+
+ <!-- Python Banner Section -->
+<section class="numpy-banner">
+  <div class="banner-overlay">
+  </div>
+</section>
+
+<!-- Python Internal Pages Tabs -->
+<nav class="python-tabs-nav">
+  <ul class="python-tabs-list">
+    <li><a href="np_intro.html" class="tab-link active">NumPy Introduction</a></li>
+    <li><a href="dimenstion.html" class="tab-link">Dimensions in Arrays</a></li>
+    <li><a href="randfn.html" class="tab-link">NumPy Random Functions</a></li>
+    <li><a href="dtype_nump.html" class="tab-link">Data Types in NumPy</a></li>
+  </ul>
+</nav>
+
+<section class="python-intro" id="with_banner">
+  <div class="container">
+    <h2>NumPy Data Types (dtypes)</h2>
+    <p>In NumPy, <b>data types (also called</b> dtypes) define the kind of values an array can hold, such as integers, floating-point numbers, 
+        or strings. Choosing the correct data type is important for <b>performance, memory optimization,</b> and <b>data accuracy.</b></p>
+  <br><br>
+
+  <h3>Why Data Types Matter :</h3>
+  <ul>
+    <li>NumPy is built for numerical efficiency.</li>
+    <li>Using the right dtype helps process large arrays faster.</li>
+    <li>Ensures precision in scientific and mathematical calculations.</li>
+  </ul>
+<br><br>
+
+<h3>Common NumPy Data Types :</h3><br>
+
+<div class="responsive-table-wrapper">
+  <table class="array-methods-table">
+    <thead>
+      <tr>
+        <th>Data Type</th>
+        <th>Description</th>
+        <th>Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code><b>int8</b></code></td>
+        <td>Integer (1 byte)</td>
+        <td>-128 to 127</td>
+      </tr>
+      <tr>
+        <td><code><b>int32</b></code></td>
+        <td>Integer (4 bytes)</td>
+        <td>-2,147,483,648 to 2,147,483,647</td>
+      </tr>
+      <tr>
+        <td><code><b>int64</b></code></td>
+        <td>Integer (8 bytes)</td>
+        <td>Very large numbers</td>
+      </tr>
+      <tr>
+        <td><code><b>float16</b></code></td>
+        <td>Floating point (2 bytes)</td>
+        <td>Less precise float</td>
+      </tr>
+      <tr>
+        <td><code><b>float32</b></code></td>
+        <td>Floating point (4 bytes)</td>
+        <td>Standard float</td>
+      </tr>
+      <tr>
+        <td><code><b>float64</b></code></td>
+        <td>Floating point (8 bytes)</td>
+        <td>High precision float</td>
+      </tr>
+      <tr>
+        <td><code><b>bool</b></code></td>
+        <td>Boolean value (<code>True</code> or <code>False</code>)</td>
+        <td>0 or 1</td>
+      </tr>
+      <tr>
+        <td><code><b>complex64</b></code></td>
+        <td>Complex numbers (real+imag)</td>
+        <td>1.5 + 2.3j</td>
+      </tr>
+      <tr>
+        <td><code><b>str</b></code></td>
+        <td>String data</td>
+        <td><code>"Hello"</code></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br><br>
+
+
+
+
+  <div class="navigation-buttons">
+  <a href="np_intro.html" class="nav-btn prev-btn">← Previous</a>
+  <a href="randfn.html" class="nav-btn next-btn">Next →</a>
+</div>
+
+</section>
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <h2>CodeWith <span>Vikas</span></h2>
+      <p>Learn programming from scratch.<br> Start your journey today!</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Python</a></li>
+        <li><a href="#">Java</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h3>Follow Me</h3>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-x"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 TechWith Vikas | Created by Vikas Mishra</p>
+  </div>
+ <div class="scroll-to-top" title="Go to Top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+</footer>
+<script src="../main.js"></script>
+</body>
+</html>
