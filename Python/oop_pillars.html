@@ -71,7 +71,7 @@ print(s.get_name())   # Output: Tanay
   </div>
 <br><br>
 
-<h3><b>🔒 Note :</b></h3>
+<h3><b>Note :</b></h3>
 <ul>
     <li><b>__name</b> is a <b>private variable</b> (name mangling used for encapsulation).</li>
     <li>Access is <b>controlled</b> via public methods <b>set_name()</b> and <b>get_name().</b></li>
@@ -230,7 +230,7 @@ class Rectangle(Shape):
     def area(self):
         return self.length * self.width
 
-# obj = Shape()         # ❌ Can't instantiate abstract class
+# obj = Shape()         # Can't instantiate abstract class
 rect = Rectangle(10, 5) #  Concrete class
 print("Area:", rect.area())
 
@@ -542,7 +542,7 @@ c.m2()   # Defined in C1
 # Object of C2
 c = C2()
 c.m3()   # Defined in C2
-# c.m2() # ❌ Not allowed: m2() belongs to C1, not C2
+# c.m2() # Not allowed: m2() belongs to C1, not C2
 
 # Output : 
 Parent class  
@@ -892,11 +892,11 @@ USA is a developed country.
 <p><b>Method Overloading</b> is the ability to define <b>multiple methods</b> in the <b>same class with the same name but different parameters</b> (in number or type).</p>
 <br><br>
 
-<h3><b>🔒 Note :</b></h3>
+<h3><b>Note :</b></h3>
 <p><b>Python does not support traditional method overloading</b> like Java or C++. Instead, Python handles this using <b>default arguments, *args,</b> or manual parameter checking inside a method.</p>
 <br>
 
-<h3><b>🔸Example (that won’t work in Python) :</b></h3>
+<h3><b>Example (that won’t work in Python) :</b></h3>
 <div class="Code-box">
     <pre><code>class Demo:
     def show(self, a):
@@ -906,7 +906,7 @@ USA is a developed country.
         print("Two arguments:", a, b)
 
 obj = Demo()
-obj.show(10)  # ❌ Error: missing 1 required positional argument
+obj.show(10)  # Error: missing 1 required positional argument
 </code></pre>
   </div>
 <h3><b>Explanation :</b></h3>
@@ -1066,7 +1066,7 @@ cat.sound()  # Output: Cat: Meow
 b1 = Book(100)
 b2 = Book(200)
 
-# print(b1 + b2)  ❌ Error: unsupported operand type(s)
+# print(b1 + b2)  # Error: unsupported operand type(s)
 </code></pre>
   </div>
 <br><br>

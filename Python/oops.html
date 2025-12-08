@@ -214,7 +214,7 @@ s1.city = "Delhi"   # city is an instance variable added from outside
     school_name = "ABC School"  # Static variable
 </code></pre>
   </div>
-  <p><b>🔒 Note:</b> Use class name, not self, because static variable is not instance-specific.</p>
+  <p><b>Note:</b> Use class name, not self, because static variable is not instance-specific.</p>
 <br><br>
 <h3><b>3. Inside instance method using class name.</b></h3>
 <div class="Code-box">
@@ -354,7 +354,7 @@ s1.city = "Delhi"   # city is an instance variable added from outside
   </ul>
 <br><br>
 
-<h3><b>🔒 Note :</b></h3>
+<h3><b>Note :</b></h3>
 <ul>
   <li><b>Instance methed</b> - (No decorator required)</li>
   <li><b>class method </b> - @classmethed is (mandatory)</li>
@@ -431,7 +431,7 @@ print(s.get_name())       # Output: Vikas
 s.set_name("Rohan")       # Update name
 print(s.get_name())       # Output: Rohan
 
-s.set_name(123)           # ❌ Invalid name
+s.set_name(123)           # Invalid name
 </code></pre>
   </div>
 <br><br>
@@ -856,7 +856,7 @@ print(Test.a)    # 5 via class name
 </code></pre>
   </div><br><br>
 
-<h3><b>🔒 Important Note :</b></h3>
+<h3><b>Important Note :</b></h3>
 <p>Even when accessed using <b>self, cls,</b> or object reference, the value still comes from the <b>class-level static variable</b> (unless overridden in the instance).</p>
 <br><br>
 
@@ -987,7 +987,7 @@ print(t2.x, t2.y)  # 10 1000 (t2.x still refers to class-level)
 </code></pre>
   </div><br><br>
 
-<h3><b>🔒 Important Note :</b></h3></p>
+<h3><b>Important Note :</b></h3></p>
 <p>When you assign <b>t1.x = 888,</b> Python <b>does NOT change the class variable.</b></p>
 <p>It creates a <b>new instance variable x</b> only for <b>t1</b>, which <b>shadows</b> the class variable.</p>
 <p>You can confirm this by printing :</p>
@@ -1042,7 +1042,7 @@ print(t2.a, t2.b)  # Output: 10 20
     @classmethod
     def m1(cls):
         cls.a = 888  # Modify class variable
-        # cls.b = 999  # ❌ Error: 'b' is an instance variable, not accessible via cls
+        # cls.b = 999  # Error: 'b' is an instance variable, not accessible via cls
 
 # Create two objects
 t1 = Test()
