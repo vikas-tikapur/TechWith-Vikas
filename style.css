@@ -318,7 +318,7 @@ body {
 /* Python page */
 .python-banner {
   background-image: url('images/python_pro.jpg'); 
-  background-size: cover;
+  background-size: cover!important;
   background-position: center;
   height: 65vh;
   width: 100%;
@@ -329,10 +329,11 @@ body {
 }
 
 .numpy-banner {
-  background-image: url('images/numpyn.png'); 
+  background-image: url('images/da_banner.png'); 
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 35vh;
+  height: 65vh;
   width: 100%;
   position: relative;
   display: flex;
@@ -594,11 +595,11 @@ h3 {
   }
 
   .numpy-banner {
-    height: 12vh;
+    height: 22vh;
+    background-size: cover !important;
     margin-top: 25px;
     background-position: left;
-    background-size: contain;
-  }
+    }
   
 .banner-overlay h1{
   font-size: 25px;
