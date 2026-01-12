@@ -170,24 +170,34 @@ body {
   font-size: 18px;
 }
 
-.hero-section {
-  background: linear-gradient(to right, #0f172a, #00c9a7);
-  color: white;
+/* .hero-section {
   padding: 100px 20px;
   text-align: center;
   position: relative;
   z-index: 1;
-  background-image: url('images/tech_vikas.jpg');
+  background-image: url('images/image.png');
   background-size: cover;
-  /* background-position: center; */
+  background-position: center;
   background-repeat: no-repeat;
-  height: 40vh;
+  height: 50vh;
+} */
+
+.hero-section {
+  min-height: 80vh;
+  width: 100%;
+  background-image: url('images/image.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.hero-content {
+
+
+
+/* .hero-content {
   max-width: 1500px;
   margin-top: 40px;
-}
+} */
 
 .hero-section h1 {
   font-size: 48px;
@@ -524,9 +534,9 @@ h3 {
   padding-bottom: 20px;
 }
 
-.hero-section {
-    background-image: url('images/tech_vikas_mobile.jpg') !important;
-    padding: 60px 10px;
+  .hero-section {
+    min-height: 14vh;
+    background-position: center;
   }
 
 .hero-content{
@@ -882,10 +892,82 @@ section#with_banner {
   }
 }
 
+/* =========================
+   Data Analytics Cards
+========================= */
 
+.da-cards-section {
+  padding: 60px 20px;
+  background: #f8fafc;
+}
 
+.da-section-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #0f172a;
+}
 
-/* Numpy */
+.da-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 25px;
+}
+
+.da-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 30px 20px;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.da-card img {
+  width: 100px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.da-card h3 {
+  font-size: 20px;
+  color: #1e293b;
+}
+
+.da-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .da-section-title {
+    font-size: 26px;
+  }
+
+  .da-card img {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .da-section-title {
+    font-size: 22px;
+  }
+
+  .da-card {
+    padding: 25px 15px;
+  }
+
+  .da-card h3 {
+    font-size: 18px;
+  }
+}
+
 
 
 
