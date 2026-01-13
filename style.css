@@ -629,6 +629,7 @@ section#with_banner {
 }
 .python-intro h2{
   font-size: 24px;
+  line-height: 30px;
 }
 .python-intro p{
   font-size: 16px;
@@ -740,6 +741,9 @@ section#with_banner {
     font-size: 0.9rem;
     min-width: 400px;
   }
+  .da-cards-section {
+    padding: 25px 20px !important;
+}
   .responsive-table-wrapper {
     margin-bottom: 20px;
   }
