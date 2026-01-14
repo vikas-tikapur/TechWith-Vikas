@@ -170,34 +170,15 @@ body {
   font-size: 18px;
 }
 
-/* .hero-section {
-  padding: 100px 20px;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-  background-image: url('images/image.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 50vh;
-} */
 
 .hero-section {
   min-height: 80vh;
   width: 100%;
-  background-image: url('images/image.png');
+  background-image: url('images/main_banner.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-
-
-
-
-/* .hero-content {
-  max-width: 1500px;
-  margin-top: 40px;
-} */
 
 .hero-section h1 {
   font-size: 48px;
@@ -338,7 +319,7 @@ body {
   justify-content: center;
 }
 
-.numpy-banner {
+.da-banner {
   background-image: url('images/da_banner.png'); 
   background-repeat: no-repeat;
   background-size: cover;
@@ -350,15 +331,7 @@ body {
   align-items: center;
   justify-content: center;
 }
-/* .banner-overlay {
-  background-color: rgba(0, 0, 0, 0.6); 
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding-left: 40px;
-} */
+
 
 .banner-overlay h1 {
   color: #fff;
@@ -955,6 +928,10 @@ section#with_banner {
     width: 70px;
     height: 70px;
   }
+
+  .numpy-banner {
+    height: 33vh !important;
+    }
 }
 
 /* Mobile */
@@ -970,8 +947,23 @@ section#with_banner {
   .da-card h3 {
     font-size: 18px;
   }
+
+  .numpy-banner {
+    height: 20vh !important;
+    }
 }
 
-
+.numpy-banner {
+  background-image: url('images/image.png'); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 55vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 
