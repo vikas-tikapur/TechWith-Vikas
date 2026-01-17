@@ -932,6 +932,10 @@ section#with_banner {
   .numpy-banner {
     height: 33vh !important;
     }
+
+  .da-banner {
+    height: 30vh !important;
+    }
 }
 
 /* Mobile */
