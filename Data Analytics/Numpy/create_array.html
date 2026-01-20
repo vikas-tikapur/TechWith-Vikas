@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechWith Vikas</title>
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header class="main-header">
+  <div class="container">
+    <div><a href="../../index.html" class="logo">TechWith <span>Vikas</span></a></div>
+    <select id="pythonPagesDropdown" onchange="if(this.value) window.location.href=this.value;">
+      <div class="custom-dropdown">
+      <option value="">Start Learning...</option>
+      <option value="../Python/python.html">Python</option>
+      <option value="../Data Analytics/da_intro.html">Data Analytics</option>
+      <option value="#">Machine Learning</option>
+      <option value="#">Artificial Intelligence</option>
+      <option value="#">Deep Learning</option>
+      <option value="#">MY SQL</option>
+      <option value="#">GIT & GitHub</option>
+      <option value="HTML/intro.html">HTML</option>
+      <option value="#">CSS</option>
+      <option value="#">JavaScript</option>
+    </select>
+  </div>
+</header>
+
+ <!-- Python Banner Section -->
+<section class="numpy-banner">
+  <div class="banner-overlay">
+  </div>
+</section>
+
+<!-- Python Internal Pages Tabs -->
+<nav class="python-tabs-nav">
+  <ul class="python-tabs-list">
+    <li><a href="numpy_intro.html" class="tab-link active">Introduction to NumPy</a></li>
+    <li><a href="create_array.html" class="tab-link">Creating NumPy Arrays</a></li>
+    <li><a href="#" class="tab-link">NumPy Array Properties</a></li>
+    <li><a href="#" class="tab-link">Indexing, Slicing & Filtering</a></li>
+    <li><a href="#" class="tab-link">Array Operations</a></li>
+    <li><a href="#" class="tab-link">Shape Manipulation</a></li>
+    <li><a href="#" class="tab-link">Views vs Copies</a></li>
+    <li><a href="#" class="tab-link">Broadcasting</a></li>
+    <li><a href="#" class="tab-link">NumPy Input / Output</a></li>
+    <li><a href="#" class="tab-link">Practical Usage</a></li>
+  </ul>
+</nav>
+
+<section class="python-intro" id="with_banner">
+  <div class="container">
+    <h2>Creating NumPy Arrays</h2>
+    <p>Before performing any analysis, the first step is to <b>store data in a proper structure.</b> 
+        In NumPy, this structure is called an <b>array.</b> Creating arrays correctly is very important 
+        because the entire data analysis process depends on how data is stored and organized.</p> <br>
+    <p>In this module, you will learn <b>different ways to create NumPy arrays</b> that are commonly used 
+        in real-world data analytics.</p>
+<br><br>
+
+<h2>Creating Arrays from Python Lists and Tuples</h2>
+<p>The most basic way to create a NumPy array is by converting a Python list or tuple into an array.</p>
+<h3>Example : Creating an Array from a List</h3>
+<div class="Code-box">
+    <pre><code>import numpy as np
+data = [10, 20, 30, 40]
+arr = np.array(data)
+print(arr)  # Output: [10 20 30 40]
+</code></pre>
+  </div>
+<p>This converts a normal Python list into a NumPy array.</p>
+<br>
+
+<h3>Example: Creating an Array from a Tuple</h3>
+<div class="Code-box">
+<pre><code>values = (5, 15, 25, 35)
+arr = np.array(values)
+print(arr)
+# Output: [ 5 15 25 35]
+</code></pre>
+  </div>
+  <p>Both lists and tuples can be used, but NumPy arrays are <b>faster and more efficient</b> for calculations.</p>
+<br><br>
+
+<h2>Creating Arrays with a Specific Data Type</h2>
+<p>Sometimes, you need data in a specific format (for example, integers or floating-point values).</p>
+<div class="Code-box">
+<pre><code>arr = np.array([1, 2, 3, 4], dtype=float)
+print(arr)
+# Output: [1. 2. 3. 4.]
+</code></pre>
+  </div>
+<p><b>This is useful when working with :</b></p>
+<ul>
+    <li>Financial data</li>
+    <li>Scientific calculations</li>
+    <li>Machine learning models</li>
+</ul>
+<br><br>
+
+<h2>Creating Multidimensional Arrays</h2>
+<p>Real-world data is often <b>not one-dimensional.</b> It may contain rows and columns like a table.</p>
+<h3>Example : 2D Array (Matrix)</h3>
+<div class="Code-box">
+<pre><code>arr = np.array([
+    [1, 2, 3],
+    [4, 5, 6]
+])
+print(arr)
+# Output:
+# [[1 2 3]
+#  [4 5 6]]
+</code></pre>
+  </div>
+<p><b>This type of structure is very common in :</b></p>
+<ul>
+    <li>Datasets</li>
+    <li>Tables</li>
+    <li>Images</li>
+    <li>Machine learning input data</li>
+</ul>
+<br><br>
+
+<h2>Creating Special NumPy Arrays</h2>
+<p>NumPy provides built-in functions to create arrays quickly.</p>
+<h3>Array of Zeros</h3>
+<div class="Code-box">
+<pre><code>arr = np.zeros(5)
+print(arr)
+# Output: [0. 0. 0. 0. 0.]
+</code></pre>
+  </div>
+<p><b>Useful for :</b></p>
+<ul>
+    <li>Initializing values</li>
+    <li>Creating placeholders</li>
+</ul>
+<br>
+
+<h3>Array of Ones</h3>
+<div class="Code-box">
+<pre><code>arr = np.ones(5)
+print(arr)
+# Output: [1. 1. 1. 1. 1.]
+</code></pre>
+  </div>
+
+  <br>
+
+  <h3>Array with a Fixed Value</h3>
+<div class="Code-box">
+<pre><code>arr = np.full(5, 10)
+print(arr)
+# Output: [10 10 10 10 10]
+</code></pre>
+  </div>
+<br><br>
+
+<h2>Creating Arrays Using Ranges</h2>
+<h3>Using arange( )</h3>
+<div class="Code-box">
+<pre><code>arr = np.arange(1, 10)
+print(arr)
+# Output: [1 2 3 4 5 6 7 8 9]
+</code></pre>
+</div>
+<br>
+
+<h3>Using linspace( )</h3>
+<div class="Code-box">
+<pre><code>arr = np.linspace(0, 1, 5)
+print(arr)
+# Output: [0.   0.25 0.5  0.75 1.  ]
+</code></pre>
+</div>
+<br>
+<p><b>Generates evenly spaced values between two numbers.</b></p>
+
+<h3>Real-Life Use Case :</h3>
+<p><b>Used in data visualization and mathematical modeling.</b></p>
+<br><br>
+
+<h2>Creating Identity and Diagonal Matrices</h2>
+<h3>Identity Matrix</h3>
+<div class="Code-box">
+<pre><code>arr = np.eye(4)
+print(arr)
+# Output:
+# [[1. 0. 0. 0.]
+#  [0. 1. 0. 0.]
+#  [0. 0. 1. 0.]
+#  [0. 0. 0. 1.]]
+</code></pre>
+</div>
+<p><b>Useful for :</b></p>
+<ul>
+    <li>Linear algebra operations</li>
+    <li>Matrix transformations</li>
+    <li>Machine learning algorithms</li>
+</ul>
+<br>
+
+<h3>Diagonal Matrix</h3>
+<div class="Code-box">
+<pre><code>arr = np.diag([1, 2, 3])
+print(arr)
+# Output:
+# [[1 0 0]
+#  [0 2 0]
+#  [0 0 3]]
+</code></pre>
+</div>
+<p><b>Useful for :</b></p>
+<ul>
+    <li>Creating diagonal matrices in linear algebra</li>
+    <li>Data analysis tasks involving diagonal elements</li>
+</ul>
+<br><br>
+
+<h2>Creating Arrays with Random Values</h2>
+<p><b>Random data is often used for :</b></p>
+<ul>
+    <li>Simulating real-world data</li>
+    <li>Testing algorithms</li>
+    <li>Machine learning model training</li>
+</ul>
+
+<h3>Random Values Between 0 and 1</h3>
+<div class="Code-box">
+<pre><code>arr = np.random.rand(5)
+print(arr)
+# Output: [0.123 0.456 0.789 0.234 0.567]</code></pre>
+</div>
+<br>
+
+<h3>Random Integers</h3>
+<div class="Code-box">
+<pre><code>arr = np.random.randint(1, 10, size=5)
+print(arr)
+# Output: [3 7 1 9 5]</code></pre>
+</div>
+<br>
+
+<h3>Real-Life Example: Sales Data Creation</h3>
+<div class="Code-box">
+<pre><code>daily_sales = np.array([1200, 1500, 1800, 1600, 2000])
+print(daily_sales)
+# Output: [1200 1500 1800 1600 2000]
+</code></pre>
+</div>
+<p><b>This array can later be used to :</b></p>
+<ul>
+    <li>Calculate average sales</li>
+    <li>Find highest or lowest sales</li>
+    <li>Plot sales trends</li>
+</ul>
+<br><br>
+
+<h3>Common Mistakes Beginners Make</h3>
+<ul>
+    <li>Mixing different data types unnecessarily</li>
+    <li>Using Python lists instead of NumPy arrays for calculations</li>
+    <li>Creating arrays without understanding their shape</li>
+</ul>
+<p>Avoiding these mistakes improves performance and clarity.</p>
+<br><br>
+
+<h2>Conclusion</h2>
+<p>Understanding how to create NumPy arrays is fundamental for data analysis and scientific computing. 
+    By mastering these techniques, you can efficiently manipulate and analyze large datasets.</p>
+
+   
+  <div class="navigation-buttons">
+  <a href="numpy_intro.html" class="nav-btn prev-btn">← Previous</a>
+  <a href="#" class="nav-btn next-btn">Next →</a>
+</div>
+
+</section>
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <h2>CodeWith <span>Vikas</span></h2>
+      <p>Learn programming from scratch.<br> Start your journey today!</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Python</a></li>
+        <li><a href="#">Java</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h3>Follow Me</h3>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-x"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 TechWith Vikas | Created by Vikas Mishra</p>
+  </div>
+ <div class="scroll-to-top" title="Go to Top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+</footer>
+<script src="../../main.js"></script>
+</body>
+</html>
