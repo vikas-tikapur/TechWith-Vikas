@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechWith Vikas</title>
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header class="main-header">
+  <div class="container">
+    <div><a href="../../index.html" class="logo">TechWith <span>Vikas</span></a></div>
+    <select id="pythonPagesDropdown" onchange="if(this.value) window.location.href=this.value;">
+      <div class="custom-dropdown">
+      <option value="">Start Learning...</option>
+      <option value="../Python/python.html">Python</option>
+      <option value="../Data Analytics/da_intro.html">Data Analytics</option>
+      <option value="#">Machine Learning</option>
+      <option value="#">Artificial Intelligence</option>
+      <option value="#">Deep Learning</option>
+      <option value="#">MY SQL</option>
+      <option value="#">GIT & GitHub</option>
+      <option value="HTML/intro.html">HTML</option>
+      <option value="#">CSS</option>
+      <option value="#">JavaScript</option>
+    </select>
+  </div>
+</header>
+
+ <!-- Python Banner Section -->
+<section class="numpy-banner">
+  <div class="banner-overlay">
+  </div>
+</section>
+
+<!-- Python Internal Pages Tabs -->
+<nav class="python-tabs-nav">
+  <ul class="python-tabs-list">
+    <li><a href="numpy_intro.html" class="tab-link active">Introduction to NumPy</a></li>
+    <li><a href="create_array.html" class="tab-link">Creating NumPy Arrays</a></li>
+    <li><a href="#" class="tab-link">NumPy Array Properties</a></li>
+    <li><a href="#" class="tab-link">Indexing, Slicing & Filtering</a></li>
+    <li><a href="#" class="tab-link">Array Operations</a></li>
+    <li><a href="#" class="tab-link">Shape Manipulation</a></li>
+    <li><a href="#" class="tab-link">Views vs Copies</a></li>
+    <li><a href="#" class="tab-link">Broadcasting</a></li>
+    <li><a href="#" class="tab-link">NumPy Input / Output</a></li>
+    <li><a href="#" class="tab-link">Practical Usage</a></li>
+  </ul>
+</nav>
+
+<section class="python-intro" id="with_banner">
+  <div class="container">
+    <h2>NumPy Array Properties</h2>
+    <p>Once a NumPy array is created, the next step is to <b>understand its properties.</b></p>
+    <p>Array properties tell us important information about how data is stored, how large it is, and how it can be processed.</p>
+    <p><b>Knowing these properties helps :</b></p>
+<ul>
+    <li>Avoid errors</li>
+    <li>Optimize performance</li>
+    <li>Work confidently with multidimensional data</li>
+</ul>
+<br><br>
+
+<h2>What Are Array Properties?</h2>
+<p>Array properties are <b>built-in attributes</b> that describe a NumPy array.</p>
+<p><b>They help answer questions like :</b></p>
+<ul>
+    <li>How many dimensions does the array have?</li>
+    <li>How many elements are stored?</li>
+    <li>What is the shape of the data?</li>
+    <li>What type of data does the array contain?</li>
+</ul>
+<br><br>
+
+<h3>1. ndim – Number of Dimensions</h3>
+<p>The <b>ndim</b> property tells how many dimensions an array has.</p>
+<div class="Code-box">
+    <pre><code>import numpy as np
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+print(arr.ndim)
+# Output: 2 (because it's a 2D array)
+</code></pre>
+  </div>
+<p><b>Real-Life Meaning :</b></p>
+<ul>
+    <li>1D → simple list of values</li>
+    <li>2D → table (rows and columns)</li>
+    <li>3D → multiple tables (used in images, videos, ML)</li>
+</ul>
+<br><br>
+
+<h3>2. shape – Structure of the Array</h3>
+<p>The <b>shape</b> property returns the <b>number of rows and columns in the array.</b></p>
+<div class="Code-box">
+    <pre><code>import numpy as np
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+print(arr.shape)
+# Output: (2, 3) - 2 rows and 3 columns
+</code></pre>
+  </div>
+<br>
+
+<h2>Why Shape Is Important</h2>
+<p><b>Shape helps :</b></p>
+<ol>
+    <li>Validate data before analysis</li>
+    <li>Reshape data for models</li>
+    <li>Avoid dimension mismatch errors</li>
+</ol>
+<br><br>
+
+<h3>3. size – Total Number of Elements</h3>
+<p>The <b>size</b> property tells how many elements are present in the array.</p>
+<div class="Code-box">
+    <pre><code>import numpy as np
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+print(arr.size)
+# Output: 6 (because there are 6 elements in the array)
+</code></pre>
+  </div>
+<p><b>This is useful when :</b></p>
+<ul>
+    <li>Calculating averages</li>
+    <li>Checking dataset size</li>
+    <li>Performing bulk operations</li>
+</ul>
+
+<br><br>
+
+<h3>4. dtype – Data Type of Elements</h3>
+<p>The <b>dtype</b> property shows the <b>type of data stored</b> in the array.</p>
+<div class="Code-box">
+    <pre><code>import numpy as np
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+print(arr.dtype)
+# Output: int64 (or int32 depending on system)
+</code></pre>
+  </div>
+<p><b>Why dtype Matters :</b></p>
+<ul>
+    <li>Affects memory usage</li>
+    <li>Impacts calculation precision</li>
+    <li>Important in scientific and financial data</li>
+</ul>
+<br><br>
+
+
+<h3>5. itemsize – Memory Size of Each Element</h3>
+<p>The <b>itemsize</b> property tells the <b>size of each element in bytes</b>.</p>
+<div class="Code-box">
+    <pre><code>import numpy as np
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+print(arr.itemsize)
+# Output: 8 (for int64 elements)
+</code></pre>
+  </div>
+<p><b>This is useful when :</b></p>
+<ul>
+    <li>Optimizing memory usage</li>
+    <li>Understanding data storage requirements</li>
+    <li>Debugging memory-related issues</li>
+</ul>
+<br><br>
+
+<h3>6. nbytes – Total Memory Used by Array</h3>
+<p>The <b>nbytes</b> property returns the <b>total memory used by the array in bytes</b>.</p>
+<div class="Code-box">
+    <pre><code>import numpy as np
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+print(arr.nbytes)
+# Output: 48 (for int64 elements)
+</code></pre>
+  </div>
+<p><b>This is useful when :</b></p>
+<ul>
+    <li>Monitoring memory usage in large datasets</li>
+    <li>Comparing performance of different data types</li>
+    <li>Debugging memory-related issues in applications</li>
+</ul>
+<br><br>
+
+<h3>7. Checking Data Type Conversion</h3>
+<p>You can convert an array’s data type using astype().</p>
+<div class="Code-box">
+    <pre><code>arr = np.array([1, 2, 3])
+new_arr = arr.astype(float)
+print(new_arr)
+</code></pre>
+  </div>
+<p><b>Used when :</b></p>
+<ul>
+    <li>Preparing data for ML models</li>
+    <li>Avoiding integer division issues</li>
+</ul>
+<br><br>
+
+
+<h3>Real-Life Example: Dataset Validation</h3>
+<p>Imagine you're working with a dataset of student grades. You want to ensure all grades are in the correct format before processing them.</p>
+<div class="Code-box">
+    <pre><code>import numpy as np
+grades = np.array([85, 92, 78, 90])
+print("Original data type:", grades.dtype)
+# Convert to float for precise calculations
+grades_float = grades.astype(float)
+print("Converted data type:", grades_float.dtype)
+</code></pre>
+  </div>
+<p><b>This ensures :</b></p>
+<ul>
+    <li>Accurate average calculations</li>
+    <li>Prevents data type errors in analysis</li>
+</ul>
+
+<br><br>
+
+<h2>Common Beginner Mistakes</h2>
+<ol>
+    <li>Ignoring array shape</li>
+    <li>Assuming wrong data type</li>
+    <li>Not checking memory usage</li>
+    <li>Confusing dimensions with size</li>
+</ol>
+<p><b>Understanding properties helps avoid these issues.</b></p>
+<br><br>
+
+<h2>Why Array Properties Are Important in Data Analytics</h2>
+<p><b>Array properties help :</b></p>
+<ul>
+    <li>Debug data issues</li>
+    <li>Prepare data for analysis</li>
+    <li>Optimize performance</li>
+    <li>Work confidently with large datasets</li>
+</ul>
+
+<p><b>They are essential when working with :</b></p>
+<ul>
+    <li>Pandas DataFrames</li>
+    <li>Machine learning models</li>
+    <li>Data visualization libraries</li>
+</ul>
+<br><br>
+
+<h2>Key Takeaways</h2>
+<ul>
+    <li>Array properties describe structure and storage</li>
+    <li>ndim, shape, and size define array layout</li>
+    <li>dtype, itemsize, and nbytes define memory usage</li>
+    <li>Checking properties early prevents errors later</li>
+</ul>
+<br><br>
+
+
+<h2>Conclusion</h2>
+<p>Understanding array properties is crucial for efficient data analysis and manipulation in NumPy. These properties provide insights into the structure, data type, and memory usage of arrays, enabling developers to make informed decisions when working with large datasets.</p>
+<p>By mastering these concepts, you'll be better equipped to handle real-world data challenges and build robust applications.</p>
+
+  <div class="navigation-buttons">
+  <a href="create_array.html" class="nav-btn prev-btn">← Previous</a>
+  <a href="#" class="nav-btn next-btn">Next →</a>
+</div>
+
+</section>
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <h2>CodeWith <span>Vikas</span></h2>
+      <p>Learn programming from scratch.<br> Start your journey today!</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/Python/python.html">Python</a></li>
+        <li><a href="/Data Analytics/da_intro.html">Data Analytics</a></li>
+        <li><a href="#">Machine Learning</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h3>Follow Me</h3>
+      <a href="https://www.facebook.com/vikas2001mishra/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <!-- <a href="#" target="_blank"><i class="fab fa-x"></i></a> -->
+      <a href="https://www.instagram.com/techwith_vikas/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://github.com/vikas-tikapur" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 TechWith Vikas | Created by Vikas Mishra</p>
+  </div>
+ <div class="scroll-to-top" title="Go to Top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+</footer>
+<script src="../../main.js"></script>
+</body>
+</html>
