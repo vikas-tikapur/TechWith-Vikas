@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechWith Vikas</title>
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header class="main-header">
+  <div class="container">
+    <div><a href="../../index.html" class="logo">TechWith <span>Vikas</span></a></div>
+    <select id="pythonPagesDropdown" onchange="if(this.value) window.location.href=this.value;">
+      <div class="custom-dropdown">
+      <option value="">Start Learning...</option>
+      <option value="../Python/python.html">Python</option>
+      <option value="../Data Analytics/da_intro.html">Data Analytics</option>
+      <option value="#">Machine Learning</option>
+      <option value="#">Artificial Intelligence</option>
+      <option value="#">Deep Learning</option>
+      <option value="#">MY SQL</option>
+      <option value="#">GIT & GitHub</option>
+      <option value="HTML/intro.html">HTML</option>
+      <option value="#">CSS</option>
+      <option value="#">JavaScript</option>
+    </select>
+  </div>
+</header>
+
+ <!-- Python Banner Section -->
+<section class="numpy-banner">
+  <div class="banner-overlay">
+  </div>
+</section>
+
+<!-- Python Internal Pages Tabs -->
+<nav class="python-tabs-nav">
+  <ul class="python-tabs-list">
+    <li><a href="numpy_intro.html" class="tab-link active">Introduction to NumPy</a></li>
+    <li><a href="create_array.html" class="tab-link">Creating NumPy Arrays</a></li>
+    <li><a href="nap.html" class="tab-link">NumPy Array Properties</a></li>
+    <li><a href="isf.html" class="tab-link">Indexing, Slicing & Filtering</a></li>
+    <li><a href="array_o.html" class="tab-link">Array Operations & Vectorization</a></li>
+    <li><a href="#" class="tab-link">Shape Manipulation</a></li>
+    <li><a href="#" class="tab-link">Views vs Copies</a></li>
+    <li><a href="#" class="tab-link">Broadcasting</a></li>
+    <li><a href="#" class="tab-link">NumPy Input / Output</a></li>
+    <li><a href="#" class="tab-link">Practical Usage</a></li>
+  </ul>
+</nav>
+
+<section class="python-intro" id="with_banner">
+  <div class="container">
+    <h2>Indexing, Slicing & Filtering</h2>
+    <p>In data analytics, you rarely work with the entire dataset at once.</p>
+    <p>Most of the time, you need to <b>access specific values, extract subsets, or filter data based on conditions.</b></p>
+<p><b>NumPy provides powerful and flexible ways to do this using :</b></p>
+<ul>
+  <li><b>Indexing:</b> Accessing individual elements or specific positions in an array.</li>
+  <li><b>Slicing:</b> Extracting a portion of the array using start, stop, and step parameters.</li>
+  <li><b>Filtering:</b> Selecting elements based on a condition or boolean mask.</li>
+</ul>
+<p>Mastering these concepts is essential for real-world data analysis.</p>
+<br><br>
+
+<h2>What Is Indexing?</h2>
+
+<p>Indexing in NumPy refers to the process of accessing individual elements or specific positions within an array. You can access elements using their position (index) in the array, starting from 0 for the first element.</p>
+<p>NumPy uses <b>zero-based indexing,</b> just like Python lists.</p>
+<br>
+
+<h3>Indexing in 1D Arrays</h3>
+<div class="Code-box">
+    <pre><code>import numpy as np
+arr = np.array([10, 20, 30, 40, 50])
+print(arr[0])   # First element
+print(arr[2])   # Third element
+print(arr[-1])  # Last element
+</code></pre>
+  </div>
+<p><b>Explanation</b></p>
+<ul>
+    <li><b>arr[0]</b> → first value</li>
+    <li><b>arr[2]</b> → third value</li>
+    <li><b>arr[-1]</b> → last value</li>
+</ul>
+<p>This is useful when you want <b>specific data points,</b> such as the latest value.</p>
+<br>
+
+<h3>Indexing in 2D Arrays</h3>
+<p><b>In 2D arrays, indexing follows this format :</b></p>
+<div class="Code-box">
+    <pre><code>array[row_index, column_index]
+</code></pre>
+  </div>
+
+<p><b>Example</b></p>
+<div class="Code-box">
+    <pre><code>matrix = np.array([
+    [1, 2, 3],
+    [4, 5, 6]
+])
+
+print(matrix[0, 1])  # Element from first row, second column
+</code></pre>
+  </div>
+<p><b>Real-Life Example: Student Scores</b></p>
+<div class="Code-box">
+    <pre><code>scores = np.array([
+    [85, 90, 88],
+    [78, 82, 80],
+    [92, 95, 94]
+])
+
+print(scores[2, 1])  # Second subject score of third student
+</code></pre>
+  </div>
+<p>Indexing helps extract <b>exact values</b> from structured data.</p>
+<br><br>
+
+<h2>What Is Slicing?</h2>
+
+<p>Slicing in NumPy allows you to extract a portion of an array using start, stop, and step parameters. It works similarly to Python list slicing.</p>
+<p>The syntax for slicing is:</p>
+<div class="Code-box">
+    <pre><code>array[start:stop:step]
+</code></pre>
+  </div>
+<br>
+
+<h3>Slicing in 1D Arrays</h3>
+<div class="Code-box">
+    <pre><code>import numpy as np
+arr = np.array([10, 20, 30, 40, 50])
+print(arr[1:4])   # Elements from index 1 to 3
+print(arr[:3])    # First three elements
+print(arr[2:])    # Elements from index 2 onwards
+print(arr[::2])   # Every second element
+</code></pre>
+  </div>
+<br>
+
+<h3>Slicing in 2D Arrays</h3>
+<div class="Code-box">
+    <pre><code>matrix = np.array([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+])
+
+print(matrix[:2, :2])  # First two rows and first two columns
+print(matrix[1:, 1:])  # From second row and second column onwards
+</code></pre>
+  </div>
+<br>
+
+<h3>Real-Life Example: Monthly Sales Data</h3>
+<div class="Code-box">
+    <pre><code>sales = np.array([
+    [1000, 1200, 1100],
+    [1300, 1250, 1400],
+    [1500, 1600, 1550]
+])
+
+print(sales[1:3, 0:2])  # Sales data for months 1 and 2 of years 2 and 3
+print(sales[0:2, :])    # Sales data for all months of years 1 and 2
+</code></pre>
+  </div>
+<p>Slicing is commonly used for <b>time-based analysis.</b></p>
+<br><br>
+
+<h2>What Is Filtering?</h2>
+
+<p>Filtering in NumPy involves <b>selecting elements from an array based on a condition or boolean mask.</b> This is particularly useful when you want to extract specific data points that meet certain criteria.</p>
+<p>This is one of the most powerful features of NumPy.</p>
+<p><b>The syntax for filtering is :</b></p>
+<div class="Code-box">
+    <pre><code>array[condition]
+</code></pre>
+  </div>
+<br>
+
+<h3>Filtering in 1D Arrays</h3>
+<div class="Code-box">
+    <pre><code>import numpy as np
+arr = np.array([10, 20, 30, 40, 50])
+filtered_arr = arr[arr > 25]   # Elements greater than 25
+print(filtered_arr)
+</code></pre>
+  </div>
+<br>
+
+<h3>Filtering in 2D Arrays</h3>
+<div class="Code-box">
+    <pre><code>matrix = np.array([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+])
+
+filtered_matrix = matrix[matrix > 5]   # Elements greater than 5
+print(filtered_matrix)
+</code></pre>
+  </div>
+<br>
+
+<h3>Real-Life Example: Student Scores</h3>
+<div class="Code-box">
+    <pre><code>scores = np.array([
+    [85, 90, 88],
+    [78, 82, 80],
+    [92, 95, 94]
+])
+
+high_scores = scores[scores > 90]   # Scores greater than or equal to 90
+print(high_scores)
+</code></pre>
+    </div>
+<br>
+
+<p><b>Useful when :</b></p>
+<ul>
+    <li>Finding high-performing products</li>
+    <li>Identifying outliers</li>
+    <li>Applying business rules</li>
+</ul>
+
+<br>
+
+<h3>Multiple Conditions in Filtering</h3>
+<div class="Code-box">
+    <pre><code>arr = np.array([10, 20, 30, 40, 50])
+
+result = arr[(arr > 20) & (arr < 50)]
+print(result)
+</code></pre>
+</div>
+<p><b>Use :</b></p>
+<ul>
+    <li><b>&</b> for AND</li>
+    <li><b>|</b> for OR</li>
+</ul>
+<br>
+
+<h3>Filtering in 2D Arrays</h3>
+<div class="Code-box">
+    <pre><code>data = np.array([
+    [80, 85, 90],
+    [60, 65, 70],
+    [95, 92, 88]
+])
+print(data[data > 85])
+</code></pre>
+</div>
+<p>This extracts all values greater than 85 from the entire array.</p>
+<br><br>
+
+<h2>Common Beginner Mistakes</h2>
+<ul>
+    <li>Forgetting zero-based indexing</li>
+    <li>Confusing rows and columns</li>
+    <li>Using <b>and</b> instead of <b>&</b></li>
+    <li>Not using brackets correctly in conditions</li>
+</ul>
+<p>Avoiding these mistakes improves accuracy.</p>
+<br><br>
+
+<h2>Why Indexing, Slicing & Filtering Are Important</h2>
+<p><b>These techniques help you :</b></p>
+<ul>
+    <li>Focus on relevant data</li>
+    <li>Reduce dataset size</li>
+    <li>Apply business logic</li>
+    <li>Prepare data for analysis and modeling</li>
+</ul>
+<p>Almost every real-world data task involves filtering and slicing.</p>
+<br><br>
+
+<h2>Key Takeaways</h2>
+<ul>
+    <li>Indexing accesses single elements</li>
+    <li>Slicing extracts ranges of data</li>
+    <li>Filtering selects data based on conditions</li>
+    <li>Boolean indexing is essential for analytics</li>
+</ul>
+<br><br>
+
+<h2>Conclusion</h2>
+<p>Indexing, slicing, and filtering are fundamental skills in NumPy that allow you to manipulate and analyze data effectively. Mastering these techniques is crucial for any data analyst or scientist working with NumPy arrays.</p>
+<br><br>
+
+
+    
+  <div class="navigation-buttons">
+  <a href="nap.html" class="nav-btn prev-btn">← Previous</a>
+  <a href="array_o.html" class="nav-btn next-btn">Next →</a>
+</div>
+
+</section>
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <h2>CodeWith <span>Vikas</span></h2>
+      <p>Learn programming from scratch.<br> Start your journey today!</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/Python/python.html">Python</a></li>
+        <li><a href="/Data Analytics/da_intro.html">Data Analytics</a></li>
+        <li><a href="#">Machine Learning</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h3>Follow Me</h3>
+      <a href="https://www.facebook.com/vikas2001mishra/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <!-- <a href="#" target="_blank"><i class="fab fa-x"></i></a> -->
+      <a href="https://www.instagram.com/techwith_vikas/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://github.com/vikas-tikapur" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 TechWith Vikas | Created by Vikas Mishra</p>
+  </div>
+ <div class="scroll-to-top" title="Go to Top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+</footer>
+<script src="../../main.js"></script>
+</body>
+</html>
