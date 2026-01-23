@@ -53,33 +53,284 @@
 
 <section class="python-intro" id="with_banner">
   <div class="container">
-    <h2>Indexing, Slicing & Filtering</h2>
+    <h2>Array Operations & Vectorization</h2>
+    <p>One of the biggest strengths of NumPy is its ability to perform <b>fast and efficient operations on entire arrays</b> without writing loops.</p>
+    <p>This is achieved through <b>array operations and vectorization.</b></p>
+
+    <br>
+
+    <p><b>Understanding these concepts is critical because :</b></p>
+    <ul>
+      <li>They make code faster</li>
+      <li>They reduce complexity</li>
+      <li>They are widely used in real-world data analytics and machine learning</li>
+    </ul>
     
+<br><br>
+
+<h2>What Are Array Operations?</h2>
+<p>Array operations allow you to perform <b>mathematical and logical operations directly on NumPy arrays.</b></p>
+<p>Instead of processing values one by one, NumPy processes the <b>entire array at once.</b></p>
+<br><br>
+
+<h2>Basic Arithmetic Operations</h2>
+<p>NumPy supports element-wise arithmetic operations.</p>
+
+<h3>Example :</h3>
+<div class="Code-box">
+    <pre><code>import numpy as np
+
+arr1 = np.array([10, 20, 30])
+arr2 = np.array([1, 2, 3])
+print(arr1 + arr2)
+print(arr1 - arr2)
+print(arr1 * arr2)
+print(arr1 / arr2)
+
+# Output:
+[11 22 33]
+[ 9 18 27]
+[10 40 90]
+[10. 10. 10.]
+</code></pre>
+  </div>
+<p>Each operation is applied <b>element by element.</b></p>
+<br><br>
+
+<h2>Operations with Scalars</h2>
+<p>You can also perform operations between an array and a scalar (a single number).</p>
+<p>NumPy automatically applies the operation to each element in the array.</p>
+
+<h3>Example :</h3>
+<div class="Code-box">
+    <pre><code>import numpy as np
+
+arr = np.array([10, 20, 30])
+print(arr + 5)
+print(arr * 2)
+print(arr - 10)
+
+# Output:
+[15 25 35]
+[20 40 60]
+[ 0 10 20]
+</code></pre>
+</div>
+<p><b>This is very common in analytics tasks like :</b></p>
+<ul>
+  <li>Applying tax</li>
+  <li>Increasing prices</li>
+  <li>Normalizing values</li>
+</ul>
+<br>
+
+<h3>Real-Life Example: Price Increase</h3>
+<p>Imagine you have a list of product prices and you want to apply a 10% increase to all products.</p>
+<div class="Code-box">
+    <pre><code>import numpy as np
+
+prices = np.array([100, 200, 300])
+new_prices = prices * 1.1
+print(new_prices)
+
+# Output:
+[110. 220. 330.]
+</code></pre>
+</div>
+<br><br>
+
+<h2>What Is Vectorization?</h2>
+<p>Vectorization means <b>performing operations on arrays without using explicit loops.</b></p>
+<p>NumPy executes vectorized code at a much lower level (C language), which makes it extremely fast.</p>
+
+<br><br>
+<h2>Vectorized vs Non-Vectorized Code</h2>
+
+<h3>Using Python Loop (Not Recommended)</h3>
+<div class="Code-box">
+    <pre><code>data = [1, 2, 3, 4, 5]
+result = []
+for x in data:
+    result.append(x * 2)
+print(result)
+
+# Output:
+[2, 4, 6, 8, 10]
+</code></pre>
+</div>
+<br>
+
+<h3>Using NumPy Vectorization (Recommended)</h3>
+<div class="Code-box">
+    <pre><code>arr = np.array([1, 2, 3, 4, 5])
+result = arr * 2
+print(result)
+
+# Output:
+[ 2  4  6  8 10]
+</code></pre>
+</div>
+<ul>
+  <li>Cleaner</li>
+  <li>Faster</li>
+  <li>Easier to read</li>
+</ul>
+<br><br>
+
+<h2>Why Vectorization Is Faster</h2>
+<p><b>Vectorization is faster because :</b></p>
+<ul>
+  <li>Operations are performed in compiled C code (not Python loops)</li>
+  <li>Optimized low-level execution</li>
+  <li>Better memory usage</li>
+</ul>
+
+<p>This becomes <b>very important for large datasets.</b></p>
+<br><br>
 
 
+<h2>Mathematical Functions on Arrays</h2>
+<p>NumPy provides built-in mathematical functions that work on entire arrays.</p>
+<h3>Common Examples :</h3>
+<div class="Code-box">
+    <pre><code>import numpy as np
+arr = np.array([1, 4, 9, 16])
+print(np.sqrt(arr))      # Square root
+print(np.log(arr))       # Natural logarithm
+print(np.exp(arr))       # Exponential
+print(np.sum(arr))       # Sum of elements
+print(np.mean(arr))      # Mean of elements
+print(np.max(arr))       # Maximum element
+print(np.min(arr))       # Minimum element
 
+# Output:
+[1. 2. 3. 4.]
+[0.         1.38629436 2.19722458 2.77258872]
+[2.71828183e+00 5.45981500e+01 8.10308393e+03 8.88611052e+06]
+30
+7.5
+16
+1
+</code></pre>
+</div>
+<p>These functions are heavily used in analytics and statistics.</p>
+<br><br>
 
+<h3>Statistical Operations (Real Analytics Use)</h3>
+<div class="Code-box">
+    <pre><code>sales = np.array([1200, 1500, 1800, 1600, 2000])
+print("Total Sales:", np.sum(sales))
+print("Average Sales:", np.mean(sales))
+print("Highest Sale:", np.max(sales))
+print("Lowest Sale:", np.min(sales))
 
+# Output:
+Total Sales: 8100
+Average Sales: 1620.0
+Highest Sale: 2000
+Lowest Sale: 1200
+</code></pre>
+</div>
+<p><b>This kind of analysis is common in :</b></p>
+<ul>
+  <li>Financial reporting</li>
+  <li>Sales performance tracking</li>
+  <li>Inventory management</li>
+  <li>Dashboards</li>
+</ul>
+<br><br>
 
+<h3>Comparison Operations</h3>
+<p>You can compare arrays with scalars or other arrays, which returns a boolean array.</p>
+<div class="Code-box">
+    <pre><code>import numpy as np
+arr = np.array([10, 20, 30, 40])
+print(arr > 25)      # Greater than
+print(arr == 20)     # Equal to
+print(arr <= 30)     # Less than or equal to
 
+# Output:
+[False False  True  True]
+[False False  True False]
+[ True  True  True False]
+</code></pre>
+</div>
+<p>This returns a Boolean array, often used for filtering.</p>
+<br><br>
 
+<h3>Combining Operations</h3>
+<p>Operations can be chained together.</p>
+<div class="Code-box">
+    <pre><code>arr = np.array([10, 20, 30, 40])
+result = np.sqrt(arr) * 2
+print(result)
 
+# Output:
+[6.32455532 8.94427191 10.95445115 12.64911064]
+</code></pre>
+</div>
+<p>This allows <b>powerful transformations in minimal code.</b></p>
+<br><br>
 
+<h3>Operations on Multidimensional Arrays</h3>
+<p>NumPy supports operations on multidimensional arrays just like 1D arrays.</p>
+<div class="Code-box">
+    <pre><code>matrix = np.array([
+    [1, 2, 3],
+    [4, 5, 6]
+])
+print(matrix * 2)
+print(np.sum(matrix))
 
+# Output:
+[[ 2  4  6]
+ [ 8 10 12]]
+</code></pre>
+</div>
+<p>Operations apply to all elements automatically.</p>
+<br><br>
 
+<h2>Common Beginner Mistakes</h2>
+<ul>
+  <li>Using loops instead of vectorization</li>
+  <li>Mixing incompatible shapes</li>
+  <li>Forgetting that operations are element-wise</li>
+  <li>Ignoring performance benefits</li>
+</ul>
+<p>Understanding vectorization helps avoid these issues.</p>
+<br><br>
 
+<h2>Why Array Operations & Vectorization Matter</h2>
+<p><b>They help :</b></p>
+<ul>
+  <li>Improve performance</li>
+  <li>Write cleaner code</li>
+  <li>Handle large datasets efficiently</li>
+  <li>Build scalable analytics solutions</li>
+</ul>
+<p>Almost all data analytics and ML libraries <b>expect vectorized data.</b></p>
+<br><br>
 
+<h2>Key Takeaways</h2>
+<ul>
+  <li>Vectorization is faster than loops</li>
+  <li>Operations are element-wise</li>
+  <li>Mathematical functions work on entire arrays</li>
+  <li>Boolean arrays are useful for filtering</li>
+  <li>Multidimensional arrays support the same operations</li>
+</ul>
+<br><br>
 
+<h2>Conclusion</h2>
+<p>Array operations and vectorization are fundamental to efficient data analysis in Python. They allow for:</p>
+<ul>
+  <li>Fast computation on large datasets</li>
+  <li>Clean, readable code</li>
+  <li>Scalable solutions for analytics and machine learning</li>
+</ul>
 
-
-
-
-
-
-
-    
   <div class="navigation-buttons">
-  <a href="nap.html" class="nav-btn prev-btn">← Previous</a>
+  <a href="isf.html" class="nav-btn prev-btn">← Previous</a>
   <a href="#" class="nav-btn next-btn">Next →</a>
 </div>
 
