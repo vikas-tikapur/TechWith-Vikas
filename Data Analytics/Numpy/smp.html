@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechWith Vikas</title>
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header class="main-header">
+  <div class="container">
+    <div><a href="../../index.html" class="logo">TechWith <span>Vikas</span></a></div>
+    <select id="pythonPagesDropdown" onchange="if(this.value) window.location.href=this.value;">
+      <div class="custom-dropdown">
+      <option value="">Start Learning...</option>
+      <option value="../Python/python.html">Python</option>
+      <option value="../Data Analytics/da_intro.html">Data Analytics</option>
+      <option value="#">Machine Learning</option>
+      <option value="#">Artificial Intelligence</option>
+      <option value="#">Deep Learning</option>
+      <option value="#">MY SQL</option>
+      <option value="#">GIT & GitHub</option>
+      <option value="HTML/intro.html">HTML</option>
+      <option value="#">CSS</option>
+      <option value="#">JavaScript</option>
+    </select>
+  </div>
+</header>
+
+ <!-- Python Banner Section -->
+<section class="numpy-banner">
+  <div class="banner-overlay">
+  </div>
+</section>
+
+<!-- Python Internal Pages Tabs -->
+<nav class="python-tabs-nav">
+  <ul class="python-tabs-list">
+    <li><a href="numpy_intro.html" class="tab-link active">Introduction to NumPy</a></li>
+    <li><a href="create_array.html" class="tab-link">Creating NumPy Arrays</a></li>
+    <li><a href="nap.html" class="tab-link">NumPy Array Properties</a></li>
+    <li><a href="isf.html" class="tab-link">Indexing, Slicing & Filtering</a></li>
+    <li><a href="array_o.html" class="tab-link">Array Operations & Vectorization</a></li>
+    <li><a href="smp.html" class="tab-link">Shape Manipulation</a></li>
+    <li><a href="#" class="tab-link">Views vs Copies</a></li>
+    <li><a href="#" class="tab-link">Broadcasting</a></li>
+    <li><a href="#" class="tab-link">NumPy Input / Output</a></li>
+    <li><a href="#" class="tab-link">Practical Usage</a></li>
+  </ul>
+</nav>
+
+<section class="python-intro" id="with_banner">
+  <div class="container">
+    <h2>Shape Manipulation</h2>
+    <p>In real-world data analysis, data rarely comes in the exact shape you need.</p>
+    <p>Before analysis, visualization, or machine learning, data often needs to be <b>reshaped, reorganized, or transformed.</b></p>
+    <p>NumPy provides powerful tools to <b>manipulate the shape of arrays</b> without changing the actual data values.</p>
+
+<p><b>Understanding shape manipulation is essential for :</b></p>
+
+<ul>
+  <li>Preparing data for machine learning algorithms</li>
+  <li>Reshaping data for visualization</li>
+  <li>Combining or splitting arrays</li>
+  <li>Performing mathematical operations on arrays</li>
+  <li>Avoiding errors</li>
+  <li>Working with models and algorithms</li>
+</ul>
+
+<br><br>
+
+<h2>What Does Shape Mean in NumPy?</h2>
+
+<p>In NumPy, the <b>shape</b> of an array refers to the dimensions of the array. It is a tuple of integers that indicates the size of each dimension.</p>
+<p><b>The shape of an array describes :</b></p>
+<ul>
+    <li>How many dimensions it has</li>
+    <li>How many elements exist in each dimension</li>
+</ul>
+
+<h3>Example :</h3>
+<div class="Code-box">
+    <pre><code>import numpy as np
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+print(arr.shape)
+
+# Output: (2, 3)
+</code></pre>
+  </div>
+<p><b>This means :</b></p>
+<ul>
+    <li>There are 2 rows (dimensions)</li>
+    <li>There are 3 columns (elements in each dimension)</li>
+</ul>
+<br><br>
+
+<h2>Reshaping Arrays Using reshape( )</h2>
+<p>The reshape( ) method changes the shape of an array <b>without changing its data.</b></p>
+<h3>Example : 1D to 2D</h3>
+
+<div class="Code-box">
+    <pre><code>import numpy as np
+
+arr = np.array([1, 2, 3, 4, 5, 6])
+reshaped_arr = arr.reshape(2, 3)
+print(reshaped_arr)
+
+# Output:
+#[[1 2 3]
+# [4 5 6]]
+</code></pre>
+</div>
+<p>Total number of elements must remain the same.</p>
+<br>
+
+<h3>Real-Life Example: Student Marks</h3>
+
+<div class="Code-box">
+    <pre><code>import numpy as np
+# Student marks in 1D array
+marks = np.array([85, 92, 78, 96, 88, 90])
+# Reshape to a 2D array (3 students, 2 subjects each)
+reshaped_marks = marks.reshape(3, 2)
+print(reshaped_marks)
+
+# Output:
+#[[85 92]
+# [78 96]
+# [88 90]]
+</code></pre>
+</div>
+<p>Now each row can represent a student, and each column a subject.</p>
+<br>
+
+<h3>Using -1 for Automatic Dimension Calculation</h3>
+<p>NumPy can automatically calculate one dimension if you use -1.</p>
+
+<div class="Code-box">
+    <pre><code>arr = np.array([1, 2, 3, 4, 5, 6])
+new_arr = arr.reshape(3, -1)
+print(new_arr)
+
+# Output:
+#[[1 2]
+# [3 4]
+# [5 6]]
+</code></pre>
+</div>
+<p><b>This is useful when :</b></p>
+<ul>
+    <li>You know rows but not columns</li>
+    <li>Dataset size may change</li>
+</ul>
+<br><br>
+
+<h2>Flattening Arrays</h2>
+<p>Flattening converts a multi-dimensional array into a <b>1D array.</b></p>
+<div class="Code-box">
+    <pre><code>import numpy as np
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+flattened_arr = arr.flatten()
+print(flattened_arr)
+
+# Output: [1 2 3 4 5 6]
+</code></pre>
+</div>
+<p>Creates a <b>copy</b> of the data.</p>
+<br>
+
+<h3>Using ravel()</h3>
+<p>The <code>ravel()</code> function is similar to <code>flatten( )</code>, but it returns a <b>view</b> of the original array when possible, which can be more memory-efficient.</p>
+<div class="Code-box">
+    <pre><code>import numpy as np
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+raveled_arr = arr.ravel()
+print(raveled_arr)
+
+# Output: [1 2 3 4 5 6]
+</code></pre>
+</div>
+<p>Returns a <b>view</b> whenever possible (more memory efficient).</p>
+<br><br>
+
+
+<h2>Difference Between flatten( ) and ravel( )</h2>
+
+<p>While both <code>flatten()</code> and <code>ravel()</code> convert a multi-dimensional array into a 1D array, they differ in how they handle memory:</p>
+<ul>
+    <li><b>flatten()</b>: Always returns a <b>copy</b> of the data.</li>
+    <li><b>ravel()</b>: Returns a <b>view</b> of the original array when possible, which is more memory-efficient.</li>
+</ul>
+<p>Important when working with large datasets.</p>
+
+<div class="Code-box">
+    <pre><code>import numpy as np
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+flattened = arr.flatten()
+raveled = arr.ravel()
+print("Flattened:", flattened)
+print("Raveled:", raveled)
+
+# Output:
+# Flattened: [1 2 3 4 5 6]
+# Raveled: [1 2 3 4 5 6]
+</code></pre>
+</div>
+
+<br>
+
+<h3>Transposing Arrays</h3>
+<p>Transpose swaps rows and columns.</p>
+<div class="Code-box">
+    <pre><code>arr = np.array([[1, 2, 3], [4, 5, 6]])
+print(arr.T)
+# Output:
+#[[1 4]
+</code></pre>
+</div>
+<p><b>Used heavily in :</b></p>
+<ul>
+    <li>Matrix operations</li>
+    <li>Data analysis</li>
+    <li>Machine learning</li>
+</ul>
+<br><br>
+
+<h2>Adding and Removing Dimensions</h2>
+<h3>Using reshape( ) to Add Dimension</h3>
+<p>You can use <code>reshape()</code> to add a new dimension to an array.</p>
+<div class="Code-box">
+    <pre><code>import numpy as np
+arr = np.array([1, 2, 3, 4])
+# Add a new axis (dimension)
+new_arr = arr.reshape(1, -1)
+print(new_arr)
+
+# Output:
+#[[1 2 3 4]]
+</code></pre>
+</div>
+<br>
+
+<h3>Using np.newaxis</h3>
+<p>You can also use <code>np.newaxis</code> to add a new axis (dimension) to an array.</p>
+<div class="Code-box">
+    <pre><code>new_arr = arr[:, np.newaxis]
+print(new_arr)
+
+# Output:
+#[[1]
+</code></pre>
+</div>
+<p>This is common when preparing data for ML models.</p>
+<br>
+
+<h3>Combining Shape Manipulation with Operations</h3>
+<p>Shape manipulation is often combined with mathematical operations to prepare data for analysis or modeling.</p>
+<div class="Code-box">
+    <pre><code>import numpy as np
+arr = np.array([[1, 2], [3, 4]])
+# Reshape and transpose
+reshaped_transposed = arr.reshape(2, 2).T
+print(reshaped_transposed)
+
+# Output:
+#[[1 3]
+# [2 4]]
+</code></pre>
+</div>
+<p>Shape manipulation allows flexible transformations.</p>
+<br><br>
+
+<h2>Common Beginner Mistakes</h2>
+<ul>
+    <li>Reshaping without checking total elements</li>
+    <li>Confusing rows and columns</li>
+    <li>Ignoring array shape before operations</li>
+    <li>Overusing flatten instead of ravel</li>
+</ul>
+<p>Understanding shape prevents many runtime errors.</p>
+<br><br>
+
+
+<h2>Why Shape Manipulation Is Important in Analytics</h2>
+<p><b>Shape manipulation helps :</b></p>
+<ul>
+    <li>Align data correctly</li>
+    <li>Prepare inputs for models</li>
+    <li>Convert raw data into structured form</li>
+    <li>Avoid shape mismatch errors</li>
+</ul>
+<p>Almost every data pipeline involves reshaping at some stage.</p>
+<br><br>
+
+
+<h2>Key Takeaways</h2>
+<ul>
+    <li>Use <code>flatten()</code> when you need a copy of the data</li>
+    <li>Use <code>ravel()</code> for better memory efficiency</li>
+    <li>Always check array shapes before operations</li>
+    <li>Reshape carefully to maintain data integrity</li>
+</ul>
+
+<br><br>
+
+<h2>Conclusion</h2>
+<p>Shape manipulation is a fundamental skill in data analytics. Mastering these techniques will make your code more efficient and less error-prone.</p>
+<br><br>
+
+<h2>Practice Exercises</h2>
+<ul>
+    <li>Try reshaping arrays of different dimensions</li>
+    <li>Experiment with flatten() and ravel() on large datasets</li>
+    <li>Practice transposing matrices in various contexts</li>
+</ul>
+<br>
+    
+  <div class="navigation-buttons">
+  <a href="isf.html" class="nav-btn prev-btn">← Previous</a>
+  <a href="#" class="nav-btn next-btn">Next →</a>
+</div>
+
+</section>
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <h2>CodeWith <span>Vikas</span></h2>
+      <p>Learn programming from scratch.<br> Start your journey today!</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/Python/python.html">Python</a></li>
+        <li><a href="/Data Analytics/da_intro.html">Data Analytics</a></li>
+        <li><a href="#">Machine Learning</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h3>Follow Me</h3>
+      <a href="https://www.facebook.com/vikas2001mishra/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <!-- <a href="#" target="_blank"><i class="fab fa-x"></i></a> -->
+      <a href="https://www.instagram.com/techwith_vikas/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://github.com/vikas-tikapur" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 TechWith Vikas | Created by Vikas Mishra</p>
+  </div>
+ <div class="scroll-to-top" title="Go to Top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+</footer>
+<script src="../../main.js"></script>
+</body>
+</html>
