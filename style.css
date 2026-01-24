@@ -955,10 +955,13 @@ section#with_banner {
   .numpy-banner {
     height: 20vh !important;
     }
+  .scipy-banner{
+    height: 20vh !important;
+  }
 }
 
 .numpy-banner {
-  background-image: url('images/image.png'); 
+  background-image: url('images/nump.png'); 
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -971,3 +974,15 @@ section#with_banner {
 }
 
 
+.scipy-banner {
+  background-image: url('images/scip.png'); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 55vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
