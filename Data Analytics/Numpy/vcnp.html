@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechWith Vikas</title>
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header class="main-header">
+  <div class="container">
+    <div><a href="../../index.html" class="logo">TechWith <span>Vikas</span></a></div>
+    <select id="pythonPagesDropdown" onchange="if(this.value) window.location.href=this.value;">
+      <div class="custom-dropdown">
+      <option value="">Start Learning...</option>
+      <option value="../Python/python.html">Python</option>
+      <option value="../Data Analytics/da_intro.html">Data Analytics</option>
+      <option value="#">Machine Learning</option>
+      <option value="#">Artificial Intelligence</option>
+      <option value="#">Deep Learning</option>
+      <option value="#">MY SQL</option>
+      <option value="#">GIT & GitHub</option>
+      <option value="HTML/intro.html">HTML</option>
+      <option value="#">CSS</option>
+      <option value="#">JavaScript</option>
+    </select>
+  </div>
+</header>
+
+ <!-- Python Banner Section -->
+<section class="numpy-banner">
+  <div class="banner-overlay">
+  </div>
+</section>
+
+<!-- Python Internal Pages Tabs -->
+<nav class="python-tabs-nav">
+  <ul class="python-tabs-list">
+    <li><a href="numpy_intro.html" class="tab-link active">Introduction to NumPy</a></li>
+    <li><a href="create_array.html" class="tab-link">Creating NumPy Arrays</a></li>
+    <li><a href="nap.html" class="tab-link">NumPy Array Properties</a></li>
+    <li><a href="isf.html" class="tab-link">Indexing, Slicing & Filtering</a></li>
+    <li><a href="array_o.html" class="tab-link">Array Operations & Vectorization</a></li>
+    <li><a href="smp.html" class="tab-link">Shape Manipulation</a></li>
+    <li><a href="vcnp.html" class="tab-link">Views vs Copies</a></li>
+    <li><a href="brod.html" class="tab-link">Broadcasting</a></li>
+    <li><a href="npio.html" class="tab-link">NumPy Input / Output</a></li>
+    <li><a href="punp.html" class="tab-link">Practical Usage</a></li>
+  </ul>
+</nav>
+
+<section class="python-intro" id="with_banner">
+  <div class="container">
+    <h2>Views vs Copies</h2>
+    <p>When working with NumPy arrays, understanding <b>how data is stored in memory</b> is extremely important.</p>
+    <p>Sometimes, when you create a new array from an existing one, NumPy does <b>not create a new dataset,</b> it only creates a <b>different view of the same data.</b></p>
+    <p>This concept is called <b>Views vs Copies.</b></p>
+
+    <p><b>If this is not understood properly, it can lead to :</b></p>
+    <ul>
+        <li>Unexpected data changes</li>
+        <li>Hard-to-find bugs</li>
+        <li>Wrong analysis results</li>
+    </ul>
+    <br><br>
+
+
+<h2>What Is a View?</h2>
+<p>A <b>view</b> is a new array object that <b>shares the same data</b> with the original array.</p>
+<p><b>This means :</b></p>
+<ul>
+    <li>No new memory is created</li>
+    <li>Changes in the view <b>affect the original array</b></li>
+</ul>
+<br><br>
+
+<h3>Example: Creating a View</h3>
+
+<div class="Code-box">
+    <pre><code>import numpy as np
+arr = np.array([10, 20, 30, 40])
+view_arr = arr.view()
+view_arr[0] = 99
+print("Original:", arr)
+print("View:", view_arr)
+
+# Output:
+# Original: [99 20 30 40]
+</code></pre>
+</div>
+<p><b>Explanation :</b></p>
+<p>Both arrays change because they are pointing to the <b>same memory location.</b></p>
+<br><br>
+
+<h2>What Is a Copy?</h2>
+<p>A <b>copy</b> is a new array object that <b>does not share the same data</b> with the original array.</p>
+<p><b>This means :</b></p>
+<ul>
+    <li>A new memory location is created</li>
+    <li>Changes in the copy <b>do not affect the original array</b></li>
+</ul>
+<br><br>
+
+<h3>Example: Creating a Copy</h3>
+
+<div class="Code-box">
+    <pre><code>import numpy as np
+arr = np.array([10, 20, 30, 40])
+copy_arr = arr.copy()
+copy_arr[0] = 99
+print("Original:", arr)
+print("Copy:", copy_arr)
+
+# Output:
+# Original: [10 20 30 40]
+# Copy: [99 20 30 40]
+</code></pre>
+</div>
+<p><b>Explanation :</b></p>
+<p>The arrays are independent because they are stored in different memory locations.</p>
+<br>
+
+<h3>Real-Life Analogy (Easy to Remember)</h3>
+<p><b>View →</b> Two people editing the same Google Sheet</p>
+<p><b>Copy →</b> Downloading the file and editing it offline</p>
+
+<br>
+
+<h3>Slicing Creates Views</h3>
+<p>When you slice an array, NumPy creates a view of the original array, not a copy.</p>
+<div class="Code-box">
+    <pre><code>import numpy as np
+arr = np.array([10, 20, 30, 40])
+sliced_arr = arr[1:3]
+sliced_arr[0] = 99
+print("Original:", arr)
+print("Sliced:", sliced_arr)
+
+# Output:
+# Original: [10 99 30 40]
+</code></pre>
+</div>
+<p><b>Explanation :</b></p>
+<p>The sliced array is a view of the original array, so changes in the slice affect the original array.</p>
+<br>
+
+<h3>How to Check: View or Copy?</h3>
+<p>NumPy provides a method called <code>.base</code> to check if an array is a view or a copy:</p>
+<ul>
+    <li>If the array is a view, <code>.base</code> returns the original array.</li>
+    <li>If the array is a copy, <code>.base</code> returns <code>None</code>.</li>
+</ul>
+
+<div class="Code-box">
+    <pre><code>import numpy as np
+arr = np.array([10, 20, 30, 40])
+view_arr = arr.view()
+copy_arr = arr.copy()
+
+print("View base:", view_arr.base)
+print("Copy base:", copy_arr.base)
+
+# Output:
+# View base: [10 20 30 40]
+# Copy base: None
+</code></pre>
+</div>
+<br>
+
+<div class="Code-box">
+    <pre><code>print(slice_arr.base is arr)
+# Output:
+# True (slice_arr is a view)
+print(copy_arr.base is arr)
+# Output:
+# False (copy_arr is a copy)
+</code></pre>
+</div>
+<p><b>True →</b> View</p>
+<p><b>False →</b> Copy</p>
+<br><br>
+
+<h2>When to Use Views</h2>
+<p><b>Views are useful when :</b></p>
+<ul>
+    <li>Dataset is very large</li>
+    <li>Memory efficiency matters</li>
+    <li>You need fast temporary operations</li>
+</ul>
+<br>
+
+<h3>Common use cases:</h3>
+<ul>
+    <li>Slicing</li>
+    <li>Reshaping</li>
+    <li>Broadcasting operations</li>
+</ul>
+<br><br>
+
+<h2>When to Use Copies</h2>
+<p><b>Copies are safer when :</b></p>
+<ul>
+    <li>You must protect original data</li>
+    <li>You are cleaning or modifying data</li>
+    <li>You don’t want side effects</li>
+</ul>
+<p>Always use <b>.copy( )</b> in risky transformations.</p>
+<br><br>
+
+
+<h2>Common Beginner Mistakes</h2>
+<ul>
+    <li>Assuming slicing creates a copy</li>
+    <li>Modifying data without realizing it’s a view</li>
+    <li>Forgetting <b>.copy( )</b> during preprocessing</li>
+</ul>
+<p>These mistakes can silently break analytics pipelines.</p>
+<br><br>
+
+
+<h2>Why Views vs Copies Matter in Data Analytics</h2>
+<p><b>In real projects :</b></p>
+<ul>
+    <li>Data integrity is critical</li>
+    <li>Mistakes are costly</li>
+    <li>Debugging is time-consuming</li>
+</ul>
+<br>
+
+<h3>Understanding views and copies helps :</h3>
+<ul>
+    <li>Write safe analytics code</li>
+    <li>Optimize memory usage</li>
+    <li>Avoid accidental data corruption</li>
+</ul>
+<br><br>
+
+<h2>Key Takeaways</h2>
+<ul>
+    <li>Views share memory with the original array</li>
+    <li>Copies create independent memory</li>
+    <li>Slicing usually returns a view</li>
+    <li>Use <b>.copy( )</b> when data safety is required</li>
+</ul>
+<br><br>
+<h2>Conclusion</h2>
+<p>Understanding the difference between <b>views and copies</b> is essential when working with NumPy arrays. 
+    Views share the same memory as the original array, which makes them faster and more memory-efficient, 
+    but also risky if changes are made unintentionally. Copies, on the other hand, create independent data, 
+    ensuring safety at the cost of additional memory.</p>
+<p>In real-world data analytics, choosing between a view and a copy depends on the situation. When performance 
+    and memory efficiency matter, views are useful. When data integrity and safety are critical, copies should be preferred.</p>
+<p>A strong understanding of views and copies helps prevent unexpected bugs, protects original data, and leads 
+    to more reliable and professional analytics code.</p>
+
+<br><br>
+
+
+    
+  <div class="navigation-buttons">
+  <a href="smp.html" class="nav-btn prev-btn">← Previous</a>
+  <a href="#" class="nav-btn next-btn">Next →</a>
+</div>
+
+</section>
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <h2>CodeWith <span>Vikas</span></h2>
+      <p>Learn programming from scratch.<br> Start your journey today!</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/Python/python.html">Python</a></li>
+        <li><a href="/Data Analytics/da_intro.html">Data Analytics</a></li>
+        <li><a href="#">Machine Learning</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h3>Follow Me</h3>
+      <a href="https://www.facebook.com/vikas2001mishra/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <!-- <a href="#" target="_blank"><i class="fab fa-x"></i></a> -->
+      <a href="https://www.instagram.com/techwith_vikas/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://github.com/vikas-tikapur" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 TechWith Vikas | Created by Vikas Mishra</p>
+  </div>
+ <div class="scroll-to-top" title="Go to Top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+</footer>
+<script src="../../main.js"></script>
+</body>
+</html>
