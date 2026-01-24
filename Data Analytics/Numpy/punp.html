@@ -53,22 +53,184 @@
 
 <section class="python-intro" id="with_banner">
   <div class="container">
-    <h2>Views vs Copies</h2>
-    
+    <h2>Practical NumPy Usage & Real-World Examples</h2>
+    <p>Learning NumPy is not just about understanding arrays and functions.</p>
+    <p>The real power of NumPy comes from <b>how it is used in real-world data analysis tasks.</b></p>
+    <p><b>In this module, you will see how NumPy is applied to :</b></p>
+    <ul>
+      <li>Clean and transform data</li>
+      <li>Perform calculations efficiently</li>
+      <li>Solve practical analytics problems</li>
+    </ul>
+    <p>This module connects everything you learned so far to <b>real use cases.</b></p>
+<br><br>
+
+<h2>Where NumPy Is Used in Real Life</h2>
+<p><b>NumPy is widely used in :</b></p>
+<ol>
+  <li>Data Analytics</li>
+  <li>Machine Learning</li>
+  <li>Artificial Intelligence</li>
+  <li>Finance and Banking</li>
+  <li>Scientific and Engineering applications</li>
+</ol>
+
+<p>Almost every data-related Python library is built <b>on top of NumPy.</b></p>
+
+<br><br>
+
+<h3>Example 1: Sales Data Analysis</h3>
+<p><b>Scenario: </b>A company has daily sales data and wants to analyze performance.</p>
 <div class="Code-box">
     <pre><code>import numpy as np
-arr = np.array([10, 20, 30, 40])
-view_arr = arr.view()
-view_arr[0] = 99
-print("Original:", arr)
-print("View:", view_arr)
+sales = np.array([1200, 1500, 1800, 1600, 2000, 2200])
+print("Total Sales:", np.sum(sales))
+print("Average Sales:", np.mean(sales))
+print("Highest Sale:", np.max(sales))
+print("Lowest Sale:", np.min(sales))
 
-# Output:
-# Original: [99 20 30 40]
+# Output - 
+Total Sales: 10300
+Average Sales: 1716.6666666666667
+Highest Sale: 2200
+Lowest Sale: 1200
 </code></pre>
 </div>
+<p><b>What This Solves</b></p>
+<ul>
+  <li>Business performance tracking</li>
+  <li>Decision-making support</li>
+  <li>Monthly or daily reporting</li>
+</ul>
 
+<br>
 
+<h3>Example 2: Filtering Data for Insights</h3>
+<p><b>Scenario: </b>Find days where sales were higher than average.</p>
+<div class="Code-box">
+    <pre><code>average = np.mean(sales)
+high_sales_days = sales[sales > average]
+print(high_sales_days)
+
+# Output - 
+[1800 2000 2200]
+</code></pre>
+</div>
+<p><b>Commonly used to :</b></p>
+<ul>
+  <li>Identify peak performance</li>
+  <li>Detect anomalies</li>
+  <li>Focus on high-impact data</li>
+</ul>
+<br>
+<h3>Example 3: Data Normalization</h3>
+<p><b>Scenario: </b>Prepare data for machine learning models.</p>
+<div class="Code-box">
+    <pre><code>data = np.array([50, 60, 70, 80, 90])
+normalized = (data - np.min(data)) / (np.max(data) - np.min(data))
+print(normalized)
+
+# Output - 
+[0.   0.25 0.5  0.75 1.  ]
+</code></pre>
+</div>
+<p>This ensures all values are in the same range.</p>
+<br>
+
+<h3>Example 4: Working with Multidimensional Data</h3>
+<p><b>Scenario: </b>Marks of students in multiple subjects.</p>
+<div class="Code-box">
+    <pre><code>marks = np.array([
+    [80, 85, 90],
+    [75, 88, 92],
+    [78, 82, 86]
+])
+subject_average = np.mean(marks, axis=0)
+student_average = np.mean(marks, axis=1)
+print("Subject-wise Average:", subject_average)
+print("Student-wise Average:", student_average)
+
+# Output - 
+Subject-wise Average: [77.66666667 85.         89.33333333]
+Student-wise Average: [85. 85. 82.]
+</code></pre>
+</div>
+<p><b>Used in :</b></p>
+<ul>
+  <li>Education analytics</li>
+  <li>Performance evaluation</li>
+</ul>
+<br>
+
+<h3>Example 5: Handling Missing or Incorrect Data</h3>
+<p><b>Scenario: </b>Replace missing or invalid values.</p>
+<div class="Code-box">
+    <pre><code>data = np.array([100, 200, -1, 300, -1])
+cleaned = np.where(data == -1, np.mean(data[data != -1]), data)
+print(cleaned)
+
+# Output - 
+[100. 200. 200. 300. 200.]
+</code></pre>
+</div>
+<p>Data cleaning is one of the <b>most common real-world tasks.</b></p>
+<br>
+<h3>Example 6: Performance Advantage of NumPy</h3>
+<p><b>Scenario: </b>Why NumPy is preferred over Python lists.</p>
+<div class="Code-box">
+    <pre><code>arr = np.arange(1, 1000000)
+result = arr * 2
+result
+
+# Output - 
+array([      2,       4,       6, ..., 1999994, 1999996, 1999998])
+</code></pre>
+</div>
+<p>This runs <b>much faster</b> than looping through a Python list.</p>
+<p><b>NumPy’s speed is critical when working with :</b></p>
+<ul>
+  <li>Large datasets</li>
+  <li>Real-time analytics</li>
+  <li>Machine learning pipelines</li>
+</ul>
+<br><br>
+
+<h2>NumPy in a Data Analytics Workflow</h2>
+<p><b>A typical analytics workflow using NumPy :</b></p>
+<ol>
+  <li>Load data from files</li>
+  <li>Clean and transform data</li>
+  <li>Perform calculations</li>
+  <li>Filter and analyze results</li>
+  <li>Pass data to Pandas or ML models</li>
+</ol>
+<p>NumPy works silently in the background of most analytics systems.</p>
+<br><br>
+
+<h2>Common Beginner Mistakes in Real Projects</h2>
+<p><b>NumPy helps you :</b></p>
+<ul>
+  <li>Think in terms of data, not loops</li>
+  <li>Write efficient and scalable code</li>
+  <li>Transition easily to Pandas, ML, and AI</li>
+  <li>Build industry-ready analytics skills</li>
+</ul>
+<br><br>
+
+<h2>Key Takeaways</h2>
+<ul>
+  <li>NumPy is the backbone of data analytics in Python</li>
+  <li>It simplifies complex calculations</li>
+  <li>It improves performance dramatically</li>
+  <li>It is used in almost every real-world data project</li>
+</ul>
+<br><br>
+
+<h2>Conclusion</h2>
+<p>NumPy transforms raw numerical data into meaningful insights with speed and simplicity. By mastering practical NumPy usage, you gain 
+  the ability to handle real-world data problems confidently and efficiently. NumPy is not just a library you learn — it is a skill you 
+  use throughout your data analytics journey.</p>
+<br><br>
     
   <div class="navigation-buttons">
   <a href="npio.html" class="nav-btn prev-btn">← Previous</a>

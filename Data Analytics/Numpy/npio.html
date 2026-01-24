@@ -53,22 +53,193 @@
 
 <section class="python-intro" id="with_banner">
   <div class="container">
-    <h2>Views vs Copies</h2>
-    
+    <h2>NumPy Input / Output (I/O)</h2>
+    <p>In real-world data analysis, data rarely comes directly as NumPy arrays.</p>
+    <p>Most of the time, data is stored in files, such as text <b>files</b>, CSV files, or binary formats.</p>
+    <p><b>NumPy provides efficient input and output (I/O) functions to :</b></p>
+    <ul>
+      <li>Load data from files</li>
+      <li>Save processed data</li>
+      <li>Work with large datasets efficiently</li>
+    </ul>
+    <p>Understanding NumPy I/O is essential for building real data pipelines.</p>
+<br><br>
+
+<h2>Why NumPy I/O Is Important</h2>
+<p><b>NumPy I/O helps you :</b></p>
+<ul>
+  <li>Read external data into arrays</li>
+  <li>Save intermediate results</li>
+  <li>Reuse processed data</li>
+  <li>Improve performance when working with large files</li>
+</ul>
+<p>Without I/O, analysis cannot move beyond small examples.</p>
+<br><br>
+
+<h2>Saving NumPy Arrays to Files</h2>
+<h3>Saving a Single Array Using save( )</h3>
+
+
 <div class="Code-box">
     <pre><code>import numpy as np
 arr = np.array([10, 20, 30, 40])
-view_arr = arr.view()
-view_arr[0] = 99
-print("Original:", arr)
-print("View:", view_arr)
-
-# Output:
-# Original: [99 20 30 40]
+np.save("data.npy", arr)
 </code></pre>
 </div>
+<p>This saves the array in a <b>binary format,</b> which is :</p>
+<ul>
+  <li>Fast</li>
+  <li>Memory efficient</li>
+  <li>Preserves data type and shape</li>
+</ul>
+<br><br>
 
+<h2>Loading NumPy Arrays Using load( )</h2>
 
+<div class="Code-box">
+    <pre><code>loaded_arr = np.load("data.npy")
+print(loaded_arr)
+</code></pre>
+</div>
+<p>The array is restored exactly as it was saved.</p>
+<br>
+
+<h3>Saving Multiple Arrays Using savez()</h3>
+<div class="Code-box">
+    <pre><code>a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+np.savez("multiple_arrays.npz", arr1=a, arr2=b)
+</code></pre>
+</div>
+<p><b>This is useful when working with :</b></p>
+<ul>
+  <li>Multiple datasets</li>
+  <li>Model inputs and outputs</li>
+</ul>
+<br>
+
+<h3>Loading Multiple Arrays</h3>
+<div class="Code-box">
+    <pre><code>data = np.load("multiple_arrays.npz")
+print(data["arr1"])
+print(data["arr2"])
+</code></pre>
+</div>
+<br><br>
+
+<h2>Working with Text Files</h2>
+<h3>Saving Data to a Text File</h3>
+<div class="Code-box">
+    <pre><code>arr = np.array([100, 200, 300])
+np.savetxt("values.txt", arr)
+</code></pre>
+</div>
+<p><b>Text files are human-readable but :</b></p>
+<ul>
+  <li>Larger in size</li>
+  <li>Slower than binary files</li>
+</ul>
+<br>
+
+<h3>Loading Data from a Text File</h3>
+<div class="Code-box">
+    <pre><code>arr = np.loadtxt("values.txt")
+print(arr)
+</code></pre>
+</div>
+<br><br>
+
+<h2>Working with CSV Files</h2>
+<p>CSV files are very common in analytics.</p>
+<h3>Loading a CSV File</h3>
+<div class="Code-box">
+    <pre><code>data = np.loadtxt("sales.csv", delimiter=",")
+print(data)
+</code></pre>
+</div>
+<p><b>Useful when :</b></p>
+<ul>
+  <li>Working with exported reports</li>
+  <li>Handling structured numerical data</li>
+</ul>
+
+<br>
+<h3>Handling Missing Values in Files</h3>
+<div class="Code-box">
+    <pre><code>data = np.loadtxt("data.csv", delimiter=",", skiprows=1)
+</code></pre>
+</div>
+<p>This skips header rows when loading data.</p>
+
+<br>
+<h3>Real-Life Example: Loading Sales Data</h3>
+<div class="Code-box">
+    <pre><code>sales = np.loadtxt("monthly_sales.csv", delimiter=",")
+total_sales = np.sum(sales)
+print("Total Sales:", total_sales)
+</code></pre>
+</div>
+<p><b>This is a common analytics workflow :</b></p>
+<ol>
+  <li>Load data</li>
+  <li>Analyze</li>
+  <li>Save results</li>
+</ol>
+<br><br>
+
+<h2>Binary vs Text File Formats</h2>
+<h3>Binary Files (.npy, .npz)</h3>
+<ul>
+  <li>Faster</li>
+  <li>Smaller size</li>
+  <li>Best for large datasets</li>
+</ul>
+<br>
+
+<h3>Text Files (.txt, .csv)</h3>
+<ul>
+  <li>Human-readable</li>
+  <li>Easy to share</li>
+  <li>Slower for large data</li>
+</ul>
+<p>Choosing the right format improves performance.</p>
+
+<br><br>
+
+<h2>Common Beginner Mistakes</h2>
+<ul>
+  <li>Using text files for very large datasets</li>
+  <li>Forgetting delimiters in CSV files</li>
+  <li>Not handling headers correctly</li>
+  <li>Overwriting important files</li>
+</ul>
+<p>Understanding I/O prevents data loss and errors.</p>
+<br><br>
+
+<h2>Why NumPy I/O Matters in Data Analytics</h2>
+<p><b>NumPy I/O is used in :</b></p>
+<ul>
+  <li>Data preprocessing pipelines</li>
+  <li>Machine learning workflows</li>
+  <li>Intermediate result storage</li>
+  <li>Performance optimization</li>
+</ul>
+<p>Efficient data loading and saving saves <b>time and resources.</b></p>
+<br><br>
+
+<h2>Key Takeaways</h2>
+<ul>
+  <li>NumPy supports efficient file I/O</li>
+  <li>Binary formats are faster and more reliable</li>
+  <li>CSV and text files are useful for data sharing</li>
+  <li>I/O is essential for real-world analytics</li>
+</ul>
+<br><br>
+<h2>Conclusion</h2>
+<p>NumPy Input and Output functions make it easy to work with real-world data stored in files. They allow you to efficiently load data, 
+  save processed results, and reuse arrays without losing structure or performance. By choosing the right file format and using NumPy’s I/O tools correctly</p>
+
+<br><br>
     
   <div class="navigation-buttons">
   <a href="brod.html" class="nav-btn prev-btn">← Previous</a>
