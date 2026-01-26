@@ -43,6 +43,10 @@ body {
   align-items: center;
 }
 
+select#pythonPagesDropdown:hover {
+    background: linear-gradient(178.66deg, #0a639b 13.35%, #0a639b 144.73%) !important;
+}
+
 
 .search-box input[type="text"] {
   color: rgba(107, 107, 107, 1); 
@@ -450,9 +454,28 @@ table {
     font-size: 17px;
     line-height: 160%;
     text-align: justify;
-    color: rgba(107, 107, 107, 1);
+    color: rgb(255, 255, 255);
     padding: 8px 10px 8px 10px;
     letter-spacing: .5px;
+    border-radius: 5px;
+    border-color: transparent;
+    background: linear-gradient(178.66deg, #F20000 13.35%, #F2A020 144.73%) !important;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    outline: none;
+    border: transparent !important;
+  }
+
+  #pythonPagesDropdown:focus {
+    outline: none;
+    border: transparent !important;
+    box-shadow: none;
+  }
+
+  #pythonPagesDropdown option {
+    background-color: #ffffff;
+    color: #000;
   }
 
   #practice_h2 {
