@@ -51,25 +51,172 @@
 <section class="python-intro" id="with_banner">
   <div class="container">
     <h2>What Is SciPy?</h2>
-    
+    <p>SciPy stands for <b>Scientific Python.</b></p>
+    <p>It is a powerful Python library built on top of <b>NumPy</b> that provides <b>advanced mathematical, scientific, and statistical functions.</b></p>
+    <p><b>While NumPy focuses on :</b></p>
+    <ul>
+      <li>Arrays</li>
+      <li>Basic numerical operations</li>
+    </ul>
+    <p><b>SciPy focuses on :</b></p>
+    <ul>
+      <li>Advanced mathematics</li>
+      <li>Optimization</li>
+      <li>Statistics</li>
+      <li>Scientific computations</li>
+    </ul>
+    <p>SciPy is widely used in <b>data analytics, machine learning, engineering, and research.</b></p>
+<br><br>
+
+<h2>Why Do We Need SciPy?</h2>
+<p>NumPy is excellent for basic numerical operations, but real-world problems often require <b>more advanced tools.</b></p>
+<p><b>SciPy provides ready-to-use solutions for :</b></p>
+<ul>
+  <li>Complex mathematical problems</li>
+  <li>Statistical analysis</li>
+  <li>Signal and image processing</li>
+  <li>Optimization and integration</li>
+</ul>
+<p>Instead of writing complex algorithms from scratch, SciPy allows you to <b>solve problems efficiently and reliably.</b></p>
+<br><br>
+
+
+<h2>Relationship Between NumPy and SciPy</h2>
+<p><b>SciPy is built on top of NumPy, which means :</b></p>
+<ul>
+  <li>SciPy uses NumPy arrays internally</li>
+  <li>You must understand NumPy before learning SciPy</li>
+  <li>All SciPy functions work with NumPy arrays</li>
+</ul>
+<p>Think of NumPy as the foundation and SciPy as the advanced toolkit built on it.</p>
+<br><br>
+
+
+<h2>Installing and Importing SciPy</h2>
+<h3>Installing SciPy</h3>
+<div class="Code-box">
+    <pre><code>pip install scipy
+</code></pre>
+</div>
+<p>(In most data science environments, SciPy is already installed.)</p>
+<br>
+<h3>Importing SciPy</h3>
+<div class="Code-box">
+    <pre><code>import scipy
+</code></pre>
+</div>
+<br>
+<h3>Or importing specific modules :</h3>
+<div class="Code-box">
+    <pre><code>from scipy import stats
+</code></pre>
+</div>
+<p>SciPy is divided into <b>modules</b>, each designed for a specific purpose.</p>
+<br><br>
+
+
+<h2>Major SciPy Modules</h2>
+<p>SciPy is not a single tool — it is a <b>collection of specialized modules.</b></p>
+<p><b>Some important modules include :</b></p>
+<ol>
+  <li><b>scipy.stats → </b> Statistics</li>
+  <li><b>scipy.linalg → </b>Linear Algebra</li>
+  <li><b>scipy.optimize → </b> Optimization</li>
+  <li><b>scipy.integrate → </b> Integration</li>
+  <li><b>scipy.signal → </b> Signal Processing</li>
+  <li><b>scipy.spatial → </b> Spatial data & distances</li>
+</ol>
+<p>You don’t need all modules at once — you learn them as needed.</p>
+<br><br>
 
 
 
+<h2>Real-Life Example: Why SciPy Is Useful</h2>
+<h3>Scenario</h3>
+<p><b>You want to :</b></p>
+<ul>
+  <li>Find correlation between two datasets</li>
+  <li>Perform statistical tests</li>
+  <li>Optimize costs or profits</li>
+  <li>Solve mathematical equations</li>
+</ul>
+<p><b>Doing this manually is :</b></p>
+<ul>
+  <li>Time-consuming</li>
+  <li>Error-prone</li>
+</ul>
+<p>SciPy provides <b>tested and optimized functions</b> to solve these problems easily.</p>
+<br><br>
 
 
+<h3>Simple Example: Using SciPy for Statistics</h3>
+<div class="Code-box">
+    <pre><code>import numpy as np
+from scipy import stats
+data = np.array([12, 15, 14, 10, 18, 20])
+
+mean = np.mean(data)
+median = np.median(data)
+mode = stats.mode(data)
+
+print("Mean:", mean)
+print("Median:", median)
+print("Mode:", mode)
+
+# Output:- 
+Mean: 14.833333333333334
+Median: 14.5
+Mode: ModeResult(mode=np.int64(10), count=np.int64(1))
+</code></pre>
+</div>
+<p><b>This kind of analysis is common in :</b></p>
+<ul>
+  <li>Business analytics</li>
+  <li>Research</li>
+  <li>Quality control</li>
+</ul>
+<br><br>
+
+<h2>Where SciPy Is Used in the Real World</h2>
+<p><b>SciPy is used in :</b></p>
+<ul>
+  <li>Data Analytics and Data Science</li>
+  <li>Machine Learning pipelines</li>
+  <li>Scientific research</li>
+  <li>Engineering simulations</li>
+  <li>Financial modeling</li>
+</ul>
+<p>Many ML and AI libraries internally depend on SciPy.</p>
+<br><br>
 
 
+<h3>SciPy vs NumPy (Simple Comparison)</h3>
+<ul>
+  <li><b>NumPy → </b> Basic numerical operations</li>
+  <li><b>SciPy → </b> Advanced scientific and statistical operations</li>
+</ul>
+<p>You don’t replace NumPy with SciPy — you <b>use them together.</b></p>
+<br><br>
 
+<h2>Why Learning SciPy Is Important</h2>
+<p><b>Learning SciPy helps you :</b></p>
+<ul>
+  <li>Perform deeper data analysis</li>
+  <li>Solve complex mathematical problems</li>
+  <li>Work on industry-level projects</li>
+  <li>Move from beginner analytics to advanced analytics</li>
+</ul>
+<p>SciPy takes your NumPy knowledge to the <b>next level.</b></p>
+<br><br>
 
-
-
-
-
-
-
-
-
-
+<h2>Key Takeaways</h2>
+<ul>
+  <li>SciPy is built on top of NumPy</li>
+  <li>It provides advanced scientific functions</li>
+  <li>It is widely used in analytics and ML</li>
+  <li>Learning SciPy expands your problem-solving power</li>
+</ul>
+<br>
 
 
 
@@ -77,7 +224,7 @@
   <!-- <a href="#" class="nav-btn prev-btn">← Previous</a> -->
   <a href="#" class="nav-btn next-btn">Next →</a>
 </div>
-
+<br>
 </section>
 
 
