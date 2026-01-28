@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechWith Vikas</title>
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header class="main-header">
+  <div class="container">
+    <div><a href="../../index.html" class="logo">TechWith <span>Vikas</span></a></div>
+    <select id="pythonPagesDropdown" onchange="if(this.value) window.location.href=this.value;">
+      <div class="custom-dropdown">
+      <option value="">Explore Courses...</option>
+      <option value="../../Python/python.html">Python</option>
+      <option value="../../Data Analytics/da_intro.html">Data Analytics</option>
+      <option value="#">Machine Learning</option>
+      <option value="#">Artificial Intelligence</option>
+      <option value="#">Deep Learning</option>
+      <option value="#">MY SQL</option>
+      <option value="#">GIT & GitHub</option>
+      <option value="HTML/intro.html">HTML</option>
+      <option value="#">CSS</option>
+      <option value="#">JavaScript</option>
+    </select>
+  </div>
+</header>
+
+ <!-- SciPy Banner Section -->
+<section class="scipy-banner">
+  <div class="banner-overlay">
+  </div>
+</section>
+
+<!-- SciPy Internal Pages Tabs -->
+<nav class="python-tabs-nav">
+  <ul class="python-tabs-list">
+    <li><a href="intro.html" class="tab-link active">Introduction to SciPy</a></li>
+    <li><a href="sfs.html" class="tab-link">SciPy for Statistics</a></li>
+    <li><a href="#" class="tab-link">SciPy Linear Algebra</a></li>
+    <li><a href="#" class="tab-link">SciPy Optimization</a></li>
+    <li><a href="#" class="tab-link">SciPy Integration</a></li>
+    <li><a href="#" class="tab-link">SciPy Spatial & Distance</a></li>
+    <li><a href="#" class="tab-link">Practical SciPy Usage</a></li>
+  </ul>
+</nav>
+
+<section class="python-intro" id="with_banner">
+  <div class="container">
+    <h2>SciPy for Statistics (scipy.stats)</h2>
+    <p>Statistics is the backbone of data analytics.</p>
+    <p>It helps us <b>understand data behavior,</b> identify patterns, and make informed decisions.</p>
+    <p>While NumPy provides basic statistical functions, <b>SciPy takes statistics to the next level</b> by 
+        offering advanced and ready-to-use statistical tools through the <b>scipy.stats</b> module.</p>
+        <p><b>This module is heavily used in :</b></p>
+    <ul>
+        <li>Data analysis</li>
+        <li>Research</li>
+        <li>Business decision making</li>
+        <li>Machine learning preprocessing</li>
+    </ul>
+    <br><br>
+
+<h2>What is scipy.stats?</h2>
+<p><b>scipy.stats is a SciPy submodule that provides :</b></p>
+<ul>
+    <li>Descriptive statistics</li>
+    <li>Probability distributions</li>
+    <li>Correlation and relationships</li>
+    <li>Hypothesis testing</li>
+</ul>
+<p>It works directly with <b>NumPy arrays,</b> making it easy to integrate into analytics workflows.</p>
+<br><br>
+
+<h2>Basic Statistical Measures</h2>
+<h3>Mean, Median, and Mode</h3>
+<p>These measures help understand the <b>central tendency</b> of data.</p>
+<div class="Code-box">
+    <pre><code>import numpy as np
+from scipy import stats
+data = np.array([10, 12, 15, 18, 20])
+print("Mean:", np.mean(data))
+print("Median:", np.median(data))
+print("Mode:", stats.mode(data))
+
+#Output: 
+Mean: 15.0
+Median: 15.0
+Mode: ModeResult(mode=np.int64(10), count=np.int64(1))
+</code></pre>
+</div>
+<br>
+<p><b>Real-Life Use :</b></p>
+<ul>
+    <li>Average sales</li>
+    <li>Typical customer spending</li>
+    <li>Central performance value</li>
+</ul>
+<br><br>
+
+
+<h3>Variance and Standard Deviation</h3>
+<p>These measure how <b>spread out</b> the data is.</p>
+<div class="Code-box">
+    <pre><code>print("Variance:", np.var(data))
+print("Standard Deviation:", np.std(data))
+
+#Output: 
+Variance: 13.6
+Standard Deviation: 3.687817782917155
+</code></pre>
+</div>
+
+<h3>Why This Matters</h3>
+<ul>
+    <li>Low variance → stable data</li>
+    <li>High variance → high fluctuations</li>
+</ul>
+<p><b>Used in :</b></p>
+<ul>
+    <li>Risk analysis</li>
+    <li>Quality control</li>
+    <li>Performance evaluation</li>
+</ul>
+<br><br>
+
+
+<h2>Probability Distributions (Basic Idea)</h2>
+<p>Probability distributions describe how values are distributed.</p>
+<h3>Common Distributions</h3>
+<ul>
+    <li>Normal (Gaussian)</li>
+    <li>Binomial</li>
+    <li>Uniform</li>
+</ul>
+<br>
+
+<h3>Example: Normal Distribution</h3>
+<div class="Code-box">
+    <pre><code>from scipy.stats import norm
+mean = 50
+std_dev = 5
+probability = norm.pdf(55, mean, std_dev)
+print(probability)
+
+#Output: 0.04839414490382867
+</code></pre>
+</div>
+<p><b>Used in :</b></p>
+<ul>
+    <li>Exam scores</li>
+    <li>Heights and weights</li>
+    <li>Financial modeling</li>
+</ul>
+<br><br>
+
+<h3>Correlation and Relationship Between Data</h3>
+<p>Correlation tells us <b>how strongly two variables are related.</b></p>
+<div class="Code-box">
+    <pre><code>x = np.array([1, 2, 3, 4, 5])
+y = np.array([2, 4, 6, 8, 10])
+correlation, _ = stats.pearsonr(x, y)
+print("Correlation:", correlation)
+
+#Output: 
+Correlation: 1.0
+</code></pre>
+</div>
+<p><b>Interpretation :</b></p>
+<ul>
+    <li><b>1 →</b> Strong positive relationship</li>
+    <li><b>-1 → </b>Strong negative relationship</li>
+    <li><b>0 →</b> No relationship</li>
+</ul>
+<br><br>
+
+<h3>Real-Life Example: Sales vs Advertising</h3>
+<p><b>Businesses often analyze :</b></p>
+<ul>
+    <li>Advertising spend</li>
+    <li>Sales growth</li>
+</ul>
+<p>Correlation helps determine whether increased marketing actually impacts sales.</p>
+<br><br>
+
+<h2>Hypothesis Testing (Basic Understanding)</h2>
+<p>Hypothesis testing helps us <b>validate assumptions using data.</b></p>
+<p><b>Common questions :</b></p>
+<ul>
+    <li>Is the new strategy better?</li>
+    <li>Is the difference significant?</li>
+    <li>Is this result due to chance?</li>
+</ul>
+<h3>Example: One-Sample t-test</h3>
+<div class="Code-box">
+    <pre><code>sample = np.array([100, 102, 98, 101, 99])
+t_stat, p_value = stats.ttest_1samp(sample, 100)
+print("p-value:", p_value)
+
+#Output: 
+p-value: 1.0
+</code></pre>
+</div>
+<p>If p-value < 0.05, the result is usually considered <b>statistically significant.</b></p>
+<br><br>
+
+<h2>Why Hypothesis Testing Is Important</h2>
+<p><b>Used in :</b></p>
+<ul>
+    <li>A/B testing</li>
+    <li>Product improvements</li>
+    <li>Business experiments</li>
+    <li>Research studies</li>
+</ul>
+<p>It helps move from <b>assumptions to evidence-based decisions.</b></p>
+<br><br>
+
+<h2>Common Beginner Mistakes</h2>
+<ul>
+    <li>Confusing correlation with causation</li>
+    <li>Ignoring data distribution</li>
+    <li>Misinterpreting p-values</li>
+    <li>Using stats without understanding context</li>
+</ul>
+<p>Statistics should always be combined with domain understanding.</p>
+<br><br>
+
+
+<h2>Why scipy.stats Is Important in Data Analytics</h2>
+<p><b>It helps analysts :</b></p>
+<ul>
+    <li>Summarize data effectively</li>
+    <li>Understand data variability</li>
+    <li>Discover relationships</li>
+    <li>Make data-driven decisions</li>
+</ul>
+<p>Almost every serious analytics project uses statistical analysis.</p>
+<br><br>
+
+<h2>Key Takeaways</h2>
+<ul>
+    <li>scipy.stats provides advanced statistical tools</li>
+    <li>Mean, variance, and correlation are core concepts</li>
+    <li>Probability distributions model real-world data</li>
+    <li>Hypothesis testing validates assumptions</li>
+</ul>
+
+<br><br>
+
+  <div class="navigation-buttons">
+  <a href="intro.html" class="nav-btn prev-btn">← Previous</a>
+  <a href="#" class="nav-btn next-btn">Next →</a>
+</div>
+<br>
+</section>
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <h2>CodeWith <span>Vikas</span></h2>
+      <p>Learn programming from scratch.<br> Start your journey today!</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/Python/python.html">Python</a></li>
+        <li><a href="/Data Analytics/da_intro.html">Data Analytics</a></li>
+        <li><a href="#">Machine Learning</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h3>Follow Me</h3>
+      <a href="https://www.facebook.com/vikas2001mishra/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <!-- <a href="#" target="_blank"><i class="fab fa-x"></i></a> -->
+      <a href="https://www.instagram.com/techwith_vikas/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://github.com/vikas-tikapur" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 TechWith Vikas | Created by Vikas Mishra</p>
+  </div>
+ <div class="scroll-to-top" title="Go to Top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+</footer>
+<script src="../../main.js"></script>
+</body>
+</html>
