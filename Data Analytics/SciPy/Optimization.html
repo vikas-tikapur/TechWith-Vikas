@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechWith Vikas</title>
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header class="main-header">
+  <div class="container">
+    <div><a href="../../index.html" class="logo">TechWith <span>Vikas</span></a></div>
+    <select id="pythonPagesDropdown" onchange="if(this.value) window.location.href=this.value;">
+      <div class="custom-dropdown">
+      <option value="">Explore Courses...</option>
+      <option value="../../Python/python.html">Python</option>
+      <option value="../../Data Analytics/da_intro.html">Data Analytics</option>
+      <option value="#">Machine Learning</option>
+      <option value="#">Artificial Intelligence</option>
+      <option value="#">Deep Learning</option>
+      <option value="#">MY SQL</option>
+      <option value="#">GIT & GitHub</option>
+      <option value="HTML/intro.html">HTML</option>
+      <option value="#">CSS</option>
+      <option value="#">JavaScript</option>
+    </select>
+  </div>
+</header>
+
+ <!-- SciPy Banner Section -->
+<section class="scipy-banner">
+  <div class="banner-overlay">
+  </div>
+</section>
+
+<!-- SciPy Internal Pages Tabs -->
+<nav class="python-tabs-nav">
+  <ul class="python-tabs-list">
+    <li><a href="intro.html" class="tab-link active">Introduction to SciPy</a></li>
+    <li><a href="sfs.html" class="tab-link">SciPy for Statistics</a></li>
+    <li><a href="sla.html" class="tab-link">SciPy Linear Algebra</a></li>
+    <li><a href="Optimization.html" class="tab-link">SciPy Optimization</a></li>
+    <li><a href="#" class="tab-link">SciPy Integration</a></li>
+    <li><a href="#" class="tab-link">SciPy Spatial & Distance</a></li>
+    <li><a href="#" class="tab-link">Practical SciPy Usage</a></li>
+  </ul>
+</nav>
+
+<section class="python-intro" id="with_banner">
+  <div class="container">
+    <h2>Optimization (scipy.optimize)</h2>
+    <p>Optimization is the process of finding the <b>best possible solution</b> from a set of available options.</p>
+    <p>In data analytics and real-world problem solving, optimization helps us <b>minimize costs, maximize profit, or improve performance.</b></p>
+    <p>SciPy provides powerful optimization tools through the <b>scipy.optimize</b> module, allowing us to solve these problems efficiently without implementing complex algorithms from scratch.</p>
+
+
+<br><br>
+
+<h2>What Is Optimization?</h2>
+<p><b>In simple terms, optimization answers questions like :</b></p>
+<ul>
+    <li>What is the minimum cost?</li>
+    <li>What is the maximum profit?</li>
+    <li>What is the best parameter value?</li>
+</ul>
+<br>
+
+<p><b>Optimization problems usually involve :</b></p>
+<ul>
+    <li>An <b>objective function</b> (what we want to optimize)</li>
+    <li>One or more <b>variables</b></li>
+    <li>Sometimes <b>constraints</b></li>
+</ul>
+<br><br>
+
+<h2>Why Use scipy.optimize?</h2>
+<p><b>Writing optimization algorithms manually is :</b></p>
+<ul>
+    <li>Complex</li>
+    <li>Error-prone</li>
+    <li>Time-consuming</li>
+</ul>
+<br>
+
+<p><b>scipy.optimize provides :</b></p>
+<ul>
+    <li>Ready-to-use optimization methods</li>
+    <li>Reliable and tested algorithms</li>
+    <li>Simple interfaces for complex problems</li>
+</ul>
+<br><br>
+
+<h2>Common Optimization Tasks</h2>
+<ul>
+    <li>Minimization</li>
+    <li>Maximization</li>
+    <li>Root finding</li>
+    <li>Curve fitting</li>
+</ul>
+<p>These tasks are common in analytics, ML, and engineering.</p>
+<br><br>
+
+<h2>Minimization Using minimize( )</h2>
+<h3>Example: Minimizing a Function</h3>
+<div class="Code-box">
+    <pre><code>import numpy as np
+from scipy.optimize import minimize
+def f(x):
+    return x**2 + 5*x + 6
+result = minimize(f, x0=0)
+print(result.x)
+
+# Output :- 
+[-2.50000002]
+</code></pre>
+</div>
+<p>This finds the value of x where the function is minimum.</p>
+<br><br>
+
+<h3>Real-Life Intuition</h3>
+<p><b>Imagine :</b></p>
+<ul>
+    <li>Cost depends on production quantity</li>
+    <li>You want to find the quantity with <b>minimum cost</b></li>
+</ul>
+<p>Optimization helps find that value automatically.</p>
+<br>
+
+<h3>Maximization Problems</h3>
+<p>SciPy mainly supports <b>minimization</b>, but maximization can be done by <b>negating the function.</b></p>
+<p><b>Example :</b></p>
+<div class="Code-box">
+    <pre><code>def g(x):
+    return -(x**2)
+result = minimize(g, x0=0)
+print(result.x)
+
+# Output :- 
+[0.]
+</code></pre>
+</div>
+<p>This effectively finds the maximum of the original function.</p>
+<br>
+
+<h3>Optimization with Multiple Variables</h3>
+<div class="Code-box">
+    <pre><code>def func(x):
+    return x[0]**2 + x[1]**2
+result = minimize(func, x0=[1, 1])
+print(result.x)
+
+# Output :- 
+[-1.07505143e-08 -1.07505143e-08]
+</code></pre>
+</div>
+<p><b>Used in :</b></p>
+<ul>
+    <li>Parameter tuning</li>
+    <li>Model optimization</li>
+    <li>Multivariate analysis</li>
+</ul>
+<br>
+
+<h3>Curve Fitting Using curve_fit( )</h3>
+<p>Curve fitting helps find the <b>best-fit line or curve</b> for data.</p>
+<p><b>Example :</b></p>
+<div class="Code-box">
+    <pre><code>from scipy.optimize import curve_fit
+def model(x, a, b):
+    return a*x + b
+xdata = np.array([1, 2, 3, 4])
+ydata = np.array([2, 4, 6, 8])
+params, _ = curve_fit(model, xdata, ydata)
+print(params)
+
+# Output :- 
+[ 2.0000000e+00 -4.4408921e-16]
+/tmp/ipython-input-2639452734.py:9: OptimizeWarning: Covariance of the parameters could not be estimated
+  params, _ = curve_fit(model, xdata, ydata)
+</code></pre>
+</div>
+<p><b>Common in :</b></p>
+<ul>
+    <li>Trend analysis</li>
+    <li>Forecasting</li>
+    <li>Data modeling</li>
+</ul>
+<br>
+
+<h3>Root Finding</h3>
+<p>Root finding solves equations where the function equals zero.</p>
+<div class="Code-box">
+    <pre><code>from scipy.optimize import fsolve
+def eq(x):
+    return x**2 - 4
+root = fsolve(eq, 1)
+print(root)
+
+# Output :- 
+[2.]
+</code></pre>
+</div>
+<br><br>
+
+<h2>Real-World Use Cases</h2>
+<p><b>scipy.optimize is used in :</b></p>
+<ul>
+    <li>Business cost optimization</li>
+    <li>Machine learning parameter tuning</li>
+    <li>Engineering design optimization</li>
+    <li>Financial modeling</li>
+</ul>
+<br><br>
+
+<h2>Common Beginner Mistakes</h2>
+<ul>
+    <li>Choosing wrong initial values <b>(x0)</b></li>
+    <li>Ignoring constraints</li>
+    <li>Assuming global minimum always found</li>
+    <li>Misinterpreting results</li>
+</ul>
+<p>Understanding the problem context is essential.</p>
+
+<br><br>
+
+
+<h2>Why Optimization Is Important in Data Analytics</h2>
+<p><b>Optimization helps :</b></p>
+<ul>
+    <li>Improve efficiency</li>
+    <li>Reduce waste</li>
+    <li>Increase performance</li>
+    <li>Support data-driven decisions</li>
+</ul>
+<p>Many ML models rely heavily on optimization.</p>
+<br><br>
+
+
+<h2>Key Takeaways</h2>
+<ul>
+    <li>Optimization finds the best possible solution</li>
+    <li><b>scipy.optimize</b> simplifies complex problems</li>
+    <li>Minimization, curve fitting, and root finding are common tasks</li>
+    <li>Real-world problems often involve optimization</li>
+</ul>
+
+
+
+
+
+
+
+<br><br>
+
+  <div class="navigation-buttons">
+  <a href="sla.html" class="nav-btn prev-btn">← Previous</a>
+  <a href="#" class="nav-btn next-btn">Next →</a>
+</div>
+<br>
+</section>
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <h2>CodeWith <span>Vikas</span></h2>
+      <p>Learn programming from scratch.<br> Start your journey today!</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/Python/python.html">Python</a></li>
+        <li><a href="/Data Analytics/da_intro.html">Data Analytics</a></li>
+        <li><a href="#">Machine Learning</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h3>Follow Me</h3>
+      <a href="https://www.facebook.com/vikas2001mishra/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <!-- <a href="#" target="_blank"><i class="fab fa-x"></i></a> -->
+      <a href="https://www.instagram.com/techwith_vikas/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://github.com/vikas-tikapur" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 TechWith Vikas | Created by Vikas Mishra</p>
+  </div>
+ <div class="scroll-to-top" title="Go to Top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+</footer>
+<script src="../../main.js"></script>
+</body>
+</html>
