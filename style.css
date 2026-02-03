@@ -1,7 +1,63 @@
 * {
   margin: 0;
 }
-/* Header Styling */
+
+/* ===============================
+   PAGE LOADER
+================================ */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.page-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease-out;
+}
+
+.page-loader.hidden {
+  opacity: 0;
+  pointer-events: none;
+  animation: fadeOut 0.5s ease-out forwards;
+}
+
+.loader-content {
+  text-align: center;
+}
+
+.loader-spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(10, 99, 155, 0.2);
+  border-top: 4px solid rgba(242, 113, 0, 1);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+.loader-text {
+  color: rgba(10, 99, 155, 1);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* ===============================
+   GENERAL
+================================ */
 .main-header {
   background-color: #ffffff; 
   color: #fff;
@@ -24,6 +80,42 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+/* Top nav (in-header) - Desktop Only */
+.top-nav {
+  display: none;
+}
+
+.top-nav .nav-links {
+  display: flex;
+  gap: 18px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.top-nav .nav-links li {
+  display: inline-block;
+}
+.top-nav .nav-link {
+  color: rgba(10,99,155,1);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 10px;
+  border-radius: 6px;
+  transition: 0.2s ease;
+}
+.top-nav .nav-link:hover,
+.top-nav .nav-link.active {
+  background: rgba(242,113,0,0.12);
+  color: rgba(242,113,0,1);
+}
+
+/* Show nav only on desktop */
+@media (min-width: 1024px) {
+  .top-nav {
+    display: block;
+  }
 }
 
 .logo {
@@ -175,52 +267,190 @@ select#pythonPagesDropdown:hover {
 }
 
 
+
+
+/* ===============================
+   HERO SECTION (UPDATED)
+================================ */
 .hero-section {
-  min-height: 80vh;
-  width: 100%;
-  background-image: url('images/main_banner.png');
+  position: relative;
+  height: 80vh;
+  min-height: 520px;
+
+  /* 🔥 Gradient + Background Image */
+  background:
+    linear-gradient(
+      rgba(10, 29, 58, 0.75),
+      rgba(16, 42, 82, 0.75)
+    ),
+    url("images/hero-bg1.jpg");
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  overflow: hidden;
 }
 
-.hero-section h1 {
+/* ===============================
+   PARTICLES LAYER
+================================ */
+#particles-js {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* ===============================
+   CONTENT
+================================ */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  padding: 0 16px;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.hero-content h1 {
+  color: #ffffff;
   font-size: 48px;
-  margin-bottom: 50px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  min-height: 1.2em;
+}
+
+/* Typing cursor animation */
+.hero-content h1 .cursor {
+  color: #f27100 !important;
   font-weight: bold;
-  letter-spacing: 1px;
+  animation: blink 0.8s infinite;
 }
 
-.hero-section h1 span {
-  color: rgba(242, 113, 0, 1);
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
 }
 
-.hero-section p {
-  font-size: 20px;
-  line-height: 1.6;
-  margin-bottom: 30px;
+/* Orange highlight for 'TechWith Vikas' */
+.text-part .highlight {
+  color: #f27100 !important;
+  font-weight: 700;
 }
 
-.hero-btn {
-  display: inline-block;
-  padding: 12px 30px;
- background: linear-gradient(178.66deg, #F20000 13.35%, #F2A020 144.73%);
-  color: #fff;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 100%;
+/* ===============================
+   SCROLL REVEAL ANIMATIONS
+================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===============================
+   BUTTON RIPPLE EFFECT
+================================ */
+@keyframes ripple {
+  to {
+    opacity: 0;
+    transform: scale(4);
+  }
+}
+
+.ripple-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
+  transform: scale(0);
+  animation: ripple 0.6s ease-out;
+  pointer-events: none;
+}
+
+/* Initial state - hidden */
+.reveal-element {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* Active state - visible */
+.reveal-element.reveal-active {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.reveal-card {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.reveal-card.reveal-active {
+  animation: fadeInScale 0.6s ease-out forwards;
+}
+
+.hero-content p {
+  color: rgba(255,255,255,0.9);
+  font-size: 18px;
+  margin: 15px 0 25px;
+}
+
+/* ===============================
+   BUTTON
+================================ */
+.hero-content .btn {
+  background: linear-gradient(178.66deg, #F20000 13.35%, #F2A020 144.73%) !important;
+  color: white;
+  padding: 14px 32px;
+  border-radius: 6px;
   text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  letter-spacing: 1px;
+  font-weight: 600;
+  transition: 0.3s ease;
 }
 
-.hero-btn:hover {
-  background: linear-gradient(178.66deg, rgb(242 70 131) 13.35%, #000000 144.73%);
-  color: rgb(255, 255, 255);
+.hero-content .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(255,140,0,0.45);
+  background: transparent !important;
 }
+
+
 
 /* Courses Section */
+.anchor-offset {
+  /* helpful utility: apply to sections targeted by anchor links */
+  scroll-margin-top: 90px;
+}
+#courses {
+  scroll-margin-top: 90px; /* prevent fixed header overlap when linked */
+}
+.section-title {
+  scroll-margin-top: 0; /* ensure heading itself doesn't add extra offset */
+}
 .courses-section {
   padding: 50px 20px;
   background-color: #f8f9fa;
@@ -537,14 +767,35 @@ h3 {
 
 .hero-content{
   margin: auto;
+  
 }
 .main-header {
      height: 80px;
 }
+  /* increase anchor offset on smaller screens to account for larger header */
+  #courses {
+    scroll-margin-top: 120px;
+  }
 .hero-section{
   padding: 90px 0px 50px 0px;
   height: 6vh;
 }
+
+/* Mobile Button Styling */
+@media (max-width: 480px) {
+  .hero-content .btn {
+    padding: 12px 20px 30px 24px;
+    font-size: 16px;
+    display: inline-block;
+    width: auto;
+    max-width: 90%;
+  }
+
+  .hero-content .btn:active {
+    transform: scale(0.98);
+  }
+}
+
 .hero-btn{
   font-size: 16px;
 }
